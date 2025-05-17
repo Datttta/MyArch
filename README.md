@@ -55,12 +55,11 @@ still on cd ~/dotfiles run install-apps.sh
 ```
 ./intall-apps.sh
 ```
-in case of "push" failure, run
+in case of "push" failure, run the command bellow and then run ./install-apps.sh again
 
 ```
 git pull origin main --rebase
 ```
-and then run ./install-apps.sh again
 
 youtube video about dotfiles: 
 
