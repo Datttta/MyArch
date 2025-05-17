@@ -36,7 +36,7 @@ git clone git@github.com:Datttta/MyArch.git
 cd dotfiles
 ```
 
-then use GNU stow to create symlinks
+then use GNU stow to create symlinks (If it doesn't work use "stow" for each file, e.g. stow hyprland kitty rofi...
 
 ```
 Stow *
