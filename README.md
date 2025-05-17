@@ -40,6 +40,7 @@ sudo pacman -S flatpak
 First, check out the dotfiles repo in your $HOME directory using git
 
 ```
+cd
 git clone git@github.com:Datttta/MyArch.git
 cd dotfiles
 ```
@@ -48,6 +49,11 @@ then use GNU stow to create symlinks (If it doesn't work use "stow" for each fil
 
 ```
 Stow *
+```
+still on cd ~/dotfiles run install-apps.sh
+
+```
+./intall-apps.sh
 ```
 youtube video about dotfiles: 
 
