@@ -31,5 +31,6 @@ then use GNU stow to create symlinks
 Stow *
 ```
 youtube video about dotfiles: 
+
 https://www.youtube.com/watch?v=y6XCebnB9gs&list=PLsV9qvkB32_e0Zk2ma962O14yEpv8EuZX&index=1&t=293s
 
