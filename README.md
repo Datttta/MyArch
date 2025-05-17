@@ -4,6 +4,12 @@
 
 Ensure you have the following installed on your system
 
+## Update packages
+
+```
+sudo pacman -Syu
+```
+
 ### Git
 
 ```
@@ -14,6 +20,11 @@ pacman -S git
 
 ```
 pacman -S stow
+```
+### Flatpak
+
+```
+sudo pacman -S flatpak
 ```
 
 ## Instalation
