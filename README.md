@@ -10,6 +10,14 @@ Ensure you have the following installed on your system
 sudo pacman -Syu
 ```
 
+### yay
+
+```
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+
 ### Git
 
 ```
