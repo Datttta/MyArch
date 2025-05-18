@@ -1,4 +1,6 @@
 balena-etcher
+neofetch
+preload
 timeshift-autosnap
 yay-git
 yay-git-debug
