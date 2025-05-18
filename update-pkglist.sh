@@ -11,4 +11,4 @@ git add pkglist.txt aurlist.txt
 git commit -m "Updating package list"
 git push
 
-echo "Done."
+echo "Done and added to git repository."
