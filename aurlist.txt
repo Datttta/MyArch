@@ -1,3 +1,5 @@
+balena-etcher
+timeshift-autosnap
 yay-git
 yay-git-debug
 youtube-music-bin
