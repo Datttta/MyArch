@@ -48,6 +48,11 @@ cd dotfiles
 then use GNU stow to create symlinks (If it doesn't work use "stow" for each file, e.g. stow hyprland kitty rofi...
 
 ```
+Stow .
+```
+if it doesn't work try
+
+```
 Stow *
 ```
 still on cd ~/dotfiles run install-apps.sh
