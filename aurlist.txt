@@ -1,5 +1,7 @@
+arc-solid-gtk-theme
 balena-etcher
 neofetch
+neovim-git
 preload
 timeshift-autosnap
 yay-git
