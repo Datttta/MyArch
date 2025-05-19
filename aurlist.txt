@@ -5,6 +5,7 @@ neofetch
 neovim-git
 piper-git
 preload
+python-pywal16
 timeshift-autosnap
 yay-git
 yay-git-debug
