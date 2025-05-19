@@ -9,6 +9,7 @@ SAVEHIST=1000
 
 # Prompt (basic)
 PROMPT='%n@%m %1~ %# '
+#PROMPT='%n@%m:%~> '
 
 # Enable suggestions and syntax highlighting (if installed)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
