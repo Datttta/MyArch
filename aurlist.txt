@@ -11,3 +11,4 @@ yay-git
 yay-git-debug
 youtube-music-bin
 youtube-music-bin-debug
+zen-browser-bin
