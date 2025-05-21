@@ -17,6 +17,7 @@ dosfstools
 dunst
 easyeffects
 exfat-utils
+eza
 fd
 firefox
 flatpak
