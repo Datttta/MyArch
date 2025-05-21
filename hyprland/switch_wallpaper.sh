@@ -3,10 +3,10 @@
 # Array of wallpapers
 WALLPAPERS=(
     "$HOME/Pictures/wallpaper/theMage.jpg"
-    "$HOME/Pictures/wallpaper/deepspacenine.jpg"
     "$HOME/Pictures/wallpaper/sun.jpg"
-    "$HOME/Pictures/wallpaper/jellyjam.jpg"
     "$HOME/Pictures/wallpaper/wallhaven-yx6e9l.jpg"
+    "$HOME/Pictures/wallpaper/ecatherina-farias-teste-2.jpg"
+    "$HOME/Pictures/wallpaper/hyprforest.jpg"
 )
 
 # File to store index
