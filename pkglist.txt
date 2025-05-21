@@ -58,6 +58,7 @@ ntfs-3g
 nwg-look
 os-prober
 otf-font-awesome
+pacman-contrib
 pamixer
 pavucontrol
 pipewire-pulse

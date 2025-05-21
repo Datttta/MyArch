@@ -56,14 +56,14 @@ window#waybar {
 #custom-weather {
     color: @color5; /* color5 */
     background-color: @background; /* background */
-    margin: 0 15px 0 0px;
+    margin: 0 7px 0 0px;
     padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
 
 #clock {
     color: @color3; /* color3 */
     background-color: @background; /* background */
-    margin: 0 15px 0 0;
+    margin: 0 7px 0 0;
     padding: 0 15px 0 15px;
 }
 

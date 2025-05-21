@@ -10,7 +10,7 @@
     "format": " {}   ",
     "interval": "once",
     "exec": "checkupdates | wc -l",
-    "on-click": "update-system",
+    "on-click": "kitty -e sudo pacman -Syu",
     "signal": 8
   },
 
