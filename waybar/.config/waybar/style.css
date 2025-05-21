@@ -1,4 +1,4 @@
-@import url("/home/user0/.cache/wal/colors-waybar.css");
+@import url("/home/DROS/.cache/wal/colors-waybar.css");
 
 * {
     font-family: 'Radio Canada Big', sans-serif;
@@ -31,19 +31,32 @@ window#waybar {
 }
 
 #battery,
-#pulseaudio,
-#backlight,
-#custom-weather {
+
+#backlight {
+    color: @color6; /* color6 */
+    background-color: @background; /* background */
+    margin: 0 0px 0 0px;
+    padding: 0 12px 0 12px; /* top, right, bottom, left */
+}
+
+#pulseaudio {
     color: @color5; /* color5 */
     background-color: @background; /* background */
-    margin: 0 15px 0 0px;
-    padding: 0 15px 0 15px; /* top, right, bottom, left */
+    margin: 0 7px 0 0px;
+    padding: 0 12px 0 12px; /* top, right, bottom, left */
 }
 
 #network {
     color: @color2; /* color2 */
     background-color: @background; /* background */
-    margin: 0 0px 0 0px;
+    margin: 0 7px 0 0px;
+    padding: 0 15px 0 15px; /* top, right, bottom, left */
+}
+
+#custom-weather {
+    color: @color5; /* color5 */
+    background-color: @background; /* background */
+    margin: 0 15px 0 0px;
     padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
 
@@ -63,7 +76,7 @@ window#waybar {
 }
 
 #backlight {
-    color: @color5; /* color5 */
+    color: @color6; /* color5 */
 }
 
 #custom-weather {
