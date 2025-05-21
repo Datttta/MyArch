@@ -1,0 +1,7 @@
+@import '.cache/wal/colors-waybar.css';
+
+@define-color bg @background;
+
+window {
+    background-color: @bg;
+}

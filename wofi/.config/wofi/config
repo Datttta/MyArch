@@ -1,0 +1,10 @@
+allow_images=true
+image_size=35
+prompt=
+insensitive=true
+always_parse_args=true
+show_all=false
+print_command=true
+#width=600
+#height=400
+#image_size=30
