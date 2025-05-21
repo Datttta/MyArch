@@ -7,6 +7,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
+# Enable color output for ls
+alias ls='ls --color=auto'
+
 # Prompt (basic)
 #PROMPT='%n@%m %1~ %# '
 #PROMPT='%/ %# ' #show full path

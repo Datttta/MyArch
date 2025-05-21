@@ -6,6 +6,7 @@ WALLPAPERS=(
     "$HOME/Pictures/wallpaper/deepspacenine.jpg"
     "$HOME/Pictures/wallpaper/sun.jpg"
     "$HOME/Pictures/wallpaper/jellyjam.jpg"
+    "$HOME/Pictures/wallpaper/wallhaven-yx6e9l.jpg"
 )
 
 # File to store index

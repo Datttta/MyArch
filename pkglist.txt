@@ -5,6 +5,7 @@ apt
 archlinux-xdg-menu
 base
 base-devel
+bat
 blueman
 bluez
 bluez-utils
@@ -76,6 +77,7 @@ swayimg
 thunar-volman
 timeshift
 tree
+ttf-jetbrains-mono-nerd
 ufw
 unrar
 vivaldi
