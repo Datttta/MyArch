@@ -67,9 +67,17 @@ window#waybar {
     padding: 0 15px 0 15px;
 }
 
+#custom-pacman {
+    color: @color10; /* color7 */
+    background-color: @background; /* background */
+    margin: 0 7px 0 0px;
+    padding: 0 15px 0 15px; /* top, right, bottom, left */
+}
+
 #network {
     color: @color4; /* color4 */
 }
+
 
 #pulseaudio {
     color: @color5; /* color5 */
