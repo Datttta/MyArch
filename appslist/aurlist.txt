@@ -1,0 +1,14 @@
+arc-solid-gtk-theme
+balena-etcher
+libratbag-git
+neofetch
+neovim-git
+piper-git
+preload
+python-pywal16
+timeshift-autosnap
+yay-git
+yay-git-debug
+youtube-music-bin
+youtube-music-bin-debug
+zen-browser-bin
