@@ -67,6 +67,13 @@ window#waybar {
     padding: 0 15px 0 15px;
 }
 
+#custom-launcher {
+    color: @color13;
+    background-color: @background;
+    margin: 0 7px 0 0px;
+    padding: 0 20px 0 16px;
+}
+
 #custom-pacman {
     color: @color10; /* color7 */
     background-color: @background; /* background */

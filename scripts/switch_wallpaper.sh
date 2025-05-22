@@ -5,8 +5,9 @@ WALLPAPERS=(
     "$HOME/Pictures/wallpaper/theMage.jpg"
     "$HOME/Pictures/wallpaper/sun.jpg"
     "$HOME/Pictures/wallpaper/wallhaven-yx6e9l.jpg"
-    "$HOME/Pictures/wallpaper/ecatherina-farias-teste-2.jpg"
     "$HOME/Pictures/wallpaper/hyprforest.jpg"
+    "$HOME/Pictures/wallpaper/Hypr-chan.png"
+    "$HOME/Pictures/wallpaper/wallpaper.png"
 )
 
 # File to store index

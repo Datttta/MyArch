@@ -2,9 +2,9 @@
   "layer": "top",
   "position": "top",
   "margin-top": 13,
-  "modules-left": ["clock", "custom/weather", "custom/pacman"],
-  "modules-center": ["hyprland/workspaces", "custom/media"],
-  "modules-right": ["pulseaudio", "battery", "network", "backlight"],
+  "modules-left": ["custom/launcher", "clock", "hyprland/workspaces"],
+  "modules-center": ["custom/media"],
+  "modules-right": ["custom/pacman", "custom/weather", "pulseaudio", "battery", "network", "backlight"],
 
   "custom/pacman": {
     "format": " {}   ",
@@ -12,6 +12,10 @@
     "exec": "checkupdates | wc -l",
     "on-click": "kitty -e sudo pacman -Syu",
     "signal": 8
+  },
+
+  "custom/launcher": {
+    "format": "",
   },
 
   "custom/media": {
@@ -34,8 +38,8 @@
   },
 
   "clock": {
-    "format": "󰥔   {:%I:%M %p}",
-    "format-alt": "󰥔   {:%a, %d. %b  %I:%M %p}"
+    "format-alt": "󰥔   {:%I:%M %p}",
+    "format": "󰥔   {:%a, %d. %b  %I:%M %p}"
   },
 
   "pulseaudio": {
