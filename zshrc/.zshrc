@@ -77,7 +77,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting fast-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting fast-syntax-highlighting zsh-autosuggestions zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,10 +102,15 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Enable command auto-completion
+autoload -U compinit
+compinit
+
+# Enable history
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
 
 # Aliases
 alias i="yay -S"
@@ -118,7 +123,6 @@ alias ls="exa -l"
 alias cat="bat --theme base16"
 alias grep="rg"
 alias find="fd"
-# alias nvim="lvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
