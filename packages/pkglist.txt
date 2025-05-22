@@ -35,6 +35,7 @@ gvfs-mtp
 gvim
 htop
 hyprland
+hyprlock
 hyprpaper
 intel-ucode
 jdk-openjdk
