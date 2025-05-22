@@ -19,6 +19,7 @@ easyeffects
 exfat-utils
 eza
 fd
+ffmpegthumbnailer
 firefox
 flatpak
 gimp
@@ -39,6 +40,7 @@ intel-ucode
 jdk-openjdk
 kitty
 libnotify
+libopenraw
 libreoffice-fresh
 linux
 linux-firmware
@@ -78,8 +80,10 @@ swappy
 swayimg
 thunar-volman
 timeshift
+trash-cli
 tree
 ttf-jetbrains-mono-nerd
+tumbler
 ufw
 unrar
 vivaldi
