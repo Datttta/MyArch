@@ -76,7 +76,7 @@ window#waybar {
 }
 
 #custom-pacman {
-    color: @color8; /* color8 */
+    color: @color1; /* color1 (previously color8) */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
     padding: 0 15px 0 15px; /* top, right, bottom, left */
