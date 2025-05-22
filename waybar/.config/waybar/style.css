@@ -34,14 +34,14 @@ window#waybar {
 #battery,
 
 #backlight {
-    color: @color6; /* color6 */
+    color: @color13; /* color13 */
     background-color: @background; /* background */
     margin: 0 0px 0 0px;
     padding: 0 12px 0 12px; /* top, right, bottom, left */
 }
 
 #pulseaudio {
-    color: @color5; /* color5 */
+    color: @color4; /* color4 */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
     padding: 0 12px 0 12px; /* top, right, bottom, left */
@@ -76,33 +76,18 @@ window#waybar {
 }
 
 #custom-pacman {
-    color: @color10; /* color7 */
+    color: @color8; /* color8 */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
     padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
 
-#network {
-    color: @color4; /* color4 */
-}
-
-
-#pulseaudio {
-    color: @color5; /* color5 */
-}
-
 #backlight {
-    color: @color6; /* color5 */
-}
-
-#custom-weather {
-    color: @color4; /* color2 */
-    background-color: @background; /* background */
-    padding: 0 15px 0 15px; /* top, right, bottom, left */
+    color: @color6; /* color6 */
 }
 
 #custom-media {
-    color: @color4; /* color2 */
+    color: @color10; /* color10 */
     background-color: @background; /* background */
     margin: 0 0px 0 15px;
     padding: 0 15px 0 15px; /* top, right, bottom, left */
