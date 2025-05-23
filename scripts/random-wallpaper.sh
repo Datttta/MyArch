@@ -9,6 +9,9 @@ preload = $WALLPAPER
 wallpaper = eDP-1,$WALLPAPER
 EOF
 
+# generate pywal colors
+wal -i $WALLPAPER
+
 # Restart hyprpaper
 pkill hyprpaper
 hyprpaper &
