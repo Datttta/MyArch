@@ -3,8 +3,8 @@
   "layer": "top",
   "position": "top",
   "margin-top": 13,
-  "modules-left": ["custom/launcher", "clock", "hyprland/workspaces"],
-  "modules-center": ["custom/media"],
+  "modules-left": ["custom/launcher", "clock"],
+  "modules-center": ["hyprland/workspaces", "custom/media"],
   "modules-right": ["custom/pacman", "network", "pulseaudio", "battery", "backlight"],
 
   "custom/pacman": {
