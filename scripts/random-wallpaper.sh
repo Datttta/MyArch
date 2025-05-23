@@ -16,3 +16,6 @@ wal -i $WALLPAPER
 pkill hyprpaper
 hyprpaper &
 
+killall waybar
+waybar &
+
