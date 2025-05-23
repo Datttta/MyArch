@@ -1,5 +1,7 @@
-/* My official waybar */
+/* Official waybar style with one color */
 @import url("/home/DROS/.cache/wal/colors-waybar.css");
+
+@define-color color15 @color7; /* change the latter "@color#" to switch the waybar color | change it to @color15 or @color7 to me it white */
 
 * {
     font-family: 'Radio Canada Big', sans-serif;
@@ -34,61 +36,62 @@ window#waybar {
 #battery,
 
 #backlight {
-    color: @color13; /* color13 */
+    color: @color15; /* color13 */
     background-color: @background; /* background */
     margin: 0 0px 0 0px;
     padding: 0 12px 0 12px; /* top, right, bottom, left */
 }
 
 #pulseaudio {
-    color: @color4; /* color4 */
+    color: @color15; /* color4 */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
     padding: 0 12px 0 12px; /* top, right, bottom, left */
 }
 
 #network {
-    color: @color2; /* color2 */
+    color: @color15; /* color2 */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
     padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
 
 #custom-weather {
-    color: @color5; /* color5 */
+    color: @color15; /* color5 */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
     padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
 
 #clock {
-    color: @color3; /* color3 */
+    color: @color15; /* color3 */
     background-color: @background; /* background */
     margin: 0 7px 0 0;
     padding: 0 15px 0 15px;
 }
 
 #custom-launcher {
-    color: @color13;
+    color: @color15;
     background-color: @background;
     margin: 0 7px 0 0px;
     padding: 0 20px 0 16px;
 }
 
 #custom-pacman {
-    color: @color1; /* color1 (previously color8) */
+    color: @color15; /* color1 (previously color8) */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
     padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
 
 #backlight {
-    color: @color6; /* color6 */
+    color: @color15; /* color6 */
 }
 
 #custom-media {
-    color: @color10; /* color10 */
+    color: @color15; /* color10 */
     background-color: @background; /* background */
     margin: 0 0px 0 15px;
     padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
+

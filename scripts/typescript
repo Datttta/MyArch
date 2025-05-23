@@ -21,4 +21,33 @@ Script started on 2025-05-22 18:55:19-03:00 [TERM="xterm-kitty" TTY="/dev/pts/1"
 [J[A[5C[32m.[39m[39m;[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [23D[32m.[39m [32m.[39m[90m/scripts/update-pkg.list[39m[24D[4m[35m.[4m[35m/[24m[39m[30m[103m[39m[49m[30m[103m[39m[49m
 [J[0;1;2mcommand[0m
 [01;32minstall-apps.sh[0m*      [01;32mswitch_wallpaper.sh[0m*  [01;32mupdate-pkglist.sh[0m*    [01;32mwaybarRestart.sh[0m*   
-[J[0;2m[1mcommon substring:[0m [30m[103m./.sh[39m[49m[3A[0m[27m[24m[0m[39m[49m[4C[4m[35m./[24m[39m[90mscripts/update-pkg.list[39m[K[176C[0m[49m[39m[38;5;244m─╯[39m[0m[
+[J[0;2m[1mcommon substring:[0m [30m[103m./.sh[39m[49m[3A[0m[27m[24m[0m[39m[49m[4C[4m[35m./[24m[39m[90mscripts/update-pkg.list[39m[K[176C[0m[49m[39m[38;5;244m─╯[39m[0m[39m[49m[201D[24m[32m.[24m[32m/[32mi[32mn[32ms[32mt[32ma[32ml[32ml[32m-[32ma[32mp[32mp[32ms[32m.[32ms[32mh[39m[39m [39m [39m [39m [39m [39m [39m [39m [8D[30m[103m[39m[49m
+[0;1;2mcommand[0m[K[K
+[7minstall-apps.sh*    [0m  [01;32mswitch_wallpaper.sh[0m*  [01;32mupdate-pkglist.sh[0m*    [01;32mwaybarRestart.sh[0m*   [K
+[J[0;2m[1mcommon substring:[0m [30m[103m./.sh[39m[49m[K[3A[0m[27m[24m[0m[39m[49m[4C[32m./install-apps.sh[39m[K[184C[0m[49m[39m[38;5;244m─╯[39m[0m[39m[49m[186D
+[1B[7minstall-apps.sh*    [0m  [7minstall-apps.sh*    [0m  [A[A[0m[27m[24m[0m[39m[49m[4C[32m./install-apps.sh[39m[K[184C[0m[49m[39m[38;5;244m─╯[39m[0m[39m[49m[186D[15D[32ms[32mw[32mi[32mt[32mc[32mh[32m_[32mw[32ma[32ml[32ml[32mp[32ma[32mp[32me[32mr.sh[39m
+[1B[22C[7mswitch_wallpaper.sh*[0m  [01;32minstall-apps.sh[0m*      [A[A[0m[27m[24m[0m[39m[49m[4C[32m./switch_wallpaper.sh[39m[K[180C[0m[49m[39m[38;5;244m─╯[39m[0m[39m[49m[182D[19D[32mu[32mp[32md[32ma[32mt[32me[32m-[32mp[32mk[32mg[32ml[32mi[32ms[32mt[32m.[32ms[32mh[39m[39m [39m 
+[1B[44C[7mupdate-pkglist.sh*  [0m  [22C[01;32mswitch_wallpaper.sh[0m*  [A[A[0m[27m[24m[0m[39m[49m[4C[32m./update-pkglist.sh[39m[K[182C[0m[49m[39m[38;5;244m─╯[39m[0m[39m[49m[184D
+[J[A[23C[1m [0m
+[J[0;1;2mfile[0m
+[J[01;32minstall-apps.sh[0m*      [J[01;32mswitch_wallpaper.sh[0m*  [Jtypescript            [J[01;32mupdate-pkglist.sh[0m*    [J[01;32mwaybarRestart.sh[0m*   [J[A[A[0m[27m[24m[0m[39m[49m[4C[32m./update-pkglist.sh[39m[1m [0m[K[181C[0m[49m[39m[38;5;244m─╯[39m[0m[39m[49m[183D[0m [?1l[?2004l
+[J[A[23C
+[J]2;./update-pkglist.sh]1;./update-pkglist.shUpdating package lists...
+[main bd8e944] General update
+ 5 files changed, 31 insertions(+), 3 deletions(-)
+ create mode 100644 scripts/typescript
+Enumerating objects: 28, done.
+Counting objects:   3% (1/28)Counting objects:   7% (2/28)Counting objects:  10% (3/28)Counting objects:  14% (4/28)Counting objects:  17% (5/28)Counting objects:  21% (6/28)Counting objects:  25% (7/28)Counting objects:  28% (8/28)Counting objects:  32% (9/28)Counting objects:  35% (10/28)Counting objects:  39% (11/28)Counting objects:  42% (12/28)Counting objects:  46% (13/28)Counting objects:  50% (14/28)Counting objects:  53% (15/28)Counting objects:  57% (16/28)Counting objects:  60% (17/28)Counting objects:  64% (18/28)Counting objects:  67% (19/28)Counting objects:  71% (20/28)Counting objects:  75% (21/28)Counting objects:  78% (22/28)Counting objects:  82% (23/28)Counting objects:  85% (24/28)Counting objects:  89% (25/28)Counting objects:  92% (26/28)Counting objects:  96% (27/28)Counting objects: 100% (28/28)Counting objects: 100% (28/28), done.
+Delta compression using up to 4 threads
+Compressing objects:  10% (1/10)Compressing objects:  20% (2/10)Compressing objects:  30% (3/10)Compressing objects:  40% (4/10)Compressing objects:  50% (5/10)Compressing objects:  60% (6/10)Compressing objects:  70% (7/10)Compressing objects:  80% (8/10)Compressing objects:  90% (9/10)Compressing objects: 100% (10/10)Compressing objects: 100% (10/10), done.
+Writing objects:   6% (1/15)Writing objects:  13% (2/15)Writing objects:  20% (3/15)Writing objects:  26% (4/15)Writing objects:  33% (5/15)Writing objects:  40% (6/15)Writing objects:  46% (7/15)Writing objects:  53% (8/15)Writing objects:  60% (9/15)Writing objects:  66% (10/15)Writing objects:  73% (11/15)Writing objects:  80% (12/15)Writing objects:  86% (13/15)Writing objects:  93% (14/15)Writing objects: 100% (15/15)Writing objects: 100% (15/15), 2.24 KiB | 2.24 MiB/s, done.
+Total 15 (delta 7), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas:   0% (0/7)[Kremote: Resolving deltas:  14% (1/7)[Kremote: Resolving deltas:  28% (2/7)[Kremote: Resolving deltas:  42% (3/7)[Kremote: Resolving deltas:  57% (4/7)[Kremote: Resolving deltas:  71% (5/7)[Kremote: Resolving deltas:  85% (6/7)[Kremote: Resolving deltas: 100% (7/7)[Kremote: Resolving deltas: 100% (7/7), completed with 7 local objects.[K
+To github.com:Datttta/MyArch.git
+   e99d078..bd8e944  main -> main
+Done and added to git repository.
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                ]2;DROS@ArchDROS:~/dotfiles/scripts]1;..files/scripts]7;file://ArchDROS/home/DROS/dotfiles/scripts\[0m[49m[39m[K
+[0m[27m[24m[J[0m[38;5;244m[49m[39m
+[A[38;5;244m╭─[0m[38;5;244m[49m[30m [0m[30m[49m[38;5;31m[1m[38;5;31m[38;5;39m~[0m[38;5;39m[49m[38;5;31m/[1m[38;5;31m[38;5;39mdotfiles[0m[38;5;39m[49m[38;5;31m/[1m[38;5;31m[38;5;39mscripts[0m[38;5;39m[49m[38;5;31m[0m[38;5;31m[49m[38;5;31m[0m[38;5;31m[49m [0m[38;5;31m[49m[38;5;178m[38;5;76mmain [38;5;178m!1[0m[38;5;178m[49m[38;5;178m[0m[38;5;178m[49m[30m[0m[30m[49m[39m                                                                                                                                                                                [0m[49m[39m[38;5;244m─╮
+[38;5;244m╰─[0m[38;5;244m[49m[38;5;76m❯[0m[38;5;76m[49m[38;5;76m[0m[38;5;76m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[201C[0m[49m[39m[38;5;244m─╯[39m[203D[?2004h
+Script done on 2025-05-22 18:55:57-03:00 [COMMAND_EXIT_CODE="0"]
