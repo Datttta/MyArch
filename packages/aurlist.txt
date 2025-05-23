@@ -7,6 +7,7 @@ piper-git
 preload
 python-pywal16
 timeshift-autosnap
+waypaper
 yay-git
 yay-git-debug
 youtube-music-bin
