@@ -7,7 +7,7 @@ WALLPAPER=$(grep '^wallpaper =' ~/.config/waypaper/config.ini | cut -d'=' -f2- |
 WALLPAPER="${WALLPAPER/#\~/$HOME}"
 
 # Run pywal
-wal -i "$WALLPAPER"
+wal --cols16 lighten -i "$WALLPAPER"
 
 # Restart Waybar
 killall waybar

@@ -1,7 +1,7 @@
 /* Official waybar style with one color */
 @import url("/home/DROS/.cache/wal/colors-waybar.css");
 
-@define-color color15 @color5; /* change the latter "@color#" to switch the waybar color | change it to @color15 or @color7 to me it white | @color5 is recomended for one color */
+/* @define-color color15 @color14; change the latter "@color#" to switch the waybar color | change it to @color15 or @color7 to me it white | @color5 is recomended for one color */ 
 
 * {
     font-family: 'Radio Canada Big', sans-serif;

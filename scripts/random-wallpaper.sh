@@ -16,7 +16,7 @@ pkill hyprpaper
 hyprpaper &
 
 # generate pywal colors
-wal -i $WALLPAPER
+wal --cols16 lighten -i $WALLPAPER
 
 killall waybar
 waybar &
