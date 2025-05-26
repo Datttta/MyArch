@@ -1,5 +1,6 @@
 arc-solid-gtk-theme
 balena-etcher
+catppuccin-gtk-theme-mocha
 libratbag-git
 neofetch
 neovim-git
@@ -8,6 +9,7 @@ preload
 python-pywal16
 timeshift-autosnap
 waypaper
+yaru-gtk-theme
 yay-git
 yay-git-debug
 youtube-music-bin

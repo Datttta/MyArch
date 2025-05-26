@@ -10,6 +10,7 @@ blueman
 bluez
 bluez-utils
 brightnessctl
+btop
 calf
 cliphist
 cups
@@ -25,6 +26,7 @@ firefox
 flatpak
 gimp
 git
+gnome-themes-extra
 go
 gobject-introspection
 grim
@@ -53,12 +55,15 @@ linux-lts-headers
 lsp-plugins
 materia-gtk-theme
 mda.lv2
+mission-center
 mtools
 nano
 network-manager-applet
 networkmanager
 nnn
 notepadqq
+noto-fonts-cjk
+noto-fonts-emoji
 npm
 ntfs-3g
 nwg-look
@@ -81,6 +86,7 @@ sof-firmware
 stow
 swappy
 swayimg
+tela-circle-icon-theme-yellow
 thunar-volman
 timeshift
 trash-cli
@@ -97,6 +103,7 @@ wireless_tools
 wofi
 wpa_supplicant
 xdg-desktop-portal
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-kde
 xdg-user-dirs
