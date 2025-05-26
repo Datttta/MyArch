@@ -6,8 +6,8 @@ vim.g.mapleader = ' '
 local opts = { noremap = true, silent = true }
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-  
+vim.keymap.set({ 'n', 'v' }, '<leader>', '<Nop>', { silent = true })
+
 -- Allow moving the cursor through wrapped lines with j, k
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -22,11 +22,11 @@ vim.keymap.set('n', '<leader>w', '<cmd> w <CR>', opts)
 vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 
 -- quit file
-vim.keymap.set('n', '<leader>q', '<cmd> wq <CR>', opts) -- saving
-vim.keymap.set({'n', 'v'}, '<leader>e', '<cmd> q! <CR>', opts) --without saving 
+vim.keymap.set('n', '<leader>q', '<cmd> wq <CR>', opts)          -- saving
+vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd> q! <CR>', opts) --without saving
 
 -- Open neotree with ctrl + n
-vim.keymap.set({'n', 'v'},'<leader>n', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true })
 
 -- Vertical scroll and center
 vim.keymap.set('n', '<leader>d', '<C-d>zz', opts)
@@ -49,8 +49,8 @@ vim.keymap.set('n', '<C-w>', ':Bdelete!<CR>', opts)   -- close buffer
 vim.keymap.set('n', '<C-t>', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Window management
-vim.keymap.set('n', '<leader>v', '<C-w>v', opts)      -- split window vertically
-vim.keymap.set('n', '<leader>h', '<C-w>s', opts)      -- split window horizontally
+vim.keymap.set('n', '<leader>v', '<C-w>v', opts)     -- split window vertically
+vim.keymap.set('n', '<leader>h', '<C-w>s', opts)     -- split window horizontally
 vim.keymap.set('n', '<leader>=', '<C-w>=', opts)     -- make split windows equal width & height
 vim.keymap.set('n', '<leader>x', ':close<CR>', opts) -- close current split window
 vim.keymap.set('n', '<leader>m', '<C-w>_', opts)

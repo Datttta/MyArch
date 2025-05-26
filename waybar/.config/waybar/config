@@ -3,16 +3,34 @@
   "layer": "top",
   "position": "top",
   "margin-top": 13,
-  "modules-left": ["custom/launcher", "clock"],
+  "modules-left": ["custom/launcher", "clock", "cpu", "memory"],
   "modules-center": ["hyprland/workspaces", "custom/media"],
-  "modules-right": ["custom/pacman", "network", "pulseaudio", "battery", "backlight"],
+  "modules-right": ["network", "pulseaudio", "backlight", "custom/aur", "custom/pacman"],
 
   "custom/pacman": {
     "format": " {}   ",
     "interval": "once",
     "exec": "checkupdates | wc -l",
-    "on-click": "kitty -e sudo pacman -Syu",
+    "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+8 waybar'",
     "signal": 8
+  },
+
+  "custom/aur": {
+  "format": "{}   ",
+  "interval": "once",
+  "exec": "yay -Qua | wc -l",
+  "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+9 waybar'",
+  "signal": 9
+  },
+
+  "cpu": {
+    "format": "{usage}%  ",
+    "on-click": "kitty -e btop",
+  },
+
+  "memory": {
+    "format": "{}%  ",
+    "on-click": "kitty -e btop",
   },
 
   "custom/launcher": {
@@ -69,7 +87,8 @@
     "format-ethernet": "󰈀   {ipaddr}/{cidr}",
     "format-disconnected": "󰤭   disconnected",
     "max-length": 50,
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click": "kitty -e nmtui",
   },
 
   "hyprland/workspaces": {

@@ -19,10 +19,9 @@ window#waybar {
     color: @foreground;
 }
 
-
 #workspaces {
     background-color: @background;
-    padding: 0 5.6px 0 0;
+    padding: 3.5px 10.4px 3.5px 4px;
 }
 
 .modules-left {
@@ -39,38 +38,52 @@ window#waybar {
     color: @color15; /* color13 */
     background-color: @background; /* background */
     margin: 0 0px 0 0px;
-    padding: 0 12px 0 12px; /* top, right, bottom, left */
+    padding: 0px 15px 0px 15px; /* top, right, bottom, left */
 }
 
 #pulseaudio {
     color: @color15; /* color4 */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
-    padding: 0 12px 0 12px; /* top, right, bottom, left */
+    padding: 0px 15px 0px 15px; /* top, right, bottom, left */
 }
 
 #network {
     color: @color15; /* color2 */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
-    padding: 0 15px 0 15px; /* top, right, bottom, left */
+    padding: 0px 15px 0px 15px; /* top, right, bottom, left */
 }
 
 #custom-weather {
     color: @color15; /* color5 */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
-    padding: 0 15px 0 15px; /* top, right, bottom, left */
+    padding: 0px 15px 0px 15px; /* top, right, bottom, left */
 }
 
 #clock {
     color: @color15; /* color3 */
     background-color: @background; /* background */
     margin: 0 7px 0 0;
-    padding: 0 15px 0 15px;
+    padding: 0px 15px 0px 15px;
 }
 
 #custom-launcher {
+    color: @color15;
+    background-color: @background;
+    margin: 0 7px 0 0px;
+    padding: 0 20px 0 16px;
+}
+
+#cpu {
+    color: @color15;
+    background-color: @background;
+    margin: 0 7px 0 0px;
+    padding: 0 20px 0 16px;
+}
+
+#memory {
     color: @color15;
     background-color: @background;
     margin: 0 7px 0 0px;
@@ -81,17 +94,27 @@ window#waybar {
     color: @color15; /* color1 (previously color8) */
     background-color: @background; /* background */
     margin: 0 7px 0 0px;
-    padding: 0 15px 0 15px; /* top, right, bottom, left */
+    padding: 0px 15px 0px 15px; /* top, right, bottom, left */
+}
+
+#custom-aur {
+    color: @color15; /* color1 (previously color8) */
+    background-color: @background; /* background */
+    margin: 0 7px 0 0px;
+    padding: 0px 15px 0px 15px; /* top, right, bottom, left */
 }
 
 #backlight {
     color: @color15; /* color6 */
+    background-color: @background; /* background */
+    margin: 0 7px 0 0px;
+    padding: 0px 15px 0px 15px; /* top, right, bottom, left */
 }
 
 #custom-media {
     color: @color15; /* color10 */
     background-color: @background; /* background */
     margin: 0 0px 0 15px;
-    padding: 0 15px 0 15px; /* top, right, bottom, left */
+    padding: 0px 15px 0px 15px; /* top, right, bottom, left */
 }
 
