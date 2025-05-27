@@ -7,7 +7,7 @@ return {
 
         local function load_nordic()
             require('nordic').setup {
-                transparent_bg = is_transparent, -- 🔄 toggle here
+                transparent = { bg = is_transparent }, -- 🔄 toggle here
 
                 bold_keywords = false,
                 italic_comments = true,
