@@ -28,4 +28,5 @@ require("lazy").setup({
 	require("plugins.alpha"),
 	require("plugins.blankline"),
 	require("plugins.misc"),
+	require("plugins.vimwiki"),
 })
