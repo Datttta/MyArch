@@ -7,8 +7,28 @@ return {
 
         local function load_nordic()
             require('nordic').setup {
-                transparent = { bg = is_transparent }, -- 🔄 toggle here
+                -- Add highlight overrides here
+                on_highlight = function(hl, palette)
+                    -- Custom line number styling
+                    hl.LineNr = {
+                        fg = '#88C0D0', -- Use Nordic's blue1 color (#81A1C1)
+                        -- bold = true,
+                        -- italic = true,
+                    }
 
+                    -- Optional: Also style CursorLineNr if needed
+                    hl.CursorLineNr = {
+                        fg = palette.blue2, -- Brighter blue (#88C0D0)
+                        bold = true,
+                    }
+
+                    hl.Comment = {
+                        fg = palette.blue1,
+
+                    }
+                end,
+
+                transparent = { bg = is_transparent },
                 bold_keywords = false,
                 italic_comments = true,
                 reduced_blue = true,
@@ -26,10 +46,6 @@ return {
                 telescope = { style = 'flat' },
                 leap = { dim_backdrop = false },
                 ts_context = { dark_background = true },
-
-                on_palette = function(palette) end,
-                after_palette = function(palette) end,
-                on_highlight = function(highlights, palette) end,
             }
 
             require('nordic').load()
