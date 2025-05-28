@@ -26,6 +26,10 @@ return {
                         fg = palette.blue1,
 
                     }
+
+                    hl.Visual = {
+                        bg = '#212f3d',
+                    }
                 end,
 
                 transparent = { bg = is_transparent },
