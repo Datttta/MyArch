@@ -46,7 +46,7 @@ window#waybar {
 #pulseaudio {
     color: @color15; /* color4 */
     background-color: @background; /* background */
-    margin: 0 7px 0 0px;
+    margin: 0 5px 0 0px;
     padding: 0px 19px 0px 19px; /* top, right, bottom, left */
     border-radius: 15;
 }
@@ -54,7 +54,7 @@ window#waybar {
 #network {
     color: @color15; /* color2 */
     background-color: @background; /* background */
-    margin: 0 7px 0 0px;
+    margin: 0 5px 0 0px;
     padding: 0px 19px 0px 19px; /* top, right, bottom, left */
     border-radius: 15;
 }
@@ -62,7 +62,7 @@ window#waybar {
 #custom-weather {
     color: @color15; /* color5 */
     background-color: @background; /* background */
-    margin: 0 7px 0 0px;
+    margin: 0 5px 0 0px;
     padding: 0px 19px 0px 19px; /* top, right, bottom, left */
     border-radius: 15;
 }
@@ -70,7 +70,7 @@ window#waybar {
 #clock {
     color: @color15; /* color3 */
     background-color: @background; /* background */
-    margin: 0 7px 0 0;
+    margin: 0 5px 0 0;
     padding: 0px 19px 0px 19px;
     border-radius: 15;
 }
@@ -78,15 +78,15 @@ window#waybar {
 #custom-launcher {
     color: @color15;
     background-color: @background;
-    margin: 0 7px 0 0px;
+    margin: 0 5px 0 0px;
     padding: 0 20px 0 16px;
-    border-radius: 15;
+    border-radius: 25;
 }
 
 #cpu {
     color: @color15;
     background-color: @background;
-    margin: 0 7px 0 0px;
+    margin: 0 5px 0 0px;
     padding: 0 25.4px 0 21px; /* top, right, bottom, left */
     border-radius: 15;
 }
@@ -94,7 +94,7 @@ window#waybar {
 #memory {
     color: @color15;
     background-color: @background;
-    margin: 0 7px 0 0px;
+    margin: 0 5px 0 0px;
     padding: 0 24px 0 20px;
     border-radius: 15;
 }
@@ -102,7 +102,7 @@ window#waybar {
 #custom-pacman {
     color: @color15; /* color1 (previously color8) */
     background-color: @background; /* background */
-    margin: 0 7px 0 0px;
+    margin: 0 5px 0 0px;
     padding: 0px 19px 0px 19px; /* top, right, bottom, left */
     border-radius: 15;
 }
@@ -110,15 +110,15 @@ window#waybar {
 #custom-aur {
     color: @color15; /* color1 (previously color8) */
     background-color: @background; /* background */
-    margin: 0 7px 0 0px;
-    padding: 0px 21px 0px 18px; /* top, right, bottom, left */
+    margin: 0 5px 0 0px;
+    padding: 0px 23px 0px 20px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
 #backlight {
     color: @color15; /* color6 */
     background-color: @background; /* background */
-    margin: 0 7px 0 0px;
+    margin: 0 5px 0 0px;
     padding: 0px 19px 0px 19px; /* top, right, bottom, left */
     border-radius: 15;
 }
