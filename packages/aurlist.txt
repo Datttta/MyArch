@@ -4,10 +4,13 @@ catppuccin-gtk-theme-mocha
 libratbag-git
 neofetch
 neovim-git
+nnn-git
 piper-git
 preload
 python-pywal16
+sddm-theme-corners-git
 timeshift-autosnap
+ttf-firacode
 waypaper
 yaru-gtk-theme
 yay-git

@@ -55,12 +55,10 @@ linux-lts-headers
 lsp-plugins
 materia-gtk-theme
 mda.lv2
-mission-center
 mtools
 nano
 network-manager-applet
 networkmanager
-nnn
 notepadqq
 noto-fonts-cjk
 noto-fonts-emoji
@@ -91,6 +89,7 @@ thunar-volman
 timeshift
 trash-cli
 tree
+ttf-font-awesome
 ttf-jetbrains-mono-nerd
 tumbler
 ufw
