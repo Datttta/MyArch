@@ -2,7 +2,6 @@ return {
   {
     'vimwiki/vimwiki',
     -- set globals before the plugin loads:
-    keys = { '<leader>ç', '<leader>wt' },
     init = function()
       -- 1) define your wiki, with syntax='markdown'
       vim.g.vimwiki_list = {

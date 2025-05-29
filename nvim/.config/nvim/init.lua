@@ -29,4 +29,7 @@ require("lazy").setup({
 	require("plugins.blankline"),
 	require("plugins.misc"),
 	require("plugins.vimwiki"),
+	require("plugins.imagenvim"),
+	require("plugins.image-clip"),
+	require("plugins.markdown-preview"),
 })
