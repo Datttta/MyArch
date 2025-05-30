@@ -22,7 +22,7 @@ vim.keymap.set('n', '<leader>w', '<cmd> w <CR>', opts)
 vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 
 -- quit file
-vim.keymap.set('n', '<leader>q', '<cmd> wq <CR>', opts) -- saving
+vim.keymap.set('n', '<leader>q', '<cmd> wq <CR>', opts)          -- saving
 vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd> q! <CR>', opts) --without saving
 
 -- Open neotree with ctrl + n
@@ -45,13 +45,13 @@ vim.keymap.set('n', '<Left>', ':vertical resize +2<CR>', opts)
 -- Buffers
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
-vim.keymap.set('n', '<C-w>', ':Bdelete!<CR>', opts) -- close buffer
+vim.keymap.set('n', '<C-w>', ':Bdelete!<CR>', opts)   -- close buffer
 vim.keymap.set('n', '<C-t>', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Window management
-vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
-vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
-vim.keymap.set('n', '<leader>=', '<C-w>=', opts) -- make split windows equal width & height
+vim.keymap.set('n', '<leader>v', '<C-w>v', opts)     -- split window vertically
+vim.keymap.set('n', '<leader>h', '<C-w>s', opts)     -- split window horizontally
+vim.keymap.set('n', '<leader>=', '<C-w>=', opts)     -- make split windows equal width & height
 vim.keymap.set('n', '<leader>x', ':close<CR>', opts) -- close current split window
 vim.keymap.set('n', '<leader>m', '<C-w>_', opts)
 
@@ -62,10 +62,10 @@ vim.keymap.set('n', '<leader>h', ':wincmd h<CR>', opts)
 vim.keymap.set('n', '<leader>l', ':wincmd l<CR>', opts)
 
 -- Tabs
-vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts) -- open new tab
+vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts)   -- open new tab
 vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', opts) -- close current tab
-vim.keymap.set('n', '<leader>tn', ':tabn<CR>', opts) --  go to next tab
-vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) --  go to previous tab
+vim.keymap.set('n', '<leader>tn', ':tabn<CR>', opts)     --  go to next tab
+vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts)     --  go to previous tab
 
 -- Toggle line wrapping
 vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
@@ -123,3 +123,10 @@ vim.keymap.set('v', '<leader>rn', function()
    vim.cmd 'normal! gv'
    vim.cmd 's/^\\d\\+\\.\\s*/\\=line(".") - line("\'<") + 1 . ". "/g'
 end, { desc = 'Renumber list' })
+
+-- Redo list
+vim.keymap.set('v', '<leader>rl', function()
+   vim.cmd 'normal! gv'
+   vim.cmd 'g/^\\d\\+\\.\\s*$/d'
+   vim.cmd 's/^\\d\\+\\.\\s*/\\=line(".") - line("\'<") + 1 . ". "/g'
+end, { desc = 'Clean and renumber list' })
