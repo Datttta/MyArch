@@ -28,6 +28,12 @@ return {
       { '<leader>wd', '<cmd>VimwikiDiaryIndex<cr>',    desc = 'Vimwiki: Diary' },
       -- create/edit today's diary
       { '<leader>wt', '<cmd>VimwikiMakeDiaryNote<cr>', desc = 'Vimwiki: Today' },
+      {
+        '<leader>wn',
+        function()
+          vim.cmd "'<,'>s/^/\\=line('.') - line(\"'<\") + 1 . '. '/"
+        end,
+      },
     },
   },
 }
