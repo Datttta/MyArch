@@ -8,6 +8,9 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#for AMD 
+export DRI_PRIME=1
+
 #trash for nnn
 #export NNN_TRASH=1
 export NNN_PLUG='t:trash'
@@ -138,3 +141,5 @@ alias nnn='nnn -x'
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
 [[ ! -f ~/dotfiles/p10k/.p10k.zsh ]] || source ~/dotfiles/p10k/.p10k.zsh
+export AMD_VULKAN_ICD=RADV
+export RADV_PERFTEST=llvm
