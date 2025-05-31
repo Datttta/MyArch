@@ -11,6 +11,7 @@ python-pywal16
 sddm-theme-corners-git
 timeshift-autosnap
 ttf-firacode
+ttf-radio-canada
 waypaper
 yaru-gtk-theme
 yay-git
