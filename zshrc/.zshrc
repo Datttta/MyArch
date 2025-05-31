@@ -9,7 +9,10 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 #for AMD 
-export DRI_PRIME=1
+#export DRI_PRIME=1 doesn't open steam
+
+#intel 
+export DRI_PRIME=0
 
 #trash for nnn
 #export NNN_TRASH=1
