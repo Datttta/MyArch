@@ -39,7 +39,7 @@ window#waybar {
     color: @color15; /* color13 */
     background-color: @background; /* background */
     margin: 0 0px 0 0px;
-    padding: 0px 19px 0px 19px; /* top, right, bottom, left */
+    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -47,7 +47,7 @@ window#waybar {
     color: @color15; /* color4 */
     background-color: @background; /* background */
     margin: 0 5px 0 0px;
-    padding: 0px 19px 0px 19px; /* top, right, bottom, left */
+    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -55,7 +55,7 @@ window#waybar {
     color: @color15; /* color2 */
     background-color: @background; /* background */
     margin: 0 5px 0 0px;
-    padding: 0px 19px 0px 19px; /* top, right, bottom, left */
+    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -63,7 +63,7 @@ window#waybar {
     color: @color15; /* color5 */
     background-color: @background; /* background */
     margin: 0 5px 0 0px;
-    padding: 0px 19px 0px 19px; /* top, right, bottom, left */
+    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -71,7 +71,7 @@ window#waybar {
     color: @color15; /* color3 */
     background-color: @background; /* background */
     margin: 0 5px 0 0;
-    padding: 0px 19px 0px 19px;
+    padding: 0px 17px 0px 17px;
     border-radius: 15;
 }
 
@@ -87,7 +87,7 @@ window#waybar {
     color: @color15;
     background-color: @background;
     margin: 0 5px 0 0px;
-    padding: 0 25.4px 0 21px; /* top, right, bottom, left */
+    padding: 0 23.4px 0 19px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -95,7 +95,7 @@ window#waybar {
     color: @color15;
     background-color: @background;
     margin: 0 5px 0 0px;
-    padding: 0 24px 0 20px;
+    padding: 0 22px 0 18px;
     border-radius: 15;
 }
 
@@ -103,7 +103,7 @@ window#waybar {
     color: @color15; /* color1 (previously color8) */
     background-color: @background; /* background */
     margin: 0 5px 0 0px;
-    padding: 0px 19px 0px 19px; /* top, right, bottom, left */
+    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -111,7 +111,7 @@ window#waybar {
     color: @color15; /* color1 (previously color8) */
     background-color: @background; /* background */
     margin: 0 5px 0 0px;
-    padding: 0px 23px 0px 20px; /* top, right, bottom, left */
+    padding: 0px 21px 0px 18px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -119,7 +119,7 @@ window#waybar {
     color: @color15; /* color6 */
     background-color: @background; /* background */
     margin: 0 5px 0 0px;
-    padding: 0px 19px 0px 19px; /* top, right, bottom, left */
+    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -127,6 +127,6 @@ window#waybar {
     color: @color15; /* color10 */
     background-color: @background; /* background */
     margin: 0 0px 0 15px;
-    padding: 0px 19px 0px 19px; /* top, right, bottom, left */
+    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
 }
