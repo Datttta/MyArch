@@ -1,3 +1,4 @@
 #!/bin/bash
 
-pkill -USR2 waybar
+killall waybar
+waybar
