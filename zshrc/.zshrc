@@ -136,6 +136,7 @@ alias find="fd"
 
 alias rm="trash"
 alias nnn='nnn -x'
+alias nvims="sudo -E nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -148,3 +149,4 @@ export AMD_VULKAN_ICD=RADV
 export RADV_PERFTEST=llvm
 export PATH=$PATH:/usr/lib/vinegar
 export PATH=$PATH:/usr/lib/vinegar
+export LIBVA_DRIVER_NAME=i965
