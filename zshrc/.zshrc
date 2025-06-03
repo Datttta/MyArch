@@ -146,3 +146,5 @@ alias nnn='nnn -x'
 [[ ! -f ~/dotfiles/p10k/.p10k.zsh ]] || source ~/dotfiles/p10k/.p10k.zsh
 export AMD_VULKAN_ICD=RADV
 export RADV_PERFTEST=llvm
+export PATH=$PATH:/usr/lib/vinegar
+export PATH=$PATH:/usr/lib/vinegar
