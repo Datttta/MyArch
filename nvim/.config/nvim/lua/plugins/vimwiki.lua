@@ -11,8 +11,27 @@ return {
          ['.md'] = 'markdown',
       }
       vim.g.vimwiki_markdown_link_ext = 1
+
+      -- Disable Vimwiki's default <Tab> mapping for links
+      vim.g.vimwiki_key_mappings = {
+         all = {
+            -- Disable <Tab> for next link
+            next_link = '',
+            -- Disable <S-Tab> for previous link
+            prev_link = '',
+         },
+      }
    end,
    config = function()
+      vim.api.nvim_create_autocmd('FileType', {
+         pattern = 'vimwiki',
+         callback = function()
+            -- Unmap <Tab> and <S-Tab> for link navigation
+            vim.keymap.del('n', '<Tab>', { buffer = true })
+            vim.keymap.del('n', '<S-Tab>', { buffer = true })
+         end,
+      })
+
       vim.api.nvim_create_autocmd('BufWritePost', {
          pattern = '*.md',
          callback = function()
