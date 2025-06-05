@@ -16,7 +16,6 @@ calf
 cliphist
 corectrl
 cups
-discord
 dmidecode
 dosfstools
 dunst

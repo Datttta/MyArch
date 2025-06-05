@@ -16,6 +16,7 @@ sklauncher-bin
 timeshift-autosnap
 ttf-firacode
 ttf-radio-canada
+vencord
 waypaper
 yaru-gtk-theme
 yay-git
