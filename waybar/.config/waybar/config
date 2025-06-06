@@ -67,7 +67,7 @@
     "format-bluetooth": "󰂱  {volume}%",
     "format-muted": "󰖁",
     "scroll-step": 1,
-    "on-click": "pavucontrol",
+    "on-click": "GDK_BACKEND=x11 pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"],
     "format-icons": {
       "headphone": "  ",
