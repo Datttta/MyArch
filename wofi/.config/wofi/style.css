@@ -1,7 +1,13 @@
 @import '.cache/wal/colors-waybar.css';
 
 @define-color bg @background;
+@define-color selected-bg @color1;
 
 window {
     background-color: @bg;
+    opacity: 0.9;
+}
+
+#entry:selected {
+    background-color: @selected-bg; /* (replace with your preferred color) */
 }
