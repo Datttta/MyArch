@@ -25,6 +25,7 @@ eza
 fd
 ffmpegthumbnailer
 flatpak
+fzf
 gamemode
 gimp
 git
@@ -104,7 +105,6 @@ slurp
 sof-firmware
 speech-dispatcher
 steam
-steam-native-runtime
 stow
 swappy
 swayimg
