@@ -6,8 +6,9 @@
 * {
     font-family: 'Radio Canada Big', sans-serif;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 10px;
+    padding: 2px 3px 2px 3px; /* top, right, bottom, left COOL SIZE*/
 }
 
 window#waybar {
@@ -21,7 +22,7 @@ window#waybar {
 
 #workspaces {
     background-color: @background;
-    padding: 0.4px 10.4px 0px 5px; /* top, right, bottom, left */
+    padding: 0px 10.4px 0px 5px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -79,7 +80,7 @@ window#waybar {
     color: @color15;
     background-color: @background;
     margin: 0 5px 0 0px;
-    padding: 0 20px 0 16px;
+    padding: 0 21px 0 16px;
     border-radius: 25;
 }
 
@@ -102,7 +103,7 @@ window#waybar {
 #custom-pacman {
     color: @color15; /* color1 (previously color8) */
     background-color: @background; /* background */
-    margin: 0 5px 0 0px;
+    margin: 0 0px 0 0px;
     padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
 }
