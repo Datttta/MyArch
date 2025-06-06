@@ -2,12 +2,33 @@
 
 @define-color bg @background;
 @define-color selected-bg @color1;
+@define-color dragging-scroll @color2;
+
+#input {
+    /* Spacing */
+    margin: 9px;           /* Outer margin */
+    padding: 3px 12px;      /* Inner padding (top/bottom, left/right) */
+
+    border: none;            /* Removes the border */
+    outline: none;           /* Removes focus outline */
+    box-shadow: none;        /* Removes shadow if present */
+}
 
 window {
     background-color: @bg;
     opacity: 0.9;
 }
 
+/* Change color ONLY when dragging */
+#scroll trough slider:active {
+    background-color: @dragging-scroll; /* Bright color when dragging */
+    opacity: 1; /* Fully visible */
+}
+
 #entry:selected {
     background-color: @selected-bg; /* (replace with your preferred color) */
+    outline: none;
+    box-shadow: none;
+    margin: 0px 12px 0px 12px; /* top, right, bottom, left */
+    border-radius: 5px
 }
