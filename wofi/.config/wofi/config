@@ -1,9 +1,9 @@
 allow_images=true
-image_size=43
+image_size=40
 prompt=
 insensitive=true
 always_parse_args=true
 show_all=false
 print_command=true
-width=700
+width=800
 #height=400

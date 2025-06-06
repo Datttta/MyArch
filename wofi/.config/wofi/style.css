@@ -16,7 +16,6 @@
 
 window {
     background-color: @bg;
-    backdrop-filter: blur(40px);
 }
 
 /* Change color ONLY when dragging */
