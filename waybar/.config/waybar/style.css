@@ -21,7 +21,7 @@ window#waybar {
 
 #workspaces {
     background-color: @background;
-    padding: 2.5px 10.4px 2.5px 5px; /* top, right, bottom, left */
+    padding: 0.4px 10.4px 0px 5px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
