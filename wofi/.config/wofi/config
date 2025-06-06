@@ -1,5 +1,5 @@
 allow_images=true
-image_size=41
+image_size=43
 prompt=
 insensitive=true
 always_parse_args=true
