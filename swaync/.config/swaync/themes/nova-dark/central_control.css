@@ -203,19 +203,19 @@ progressbar {
   /* Music player */
   /* NOTE: Background need *opacity 1* otherwise will turn into the album art blurred  */
 .widget-mpris-player {
-    background-color: @background-sec;
+    background-color: alpha(@background-sec, 0.9);
     border-radius: 22px;
     padding: 16px 24px;
     margin: 6px;
 }
 
 .widget-mpris > box > button {
-  color: @text;
+  color: @text; /*@text previously*/
   border-radius: 20px;
 }
  
 .widget-mpris button {
-  color: alpha(@color20, .6);
+  color: alpha(@color20, 0.9);
   padding: 25px 10px 0px 10px;
 }
 
@@ -229,12 +229,12 @@ progressbar {
  
 .widget-mpris-title {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
  
 .widget-mpris-subtitle {
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 /* Volume */

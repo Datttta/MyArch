@@ -1,3 +1,211 @@
 @import '../../.cache/wal/colors-waybar.css';
-@import 'themes/nova-dark/notifications.css';
-@import 'themes/nova-dark/central_control.css';
+
+@define-color noti-border-color @color4;
+@define-color noti-bg @color0;
+@define-color noti-bg-hover @color8;
+@define-color noti-fg @foreground;
+@define-color noti-close-bg @color1;
+@define-color noti-close-fg @foreground;
+@define-color noti-urgent-bg @color5;
+@define-color noti-urgent-fg @foreground;
+@define-color cc-bg @color0;
+@define-color cc-fg @foreground;
+@define-color cc-border-color @color8;
+@define-color cc-btn-hover-bg @color5;
+@define-color cc-btn-fg @foreground;
+@define-color mpris-bg @color0;
+@define-color mpris-fg @foreground;
+@define-color mpris-border-color @color8;
+
+/* Rest of the CSS remains the same */
+.notification-row {
+    outline: none;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+    background: @noti-bg-hover;
+}
+
+.notification {
+    border-radius: 12px;
+    margin: 6px 12px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+    border: 1px solid @noti-border-color;
+    background-color: @noti-bg;
+    color: @noti-fg;
+    padding: 0;
+}
+
+.notification-content {
+    padding: 6px;
+    margin: 0;
+}
+
+.close-button {
+    background: @noti-close-bg;
+    color: @noti-close-fg;
+    text-shadow: none;
+    padding: 0;
+    border-radius: 100%;
+    margin-top: 6px;
+    margin-right: 6px;
+    box-shadow: none;
+    border: none;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.close-button:hover {
+    box-shadow: none;
+    background: shade(@noti-close-bg, 1.2);
+    transition: all 0.15s ease-in-out;
+    border: none;
+}
+
+.notification-default-action,
+.notification-action {
+    padding: 4px;
+    margin: 0;
+    box-shadow: none;
+    background: @cc-btn-bg;
+    border: none;
+    color: @cc-btn-fg;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: @cc-btn-hover-bg;
+}
+
+.notification-default-action {
+    border-radius: 0 0 12px 12px;
+}
+
+.notification-action {
+    border-radius: 0 0 0 12px;
+    border-right: 1px solid @cc-border-color;
+}
+
+.notification-action:last-child {
+    border-radius: 0 0 12px 0;
+    border-right: none;
+}
+
+.image {
+    margin: 6px;
+}
+
+.body-image {
+    margin-top: 6px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.summary {
+    font-weight: bold;
+}
+
+.time {
+    font-size: small;
+}
+
+.body {
+    font-size: small;
+}
+
+.control-center {
+    background: alpha(@cc-bg, .55);
+    border: 1px solid @cc-border-color;
+    border-radius: 12px;
+    margin: 6px;
+    padding: 6px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.widget-title {
+    color: @cc-fg;
+    background: @cc-btn-bg;
+    padding: 6px 10px;
+    margin: 6px;
+    font-size: large;
+    border-radius: 6px;
+}
+
+.widget-title > button {
+    font-size: small;
+    color: @cc-fg;
+    background: @cc-btn-hover-bg;
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+.widget-title > button:hover {
+    background: shade(@cc-btn-hover-bg, 1.1);
+}
+
+.widget-dnd {
+    color: @cc-fg;
+    background: @cc-btn-bg;
+    padding: 6px 10px;
+    margin: 6px;
+    border-radius: 6px;
+}
+
+.widget-dnd > switch {
+    border-radius: 6px;
+    background: @cc-btn-hover-bg;
+    border: none;
+    box-shadow: none;
+}
+
+.widget-dnd > switch:checked {
+    background: @noti-urgent-bg;
+}
+
+.widget-dnd > switch slider {
+    background: @cc-fg;
+    border-radius: 6px;
+    border: none;
+}
+/*MPRIS ====================================== */
+.widget-mpris {
+    color: @mpris-fg;
+    background-color: alpha(@background-sec, 0.9); /* this line doesn't change anything*/
+    padding: 6px 10px;
+    margin: 6px;
+    border-radius: 6px;
+}
+
+.widget-mpris > box > button {
+    border-radius: 6px;
+    color: @cc-fg;
+    border: none;
+    box-shadow: none;
+}
+
+.widget-mpris > box > button:hover {
+    background: @cc-btn-hover-bg;
+}
+
+.widget-mpris-player {
+    padding: 6px;
+}
+
+.widget-mpris-title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.widget-mpris-subtitle {
+    font-size: small;
+}
