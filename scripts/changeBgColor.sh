@@ -8,3 +8,6 @@ WALLPAPER="${WALLPAPER/#\~/$HOME}"
 
 # Run pywal
 wal --cols16 lighten -i "$WALLPAPER"
+
+killall swaync
+exec swaync
