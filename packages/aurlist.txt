@@ -10,6 +10,7 @@ nnn-git
 osu
 piper-git
 preload
+protonup-qt
 python-pywal16
 sddm-theme-corners-git
 sklauncher-bin
