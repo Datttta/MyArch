@@ -31,11 +31,10 @@
 .notification {
     border-radius: 12px;
     margin: 6px 12px;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
     border: 1px solid @noti-border-color;
     background-color: @noti-bg;
     color: @noti-fg;
-    padding: 0;
+    padding: 0px 0px 0px 0px;
 }
 
 .notification-content {
@@ -117,7 +116,7 @@
 /* control-center ====================================== */
 .control-center {
     background: alpha(@cc-bg, .55);
-    border: 1px solid @cc-bg;
+    border: 1px solid @noti-border-color;
     border-radius: 12px;
     margin: 6px;
     padding: 6px;
@@ -208,10 +207,14 @@
     color: @cc-fg;
     border: none;
     box-shadow: none;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 .widget-mpris > box > button:hover {
     background: alpha(@color7, 0.2);
+    padding: 0px 0px 0px 0px; 
+    margin: 0px 0px 0px 0px;
 }
 
 .widget-mpris-player {
