@@ -217,6 +217,8 @@
 
 .widget-mpris-player {
     padding: 18px;
+    margin: 10px;
+    box-shadow: none;
 }
 
 .widget-mpris-title {
