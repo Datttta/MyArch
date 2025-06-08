@@ -132,7 +132,7 @@
 }
  /* Buttons menu ========================================= */
 .widget-buttons-grid {
-  background: alpha(@main, 0.9);
+  background: alpha(@main, 0.7);
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
@@ -157,7 +157,7 @@
 .widget-title > button {
     font-size: 1.2em;
     color: @cc-fg;
-    background: alpha(@main, 0.9);
+    background: alpha(@main, 0.7);
     border: none;
     border-radius: 6px;
     box-shadow: none;
@@ -180,7 +180,7 @@
 .widget-dnd > switch {
     border-radius: 8px;
     padding: 2px 5px 2px 5px;
-    background: alpha(@main, 0.9);
+    background: alpha(@main, 0.7);
     border: none;
     box-shadow: none;
 }
