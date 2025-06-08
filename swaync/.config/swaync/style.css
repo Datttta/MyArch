@@ -116,7 +116,7 @@
 
 .control-center {
     background: alpha(@cc-bg, .55);
-    border: 1px solid @color2;
+    border: 1px solid @cc-border-color;
     border-radius: 12px;
     margin: 6px;
     padding: 6px;
