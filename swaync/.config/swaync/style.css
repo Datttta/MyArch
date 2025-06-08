@@ -17,6 +17,12 @@
 @define-color mpris-fg @foreground;
 @define-color mpris-border-color @color8;
 
+@define-color text            @foreground;
+@define-color background-alt  alpha(@color1, .4);
+@define-color selected        @color6;
+@define-color hover           alpha(@selected, .4);
+@define-color urgent          @color2;
+
 /* Rest of the CSS remains the same */
 .notification-row {
     outline: none;
@@ -115,8 +121,8 @@
 }
 
 .control-center {
-    background: alpha(@cc-bg, .55);
-    border: 1px solid @cc-border-color;
+    background: alpha(@background, .55);
+    border: 1px solid @color6;
     border-radius: 12px;
     margin: 6px;
     padding: 6px;
@@ -131,9 +137,8 @@
     background: transparent;
 }
 
+/*clear notifications ================= */
 .widget-title {
-    color: @cc-fg;
-    background: @cc-btn-bg;
     padding: 6px 10px;
     margin: 6px;
     font-size: large;
@@ -142,32 +147,35 @@
 
 .widget-title > button {
     font-size: small;
-    color: @cc-fg;
+    color: @cc-fg;/*color of the clear notifications icon*/
+    background: @background-alt;
     border: none;
     border-radius: 6px;
     box-shadow: none;
 }
 
 .widget-title > button:hover {
-    background: shade(@cc-btn-hover-bg, 0.4);
+    background: @hover;
 }
 
+/* do not disturb button ====================== */
 .widget-dnd {
-    color: @cc-fg;
-    background: @cc-btn-bg;
+    /*color: @cc-fg;
+    background: @cc-btn-bg;*/
     padding: 6px 10px;
     margin: 6px;
     border-radius: 6px;
 }
 
 .widget-dnd > switch {
+    background: @background-alt;
     border-radius: 6px;
     border: none;
     box-shadow: none;
 }
 
 .widget-dnd > switch:checked {
-    background: shade(@noti-urgent-bg, 0.4);
+    background: @selected;
 }
 
 .widget-dnd > switch slider {
@@ -175,6 +183,20 @@
     border-radius: 6px;
     border: none;
 }
+
+  /* Buttons menu ================================*/
+.widget-buttons-grid {
+  background: @background-alt;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  background: transparent;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: @hover;
+}
+
 /*MPRIS ====================================== */
 .widget-mpris {
     color: @mpris-fg;
