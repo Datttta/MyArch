@@ -17,12 +17,6 @@
 @define-color mpris-fg @foreground;
 @define-color mpris-border-color @color8;
 
-@define-color text            @foreground;
-@define-color background-alt  alpha(@color1, .4);
-@define-color selected        @color6;
-@define-color hover           alpha(@selected, .4);
-@define-color urgent          @color2;
-
 /* Rest of the CSS remains the same */
 .notification-row {
     outline: none;
@@ -119,10 +113,10 @@
 .body {
     font-size: small;
 }
-
+/* control-center ====================================== */
 .control-center {
-    background: alpha(@background, .55);
-    border: 1px solid @color6;
+    background: alpha(@cc-bg, .55);
+    border: 1px solid @cc-bg;
     border-radius: 12px;
     margin: 6px;
     padding: 6px;
@@ -136,9 +130,24 @@
 .floating-notifications {
     background: transparent;
 }
+ /* Buttons menu ========================================= */
+.widget-buttons-grid {
+  background: alpha(@background, 0.5);
+}
 
-/*clear notifications ================= */
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  background: @transparent;
+  border-radius: 8px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: @hover;
+}
+
+/* Delete notifications button =================== */
 .widget-title {
+    color: @cc-fg;
+    background: @cc-btn-bg;
     padding: 6px 10px;
     margin: 6px;
     font-size: large;
@@ -147,35 +156,35 @@
 
 .widget-title > button {
     font-size: small;
-    color: @cc-fg;/*color of the clear notifications icon*/
-    background: @background-alt;
+    color: @cc-fg;
+    background: alpha(@cc-bg, 0.5);
     border: none;
     border-radius: 6px;
     box-shadow: none;
 }
 
 .widget-title > button:hover {
-    background: @hover;
+    background: shade(@cc-btn-hover-bg, 0.4);
 }
 
-/* do not disturb button ====================== */
+/* Do not disturb button ============================= */
 .widget-dnd {
-    /*color: @cc-fg;
-    background: @cc-btn-bg;*/
+    color: @cc-fg;
+    background: @cc-btn-bg;
     padding: 6px 10px;
     margin: 6px;
     border-radius: 6px;
 }
 
 .widget-dnd > switch {
-    background: @background-alt;
     border-radius: 6px;
+    background: alpha(@cc-bg, 0.5);
     border: none;
     box-shadow: none;
 }
 
 .widget-dnd > switch:checked {
-    background: @selected;
+    background: shade(@noti-urgent-bg, 0.4);
 }
 
 .widget-dnd > switch slider {
@@ -183,20 +192,6 @@
     border-radius: 6px;
     border: none;
 }
-
-  /* Buttons menu ================================*/
-.widget-buttons-grid {
-  background: @background-alt;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button {
-  background: transparent;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @hover;
-}
-
 /*MPRIS ====================================== */
 .widget-mpris {
     color: @mpris-fg;
