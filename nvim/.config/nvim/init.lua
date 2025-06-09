@@ -32,4 +32,5 @@ require("lazy").setup({
 	require("plugins.imagenvim"),
 	require("plugins.image-clip"),
 	require("plugins.markdown-preview"),
+	require("plugins.colorizer"),
 })
