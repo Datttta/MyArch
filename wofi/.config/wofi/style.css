@@ -10,7 +10,7 @@
     margin: 9px 9px 15px 9px;           /* Outer margin */
     padding: 8px 12px;      /* Inner padding (top/bottom, left/right) */
 
-    border: 0.3px solid @border-color;            /* Removes the border */
+    border: 0.5px solid @border-color;            /* Removes the border */
     outline: none;           /* Removes focus outline */
     box-shadow: none;        /* Removes shadow if present */
 }
