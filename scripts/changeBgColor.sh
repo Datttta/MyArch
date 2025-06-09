@@ -6,6 +6,9 @@ WALLPAPER=$(grep '^wallpaper =' ~/.config/waypaper/config.ini | cut -d'=' -f2- |
 # Expand ~ to full path if needed
 WALLPAPER="${WALLPAPER/#\~/$HOME}"
 
+mkdir -p ~/.cache/hyprlock
+cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
+
 # Run pywal
 wal --cols16 lighten -i "$WALLPAPER"
 
