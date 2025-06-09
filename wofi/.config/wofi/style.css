@@ -3,19 +3,23 @@
 @define-color bg @background;
 @define-color selected-bg @color1;
 @define-color dragging-scroll @color2;
+@define-color border-color @color14;
 
 #input {
     /* Spacing */
-    margin: 9px;           /* Outer margin */
-    padding: 3px 12px;      /* Inner padding (top/bottom, left/right) */
+    margin: 9px 9px 15px 9px;           /* Outer margin */
+    padding: 8px 12px;      /* Inner padding (top/bottom, left/right) */
 
-    border: none;            /* Removes the border */
+    border: 0.3px solid @border-color;            /* Removes the border */
     outline: none;           /* Removes focus outline */
     box-shadow: none;        /* Removes shadow if present */
 }
 
 window {
-    background-color: @bg;
+    background-color: alpha(@bg, 0.55);
+    border: 0.3px solid @border-color;
+    padding: 100px;
+    border-radius: 15px;
 }
 
 /* Change color ONLY when dragging */
@@ -24,10 +28,15 @@ window {
     opacity: 1; /* Fully visible */
 }
 
+#entry {
+    margin: 5px 15px; /* Space around entries (top/bottom, left/right) */
+}
+
 #entry:selected {
     background-color: @selected-bg; /* (replace with your preferred color) */
+    /*border: 1px solid @color4;*/
     outline: none;
     box-shadow: none;
-    margin: 0px 11px 0px 11px; /* top, right, bottom, left */
+    margin: 1px 11px 0px 11px; /* top, right, bottom, left */
     border-radius: 5px
 }

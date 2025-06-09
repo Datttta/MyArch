@@ -1,6 +1,6 @@
 @import '../../.cache/wal/colors-waybar.css';
 
-@define-color noti-border-color @color4;
+@define-color noti-border-color @color14;
 @define-color noti-bg @color0;
 @define-color noti-bg-hover @color8;
 @define-color noti-fg @foreground;
