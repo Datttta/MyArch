@@ -234,6 +234,10 @@ SwayNotificationCenterNotification {
     border-radius: 6px;
 }
 
+.widget-mpris button {
+  padding: 8px 0px 2px 0px; /* top, right, bottom, left */
+}
+
 .widget-mpris > box > button {
     border-radius: 6px;
     color: @cc-fg;
