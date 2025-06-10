@@ -1,5 +1,6 @@
 @import '../../.cache/wal/colors-waybar.css';
-
+/*@import 'themes/nova-dark/notifications.css';*/
+/*@import 'themes/nova-dark/central_control.css';*/
 @define-color noti-border-color @color14;
 @define-color noti-bg @color0;
 @define-color noti-bg-hover @color8;
@@ -21,11 +22,33 @@
 /* Rest of the CSS remains the same */
 .notification-row {
     outline: none;
+    margin:0;
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.notification-group:focus {
+    outline: none;
+    margin:0;
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+
+}
+
+.background.blank-window { /* Or specifically the GtkWindow */
+    background-color: transparent; 
+}
+
+SwayNotificationCenterNotification {
+    box-shadow: none;
+    border: none;
 }
 
 .notification-row:focus,
 .notification-row:hover {
-    background: @noti-bg-hover;
+    background: transparent;
 }
 
 .notification {
@@ -141,6 +164,7 @@
 .widget-buttons-grid>flowbox>flowboxchild>button {
   background: @transparent;
   border-radius: 8px;
+    margin: 0px 14px; 
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
@@ -148,12 +172,13 @@
 }
 
 /* Delete notifications button =================== */
+.widget-title label{
+    font-size: 1.01em;
+}
 .widget-title {
-    color: @cc-fg;
     background: @cc-btn-bg;
     padding: 6px 10px;
     margin: 6px;
-    font-size: 1em;
     border-radius: 6px;
 }
 
@@ -171,6 +196,9 @@
 }
 
 /* Do not disturb button ============================= */
+.widget-dnd label {
+    font-size: 1em;
+}
 .widget-dnd {
     color: @cc-fg;
     background: @cc-btn-bg;
@@ -201,7 +229,7 @@
 .widget-mpris {
     color: @mpris-fg;
     background-color: alpha(@background-sec, 0.9); /* this line doesn't change anything*/
-    padding: 0px 0px;
+    padding: 0px 0px 0px 0px;
     margin: 0px;
     border-radius: 6px;
 }
@@ -211,21 +239,20 @@
     color: @cc-fg;
     border: none;
     box-shadow: none;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .widget-mpris > box > button:hover {
     background: alpha(@color7, 0.2);
-    padding: 0px 0px 0px 0px; 
-    margin: 0px 0px 0px 0px;
+    padding: 0px; 
+    margin: 0px;
 }
 
-.widget-mpris-player {
-    padding: 18px;
+/*.widget-mpris-player {
     margin: 10px;
     box-shadow: none;
-}
+}*/
 
 .widget-mpris-title {
     font-weight: bold;

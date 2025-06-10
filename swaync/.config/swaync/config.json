@@ -1,5 +1,4 @@
 {
-  "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
   "positionY": "top",
   "cssPriority": "user",
@@ -59,7 +58,8 @@
     },
     "mpris": {
       "image-size": 96,
-      "image-radius": 12
+      "image-radius": 12,
+      "format": "{artist} - {title} - {album}"
     },
     "volume": {
       "label": "󰕾",

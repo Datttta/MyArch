@@ -8006,7 +8006,7 @@ window.org-gnome-TextEditor popover.open-popover > contents {
 #NautilusQueryEditor > menubutton > button.image-button {
   min-width: 24px;
   min-height: 24px;
-  padding: -1px;
+  padding: 1px;
 }
 
 #NautilusPathBar {
