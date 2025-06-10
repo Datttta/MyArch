@@ -71,8 +71,8 @@ SwayNotificationCenterNotification {
     text-shadow: none;
     padding: 0;
     border-radius: 100%;
-    margin-top: 7px;
-    margin-right: 15px;
+    margin-top: 10px;
+    margin-right: 18px;
     box-shadow: none;
     border: none;
     min-width: 20px;
@@ -81,7 +81,7 @@ SwayNotificationCenterNotification {
 
 .close-button:hover {
     box-shadow: none;
-    background: shade(@noti-close-bg, 1.2);
+    background: red;
     transition: all 0.15s ease-in-out;
     border: none;
     box-shadow: none;
@@ -161,14 +161,15 @@ SwayNotificationCenterNotification {
   background: alpha(@main, 0.7);
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button {
+.widget-buttons-grid button {
   background: @transparent;
   border-radius: 8px;
-    margin: 0px 14px; 
+    padding: 2px 20px ; /* top, right, bottom, left */
+    margin: 0px 4px;
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @hover;
+.widget-buttons-grid button:hover {
+  background: alpha(@cc-btn-hover-bg, 0.1);
 }
 
 /* Delete notifications button =================== */
