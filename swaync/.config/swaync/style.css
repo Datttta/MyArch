@@ -18,6 +18,7 @@
 @define-color mpris-fg @foreground;
 @define-color mpris-border-color @color8;
 @define-color main @color0;
+@define-color mycolor @color9;
 
 /* Rest of the CSS remains the same */
 .notification-row {
@@ -165,7 +166,7 @@
   background: @transparent;
   border-radius: 8px;
     padding: 6px 18px ; /* top, right, bottom, left */
-    margin: 3px 8px;
+    margin: 3px 7px;
 }
 
 .widget-buttons-grid button:hover {
@@ -266,4 +267,47 @@
 
 .widget-mpris-subtitle {
     font-size: small;
+}
+
+/*Volume and backlight config ======================= */
+
+trough {
+    border-radius: 20px;
+    background: alpha(@main, 0.6);;
+}
+
+trough highlight {
+    padding: 5px;
+    background: @mycolor;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+    transition: all .7s ease;
+}
+trough highlight:hover {
+    padding: 5px;
+    background: @mycolor;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+    transition: all .7s ease;
+}
+
+trough slider {
+    background: transparent;
+    box-shadow: none;
+}
+trough slider:hover {
+    background: transparent;
+}
+.widget-backlight {
+    background-color: transparent;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 12px;
+}
+
+.widget-volume {
+    background-color: transparent;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 12px;
 }

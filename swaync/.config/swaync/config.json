@@ -2,7 +2,7 @@
   "positionX": "right",
   "positionY": "top",
   "cssPriority": "user",
-  "control-center-width": 400,
+  "control-center-width": 380,
   "control-center-height": 1000,
   "control-center-margin-top": 2,
   "control-center-margin-bottom": 2,
@@ -15,7 +15,7 @@
   "timeout": 4,
   "timeout-low": 2,
   "timeout-critical": 6,
-  "fit-to-screen": false,
+  "fit-to-screen": true,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,
@@ -41,6 +41,8 @@
     "mpris",
     "title",
     "dnd",
+    "volume",
+    "backlight",
     "notifications"
   ],
   "widget-config": {
@@ -59,6 +61,9 @@
     "mpris": {
       "image-size": 96,
       "image-radius": 12
+    },
+    "backlight": {
+      "label": "󰃟 "
     },
     "volume": {
       "label": "󰕾",
