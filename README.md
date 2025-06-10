@@ -4,7 +4,7 @@
 
 Ensure you have the following installed on your system
 
-## Update packages
+### Update packages
 
 ```
 sudo pacman -Syu
