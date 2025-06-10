@@ -113,7 +113,6 @@ steam
 stow
 swappy
 swayimg
-swaync
 tela-circle-icon-theme-yellow
 thunar-volman
 timeshift

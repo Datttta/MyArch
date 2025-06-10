@@ -1,6 +1,7 @@
 arc-solid-gtk-theme
 balena-etcher
 catppuccin-gtk-theme-mocha
+hyprlock-git
 jdk-lts
 jdk-temurin
 libratbag-git
@@ -14,11 +15,13 @@ protonup-qt
 python-pywal16
 sddm-theme-corners-git
 sklauncher-bin
+swaync-git
 timeshift-autosnap
 ttf-firacode
 ttf-radio-canada
 vencord
 waypaper
+wlogout
 yaru-gtk-theme
 yay-git
 yay-git-debug
