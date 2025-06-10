@@ -159,17 +159,22 @@ SwayNotificationCenterNotification {
  /* Buttons menu ========================================= */
 .widget-buttons-grid {
   background: alpha(@main, 0.7);
+    margin: 0px 13px;
+    padding: 2px 0px;
 }
 
 .widget-buttons-grid button {
   background: @transparent;
   border-radius: 8px;
-    padding: 2px 20px ; /* top, right, bottom, left */
-    margin: 0px 4px;
+    padding: 6px 18px ; /* top, right, bottom, left */
+    margin: 3px 8px;
 }
 
 .widget-buttons-grid button:hover {
   background: alpha(@cc-btn-hover-bg, 0.1);
+    outile: none;
+    border: 0px;
+    box-shadow: none;
 }
 
 /* Delete notifications button =================== */
@@ -229,7 +234,7 @@ SwayNotificationCenterNotification {
 /*MPRIS ====================================== */
 .widget-mpris {
     color: @mpris-fg;
-    background-color: alpha(@background-sec, 0.9); /* this line doesn't change anything*/
+    background-color: transparent;
     padding: 0px 0px 0px 0px;
     margin: 0px;
     border-radius: 6px;
@@ -245,13 +250,11 @@ SwayNotificationCenterNotification {
     border: none;
     box-shadow: none;
     padding: 0px;
-    margin: 0px;
+    margin: 15px 0px;
 }
 
 .widget-mpris > box > button:hover {
-    background: alpha(@color7, 0.2);
     padding: 0px; 
-    margin: 0px;
 }
 
 /*.widget-mpris-player {
