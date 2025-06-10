@@ -66,8 +66,8 @@ SwayNotificationCenterNotification {
 }
 
 .close-button {
-    background: @noti-close-bg;
-    color: @noti-close-fg;
+    background: transparent;
+    color: transparent;
     text-shadow: none;
     padding: 0;
     border-radius: 100%;
@@ -78,6 +78,7 @@ SwayNotificationCenterNotification {
     min-width: 20px;
     min-height: 20px;
 }
+
 
 .close-button:hover {
     box-shadow: none;
@@ -171,15 +172,14 @@ SwayNotificationCenterNotification {
 }
 
 .widget-buttons-grid button:hover {
-  background: alpha(@cc-btn-hover-bg, 0.1);
-    outile: none;
+  background: alpha(@cc-fg, 0.1);
     border: 0px;
     box-shadow: none;
 }
 
 /* Delete notifications button =================== */
 .widget-title label{
-    font-size: 1.01em;
+    font-size: 1.05em;
 }
 .widget-title {
     background: @cc-btn-bg;

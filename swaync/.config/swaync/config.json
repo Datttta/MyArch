@@ -58,8 +58,7 @@
     },
     "mpris": {
       "image-size": 96,
-      "image-radius": 12,
-      "format": "{artist} - {title} - {album}"
+      "image-radius": 12
     },
     "volume": {
       "label": "󰕾",
