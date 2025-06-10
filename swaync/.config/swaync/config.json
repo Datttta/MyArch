@@ -73,7 +73,8 @@
       "actions": [
         {
           "label": " ",
-          "command": "amixer set Master toggle"
+          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+          "type": "toggle"
         },
         {
           "label": "",

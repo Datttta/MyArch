@@ -167,12 +167,19 @@
   border-radius: 8px;
     padding: 6px 18px ; /* top, right, bottom, left */
     margin: 3px 7px;
+    outline: none;
 }
 
 .widget-buttons-grid button:hover {
   background: alpha(@cc-fg, 0.1);
     border: 0px;
     box-shadow: none;
+}
+
+.widget-buttons-grid button:checked {
+  background: @mycolor; /* Set to your desired "activated" color, e.g., @color9 */
+  color: @noti-bg; /* Adjust text color for contrast if needed */
+  transition: background 0.15s ease-in-out; /* Smooth transition */
 }
 
 /* Delete notifications button =================== */
@@ -310,4 +317,9 @@ trough slider:hover {
     padding: 8px;
     margin: 8px;
     border-radius: 12px;
+}
+
+.widget-volume label {
+    font-size: 1.2em;
+    margin-right: 8.7px; /* Space between label and slider */
 }
