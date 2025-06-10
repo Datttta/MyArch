@@ -41,11 +41,6 @@
     background-color: transparent; 
 }
 
-SwayNotificationCenterNotification {
-    box-shadow: none;
-    border: none;
-}
-
 .notification-row:focus,
 .notification-row:hover {
     background: transparent;
@@ -54,8 +49,8 @@ SwayNotificationCenterNotification {
 .notification {
     border-radius: 12px;
     margin: 6px 12px;
-    border: 1px solid @noti-border-color;
-    background-color: alpha(@noti-bg, 0.7);
+    border: 0.5px solid @noti-border-color;
+    background-color: alpha(@noti-bg, 0.55);
     color: @noti-fg;
 }
 
@@ -64,6 +59,8 @@ SwayNotificationCenterNotification {
     box-shadow: none;
     border: none;
 }
+
+/*close button ========================= */
 
 .close-button {
     background: transparent;
@@ -145,7 +142,7 @@ SwayNotificationCenterNotification {
 .control-center {
     background: alpha(@cc-bg, .55);
     border: 1px solid @noti-border-color;
-    border-radius: 12px;
+    border-radius: 25px;
     margin: 6px;
     padding: 6px;
 }
@@ -159,7 +156,7 @@ SwayNotificationCenterNotification {
 }
  /* Buttons menu ========================================= */
 .widget-buttons-grid {
-  background: alpha(@main, 0.7);
+  background: alpha(@main, 0.6);
     margin: 0px 13px;
     padding: 2px 0px;
 }
@@ -191,7 +188,7 @@ SwayNotificationCenterNotification {
 .widget-title > button {
     font-size: 1.2em;
     color: @cc-fg;
-    background: alpha(@main, 0.7);
+    background: alpha(@main, 0.6);
     border: none;
     border-radius: 6px;
     box-shadow: none;
@@ -217,7 +214,7 @@ SwayNotificationCenterNotification {
 .widget-dnd > switch {
     border-radius: 8px;
     padding: 2px 5px 2px 5px;
-    background: alpha(@main, 0.7);
+    background: alpha(@main, 0.6);
     border: none;
     box-shadow: none;
 }
