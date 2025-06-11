@@ -142,7 +142,7 @@
 /* control-center ====================================== */
 .control-center {
     background: alpha(@cc-bg, .55);
-    border: 1px solid @noti-border-color;
+    border: 1px solid @mycolor;
     border-radius: 25px;
     margin: 6px;
     padding: 6px;
@@ -157,7 +157,7 @@
 }
  /* Buttons menu ========================================= */
 .widget-buttons-grid {
-  background: alpha(@main, 0.6);
+  background: alpha(@mycolor, 0.3);
     margin: 0px 13px;
     padding: 2px 0px;
 }
@@ -196,7 +196,7 @@
 .widget-title > button {
     font-size: 1.2em;
     color: @cc-fg;
-    background: alpha(@main, 0.6);
+    background: alpha(@mycolor, 0.3);
     border: none;
     border-radius: 6px;
     box-shadow: none;
@@ -222,13 +222,13 @@
 .widget-dnd > switch {
     border-radius: 8px;
     padding: 2px 5px 2px 5px;
-    background: alpha(@main, 0.6);
+    background: alpha(@mycolor, 0.3);
     border: none;
     box-shadow: none;
 }
 
 .widget-dnd > switch:checked {
-    background: shade(@noti-urgent-bg, 0.4);
+    background: shade(@mycolor, 0.8);
 }
 
 .widget-dnd > switch slider {
@@ -285,14 +285,14 @@ trough {
 
 trough highlight {
     padding: 5px;
-    background: @mycolor;
+    background: alpha(@mycolor, 0.5);
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
     transition: all .7s ease;
 }
 trough highlight:hover {
     padding: 5px;
-    background: @mycolor;
+    background: alpha(@mycolor, 0.5);
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
     transition: all .7s ease;
@@ -310,6 +310,8 @@ trough slider:hover {
     padding: 8px;
     margin: 8px;
     border-radius: 12px;
+    box-shadow: none;
+    outline: none;
 }
 
 .widget-volume {
@@ -317,6 +319,8 @@ trough slider:hover {
     padding: 8px;
     margin: 8px;
     border-radius: 12px;
+    box-shadow: none;
+    outline: none;
 }
 
 .widget-volume label {

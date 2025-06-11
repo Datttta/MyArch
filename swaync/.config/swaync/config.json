@@ -41,9 +41,9 @@
     "mpris",
     "title",
     "dnd",
+    "notifications",
     "volume",
-    "backlight",
-    "notifications"
+    "backlight"
   ],
   "widget-config": {
     "title": {
@@ -72,13 +72,14 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": " ",
+          "label": "󰝟",
           "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
           "type": "toggle"
         },
         {
           "label": "",
-          "command": "amixer set Capture toggle"
+          "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+          "type": "toggle"
         },
         {
           "label": " ",
