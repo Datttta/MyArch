@@ -18,7 +18,7 @@
 @define-color mpris-fg @foreground;
 @define-color mpris-border-color @color8;
 @define-color main @color0;
-@define-color mycolor @color9;
+@define-color mycolor @color14;
 
 /* Rest of the CSS remains the same */
 .notification-row {
@@ -157,7 +157,7 @@
 }
  /* Buttons menu ========================================= */
 .widget-buttons-grid {
-  background: alpha(@mycolor, 0.3);
+  background: alpha(@mycolor, 0.2);
     margin: 0px 13px;
     padding: 2px 0px;
 }
@@ -196,7 +196,7 @@
 .widget-title > button {
     font-size: 1.2em;
     color: @cc-fg;
-    background: alpha(@mycolor, 0.3);
+    background: alpha(@mycolor, 0.2);
     border: none;
     border-radius: 6px;
     box-shadow: none;
@@ -222,7 +222,7 @@
 .widget-dnd > switch {
     border-radius: 8px;
     padding: 2px 5px 2px 5px;
-    background: alpha(@mycolor, 0.3);
+    background: alpha(@mycolor, 0.2);
     border: none;
     box-shadow: none;
 }
@@ -285,14 +285,14 @@ trough {
 
 trough highlight {
     padding: 5px;
-    background: alpha(@mycolor, 0.5);
+    background: alpha(@mycolor, 0.6);
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
     transition: all .7s ease;
 }
 trough highlight:hover {
     padding: 5px;
-    background: alpha(@mycolor, 0.5);
+    background: alpha(@mycolor, 0.6);
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
     transition: all .7s ease;
