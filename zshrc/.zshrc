@@ -121,6 +121,16 @@ compinit
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+
+#Custom key-bindings:
+export FZF_DEFAULT_OPTS="--bind=j:down,k:up --bind=ctrl-j:down,ctrl-k:up"
+bindkey -r '^R'
+bindkey '\ea' fzf-history-widget
+bindkey -M vicmd '\ea' fzf-history-widget
+bindkey -M viins '\ea' fzf-history-widget
+bindkey -M emacs '^[;' autosuggest-accept
+bindkey -M viins '^[;' autosuggest-accept
 
 # Aliases
 alias i="yay -S"
