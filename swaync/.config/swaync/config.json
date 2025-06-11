@@ -39,10 +39,10 @@
     "label",
     "buttons-grid",
     "mpris",
-    "volume",
-    "backlight",
     "title",
     "dnd",
+    "volume",
+    "backlight",
     "notifications"
   ],
   "widget-config": {
