@@ -280,7 +280,7 @@
 
 trough {
     border-radius: 20px;
-    background: alpha(@main, 0.6);;
+    background: alpha(@main, 0.6);
 }
 
 trough highlight {
@@ -304,6 +304,7 @@ trough slider {
 }
 trough slider:hover {
     background: transparent;
+    box-shadow: none;
 }
 .widget-backlight {
     background-color: transparent;

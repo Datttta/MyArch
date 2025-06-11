@@ -3,9 +3,9 @@
   "layer": "top",
   "position": "top",
   "margin-top": 3,
-  "modules-left": ["custom/launcher", "clock", "cpu", "memory"],
+  "modules-left": ["custom/launcher", "clock", ],
   "modules-center": ["hyprland/workspaces", "custom/media"],
-  "modules-right": ["network", "pulseaudio", "backlight", "custom/aur", "custom/pacman"],
+  "modules-right": ["network", "cpu", "memory", "custom/aur", "custom/pacman"],
 
   "custom/pacman": {
     "format": " {}   ",

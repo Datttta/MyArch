@@ -39,11 +39,11 @@
     "label",
     "buttons-grid",
     "mpris",
+    "volume",
+    "backlight",
     "title",
     "dnd",
-    "notifications",
-    "volume",
-    "backlight"
+    "notifications"
   ],
   "widget-config": {
     "title": {
@@ -77,13 +77,13 @@
           "type": "toggle"
         },
         {
-          "label": "",
+          "label": "󰍭",
           "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
           "type": "toggle"
         },
         {
           "label": " ",
-          "command": "nm-connection-editor"
+          "command": "kitty -e nvim +VimwikiIndex"
         },
         {
           "label": "󰂯",
