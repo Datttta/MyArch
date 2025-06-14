@@ -21,3 +21,6 @@ wal --cols16 lighten -i $WALLPAPER
 
 killall waybar
 waybar &
+
+killall swaync
+exec swaync
