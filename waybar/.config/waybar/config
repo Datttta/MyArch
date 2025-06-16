@@ -35,7 +35,7 @@
 
   "custom/launcher": {
     "format": "",
-    "on-click": "hyprlock"
+    "on-click": "wlogout"
   },
 
   "custom/media": {

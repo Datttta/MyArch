@@ -15,6 +15,7 @@ protonup-qt
 python-pywal16
 sddm-theme-corners-git
 sklauncher-bin
+stremio
 swaync-git
 timeshift-autosnap
 ttf-firacode
