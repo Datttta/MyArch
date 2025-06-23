@@ -141,7 +141,6 @@ alias q="yay -Q"
 
 alias ls="exa -l"
 alias cat="bat --theme base16"
-alias grep="rg"
 alias find="fd"
 
 alias rm="trash"
