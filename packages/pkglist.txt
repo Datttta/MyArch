@@ -6,16 +6,17 @@ archlinux-xdg-menu
 base
 base-devel
 bat
-blender
 blueman
 bluez
 bluez-utils
 brightnessctl
 btop
 calf
+chromium
 cliphist
 corectrl
 cups
+discord
 dmidecode
 dosfstools
 easyeffects
@@ -81,6 +82,7 @@ materia-gtk-theme
 mda.lv2
 mesa
 mesa-utils
+mono
 mtools
 nano
 network-manager-applet
@@ -113,6 +115,7 @@ steam
 stow
 swappy
 swayimg
+swh-plugins
 tela-circle-icon-theme-yellow
 thunar-volman
 timeshift
@@ -137,6 +140,8 @@ vulkan-tools
 vulkan-validation-layers
 waybar
 wev
+wine-gecko
+wine-mono
 wine-staging
 wireless_tools
 wofi
@@ -147,6 +152,7 @@ xdg-desktop-portal-hyprland
 xdg-desktop-portal-kde
 xdg-user-dirs
 xdg-utils
+xdotool
 xf86-video-amdgpu
 xf86-video-intel
 xf86-video-qxl

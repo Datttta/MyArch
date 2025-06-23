@@ -1,5 +1,6 @@
 arc-solid-gtk-theme
 balena-etcher
+bottles
 catppuccin-gtk-theme-mocha
 hyprlock-git
 jdk-lts
@@ -13,8 +14,10 @@ piper-git
 preload
 protonup-qt
 python-pywal16
+rose-pine-hyprcursor
 sddm-theme-corners-git
 sklauncher-bin
+snapd
 stremio
 swaync-git
 timeshift-autosnap
