@@ -43,7 +43,7 @@ while true; do
     time_remaining=$((track_length - current_position))
     
     # When we're at the last 0.5 seconds of a track
-    if [[ "$current_status" == "Playing" && $time_remaining -lt 2 && "$gap_added" == false ]]; then
+    if [[ "$current_status" == "Playing" && $time_remaining -lt 1 && "$gap_added" == false ]]; then
         echo "[$(date +%T)] Track ending detected - adding gap..."
         playerctl -p "$PLAYER_NAME" pause
         sleep 5
