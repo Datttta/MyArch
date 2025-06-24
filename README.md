@@ -94,12 +94,6 @@ you can use the comman bellow to everyfile if the command above didn't work:
 chmod -R o+rx /home/DROS/dotfiles/slashConfs/usr/share/sddm/themes
 ```
 
-##Add the youtubePause.sh script to the exec line of youtubeMusic.dektop, example:
-
-```
-Exec=sh -c '/home/DROS/apps/Youtube-Music/YouTube-Music-3.9.0.AppImage & sleep 5 && /home/DROS/dotfiles/scripts/youtubePause.sh'
-```
-
 youtube video about dotfiles:
 
 https://www.youtube.com/watch?v=y6XCebnB9gs&list=PLsV9qvkB32_e0Zk2ma962O14yEpv8EuZX&index=1&t=293s

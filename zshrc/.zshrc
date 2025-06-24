@@ -124,8 +124,7 @@ SAVEHIST=1000
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
 #Custom key-bindings:
-export FZF_DEFAULT_OPTS="--bind=j:down,k:up --bind=ctrl-j:down,ctrl-k:up"
-bindkey -r '^R'
+export FZF_DEFAULT_OPTS="--bind=tab:up,shift-tab:down"
 bindkey '\ea' fzf-history-widget
 bindkey -M vicmd '\ea' fzf-history-widget
 bindkey -M viins '\ea' fzf-history-widget
