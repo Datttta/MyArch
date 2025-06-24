@@ -94,6 +94,12 @@ you can use the comman bellow to everyfile if the command above didn't work:
 chmod -R o+rx /home/DROS/dotfiles/slashConfs/usr/share/sddm/themes
 ```
 
+##Add the script bellow to the exec line of youtubeMusic:
+
+```
+sh -c home/<user>/dotfiles/scripts/youtubePause.sh &
+```
+
 youtube video about dotfiles:
 
 https://www.youtube.com/watch?v=y6XCebnB9gs&list=PLsV9qvkB32_e0Zk2ma962O14yEpv8EuZX&index=1&t=293s
