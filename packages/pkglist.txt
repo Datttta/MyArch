@@ -6,12 +6,14 @@ archlinux-xdg-menu
 base
 base-devel
 bat
+bc
 blueman
 bluez
 bluez-utils
 brightnessctl
 btop
 calf
+calibre
 chromium
 cliphist
 corectrl
@@ -24,6 +26,7 @@ exfat-utils
 eza
 fd
 ffmpegthumbnailer
+firefox
 flatpak
 fzf
 gamemode
@@ -82,6 +85,7 @@ materia-gtk-theme
 mda.lv2
 mesa
 mesa-utils
+mission-center
 mono
 mtools
 nano
