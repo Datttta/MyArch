@@ -45,8 +45,14 @@ gvfs
 gvfs-mtp
 gvim
 htop
+hyprcursor
+hyprgraphics
 hyprland
+hyprland-qt-support
+hyprlang
+hyprlock
 hyprpaper
+hyprutils
 imv
 inotify-tools
 intel-compute-runtime

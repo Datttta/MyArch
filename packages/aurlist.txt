@@ -2,13 +2,13 @@ arc-solid-gtk-theme
 balena-etcher
 bottles
 catppuccin-gtk-theme-mocha
-hyprlock-git
 jdk-lts
 jdk-temurin
 libratbag-git
 neofetch
 neovim-git
 nnn-git
+notion-app-electron
 osu
 piper-git
 play-timer
