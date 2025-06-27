@@ -23,7 +23,6 @@ swaync-git
 timeshift-autosnap
 ttf-firacode
 ttf-radio-canada
-vencord
 waypaper
 wlogout
 yaru-gtk-theme
