@@ -11,6 +11,7 @@ neovim-git
 nnn-git
 osu
 piper-git
+play-timer
 preload
 protonup-qt
 python-pywal16
