@@ -61,7 +61,10 @@ intel-media-sdk
 intel-ucode
 jdk-openjdk
 jq
+kclock
+kirigami2
 kitty
+kwayland-integration
 lib32-amdvlk
 lib32-gamemode
 lib32-gtk3
@@ -115,6 +118,7 @@ power-profiles-daemon
 pulseaudio-alsa
 python-pip
 qt5-multimedia
+qt5ct
 radeontop
 reflector
 sddm
