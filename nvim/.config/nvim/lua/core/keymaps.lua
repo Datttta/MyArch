@@ -117,16 +117,3 @@ vim.keymap.set('v', '<leader>ne', function()
    vim.cmd 'normal! gv' -- Re-select the visual area
    vim.cmd "'<,'>s/^/\\=line('.') - line(\"'<\") + 1 . '. '/"
 end, { desc = 'Number selected lines' })
-
--- renumber a list
-vim.keymap.set('v', '<leader>rn', function()
-   vim.cmd 'normal! gv'
-   vim.cmd 's/^\\d\\+\\.\\s*/\\=line(".") - line("\'<") + 1 . ". "/g'
-end, { desc = 'Renumber list' })
-
--- Redo list
-vim.keymap.set('v', '<leader>rl', function()
-   vim.cmd 'normal! gv'
-   vim.cmd 'g/^\\d\\+\\.\\s*$/d'
-   vim.cmd 's/^\\d\\+\\.\\s*/\\=line(".") - line("\'<") + 1 . ". "/g'
-end, { desc = 'Clean and renumber list' })

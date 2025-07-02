@@ -3,7 +3,7 @@
   "layer": "top",
   "position": "top",
   "margin-top": 3,
-  "modules-left": ["custom/launcher", "clock", ],
+  "modules-left": ["custom/launcher", "clock", "tray"],
   "modules-center": ["hyprland/workspaces", "custom/media"],
   "modules-right": ["network", "cpu", "memory", "custom/aur", "custom/pacman"],
 
@@ -13,6 +13,11 @@
     "exec": "checkupdates | wc -l",
     "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+8 waybar'",
     "signal": 8
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
   },
 
   "custom/aur": {
