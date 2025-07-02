@@ -7,28 +7,19 @@
   "modules-center": ["hyprland/workspaces", "custom/media"],
   "modules-right": ["network", "cpu", "memory", "custom/aur", "custom/pacman"],
 
-  "custom/pacman": {
-    "format": " {}   ",
-    "interval": "once",
-    "exec": "checkupdates | wc -l",
-    "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+8 waybar'",
-    "signal": 8
-  },
-
   "tray": {
-    "icon-size": 16,
-    "spacing": 10,
+    "icon-size": 17,
   },
 
   "image#Memhack_icon": {
       "path": "/home/DROS/Pictures/Icons/Memhack.png",
-      "size": 24,
+      "size": 23,
       "on-click": "xdg-open https://memhack.fluency.io/home"
   },
 
   "image#anki_icon": {
       "path": "/usr/local/share/pixmaps/anki.xpm",
-      "size": 18, 
+      "size": 17, 
       "tooltip": "Launch Anki",
       "on-click": "anki"
   },
@@ -39,6 +30,14 @@
   "exec": "yay -Qua | wc -l",
   "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+9 waybar'",
   "signal": 9
+  },
+
+  "custom/pacman": {
+    "format": " {}   ",
+    "interval": "once",
+    "exec": "checkupdates | wc -l",
+    "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+8 waybar'",
+    "signal": 8
   },
 
   "cpu": {

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Memhack
+Exec=xdg-open https://memhack.fluency.io/home
+Terminal=false
+Type=Application
+Icon=/home/DROS/Pictures/Icons/Memhack.png
+Comment=Access Memhack
+Categories=Network;WebBrowser
+
