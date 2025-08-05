@@ -1,0 +1,235 @@
+Script started on 2025-07-31 13:45:07-03:00 [TERM="xterm-kitty" TTY="/dev/pts/2" COLUMNS="105" LINES="51"]
+[0m[49m[39m[27m[24m[K
+
+[2A7[0m[49m[39m]133;A[37m╭─[0m[37m[49m[30m [0m[30m[49m[34m[34m~[0m[34m[49m[34m/[34mdotfiles[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m[30m[0m[30m[49m[39m                                                                                           [0m[49m[39m
+[37m╰─[0m[37m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m]133;B[?2004h[?25l8[0m[49m[39m[27m[24m[J]2;DROS@ArchDROS:~/dotfiles]1;~/dotfiles]7;file://ArchDROS/home/DROS/dotfiles\[0m[34m[49m[39m[27m[24m[1m[7m%[27m[1m[0m                                                                                                        [0m[49m[39m[27m[24m[K[0m[27m[24m[J[0m[49m[39m
+[A[37m╭─[0m[37m[49m[30m [0m[30m[49m[34m[34m~[0m[34m[49m[34m/[34mdotfiles[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[32mmain [33m!3 [34m?1[0m[34m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                                                                [0m[49m[39m
+[37m╰─[0m[37m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[?25h[?2004h[1m[31mc[0m[39m[1m[31mc[0m[39m[90md ~/dotfiles[39m[12D[30m[104m[39m[49m[30m[104m[39m[49m[30m[104m[39m[49m
+[0;1;2mcommand[0m
+[0mc89                  c99               cabextract             cacaclock       cacaplay          
+cacaview             cairo-trace       calibre-complete       calibre-debug   calibre-parallel  
+calibre-server       captree           caspol                 catman          cc                
+cdda-player          cd-info           cd-paranoia            cert2spc        certutil          
+chgrp                chktrust          chmem                  chm_http        chmod             
+chpasswd             chromedriver      chromium               clang-cl        clang-extdef-mapping
+clang-include-fixer  clang-move        clang-offload-bundler  clang-refactor  clang-tidy        
+cliphist             clrunimap         cluster                cmis-client     cmx2raw           
+cmx2xhtml            code_cov_capture  code_cov_parse_info    colcrt          colrm             
+column               comm              compare                composefs-info  convert           
+corectrl             count             coverage               cp              cpan              
+createfp             cupsdisable       cupsenable             cupsfilter      cupstestppd       
+curl                 cvtsudoers        cxpm                                                   
+[J[30m[104m(MORE)[39m[49m[15A[0m[27m[24m[0m[39m[49m[4C[1m[31mc[0m[39m[90md ~/dotfiles[39m[K[0m[39m[49m[12D[0m[32mc[32md[39m
+[J[0;1;2mcommand[0m
+[J[0mcd  [Jcdda-player  [Jcd-drive  [Jcd-info  [Jcd-paranoia  [Jcdparanoia  [Jcdr2raw  [Jcdr2text  [Jcdr2xhtml  [Jcd-read  [J[A[A[0m[27m[24m[0m[39m[49m[4C[32mcd[39m[90m ~/dotfiles[39m[K[0m[39m[49m[11D[39m 
+[J[A[7C
+[J[0;1;2mdirectory[0m
+[01;34mDesktop-files[0m/  [01;34mgamemode[0m/  [01;34mhyprland[0m/  [01;34mIcons[0m/     [01;34mimv[0m/             [01;34mkdeglobals[0m/  [01;34mkitty[0m/      [01;34mneofetch[0m/
+[01;34mnnn[0m/            [01;34mnvim[0m/      [01;34mp10k[0m/      [01;34mpackages[0m/  [01;34mpavucontrol-qt[0m/  [01;34mrofi[0m/        [01;34mscripts[0m/    [01;34msddm[0m/  
+[01;34mslashConfs[0m/     [01;34mssh[0m/       [01;34mswappy[0m/    [01;34mswaync[0m/    [01;34mthemes[0m/          [01;34mwal[0m/         [01;34mwallpaper[0m/  [01;34mwaybar[0m/
+[J[01;34mwaypaper[0m/       [J[01;34mwlogout[0m/   [J[01;34mwofi[0m/      [J[01;34mzshrc[0m/     [J                                           [5A[0m[27m[24m[0m[39m[49m[4C[32mcd[39m [90m~/dotfiles[39m[K[0m[39m[49m[10D[39ms[39m [39m [39m [39m [39m [39m [39m [39m [39m [9D[90mwaync[39m
+[J[0;1;2mdirectory[0m
+[J[01;34mscripts[0m/     [J[01;34msddm[0m/        [J[01;34mslashConfs[0m/  [J[01;34mssh[0m/         [J[01;34mswappy[0m/      [J[01;34mswaync[0m/    [J[A[A[0m[27m[24m[0m[39m[49m[4C[32mcd[39m s[90mwaync[39m[K[0m[39m[49m[39mc[39m [39m [39m [39m [90mripts[39m
+[J[0;1;2mdirectory[0m
+[J[01;34mscripts[0m/[J[A[A[0m[27m[24m[0m[39m[49m[4C[32mcd[39m sc[90mripts[39m[K[0m[39m[49m[4m[35ms[4m[35mc[4m[35mr[4m[35mi[4m[35mp[4m[35mt[4m[35ms[1m[4m[35m/[0m[24m[39m
+[J[0;1;2mdirectory[0m
+[J[01;34mscripts[0m/[J[A[A[0m[27m[24m[0m[39m[49m[4C[32mcd[39m [4m[35mscripts[1m[4m[35m/[0m[24m[39m[K[0m[39m[49m
+[J[A[15C[4m[35ms[24m[39m[0m[24m[39m [?1l[?2004l
+[J[A[14C
+[J]2;cd scripts]1;cd[1m[7m%[27m[1m[0m                                                                                                         ]2;DROS@ArchDROS:~/dotfiles/scripts]1;..files/scripts]7;file://ArchDROS/home/DROS/dotfiles/scripts\[0m[34m[49m[39m[K
+[0m[27m[24m[J[0m[49m[39m
+[A[37m╭─[0m[37m[49m[30m [0m[30m[49m[34m[34m~[0m[34m[49m[34m/[34mdotfiles[0m[34m[49m[34m/[34mscripts[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[32mmain [33m!3 [34m?1[0m[34m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                                                        [0m[49m[39m
+[37m╰─[0m[37m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[?2004h[32ml[39m[32ml[39m[90ms[39m[30m[104m[39m[49m[30m[104m[39m[49m[30m[104m[39m[49m
+[0;1;2mcommand[0m
+[0mlibevdev-tweak-device            listplugins                      llvm-ar                        
+llvm-as                          llvm-cxxfilt                     llvm-install-name-tool         
+llvm-jitlink                     llvm-link                        llvm-lipo                      
+llvm-stress                      llvm-xray                        localectl                      
+login                            lsinitcpio                       lsp-plugins-ab-tester-x2-stereo
+lsp-plugins-chorus-mono          lsp-plugins-clipper-mono         lsp-plugins-compressor-lr      
+lsp-plugins-compressor-ms        lsp-plugins-expander-stereo      lsp-plugins-profiler-mono      
+lsp-plugins-referencer-mono      lsp-plugins-sc-autogain-stereo   lsp-plugins-sc-compressor-lr   
+lsp-plugins-sc-compressor-ms     lsp-plugins-sc-mb-gate-mono      lv2specgen.py                  
+lwp-dump                         lwp-request                      lzegrep                        
+lzless                                                                                         
+[J[30m[104m(MORE)[39m[49m[13A[0m[27m[24m[0m[39m[49m[4C[32ml[39m[90ms[39m[K[0m[39m[49m[32ml[32ms[39m[30m[104m[39m[49m[30m[104m[39m[49m[30m[104m[39m[49m
+[J[0;1;2mcommand[0m
+[0mlsinitcpio                       lsp-plugins-ab-tester-x2-stereo  lsp-plugins-chorus-mono        
+lsp-plugins-clipper-mono         lsp-plugins-compressor-lr        lsp-plugins-compressor-ms      
+lsp-plugins-expander-stereo      lsp-plugins-mb-limiter-stereo    lsp-plugins-profiler-mono      
+lsp-plugins-referencer-mono      lsp-plugins-sc-autogain-stereo   lsp-plugins-sc-compressor-lr   
+lsp-plugins-sc-compressor-ms     lsp-plugins-sc-mb-gate-mono      lsp-plugins-send-mono          
+[J[30m[104m(MORE)[39m[49m[7A[0m[27m[24m[0m[39m[49m[4C[32mls[39m[K[0m[39m[49m[?1l[?2004l
+[J[A[6C
+[J]2;exa -l]1;ls.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m  [32m490[0m [1;33mDROS[0m [34m11 Jun 13:46[0m [1;32mchangeBgColor.sh[0m
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m  [32m460[0m [1;33mDROS[0m [34m15 Jun 01:09[0m [1;32mgamemode.sh[0m
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m  [32m306[0m [1;33mDROS[0m [34m27 May 12:13[0m [1;32minstall-apps.sh[0m
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m  [32m470[0m [1;33mDROS[0m [34m14 Jun 16:55[0m [1;32mrandom-wallpaper.sh[0m
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m   [32m40[0m [1;33mDROS[0m [34m 7 Jun 15:43[0m [1;32mswayncRestart.sh[0m
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m  [32m702[0m [1;33mDROS[0m [34m22 May 14:45[0m [1;32mswitch_wallpaper.sh[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m-[0m[32mx[0m  [1;32m14k[0m [1;33mDROS[0m [34m22 May 18:55[0m typescript
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m  [32m294[0m [1;33mDROS[0m [34m21 May 18:52[0m [1;32mupdate-pkglist.sh[0m
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m   [32m35[0m [1;33mDROS[0m [34m 7 Jun 15:42[0m [1;32mwaybarRestart.sh[0m
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [1;32m1.2k[0m [1;33mDROS[0m [34m24 Jun 01:25[0m [1;32myoutubePause.sh[0m
+[1m[7m%[27m[1m[0m                                                                                                         ]2;DROS@ArchDROS:~/dotfiles/scripts]1;..files/scripts]7;file://ArchDROS/home/DROS/dotfiles/scripts\[0m[49m[39m[K
+[0m[27m[24m[J[0m[49m[39m
+[A[37m╭─[0m[37m[49m[30m [0m[30m[49m[34m[34m~[0m[34m[49m[34m/[34mdotfiles[0m[34m[49m[34m/[34mscripts[0m[34m[49m[34m[0m[34m[49m[34m[0m[34m[49m [0m[34m[49m[33m[32mmain [33m!3 [34m?1[0m[34m[49m[33m[0m[33m[49m[30m[0m[30m[49m[39m                                                                        [0m[49m[39m
+[37m╰─[0m[37m[49m[32m❯[0m[32m[49m[32m[0m[32m[49m[30m[0m[30m[49m[39m [0m[49m[39m[K[?2004h[32m.[39m[32m.[39m[90m/Lutris+Wine+BattlNet.sh[39m[24D[4m[35m.[4m[35m/[24m[39m
+[0;1;2mcommand[0m
+[01;32mchangeBgColor.sh[0m*     [01;32mgamemode.sh[0m*  [01;32minstall-apps.sh[0m*    [01;32mrandom-wallpaper.sh[0m*  [01;32mswayncRestart.sh[0m*
+[J[01;32mswitch_wallpaper.sh[0m*  [J[01;32mtypescript[0m*   [J[01;32mupdate-pkglist.sh[0m*  [J[01;32mwaybarRestart.sh[0m*     [J[01;32myoutubePause.sh[0m*[J[3A[0m[27m[24m[0m[39m[49m[4C[4m[35m./[24m[39m[90mLutris+Wine+BattlNet.sh[39m[K[0m[39m[49m[23D[24m[1m[31m.[24m[1m[31m/[1m[31mr[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [22D
+[J[0;1;2mcommand[0m
+[J[01;32mrandom-wallpaper.sh[0m*[J[A[A[0m[27m[24m[0m[39m[49m[4C[1m[31m./r[0m[39m[K[0m[39m[49m[1m[31mr[1m[31ma[0m[39m
+[J[0;1;2mcommand[0m
+[J[01;32mrandom-wallpaper.sh[0m*[J[A[A[0m[27m[24m[0m[39m[49m[4C[1m[31m./ra[0m[39m[K[0m[39m[49m[1m[31ma[1m[31mn[0m[39m
+[J[0;1;2mcommand[0m
+[J[01;32mrandom-wallpaper.sh[0m*[J[A[A[0m[27m[24m[0m[39m[49m[4C[1m[31m./ran[0m[39m[K[0m[39m[49m[1m[31mn[1m[31md[0m[39m
+[J[0;1;2mcommand[0m
+[J[01;32mrandom-wallpaper.sh[0m*[J[A[A[0m[27m[24m[0m[39m[49m[4C[1m[31m./rand[0m[39m[K[0m[39m[49m[0m[32m.[0m[32m/[0m[32mr[0m[32ma[0m[32mn[0m[32md[32mom-wallpaper.sh[39m[1m [0m
+[J[0;1;2mcommand[0m
+[J[01;32mrandom-wallpaper.sh[0m*[J[A[A[0m[27m[24m[0m[39m[49m[4C[32m./random-wallpaper.sh[39m[1m [0m[K[0m[39m[49m
+[J[0;1;2mfile[0m
+[01;32mchangeBgColor.sh[0m*     [01;32mgamemode.sh[0m*  [01;32minstall-apps.sh[0m*    [01;32mrandom-wallpaper.sh[0m*  [01;32mswayncRestart.sh[0m*
+[J[01;32mswitch_wallpaper.sh[0m*  [J[01;32mtypescript[0m*   [J[01;32mupdate-pkglist.sh[0m*  [J[01;32mwaybarRestart.sh[0m*     [J[01;32myoutubePause.sh[0m*[J[3A[0m[27m[24m[0m[39m[49m[4C[32m./random-wallpaper.sh[39m[1m [0m[K[0m[39m[49m[0m [?1l[?2004l
+[J[A[25C
+[J]2;./random-wallpaper.sh]1;./random-wallpaper.sh[LOG] Welcome to hyprpaper!
+built from commit  ()
+[LOG] Preloaded target /home/DROS/dotfiles/wallpaper/Stones.jpg in 87.66ms -> Pixel size: [3840, 2160]
+[LOG] Buffer created for target /home/DROS/dotfiles/wallpaper/Stones.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 8.3MB
+[LOG] hyprpaper socket started at /run/user/1000/hypr/4e242d086e20b32951fdc0ebcbfb4d41b5be8dcc_1753980227_150447928/.hyprpaper.sock (fd: 5)
+[LOG] configure for eDP-1
+[LOG] configure for eDP-1
+[[1;32mI[0m] [1;31mimage[0m: Using image [1;37mStones.jpg[0m.
+[LOG] Image data for eDP-1: /home/DROS/dotfiles/wallpaper/Stones.jpg at [-0.00, 0.00], scale: 0.50 (original image size: [3840, 2160])
+[LOG] Submitting viewport dest size 1920x1080 for 55f941e3e9e0
+[LOG] handlePreferredScale: 1.00 for 55f941e3e9e0
+[[1;32mI[0m] [1;31mtheme[0m: Set theme to [1;37m_home_DROS_dotfiles_wallpaper_Stones_jpg_16_lighten_dark_None_None_1296377_2.0.0.json[0m.
+[[1;32mI[0m] [1;31mcolors[0m: Found cached colorscheme.
+[[1;32mI[0m] [1;31mwallpaper[0m: Set the new wallpaper.
+]4;0;#0e1521\]4;1;#B6555B\]4;2;#E3926D\]4;3;#314B9D\]4;4;#5A5CA1\]4;5;#1868DD\]4;6;#B96495\]4;7;#91949b\]4;8;#5d6472\]4;9;#c87e83\]4;10;#d7b3a3\]4;11;#5e75ba\]4;12;#7677c4\]4;13;#7393c3\]4;14;#cc87af\]4;15;#c2c4c7\]10;#c2c4c7\]11;#0e1521\]12;#c2c4c7\]13;#c2c4c7\]17;#c2c4c7\]19;#0e1521\]4;232;#0e1521\]4;256;#c2c4c7\]4;257;#0e1521\]708;#0e1521\[[1;33mW[0m] [1;31mutil[0m: Couldn't write to /dev/pts/0.
+[[1;32mI[0m] [1;31msequences[0m: Set terminal colors.
+
+[40m    [0m[41m    [0m[42m    [0m[43m    [0m[44m    [0m[45m    [0m[46m    [0m[47m    [0m
+[48;5;8m    [0m[48;5;9m    [0m[48;5;10m    [0m[48;5;11m    [0m[48;5;12m    [0m[48;5;13m    [0m[48;5;14m    [0m[48;5;15m    [0m
+
+[[1;32mI[0m] [1;31mexport[0m: Reading system templates from: /usr/lib/python3.13/site-packages/pywal/templates
+[[1;32mI[0m] [1;31mexport[0m: Reading user templates from: /home/DROS/.config/wal/templates
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Received a request: preload  /home/DROS/dotfiles/wallpaper/Stones.jpg
+[LOG] Ignoring request to preload /home/DROS/dotfiles/wallpaper/Stones.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Received a request: wallpaper , /home/DROS/dotfiles/wallpaper/Stones.jpg
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Closing Accepted Connection
+[[1;32mI[0m] [1;31mexport[0m: Exported all files.
+[[1;32mI[0m] [1;31mexport[0m: Exported all user files to /home/DROS/.cache/wal
+[?s[*x[4l[?1l[?5l[?2004l[?1000l[?1002l[?1003l[?1005l[?1006l[?8h[?7h[?25hP@kitty-cmd{"cmd":"set-colors","version":[0,26,0],"kitty_window_id":1,"payload":{"colors":{"active_border_color":12764359,"active_tab_background":12764359,"active_tab_foreground":922913,"background":922913,"bell_border_color":11949403,"color0":922913,"color1":11949403,"color10":14136227,"color11":6190522,"color12":7763908,"color13":7574467,"color14":13404079,"color15":12764359,"color2":13404079,"color3":3230621,"color4":5921953,"color5":1599709,"color6":12149909,"color7":9540763,"color8":6120562,"color9":13139587,"cursor":12764359,"foreground":12764359,"inactive_border_color":922913,"inactive_tab_background":922913,"inactive_tab_foreground":12764359},"all":true}}\7[?r8[[1;32mI[0m] [1;31mreload[0m: Reloaded environment.
+** [1;32mMessage[0m: [34m13:45:25.389[0m: configModel.vala:331: Loading Config: "/home/DROS/.config/swaync/config.json"
+
+(process:42951): Gtk-[1;33mWARNING[0m **: [34m13:45:25.463[0m: Theme parser error: gtk-dark.css:8009:12-16: Negative values are not allowed
+[2025-07-31 13:45:25.476] [[32minfo[m] Using configuration file /home/DROS/.config/waybar/config
+[2025-07-31 13:45:25.479] [[32minfo[m] Discovered appearance 'dark'
+[2025-07-31 13:45:25.479] [[32minfo[m] Using CSS file /home/DROS/.config/waybar/style.css
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.479[0m: Theme parsing error: style.css:26:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.479[0m: Theme parsing error: style.css:44:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.479[0m: Theme parsing error: style.css:52:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.479[0m: Theme parsing error: style.css:60:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.479[0m: Theme parsing error: style.css:68:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.480[0m: Theme parsing error: style.css:76:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.480[0m: Theme parsing error: style.css:84:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.480[0m: Theme parsing error: style.css:92:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.480[0m: Theme parsing error: style.css:100:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.480[0m: Theme parsing error: style.css:108:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.480[0m: Theme parsing error: style.css:116:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.480[0m: Theme parsing error: style.css:124:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:25.480[0m: Theme parsing error: style.css:132:21: Not using units is deprecated. Assuming 'px'.
+[2025-07-31 13:45:25.489] [[32minfo[m] Hyprland IPC starting
+[2025-07-31 13:45:25.489] [[32minfo[m] Loading persistent workspaces from Hyprland workspace rules
+Fontconfig warning: using without calling FcInit()
+
+(process:42951): Adwaita-[1;33mWARNING[0m **: [34m13:45:25.506[0m: Using GtkSettings:gtk-application-prefer-dark-theme with libadwaita is unsupported. Please use AdwStyleManager:color-scheme instead.
+[2025-07-31 13:45:25.670] [[32minfo[m] Bar configured (width: 1920, height: 39) for output: eDP-1
+** [1;32mMessage[0m: [34m13:45:25.766[0m: functions.vala:84: Loading CSS: "/etc/xdg/swaync/style.css"
+** [1;32mMessage[0m: [34m13:45:25.767[0m: functions.vala:97: Loading CSS: "/home/DROS/.config/swaync/style.css"
+** [1;32mMessage[0m: [34m13:45:25.774[0m: factory.vala:47: Loading widget: label
+** [1;32mMessage[0m: [34m13:45:25.775[0m: factory.vala:47: Loading widget: buttons-grid
+** [1;32mMessage[0m: [34m13:45:25.777[0m: factory.vala:47: Loading widget: mpris
+** [1;32mMessage[0m: [34m13:45:25.777[0m: factory.vala:47: Loading widget: title
+** [1;32mMessage[0m: [34m13:45:25.777[0m: factory.vala:47: Loading widget: dnd
+** [1;32mMessage[0m: [34m13:45:25.778[0m: factory.vala:47: Loading widget: volume
+** [1;32mMessage[0m: [34m13:45:25.780[0m: factory.vala:47: Loading widget: backlight
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/DROS/dotfiles/wallpaper/Stones.jpg, preload path /run/user/1000/.hyprpaper_DMDMxn
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Received a request: preload /home/DROS/dotfiles/wallpaper/watchtower-mountains-and-forests.jpg
+[LOG] Preloaded target /home/DROS/dotfiles/wallpaper/watchtower-mountains-and-forests.jpg in 60.33ms -> Pixel size: [3840, 2160]
+[LOG] Buffer created for target /home/DROS/dotfiles/wallpaper/watchtower-mountains-and-forests.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 8.3MB
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Received a request: wallpaper eDP-1,/home/DROS/dotfiles/wallpaper/watchtower-mountains-and-forests.jpg
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Closing Accepted Connection
+[LOG] configure for eDP-1
+[LOG] configure for eDP-1
+[LOG] Image data for eDP-1: /home/DROS/dotfiles/wallpaper/watchtower-mountains-and-forests.jpg at [-0.00, 0.00], scale: 0.50 (original image size: [3840, 2160])
+[LOG] Submitting viewport dest size 1920x1080 for 55f941e3d2c0
+[LOG] handlePreferredScale: 1.00 for 55f941e3d2c0
+]4;0;#0b101b\]4;1;#2469AC\]4;2;#5A5D9B\]4;3;#416CB5\]4;4;#936F88\]4;5;#219AD4\]4;6;#1AB6E6\]4;7;#8f9299\]4;8;#5a606f\]4;9;#5f8dba\]4;10;#7376c3\]4;11;#7390c3\]4;12;#c67aad\]4;13;#73a9c3\]4;14;#79b3c5\]4;15;#c2c3c6\]10;#c2c3c6\]11;#0b101b\]12;#c2c3c6\]13;#c2c3c6\]17;#c2c3c6\]19;#0b101b\]4;232;#0b101b\]4;256;#c2c3c6\]4;257;#0b101b\]708;#0b101b\[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Received a request: wallpaper , /home/DROS/dotfiles/wallpaper/watchtower-mountains-and-forests.jpg
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Received a request: preload  /home/DROS/dotfiles/wallpaper/watchtower-mountains-and-forests.jpg
+[LOG] Ignoring request to preload /home/DROS/dotfiles/wallpaper/watchtower-mountains-and-forests.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 4
+[LOG] Closing Accepted Connection
+[2025-07-31 13:45:38.957] [[32minfo[m] Reloading...
+[2025-07-31 13:45:38.962] [[32minfo[m] Using configuration file /home/DROS/.config/waybar/config
+[2025-07-31 13:45:38.962] [[32minfo[m] Using CSS file /home/DROS/.config/waybar/style.css
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.963[0m: Theme parsing error: style.css:26:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.963[0m: Theme parsing error: style.css:44:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.963[0m: Theme parsing error: style.css:52:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.963[0m: Theme parsing error: style.css:60:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.963[0m: Theme parsing error: style.css:68:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.963[0m: Theme parsing error: style.css:76:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.963[0m: Theme parsing error: style.css:84:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.963[0m: Theme parsing error: style.css:92:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.964[0m: Theme parsing error: style.css:100:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.964[0m: Theme parsing error: style.css:108:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.964[0m: Theme parsing error: style.css:116:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [34m13:45:38.964[0m: Theme parsing error: style.css:124:21: Not using units is deprecated. Assuming 'px'.
+
+(waybar:42984): Gtk-[1;33mWARNING[0m **: [

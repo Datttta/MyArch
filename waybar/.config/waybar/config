@@ -25,7 +25,7 @@
   },
 
   "custom/aur": {
-  "format": "{}   ",
+  "format": "{}   ",
   "interval": "once",
   "exec": "yay -Qua | wc -l",
   "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+9 waybar'",
