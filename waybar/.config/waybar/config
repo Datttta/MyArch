@@ -51,7 +51,7 @@
   },
 
   "custom/launcher": {
-    "format": "",
+    "format": "󰣇",
     "on-click": "wlogout"
   },
 
