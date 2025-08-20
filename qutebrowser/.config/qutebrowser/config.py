@@ -17,7 +17,8 @@ c.colors.tabs.bar.bg = "#3B3B3B"
 
 #Aliases:
 c.aliases = {
-    'gm': 'tab-move'
+    'gm': 'tab-move',
+    'bk': 'bookmark-add'
 }
 
 # Change the argument to True to still load settings configured via autoconfig.yml
