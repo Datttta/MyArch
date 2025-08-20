@@ -10,6 +10,10 @@
 #   qute://help/configuring.html
 #   qute://help/settings.html
 
+c.colors.tabs.even.bg = "#3B3B3B" 
+c.colors.tabs.odd.bg = "#3B3B3B"
+c.colors.tabs.bar.bg = "#3B3B3B"
+
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
 
