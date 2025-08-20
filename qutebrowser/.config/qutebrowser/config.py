@@ -10,9 +10,15 @@
 #   qute://help/configuring.html
 #   qute://help/settings.html
 
+# tab's color
 c.colors.tabs.even.bg = "#3B3B3B" 
 c.colors.tabs.odd.bg = "#3B3B3B"
 c.colors.tabs.bar.bg = "#3B3B3B"
+
+#Aliases:
+c.aliases = {
+    'gm': 'tab-move'
+}
 
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
