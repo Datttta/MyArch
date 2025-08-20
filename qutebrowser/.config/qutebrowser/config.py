@@ -14,6 +14,9 @@
 ## Remove it to not load settings done via the GUI.
 # config.load_autoconfig(True)
 
+#Prevent asking for clipboard access
+c.content.javascript.clipboard = "access"
+
 # tab's color
 c.colors.tabs.even.bg = "#3B3B3B" 
 c.colors.tabs.odd.bg = "#3B3B3B"
