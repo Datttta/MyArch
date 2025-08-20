@@ -17,9 +17,13 @@ c.colors.tabs.bar.bg = "#3B3B3B"
 
 #Aliases:
 c.aliases = {
-    'gm': 'tab-move',
+    'tb': 'tab-move',
     'bk': 'bookmark-add'
 }
+
+# Bind the new Super-num bindings
+for i in range(10):
+    config.bind(f'<Super-{i}>', f'tab-select {i}', mode='normal')
 
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
