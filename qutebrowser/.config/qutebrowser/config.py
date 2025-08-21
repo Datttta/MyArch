@@ -249,6 +249,7 @@ config.set('colors.webpage.darkmode.enabled', False, 'https://wiki.qt.io')
 # image inversion": qutebrowser default settings.
 # Type: Bool
 c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.algorithm = 'lightness-hsl'
 
 # Render all web contents using a dark theme. On QtWebEngine < 6.7, this
 # setting requires a restart and does not support URL patterns, only the
@@ -302,5 +303,5 @@ config.bind('<Meta+6>', 'tab-select 6')
 config.bind('<Meta+7>', 'tab-select 7')
 config.bind('<Meta+8>', 'tab-select 8')
 config.bind('<Meta+9>', 'tab-select 9')
-config.bind('<Ctrl-Shift-D>', 'set -u {clipboard} colors.webpage.darkmode.enabled true ;; reload')
-config.bind('<Ctrl-Shift-B>', 'set -u {clipboard} colors.webpage.darkmode.enabled false ;; reload')
+config.bind('<Ctrl-Shift-D>', 'yank domain ;; set -u {clipboard} colors.webpage.darkmode.enabled true ;; reload')
+config.bind('<Ctrl-Shift-B>', 'yank domain ;; set -u {clipboard} colors.webpage.darkmode.enabled false ;; reload')
