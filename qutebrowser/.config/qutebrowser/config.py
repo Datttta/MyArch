@@ -238,6 +238,16 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 # `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
 # image inversion": qutebrowser default settings.
 # Type: Bool
+config.set('colors.webpage.darkmode.enabled', False, 'https://wiki.qt.io')
+
+# Render all web contents using a dark theme. On QtWebEngine < 6.7, this
+# setting requires a restart and does not support URL patterns, only the
+# global setting is applied. Example configurations from Chromium's
+# `chrome://flags`: - "With simple HSL/CIELAB/RGB-based inversion": Set
+# `colors.webpage.darkmode.algorithm` accordingly, and   set
+# `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
+# image inversion": qutebrowser default settings.
+# Type: Bool
 c.colors.webpage.darkmode.enabled = True
 
 # Render all web contents using a dark theme. On QtWebEngine < 6.7, this
@@ -292,3 +302,5 @@ config.bind('<Meta+6>', 'tab-select 6')
 config.bind('<Meta+7>', 'tab-select 7')
 config.bind('<Meta+8>', 'tab-select 8')
 config.bind('<Meta+9>', 'tab-select 9')
+config.bind('<Ctrl-Shift-D>', 'set -u {clipboard} colors.webpage.darkmode.enabled true')
+config.bind('<Ctrl-Shift-B>', 'set -u {clipboard} colors.webpage.darkmode.enabled false')
