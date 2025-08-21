@@ -37,5 +37,4 @@ early_exit=false
 fill_shape=false
 EOF
 
-# (Optional) Open the saved screenshot in swappy.
 swappy -f "$FILE"
