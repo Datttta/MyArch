@@ -13,7 +13,7 @@
 
 window#waybar {
     background-color: transparent;
-    color: @background;
+    color: alpha(@background, 0.8);
 }
 
 #workspaces button.active {
@@ -21,7 +21,7 @@ window#waybar {
 }
 
 #workspaces {
-    background-color: @background;
+    background-color: alpha(@background, 0.8);
     padding: 0px 10.4px 0px 5px; /* top, right, bottom, left */
     border-radius: 15;
 }
@@ -38,7 +38,7 @@ window#waybar {
 
 #backlight {
     color: @color15; /* color13 */
-    background-color: @background; /* background */
+    background-color: alpha(@background, 0.8); /* background */
     margin: 0 0px 0 0px;
     padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
@@ -46,14 +46,10 @@ window#waybar {
 
 #pulseaudio {
     color: @color15; /* color4 */
-    background-color: @background; /* background */
+    background-color: alpha(@background, 0.8); /* background */
     margin: 0 5px 0 0px;
     padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
-}
-
-#tray {
-    margin: 0px 90px 0px 0px;
 }
 
 #image.Memhack_icon {
@@ -63,7 +59,7 @@ window#waybar {
 
 #network {
     color: @color15; /* color2 */
-    background-color: @background; /* background */
+    background-color: alpha(@background, 0.8); /* background */
     margin: 0 5px 0 0px;
     padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
@@ -71,7 +67,7 @@ window#waybar {
 
 #custom-weather {
     color: @color15; /* color5 */
-    background-color: @background; /* background */
+    background-color: alpha(@background, 0.8); /* background */
     margin: 0 5px 0 0px;
     padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
@@ -79,7 +75,7 @@ window#waybar {
 
 #clock {
     color: @color15; /* color3 */
-    background-color: @background; /* background */
+    background-color: alpha(@background, 0.8); /* background */
     margin: 0 5px 0 0;
     padding: 0px 17px 0px 17px;
     border-radius: 15;
@@ -87,7 +83,7 @@ window#waybar {
 
 #custom-launcher {
     color: @color15;
-    background-color: @background;
+    background-color: alpha(@background, 0.8);
     margin: 0 5px 0 0px;
     padding: 0 22px 0 16px;
     border-radius: 25;
@@ -95,7 +91,7 @@ window#waybar {
 
 #cpu {
     color: @color15;
-    background-color: @background;
+    background-color: alpha(@background, 0.8);
     margin: 0 5px 0 0px;
     padding: 0 23.4px 0 19px; /* top, right, bottom, left */
     border-radius: 15;
@@ -103,7 +99,7 @@ window#waybar {
 
 #memory {
     color: @color15;
-    background-color: @background;
+    background-color: alpha(@background, 0.8);
     margin: 0 5px 0 0px;
     padding: 0 22px 0 18px;
     border-radius: 15;
@@ -111,7 +107,7 @@ window#waybar {
 
 #custom-pacman {
     color: @color15; /* color1 (previously color8) */
-    background-color: @background; /* background */
+    background-color: alpha(@background, 0.8); /* background */
     margin: 0 0px 0 0px;
     padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
@@ -119,7 +115,7 @@ window#waybar {
 
 #custom-aur {
     color: @color15; /* color1 (previously color8) */
-    background-color: @background; /* background */
+    background-color: alpha(@background, 0.8); /* background */
     margin: 0 5px 0 0px;
     padding: 0px 21px 0px 18px; /* top, right, bottom, left */
     border-radius: 15;
@@ -127,7 +123,7 @@ window#waybar {
 
 #backlight {
     color: @color15; /* color6 */
-    background-color: @background; /* background */
+    background-color: alpha(@background, 0.8); /* background */
     margin: 0 5px 0 0px;
     padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
@@ -135,7 +131,7 @@ window#waybar {
 
 #custom-media {
     color: @color15; /* color10 */
-    background-color: @background; /* background */
+    background-color: alpha(@background, 0.8); /* background */
     margin: 0 0px 0 15px;
     padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
