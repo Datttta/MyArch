@@ -88,6 +88,7 @@ vim.keymap.set('n', '<S-j>', '*``cgn', opts)
 vim.keymap.set({ 'n', 'v' }, '<leader>c', [["+y]])
 vim.keymap.set('n', '<leader>C', [["+Y]])
 vim.keymap.set({ 'n', 'v' }, '<leader>x', [["+d]])
+vim.keymap.set({ 'n', 'v' }, '<leader>X', [["+d]])
 
 -- Toggle diagnostics
 local diagnostics_active = true
