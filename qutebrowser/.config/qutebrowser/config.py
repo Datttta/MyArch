@@ -16,7 +16,15 @@ config.load_autoconfig(False)
 # Aliases for commands. The keys of the given dictionary are the
 # aliases, while the values are the commands they map to.
 # Type: Dict
-c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save', 'tb': 'tab-move', 'bk': 'bookmark-add'}
+c.aliases = {
+    "w": "session-save",
+    "q": "close",
+    "qa": "quit",
+    "wq": "quit --save",
+    "wqa": "quit --save",
+    "tb": "tab-move",
+    "bk": "bookmark-add",
+}
 
 # Always restore open sites when qutebrowser is reopened. Without this
 # option set, `:wq` (`:quit --save`) needs to be used to save open tabs
@@ -53,7 +61,7 @@ c.content.autoplay = False
 #   - no-3rdparty: Accept cookies from the same origin only. This is known to break some sites, such as GMail.
 #   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 #   - never: Don't accept cookies at all.
-config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
+config.set("content.cookies.accept", "all", "chrome-devtools://*")
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
@@ -77,12 +85,13 @@ config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 #   - no-3rdparty: Accept cookies from the same origin only. This is known to break some sites, such as GMail.
 #   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 #   - never: Don't accept cookies at all.
-config.set('content.cookies.accept', 'all', 'devtools://*')
+config.set("content.cookies.accept", "all", "devtools://*")
 
 # Value to send in the `Accept-Language` header. Note that the value
 # read from JavaScript is always the global value.
 # Type: String
-config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io/*')
+config.set("content.headers.accept_language",
+           "", "https://matchmaker.krunker.io/*")
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -99,7 +108,11 @@ config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io
 # increased compatibility.  Note that the value read from JavaScript is
 # always the global value.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:136.0) Gecko/20100101 Firefox/139.0', 'https://accounts.google.com/*')
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}; rv:136.0) Gecko/20100101 Firefox/139.0",
+    "https://accounts.google.com/*",
+)
 
 # Enable the ad/host blocker
 # Type: Bool
@@ -116,7 +129,7 @@ c.content.blocking.enabled = True
 #   - adblock: Use Brave's ABP-style adblocker
 #   - hosts: Use hosts blocking
 #   - both: Use both hosts blocking and Brave's ABP-style adblocker
-c.content.blocking.method = 'both'
+c.content.blocking.method = "both"
 
 # List of URLs to ABP-style adblocking rulesets.  Only used when Brave's
 # ABP-style adblocker is used (see `content.blocking.method`).  You can
@@ -127,15 +140,37 @@ c.content.blocking.method = 'both'
 # extracting it from the `location` parameter of the subscribe URL and
 # URL-decoding it).
 # Type: List of Url
-c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt', 'https://easylist.to/easylist/easylistdutch.txt', 'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt', 'https://github.com/ewpratten/youtube_ad_blocklist/blob/master/blocklist.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2021.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2022.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2023.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2024.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/badware.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-cookies.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-others.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/quick-fixes.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt']
+c.content.blocking.adblock.lists = [
+    "https://easylist.to/easylist/easylist.txt",
+    "https://easylist.to/easylist/easylistdutch.txt",
+    "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
+    "https://github.com/ewpratten/youtube_ad_blocklist/blob/master/blocklist.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2021.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2022.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2023.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2024.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badware.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-cookies.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-others.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/quick-fixes.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt",
+    "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt",
+]
 
 # Load images automatically in web pages.
 # Type: Bool
-config.set('content.images', True, 'chrome-devtools://*')
+config.set("content.images", True, "chrome-devtools://*")
 
 # Load images automatically in web pages.
 # Type: Bool
-config.set('content.images', True, 'devtools://*')
+config.set("content.images", True, "devtools://*")
 
 # Allow JavaScript to read from or write to the clipboard. With
 # QtWebEngine, writing the clipboard as response to a user interaction
@@ -147,7 +182,8 @@ config.set('content.images', True, 'devtools://*')
 #   - access: Allow reading from and writing to the clipboard.
 #   - access-paste: Allow accessing the clipboard and pasting clipboard content.
 #   - ask: Prompt when requested (grants 'access-paste' permission).
-config.set('content.javascript.clipboard', 'access-paste', 'https://gemini.google.com')
+config.set("content.javascript.clipboard",
+           "access-paste", "https://gemini.google.com")
 
 # Allow JavaScript to read from or write to the clipboard. With
 # QtWebEngine, writing the clipboard as response to a user interaction
@@ -159,31 +195,39 @@ config.set('content.javascript.clipboard', 'access-paste', 'https://gemini.googl
 #   - access: Allow reading from and writing to the clipboard.
 #   - access-paste: Allow accessing the clipboard and pasting clipboard content.
 #   - ask: Prompt when requested (grants 'access-paste' permission).
-c.content.javascript.clipboard = 'access'
+c.content.javascript.clipboard = "access"
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'chrome-devtools://*')
+config.set("content.javascript.enabled", True, "chrome-devtools://*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'devtools://*')
+config.set("content.javascript.enabled", True, "devtools://*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'chrome://*/*')
+config.set("content.javascript.enabled", True, "chrome://*/*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'qute://*/*')
+config.set("content.javascript.enabled", True, "qute://*/*")
 
 # Allow locally loaded documents to access remote URLs.
 # Type: Bool
-config.set('content.local_content_can_access_remote_urls', True, 'file:///home/DROS/.local/share/qutebrowser/userscripts/*')
+config.set(
+    "content.local_content_can_access_remote_urls",
+    True,
+    "file:///home/DROS/.local/share/qutebrowser/userscripts/*",
+)
 
 # Allow locally loaded documents to access other local URLs.
 # Type: Bool
-config.set('content.local_content_can_access_file_urls', False, 'file:///home/DROS/.local/share/qutebrowser/userscripts/*')
+config.set(
+    "content.local_content_can_access_file_urls",
+    False,
+    "file:///home/DROS/.local/share/qutebrowser/userscripts/*",
+)
 
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -204,19 +248,23 @@ config.set('content.local_content_can_access_file_urls', False, 'file:///home/DR
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}'}
+c.url.searchengines = {
+    "DEFAULT": "https://www.google.com/search?q={}",
+    "yt": "https://www.youtube.com/results?search_query={}",
+    "cam": "https://dictionary.cambridge.org/us/dictionary/english/{}",
+}
 
 # Background color of the tab bar.
 # Type: QssColor
-c.colors.tabs.bar.bg = '#3B3B3B'
+c.colors.tabs.bar.bg = "#3B3B3B"
 
 # Background color of unselected odd tabs.
 # Type: QtColor
-c.colors.tabs.odd.bg = '#3B3B3B'
+c.colors.tabs.odd.bg = "#3B3B3B"
 
 # Background color of unselected even tabs.
 # Type: QtColor
-c.colors.tabs.even.bg = '#3B3B3B'
+c.colors.tabs.even.bg = "#3B3B3B"
 
 # Value to use for `prefers-color-scheme:` for websites. The "light"
 # value is only available with QtWebEngine 5.15.2+. On older versions,
@@ -228,7 +276,7 @@ c.colors.tabs.even.bg = '#3B3B3B'
 #   - auto: Use the system-wide color scheme setting.
 #   - light: Force a light theme.
 #   - dark: Force a dark theme.
-c.colors.webpage.preferred_color_scheme = 'dark'
+c.colors.webpage.preferred_color_scheme = "dark"
 
 # Render all web contents using a dark theme. On QtWebEngine < 6.7, this
 # setting requires a restart and does not support URL patterns, only the
@@ -238,7 +286,7 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 # `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
 # image inversion": qutebrowser default settings.
 # Type: Bool
-config.set('colors.webpage.darkmode.enabled', False, 'https://wiki.qt.io')
+config.set("colors.webpage.darkmode.enabled", False, "https://wiki.qt.io")
 
 # Render all web contents using a dark theme. On QtWebEngine < 6.7, this
 # setting requires a restart and does not support URL patterns, only the
@@ -249,7 +297,7 @@ config.set('colors.webpage.darkmode.enabled', False, 'https://wiki.qt.io')
 # image inversion": qutebrowser default settings.
 # Type: Bool
 c.colors.webpage.darkmode.enabled = True
-c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
+c.colors.webpage.darkmode.algorithm = "lightness-cielab"
 
 # Render all web contents using a dark theme. On QtWebEngine < 6.7, this
 # setting requires a restart and does not support URL patterns, only the
@@ -259,7 +307,11 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 # `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
 # image inversion": qutebrowser default settings.
 # Type: Bool
-config.set('colors.webpage.darkmode.enabled', True, 'https://dictionary.cambridge.org/us/dictionary/english/don?q=Don')
+config.set(
+    "colors.webpage.darkmode.enabled",
+    True,
+    "https://dictionary.cambridge.org/us/dictionary/english/don?q=Don",
+)
 
 # Render all web contents using a dark theme. On QtWebEngine < 6.7, this
 # setting requires a restart and does not support URL patterns, only the
@@ -269,7 +321,8 @@ config.set('colors.webpage.darkmode.enabled', True, 'https://dictionary.cambridg
 # `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
 # image inversion": qutebrowser default settings.
 # Type: Bool
-config.set('colors.webpage.darkmode.enabled', False, 'https://dictionary.cambridge.org')
+config.set("colors.webpage.darkmode.enabled", False,
+           "https://dictionary.cambridge.org")
 
 # Render all web contents using a dark theme. On QtWebEngine < 6.7, this
 # setting requires a restart and does not support URL patterns, only the
@@ -279,7 +332,7 @@ config.set('colors.webpage.darkmode.enabled', False, 'https://dictionary.cambrid
 # `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
 # image inversion": qutebrowser default settings.
 # Type: Bool
-config.set('colors.webpage.darkmode.enabled', False, 'https://www.youtube.com')
+config.set("colors.webpage.darkmode.enabled", False, "https://www.youtube.com")
 
 # Render all web contents using a dark theme. On QtWebEngine < 6.7, this
 # setting requires a restart and does not support URL patterns, only the
@@ -289,19 +342,26 @@ config.set('colors.webpage.darkmode.enabled', False, 'https://www.youtube.com')
 # `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
 # image inversion": qutebrowser default settings.
 # Type: Bool
-config.set('colors.webpage.darkmode.enabled', False, 'https://www.shortcutfoo.com')
+config.set("colors.webpage.darkmode.enabled",
+           False, "https://www.shortcutfoo.com")
 
 # Bindings for normal mode
-config.bind('<F1>', 'session-save ;; cmd-set-text -s :session-load --clear')
-config.bind('<Meta+0>', 'tab-select 0')
-config.bind('<Meta+1>', 'tab-select 1')
-config.bind('<Meta+2>', 'tab-select 2')
-config.bind('<Meta+3>', 'tab-select 3')
-config.bind('<Meta+4>', 'tab-select 4')
-config.bind('<Meta+5>', 'tab-select 5')
-config.bind('<Meta+6>', 'tab-select 6')
-config.bind('<Meta+7>', 'tab-select 7')
-config.bind('<Meta+8>', 'tab-select 8')
-config.bind('<Meta+9>', 'tab-select 9')
-config.bind('<Ctrl-Shift-D>', 'yank domain ;; set -u {clipboard} colors.webpage.darkmode.enabled true ;; reload')
-config.bind('<Ctrl-Shift-B>', 'yank domain ;; set -u {clipboard} colors.webpage.darkmode.enabled false ;; reload')
+config.bind("<F1>", "session-save ;; cmd-set-text -s :session-load --clear")
+config.bind("<Meta+0>", "tab-select 0")
+config.bind("<Meta+1>", "tab-select 1")
+config.bind("<Meta+2>", "tab-select 2")
+config.bind("<Meta+3>", "tab-select 3")
+config.bind("<Meta+4>", "tab-select 4")
+config.bind("<Meta+5>", "tab-select 5")
+config.bind("<Meta+6>", "tab-select 6")
+config.bind("<Meta+7>", "tab-select 7")
+config.bind("<Meta+8>", "tab-select 8")
+config.bind("<Meta+9>", "tab-select 9")
+config.bind(
+    "<Ctrl-Shift-D>",
+    "yank domain ;; set -u {clipboard} colors.webpage.darkmode.enabled true ;; reload",
+)
+config.bind(
+    "<Ctrl-Shift-B>",
+    "yank domain ;; set -u {clipboard} colors.webpage.darkmode.enabled false ;; reload",
+)
