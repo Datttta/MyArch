@@ -23,8 +23,6 @@
 
 window {
     background-color: alpha(@bg, 0.55);
-    border: 0.8px solid @border-color;
-    border-radius: 15px;
 }
 #scroll {
     margin: 0px 20px 20px 20px;
