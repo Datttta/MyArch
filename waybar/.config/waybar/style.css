@@ -8,12 +8,12 @@
     font-weight: bold;
     font-size: 15.2px;
     border-radius: 10px;
-    padding: 2.5px 3px 2.5px 3px; /* top, right, bottom, left COOL SIZE*/
+    padding: 2px 3px; /* top, right, bottom, left COOL SIZE*/
 }
 
 window#waybar {
     background-color: transparent;
-    color: alpha(@background, 0.8);
+    color: alpha(@background, 0.8); /* last number control the opacity */
 }
 
 #workspaces button.active {

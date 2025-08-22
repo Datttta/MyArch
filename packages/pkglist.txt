@@ -122,6 +122,7 @@ pamixer
 pavucontrol
 pipewire-pulse
 plocate
+polkit-gnome
 polkit-kde-agent
 power-profiles-daemon
 pulseaudio-alsa
