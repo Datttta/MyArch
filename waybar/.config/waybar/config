@@ -8,18 +8,18 @@
   "modules-right": ["network", "cpu", "memory", "custom/aur", "custom/pacman"],
 
   "tray": {
-    "icon-size": 17,
+    "icon-size": 19,
   },
 
   "image#Memhack_icon": {
       "path": "/home/DROS/Pictures/Icons/Memhack.png",
-      "size": 23,
-      "on-click": "xdg-open https://memhack.fluency.io/home"
+      "size": 22,
+      "on-click": "xdg-open https://memhack.fluency.io/home",
   },
 
   "image#anki_icon": {
       "path": "/usr/local/share/pixmaps/anki.xpm",
-      "size": 17, 
+      "size": 18, 
       "tooltip": "Launch Anki",
       "on-click": "anki"
   },

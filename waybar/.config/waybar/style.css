@@ -52,6 +52,15 @@ window#waybar {
     border-radius: 15;
 }
 
+#tray {
+    margin: 0px 90px 0px 0px;
+}
+
+#image.Memhack_icon {
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
 #network {
     color: @color15; /* color2 */
     background-color: @background; /* background */
