@@ -87,8 +87,8 @@ vim.keymap.set('n', '<S-j>', '*``cgn', opts)
 -- Explicitly yank to system clipboard (highlighted and entire row)
 vim.keymap.set({ 'n', 'v' }, '<leader>c', [["+y]])
 vim.keymap.set('n', '<leader>C', [["+Y]])
-vim.keymap.set({ 'n', 'v' }, '<leader>x', [["+d]])
-vim.keymap.set({ 'n', 'v' }, '<leader>X', [["+d]])
+vim.keymap.set({ 'n', 'v' }, '<leader>f', [["+d]])
+vim.keymap.set({ 'n', 'v' }, '<leader>F', [["+d]])
 
 -- Toggle diagnostics
 local diagnostics_active = true

@@ -9,6 +9,7 @@ limitcpu
 neofetch
 neovim-git
 nnn-git
+notepadqq
 notion-app-electron
 notion-app-electron-debug
 osu
@@ -22,6 +23,7 @@ sklauncher-bin
 snapd
 stremio
 swaync-git
+swaync-git-debug
 timeshift-autosnap
 ttf-firacode
 ttf-radio-canada
