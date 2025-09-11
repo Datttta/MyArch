@@ -106,6 +106,7 @@ mission-center
 mono
 mtools
 nano
+net-tools
 network-manager-applet
 networkmanager
 noto-fonts-cjk

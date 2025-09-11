@@ -1,3 +1,4 @@
+anki
 arc-solid-gtk-theme
 balena-etcher
 bottles
@@ -6,6 +7,7 @@ jdk-lts
 jdk-temurin
 libratbag-git
 limitcpu
+logmein-hamachi
 neofetch
 neovim-git
 nnn-git
@@ -32,5 +34,6 @@ wlogout
 yaru-gtk-theme
 yay-git
 yay-git-debug
+youtubemusic
 z-library-bin
 z-library-bin-debug
