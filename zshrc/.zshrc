@@ -158,3 +158,6 @@ export RADV_PERFTEST=llvm
 export PATH=$PATH:/usr/lib/vinegar
 export PATH=$PATH:/usr/lib/vinegar
 export LIBVA_DRIVER_NAME=i965
+
+# Autosuggestions color
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=
