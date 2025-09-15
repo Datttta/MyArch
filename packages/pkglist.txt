@@ -26,6 +26,7 @@ discord
 dmidecode
 dosfstools
 easyeffects
+electron
 espeak-ng
 exfat-utils
 eza
