@@ -23,7 +23,7 @@ return {
                     }
 
                     hl.Comment = {
-                        fg = palette.blue1,
+                        fg = "#88C0D0",
 
                     }
 
