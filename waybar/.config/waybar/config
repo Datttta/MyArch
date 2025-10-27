@@ -3,7 +3,7 @@
   "layer": "top",
   "position": "top",
   "margin-top": 3,
-  "modules-left": ["custom/launcher", "clock", "image#anki_icon", "image#Memhack_icon", "tray"],
+  "modules-left": ["custom/launcher", "clock", "image#Memhack_icon", "image#anki_icon", "tray"],
   "modules-center": ["hyprland/workspaces", "custom/media"],
   "modules-right": ["network", "cpu", "memory", "custom/aur", "custom/pacman"],
 
