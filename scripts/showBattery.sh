@@ -3,5 +3,4 @@
 bluetoothctl << EOF
 info
 EOF
-read -p "Press enter to close..."
-
+read -n1 -s -r -p "Press any key to close..."
