@@ -1,24 +1,40 @@
 [Colors:Button]
-BackgroundNormal=45,45,45
 BackgroundAlternate=40,40,40
+BackgroundNormal=45,45,45
 ForegroundNormal=220,220,220
 
 [Colors:Selection]
-BackgroundNormal=64,64,64
 BackgroundAlternate=72,72,72
+BackgroundNormal=64,64,64
 ForegroundNormal=255,255,255
 
 [Colors:View]
-BackgroundNormal=36,36,36
 BackgroundAlternate=40,40,40
+BackgroundNormal=36,36,36
 ForegroundNormal=220,220,220
 
 [Colors:Window]
-BackgroundNormal=30,30,30
 BackgroundAlternate=35,35,35
+BackgroundNormal=30,30,30
 ForegroundNormal=220,220,220
 
 [General]
 ColorScheme=Colloid-Grey-Darker
 contrast=4
-EOF
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort hidden files last=false
+Sort reversed=false
+Speedbar Width=154
+View Style=DetailTree
