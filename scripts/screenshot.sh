@@ -7,7 +7,7 @@ grim -g "$(slurp)" "$TMP_FILE" || { rm "$TMP_FILE"; exit 1; }
 
 # Ask for the save location and filename after the screenshot is taken.
 # The default filename is now based on the current date and time.
-DEFAULT_FILENAME="screenshot-$(date '+%Y-%m-%d-%H%M%S').png"
+DEFAULT_FILENAME="Screenshot-$(date '+%Y-%m-%d-%H%M%S').png"
 FILE="$(zenity --file-selection --save --confirm-overwrite --filename=$HOME/Pictures/$DEFAULT_FILENAME)" 
 
 # If the user cancels the save dialog, clean up the temporary file and exit.

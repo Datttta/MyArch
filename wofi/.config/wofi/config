@@ -6,4 +6,4 @@ always_parse_args=true
 show_all=false
 print_command=true
 width=700
-height=445
+height=350
