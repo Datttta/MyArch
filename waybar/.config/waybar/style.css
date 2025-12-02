@@ -4,11 +4,10 @@
 /* @define-color color15 @color14; change the color it to @color15 or @color7 to meke it white | @color5 is recomended for one color */ 
 
 * {
-    font-family: 'Radio Canada Big', sans-serif;
+    font-family: "LiterationMono Nerd Font";
     font-weight: bold;
     font-size: 15.2px;
     border-radius: 10px;
-    padding: 2px 3px; /* top, right, bottom, left COOL SIZE*/
 }
 
 window#waybar {
@@ -17,38 +16,42 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @foreground;
+    color: @color2;
 }
 
 #workspaces {
     background-color: alpha(@background, 0.8);
     padding: 0px 10.4px 0px 5px; /* top, right, bottom, left */
     border-radius: 15;
+    padding: 1px 6px 1px 6px;
+    border-radius: 10px;
+    border: 1px solid alpha(@color6, 1)
+
 }
 
-.modules-left {
-    margin-left: 12px;    
+#workspaces button {
+	color: @color6;
+   	box-shadow: none;
+	text-shadow: none;
+   	padding: 0px;
+   	border-radius: 9px;
+   	padding-left: 4px;
+   	padding-right: 4px;
+   	animation: gradient_f 20s ease-in infinite;
+   	transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
+.modules-left,
 .modules-right {
-    margin-right: 12px;    
-}
-
-#battery,
-
-#backlight {
-    color: @color15; /* color13 */
     background-color: alpha(@background, 0.8); /* background */
-    margin: 0 0px 0 0px;
-    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
-    border-radius: 15;
+    padding: 1px 6px 1px 6px;
+    border-radius: 10px;
+    border: 1px solid alpha(@color6, 1)
 }
 
 #pulseaudio {
     color: @color15; /* color4 */
-    background-color: alpha(@background, 0.8); /* background */
     margin: 0 5px 0 0px;
-    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
 }
 
@@ -57,82 +60,51 @@ window#waybar {
     padding: 0px 0px;
 }
 
-#network {
-    color: @color15; /* color2 */
+#custom-media {
+    color: @color6; /* color10 */
+    margin: 0 0px 0 15px;
     background-color: alpha(@background, 0.8); /* background */
-    margin: 0 5px 0 0px;
-    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
-    border-radius: 15;
-}
-
-#custom-weather {
-    color: @color15; /* color5 */
-    background-color: alpha(@background, 0.8); /* background */
-    margin: 0 5px 0 0px;
-    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
-    border-radius: 15;
-}
-
-#clock {
-    color: @color15; /* color3 */
-    background-color: alpha(@background, 0.8); /* background */
-    margin: 0 5px 0 0;
-    padding: 0px 17px 0px 17px;
-    border-radius: 15;
+    padding: 1px 10px 1px 10px;
+    border-radius: 10px;
+    border: 1px solid alpha(@color6, 1)
 }
 
 #custom-launcher {
     color: @color15;
-    background-color: alpha(@background, 0.8);
     margin: 0 5px 0 0px;
-    padding: 0 22px 0 16px;
     border-radius: 25;
-}
-
-#cpu {
-    color: @color15;
-    background-color: alpha(@background, 0.8);
-    margin: 0 5px 0 0px;
-    padding: 0 23.4px 0 19px; /* top, right, bottom, left */
-    border-radius: 15;
-}
-
-#memory {
-    color: @color15;
-    background-color: alpha(@background, 0.8);
-    margin: 0 5px 0 0px;
-    padding: 0 22px 0 18px;
-    border-radius: 15;
+    font-size: 13px;
 }
 
 #custom-pacman {
-    color: @color15; /* color1 (previously color8) */
-    background-color: alpha(@background, 0.8); /* background */
+    color: @color6; /* color1 (previously color8) */
     margin: 0 0px 0 0px;
-    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
     border-radius: 15;
+    font-size: 13px;
 }
 
-#custom-aur {
-    color: @color15; /* color1 (previously color8) */
-    background-color: alpha(@background, 0.8); /* background */
-    margin: 0 5px 0 0px;
-    padding: 0px 21px 0px 18px; /* top, right, bottom, left */
+#cpu,
+
+#network,
+
+#custom-weather,
+
+#clock, 
+
+#memory, 
+
+#battery{
+    color: @color1; /* color13 */
+    margin: 0 7px 0 7px;
     border-radius: 15;
+    font-size: 13px;
 }
+
+#custom-aur,
 
 #backlight {
-    color: @color15; /* color6 */
-    background-color: alpha(@background, 0.8); /* background */
-    margin: 0 5px 0 0px;
-    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
+    color: @color6; /* color13 */
+    margin: 0 7px 0 7px;
     border-radius: 15;
-}
-
-#custom-media {
-    color: @color15; /* color10 */
-    background-color: alpha(@background, 0.8); /* background */
-    margin: 0 0px 0 15px;
-    padding: 0px 17px 0px 17px; /* top, right, bottom, left */
-    border-radius: 15;
+    font-size: 13px;
 }
