@@ -16,7 +16,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @color2;
+    color: @foreground;
 }
 
 #workspaces {
@@ -29,22 +29,10 @@ window#waybar {
 
 }
 
-#workspaces button {
-	color: @color6;
-   	box-shadow: none;
-	text-shadow: none;
-   	padding: 0px;
-   	border-radius: 9px;
-   	padding-left: 4px;
-   	padding-right: 4px;
-   	animation: gradient_f 20s ease-in infinite;
-   	transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
 .modules-left,
 .modules-right {
-    background-color: alpha(@background, 0.8); /* background */
-    padding: 1px 6px 1px 6px;
+    background-color: alpha(@background, 1); /* background */
+    padding: 5px 6px;
     border-radius: 10px;
     border: 1px solid alpha(@color6, 1)
 }
@@ -61,7 +49,7 @@ window#waybar {
 }
 
 #custom-media {
-    color: @color6; /* color10 */
+    color: @color15; /* color10 */
     margin: 0 0px 0 15px;
     background-color: alpha(@background, 0.8); /* background */
     padding: 1px 10px 1px 10px;
@@ -73,17 +61,19 @@ window#waybar {
     color: @color15;
     margin: 0 5px 0 0px;
     border-radius: 25;
-    font-size: 13px;
+    font-size:13px;
 }
 
 #custom-pacman {
-    color: @color6; /* color1 (previously color8) */
+    color: @color15; /* color1 (previously color8) */
     margin: 0 0px 0 0px;
     border-radius: 15;
-    font-size: 13px;
+    font-size:13px;
 }
 
 #cpu,
+
+#custom-aur,
 
 #network,
 
@@ -93,18 +83,11 @@ window#waybar {
 
 #memory, 
 
-#battery{
-    color: @color1; /* color13 */
-    margin: 0 7px 0 7px;
-    border-radius: 15;
-    font-size: 13px;
-}
-
-#custom-aur,
+#battery,
 
 #backlight {
-    color: @color6; /* color13 */
-    margin: 0 7px 0 7px;
+    color: @color15; /* color13 */
+    margin: 0 10px 0 7px;
     border-radius: 15;
-    font-size: 13px;
+    font-size:13px;
 }
