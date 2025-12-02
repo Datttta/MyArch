@@ -20,7 +20,7 @@ window#waybar {
 }
 
 #workspaces {
-    background-color: alpha(@background, 0.8);
+    background-color: alpha(@background, 0.9);
     padding: 0px 10.4px 0px 5px; /* top, right, bottom, left */
     border-radius: 15;
     padding: 1px 6px 1px 6px;
@@ -31,7 +31,7 @@ window#waybar {
 
 .modules-left,
 .modules-right {
-    background-color: alpha(@background, 1); /* background */
+    background-color: alpha(@background, 0.9); /* background */
     padding: 5px 6px;
     border-radius: 10px;
     border: 1px solid alpha(@color6, 1)
@@ -51,7 +51,7 @@ window#waybar {
 #custom-media {
     color: @color15; /* color10 */
     margin: 0 0px 0 15px;
-    background-color: alpha(@background, 0.8); /* background */
+    background-color: alpha(@background, 0.9); /* background */
     padding: 1px 10px 1px 10px;
     border-radius: 10px;
     border: 1px solid alpha(@color6, 1)
