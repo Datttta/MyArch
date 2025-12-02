@@ -21,9 +21,8 @@ window#waybar {
 
 #workspaces {
     background-color: alpha(@background, 0.9);
-    padding: 0px 10.4px 0px 5px; /* top, right, bottom, left */
     border-radius: 15;
-    padding: 1px 6px 1px 6px;
+    padding: 1px 10px 1px 10px;
     border-radius: 10px;
     border: 1px solid alpha(@color6, 1)
 
@@ -60,7 +59,7 @@ window#waybar {
 
 #custom-launcher {
     color: @color15;
-    margin: 0 10px 0 5px;
+    margin: 0 3px 0 5px;
     border-radius: 25;
     font-size:13px;
 }
@@ -96,5 +95,5 @@ window#waybar {
     color: @color15; /* color13 */
     margin: 0 10px 0 10px;
     border-radius: 15;
-    font-size:13px;
+    font-size:13.5px;
 }
