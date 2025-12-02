@@ -5,7 +5,7 @@
   "margin-top": 3,
   "modules-left": ["custom/launcher", "clock", "image#Memhack_icon", "image#anki_icon", "tray"],
   "modules-center": ["hyprland/workspaces", "custom/media"],
-  "modules-right": ["network", "cpu", "memory", "custom/aur", "custom/pacman", "backlight"],
+  "modules-right": ["network", "cpu", "memory", "backlight", "custom/aur", "custom/pacman"],
 
   "tray": {
     "icon-size": 19,
@@ -25,7 +25,7 @@
   },
 
   "custom/aur": {
-  "format": "{} <span size='120%'></span>",
+  "format": "{} <span size='120%'>󱉚</span>",
   "interval": "once",
   "exec": "yay -Qua | wc -l",
   "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+9 waybar'",
@@ -33,7 +33,7 @@
   },
 
   "custom/pacman": {
-    "format": " {}  ",
+    "format": " {} <span size='120%'>󰏔 </span>",
     "interval": "once",
     "exec": "checkupdates | wc -l",
     "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+8 waybar'",
@@ -46,12 +46,12 @@
   },
 
   "memory": {
-    "format": "{}% ",
+    "format": "{}% ",
     "on-click": "kitty -e btop",
   },
 
   "custom/launcher": {
-    "format": "󰣇",
+    "format": "<span size='130%'>󰣇</span>",
     "on-click": "wlogout"
   },
 
@@ -102,9 +102,9 @@
     "format": "{ifname}",
     "format-wifi": "{icon}",
     "format-ethernet": "󰈀   {ipaddr}/{cidr}",
-    "format-disconnected": "󰤭   disconnected",
+    "format-disconnected": "󰖪  disconnected",
     "max-length": 50,
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", ""],
     "on-click": "kitty -e nmtui",
   },
 

@@ -1,6 +1,6 @@
 [Default]
-save_dir=/home/DROS/Pictures/Screenshots/Waybar examples
-save_filename_format=New-waybar.png
+save_dir=/home/DROS/Pictures/Screenshots/Desktop screenshots
+save_filename_format=Cyberpunk-New-waybar.png
 show_panel=false
 line_size=5
 text_size=20
