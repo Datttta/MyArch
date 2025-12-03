@@ -13,13 +13,13 @@
 
   "image#Memhack_icon": {
       "path": "/home/DROS/Pictures/Icons/Memhack.png",
-      "size": 22,
+      "size": 21,
       "on-click": "xdg-open https://memhack.fluency.io/home",
   },
 
   "image#anki_icon": {
       "path": "/usr/local/share/pixmaps/anki.xpm",
-      "size": 18, 
+      "size": 17, 
       "tooltip": "Launch Anki",
       "on-click": "anki"
   },
