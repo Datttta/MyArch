@@ -94,6 +94,12 @@ window#waybar {
     font-size:13.5px;
 }
 
+#temperature {
+    color: @color15; /* color13 */
+    margin: 0 2px 0 10px;
+    font-size:13.5px;
+}
+
 #image.anki_icon,
 
 #image.Memhack_icon {

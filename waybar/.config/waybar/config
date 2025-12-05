@@ -5,7 +5,7 @@
   "margin-top": 3,
   "modules-left": ["custom/launcher", "clock", "image#Memhack_icon", "image#anki_icon", "tray"],
   "modules-center": ["hyprland/workspaces", "custom/media"],
-  "modules-right": ["network", "cpu", "memory", "backlight", "custom/aur", "custom/pacman"],
+  "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "custom/aur", "custom/pacman"],
 
   "tray": {
     "icon-size": 19,
@@ -22,6 +22,14 @@
       "size": 17, 
       "tooltip": "Launch Anki",
       "on-click": "anki"
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C <span size='110%'></span>",
+    "format-critical": "{temperatureC}°C ",
+    "interval": 5
   },
 
   "custom/aur": {
