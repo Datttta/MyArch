@@ -103,10 +103,10 @@ window#waybar {
 #image.anki_icon,
 
 #image.Memhack_icon {
-    margin-left: 5px;    
+    margin: 0px 3px;    
 }
 
 #tray * {
-    margin: 0px 2px;
+    margin: 0px 3px;
 }
 
