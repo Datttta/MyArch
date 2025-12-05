@@ -83,8 +83,9 @@
   },
 
   "clock": {
-    "format-alt": "󰥔   {:%I:%M %p}",
-    "format": "{:%a %d/%b %I:%M%p}"
+    //"format-alt": "󰥔   {:%I:%M %p}",
+    "format": "{:%a %d/%b %I:%M%p}",
+    "on-click": "gnome-calendar"
   },
 
   "pulseaudio": {
