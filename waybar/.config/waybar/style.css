@@ -44,7 +44,7 @@ window#waybar {
     background-color: alpha(@foreground, 1);
     border-radius: 9px;
     margin: 4px 4px 4px 4px;
-    padding: 0px 11px;
+    padding: 0px 13px;
 }
 
 #pulseaudio {
