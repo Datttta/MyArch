@@ -5,7 +5,7 @@
   "margin-top": 3,
   "modules-left": ["custom/launcher", "clock", "image#Memhack_icon", "image#anki_icon", "tray"],
   "modules-center": ["hyprland/workspaces", "custom/media"],
-  "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "custom/aur", "custom/pacman"],
+  "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "group/expand"],
 
   "tray": {
     "icon-size": 19,
@@ -24,17 +24,28 @@
       "on-click": "anki"
   },
 
-  "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-    "critical-threshold": 80,
-    "format": "{temperatureC}°C <span size='110%'></span>",
-    "format-critical": "{temperatureC}°C ",
-    "interval": 5
-  },
+  "group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 600,
+        "transition-to-left": true,
+        "click-to-reveal": false,
+        "hover-to-reveal": true
+    },
+    "modules": ["custom/expand", "custom/flatpak", "custom/pacman", "custom/aur"],
+    },
+
+    "custom/expand": {
+        "tooltip": false,
+        "exec": "~/.config/waybar/scripts/Check-update.sh",
+        "format": "{}",
+        "interval": 60,
+        "signal": [8, 9, 7],
+    },
 
   "custom/aur": {
-  "format": "{} <span size='120%'>󱉚</span>",
-  "interval": "once",
+  "format": "{} <span size='120%'>󱑢</span>",
+  "interval": 3600,
   "exec": "yay -Qua | wc -l",
   "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+9 waybar'",
   "signal": 9
@@ -42,10 +53,26 @@
 
   "custom/pacman": {
     "format": " {} <span size='120%'>󰏔 </span>",
-    "interval": "once",
+    "interval": 3600,
     "exec": "checkupdates | wc -l",
     "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+8 waybar'",
     "signal": 8
+  },
+
+  "custom/flatpak": {
+    "format": " {} <span size='120%'>󱉚</span>",
+    "interval": 3600,
+    "exec": "flatpak remote-ls --updates | wc -l",
+    "on-click": "kitty -e sh -c 'flatpak update; pkill -SIGRTMIN+7 waybar'",
+    "signal": 7
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C <span size='110%'></span>",
+    "format-critical": "{temperatureC}°C ",
+    "interval": 5
   },
 
   "cpu": {

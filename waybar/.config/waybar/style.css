@@ -35,7 +35,6 @@ window#waybar {
     margin: 4px 4px;
     border-radius: 400px;
     padding: 0px 0px;
-    color: alpha(@foreground, 0.8);
     background-color: alpha(@foreground, 0.8);
     min-height: 0;
 }
@@ -65,24 +64,43 @@ window#waybar {
 
 #custom-launcher {
     color: @color15;
-    margin: 0px 3px 0px 5px;
+    margin: 0px 3px 0px 4px;
     border-radius: 25px;
     font-size:13px;
 }
 
 #custom-pacman {
     color: @color15; /* color1 (previously color8) */
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 1.5px;
     border-radius: 15px;
     font-size:13px;
 }
 
 #custom-aur{
     color: @color15; /* color1 (previously color8) */
-    margin: 0px 5px 0px 0px;
+    margin: 0px 7px 0px 0px;
     border-radius: 15px;
     font-size:13px;
 
+}
+
+#custom-flatpak {
+    color: @color15; /* color1 (previously color8) */
+    border-radius: 15px;
+    font-size:13px;
+}
+
+#custom-expand{
+    padding: 0px 5px 0px 2px;
+    color:alpha(@color15,1);
+    transition: all .3s ease;
+    margin: 0px 0px 2px 0px;
+}
+
+#temperature {
+    color: @color15; /* color13 */
+    margin: 0px 2px 0px 10px;
+    font-size:13.5px;
 }
 
 #cpu,
@@ -101,12 +119,6 @@ window#waybar {
     color: @color15; /* color13 */
     margin: 0px 10px 0px 10px;
     border-radius: 15px;
-    font-size:13.5px;
-}
-
-#temperature {
-    color: @color15; /* color13 */
-    margin: 0px 2px 0px 10px;
     font-size:13.5px;
 }
 
