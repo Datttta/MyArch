@@ -117,16 +117,22 @@
     "on-click": "kitty -e nmtui",
   },
 
-  "hyprland/workspaces": {
-    "format": "{icon}",
+"hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
     "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{icon}",
     "format-icons": {
-      "urgent": "󰀨",
-      "active": "",
-      "default": ""
+      "urgent": "",
+      "active": "",
+      "default": ""
     },
 
     "sort-by-number": true
+  },
+
   },
 
   "backlight": {
