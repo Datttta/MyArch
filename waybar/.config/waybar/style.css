@@ -6,8 +6,7 @@
 * {
     font-family: "LiterationMono Nerd Font";
     font-weight: bold;
-    font-size: 15.2px;
-    min-height: 20px;
+    font-size: 10px;
 }
 
 window#waybar {
@@ -15,9 +14,19 @@ window#waybar {
     color: alpha(@background, 0.8); /* last number control the opacity */
 }
 
+.modules-left,
+.modules-right {
+    margin: 0px 3px;
+    background-color: alpha(@background, 0.9); /* background */
+    padding: 0px 4px;
+    border-radius: 10px;
+    border: 1px solid alpha(@color6, 1)
+}
+
+
 #workspaces {
     background-color: alpha(@background, 0.9);
-    padding: 1px 6px;
+    padding: 5px 6px;
     border-radius: 10px;
     border: 1px solid alpha(@color6, 1)
 }
@@ -32,20 +41,10 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: alpha(@foreground, 0.9);
-    background-color: alpha(@foreground, 0.9);
+    background-color: alpha(@foreground, 1);
     border-radius: 9px;
     margin: 4px 4px 4px 4px;
     padding: 0px 11px;
-}
-
-.modules-left,
-.modules-right {
-    margin: 0px 3px;
-    background-color: alpha(@background, 0.9); /* background */
-    padding: 0px 6px;
-    border-radius: 10px;
-    border: 1px solid alpha(@color6, 1)
 }
 
 #pulseaudio {
@@ -120,4 +119,3 @@ window#waybar {
 #tray * {
     margin: 0px 3px;
 }
-
