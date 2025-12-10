@@ -138,7 +138,7 @@
     "format": "{ifname}",
     "format-wifi": "{icon}",
     "format-ethernet": "󰈀   {ipaddr}/{cidr}",
-    "format-disconnected": "󰖪  disconnected",
+    "format-disconnected": "󰖪",
     "max-length": 50,
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", ""],
     "on-click": "kitty -e nmtui",

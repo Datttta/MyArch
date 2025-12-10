@@ -71,7 +71,7 @@ window#waybar {
 
 #custom-pacman {
     color: @color15; /* color1 (previously color8) */
-    margin: 0px 0px 0px 1.5px;
+    margin: 0px 3px 0px 1.5px;
     border-radius: 15px;
     font-size:13px;
 }
@@ -87,6 +87,7 @@ window#waybar {
 #custom-flatpak {
     color: @color15; /* color1 (previously color8) */
     border-radius: 15px;
+    margin: 0px 3px 0px 0px;
     font-size:13px;
 }
 
