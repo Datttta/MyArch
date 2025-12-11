@@ -78,7 +78,7 @@ window#waybar {
 
 #custom-aur{
     color: @color15; /* color1 (previously color8) */
-    margin: 0px 7px 0px 0px;
+    margin: 0px 10px 0px 0px;
     border-radius: 15px;
     font-size:13px;
 
@@ -93,7 +93,8 @@ window#waybar {
 
 #custom-expand{
     padding: 0px 5px 0px 2px;
-    color:alpha(@color15,1);
+    color: @color15;
+    font-size: 11px;
     transition: all .3s ease;
     margin: 0px 0px 2px 0px;
 }
