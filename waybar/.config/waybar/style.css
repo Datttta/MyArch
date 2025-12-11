@@ -94,7 +94,7 @@ window#waybar {
 #custom-expand{
     padding: 0px 5px 0px 2px;
     color: @color15;
-    font-size: 11px;
+    font-size: 10.5px;
     transition: all .3s ease;
     margin: 0px 0px 2px 0px;
 }
