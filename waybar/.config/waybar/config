@@ -5,7 +5,7 @@
   "margin-top": 3,
   "modules-left": ["custom/launcher", "clock", "image#Memhack_icon", "image#anki_icon", "tray"],
   "modules-center": ["hyprland/workspaces", "custom/media"],
-  "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "group/expand"],
+  "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "group/expand"],
 
   "tray": {
     "icon-size": 19,
@@ -22,6 +22,15 @@
       "size": 17, 
       "tooltip": "Launch Anki",
       "on-click": "anki"
+  },
+
+  "keyboard-state": {
+    "capslock": true,
+    "format": "{icon}",
+    "format-icons": {
+        "locked": "<span size='180%'>󱍳 </span>",
+        "unlocked": ""        
+    }
   },
 
   "group/expand": {

@@ -37,6 +37,7 @@ window#waybar {
     padding: 0px 0px;
     background-color: alpha(@foreground, 0.8);
     min-height: 0;
+    transition: all 0.15s ease-in-out;
 }
 
 #workspaces button.active {
@@ -44,6 +45,7 @@ window#waybar {
     border-radius: 9px;
     margin: 4px 4px 4px 4px;
     padding: 0px 13px;
+    transition: all 0.15s ease-in-out;
 }
 
 #pulseaudio {
@@ -96,13 +98,17 @@ window#waybar {
     color: @color15;
     font-size: 10.5px;
     transition: all .3s ease;
-    margin: 0px 0px 2px 0px;
+    margin: 0px 0px 3px 0px;
 }
 
 #temperature {
     color: @color15; /* color13 */
     margin: 0px 2px 0px 10px;
     font-size:13.5px;
+}
+
+#keyboard-state {
+    color: @color15
 }
 
 #cpu,
