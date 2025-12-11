@@ -19,7 +19,7 @@ window#waybar {
 .modules-right {
     margin: 0px 3px;
     background-color: alpha(@background, 0.9); /* background */
-    padding: 0px 4px;
+    padding: 0px 6px;
     border-radius: 10px;
     border: 1px solid alpha(@color14, 1)
 }
@@ -47,12 +47,6 @@ window#waybar {
     margin: 4px 4px 4px 4px;
     padding: 0px 13px;
     transition: all 0.15s ease-in-out;
-}
-
-#pulseaudio {
-    color: @color15; /* color4 */
-    margin: 0px 5px 0px 0px;
-    border-radius: 15px;
 }
 
 #custom-media {
@@ -112,9 +106,14 @@ window#waybar {
     color: @color15
 }
 
-#cpu,
+#network{
+    color: @color15; /* color13 */
+    margin: 0px 10px 0px 8px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
 
-#network,
+#cpu,
 
 #custom-weather,
 
