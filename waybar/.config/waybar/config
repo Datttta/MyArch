@@ -49,7 +49,6 @@
         "exec": "~/.config/waybar/scripts/Check-update.sh",
         "format": "{}",
         "interval": 60,
-        "signal": [8, 9, 7],
     },
 
   "custom/aur": {
