@@ -1,6 +1,6 @@
 [Default]
-save_dir=/home/DROS/Pictures/Screenshots
-save_filename_format=old_style.png
+save_dir=/home/DROS/Pictures/Screenshots/Desktop screenshots
+save_filename_format=Katarina2.png
 show_panel=false
 line_size=5
 text_size=20
