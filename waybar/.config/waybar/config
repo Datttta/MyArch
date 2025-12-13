@@ -54,7 +54,7 @@
   "custom/aur": {
   "format": "{} <span size='120%'>󱑢</span>",
   "interval": 3600,
-  "exec": "yay -Qua | wc -l",
+  "exec": "yay -Qua | wc -l; pkill -SIGRTMIN+10 waybar",
   "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+10 waybar'",
   "signal": 10
   },
@@ -62,7 +62,7 @@
   "custom/pacman": {
     "format": " {} <span size='120%'>󰏔 </span>",
     "interval": 3600,
-    "exec": "checkupdates | wc -l",
+    "exec": "checkupdates | wc -l; pkill -SIGRTMIN+10 wayba",
     "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+10 waybar'",
     "signal": 10
   },
@@ -70,7 +70,7 @@
   "custom/flatpak": {
     "format": " {} <span size='120%'>󱉚</span>",
     "interval": 3600,
-    "exec": "flatpak remote-ls --updates | wc -l",
+    "exec": "flatpak remote-ls --updates | wc -l; pkill -SIGRTMIN+10 wayba",
     "on-click": "kitty -e sh -c 'flatpak update; pkill -SIGRTMIN+10 waybar'",
     "signal": 10
   },
