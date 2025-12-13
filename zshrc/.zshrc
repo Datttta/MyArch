@@ -5,7 +5,7 @@
 # fastfetch with cutom image:
 # fastfetch --kitty-direct /home/DROS/.config/fastfetch/Pictures/anime20width.png
 
-fastfetch --logo Arch2
+fastfetch
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
