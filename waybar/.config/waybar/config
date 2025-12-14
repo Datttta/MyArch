@@ -56,7 +56,6 @@
   "interval": 3600,
   "exec": "yay -Qua | wc -l; pkill -SIGRTMIN+10 waybar",
   "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+10 waybar'",
-  "signal": 10
   },
 
   "custom/pacman": {
@@ -64,7 +63,6 @@
     "interval": 3600,
     "exec": "checkupdates | wc -l; pkill -SIGRTMIN+10 waybar",
     "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+10 waybar'",
-    "signal": 10
   },
 
   "custom/flatpak": {
@@ -72,7 +70,6 @@
     "interval": 3600,
     "exec": "flatpak remote-ls --updates | wc -l; pkill -SIGRTMIN+10 waybar",
     "on-click": "kitty -e sh -c 'flatpak update; pkill -SIGRTMIN+10 waybar'",
-    "signal": 10
   },
 
   "temperature": {

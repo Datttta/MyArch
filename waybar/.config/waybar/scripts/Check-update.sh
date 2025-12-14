@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 2
+sleep 0.5
 PACMAN_UPDATES=$(checkupdates | wc -l)
 AUR_UPDATES=$(yay -Qua | wc -l)
 FLATPAK_UPDATES=$(flatpak remote-ls --updates | wc -l)
@@ -10,6 +10,8 @@ ALERT_ICON=" <span size='150%'>󰃘</span> !"
 
 if [ "$PACMAN_UPDATES" -gt 0 ] || [ "$AUR_UPDATES" -gt 0 ] || [ "$FLATPAK_UPDATES" -gt 0 ]; then
     echo "${ALERT_ICON}"
+    notify-send "joão botou melao no gol"
 else
     echo "${EXPAND_ICON}"
+    notify-send "No goool"
 fi
