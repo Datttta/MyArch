@@ -15,9 +15,6 @@ rtp:prepend(lazypath)
 
 require("lazy").setup({
 	require("plugins.neotree"),
-	require("plugins.tokyo-night"),
-	-- require("plugins.colortheme"),
-	-- require("plugins.colorthemeCat"),
 	require("plugins.bufferline"),
 	require("plugins.lualine"),
 	require("plugins.treesitter"),
@@ -34,4 +31,8 @@ require("lazy").setup({
 	require("plugins.image-clip"),
 	require("plugins.markdown-preview"),
 	require("plugins.colorizer"),
+	require("plugins.tokyo-night"),
+	-- require("plugins.colortheme"),
+	-- require("plugins.colorthemeCat"),
+
 })

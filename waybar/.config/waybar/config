@@ -8,13 +8,13 @@
   "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "group/expand"],
 
   "tray": {
-    "icon-size": 19,
+    "icon-size": 19
   },
 
   "image#Memhack_icon": {
       "path": "/home/DROS/Pictures/Icons/Memhack.png",
       "size": 21,
-      "on-click": "xdg-open https://memhack.fluency.io/home",
+      "on-click": "xdg-open https://memhack.fluency.io/home"
   },
 
   "image#anki_icon": {
@@ -41,36 +41,36 @@
         "click-to-reveal": false,
         "hover-to-reveal": true
     },
-    "modules": ["custom/expand", "custom/flatpak", "custom/pacman", "custom/aur"],
+    "modules": ["custom/expand", "custom/flatpak", "custom/pacman", "custom/aur"]
     },
 
     "custom/expand": {
         "tooltip": false,
         "exec": "~/.config/waybar/scripts/Check-update.sh",
         "format": "{}",
-        "interval": "once",
+        "interval": 10,
         "signal": 10
     },
 
   "custom/aur": {
   "format": "{} <span size='120%'>󱑢</span>",
-  "interval": 3600,
-  "exec": "yay -Qua | wc -l; pkill -SIGRTMIN+10 waybar",
-  "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+10 waybar'",
+  "exec": "yay -Qua | wc -l;",
+  "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+1 waybar'",
+  "signal": 1
   },
 
   "custom/pacman": {
     "format": " {} <span size='120%'>󰏔 </span>",
-    "interval": 3600,
-    "exec": "checkupdates | wc -l; pkill -SIGRTMIN+10 waybar",
-    "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+10 waybar'",
+    "exec": "checkupdates | wc -l",
+    "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+1 waybar'",
+    "signal": 1
   },
 
   "custom/flatpak": {
     "format": " {} <span size='120%'>󱉚</span>",
-    "interval": 3600,
-    "exec": "flatpak remote-ls --updates | wc -l; pkill -SIGRTMIN+10 waybar",
-    "on-click": "kitty -e sh -c 'flatpak update; pkill -SIGRTMIN+10 waybar'",
+    "exec": "flatpak remote-ls --updates | wc -l",
+    "on-click": "kitty -e sh -c 'flatpak update; pkill -SIGRTMIN+1 waybar'",
+    "signal": 1
   },
 
   "temperature": {
@@ -83,12 +83,12 @@
 
   "cpu": {
     "format": "{usage}% ",
-    "on-click": "kitty -e btop",
+    "on-click": "kitty -e btop"
   },
 
   "memory": {
     "format": "{}% ",
-    "on-click": "kitty -e btop",
+    "on-click": "kitty -e btop"
   },
 
   "custom/launcher": {
@@ -147,7 +147,7 @@
     "format-disconnected": "󰖪",
     "max-length": 50,
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", ""],
-    "on-click": "kitty -e nmtui",
+    "on-click": "kitty -e nmtui"
   },
 
    "hyprland/workspaces": {
