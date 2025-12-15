@@ -15,8 +15,9 @@ rtp:prepend(lazypath)
 
 require("lazy").setup({
 	require("plugins.neotree"),
-	require("plugins.colortheme"),
-	--	require("plugins.colorthemeCat"),
+	require("plugins.tokyo-night"),
+	-- require("plugins.colortheme"),
+	-- require("plugins.colorthemeCat"),
 	require("plugins.bufferline"),
 	require("plugins.lualine"),
 	require("plugins.treesitter"),

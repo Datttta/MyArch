@@ -10,6 +10,7 @@ ALERT_ICON=" <span size='150%'>󰃘</span> !"
 
 if [ "$PACMAN_UPDATES" -gt 0 ] || [ "$AUR_UPDATES" -gt 0 ] || [ "$FLATPAK_UPDATES" -gt 0 ]; then
     echo "${ALERT_ICON}"
+    notify-send "Vai ser grande o Chororô"
 else
     echo "${EXPAND_ICON}"
 fi

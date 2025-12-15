@@ -37,12 +37,11 @@ return {
     }
 
     -- Import color theme based on environment variable NVIM_THEME
-    local env_var_nvim_theme = os.getenv 'NVIM_THEME' or 'nordic'
+    local env_var_nvim_theme = os.getenv 'NVIM_THEME' or 'tokyonight'
 
     -- Define a table of themes
     local themes = {
       onedark = onedark_theme,
-      nordic = 'nordic',
     }
 
     local mode = {
