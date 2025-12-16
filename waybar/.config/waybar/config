@@ -48,8 +48,8 @@
         "tooltip": false,
         "exec": "~/.config/waybar/scripts/Check-update.sh",
         "format": "{}",
-        "interval": 10,
-        "signal": 10
+        "interval": 7200,
+        "signal": 1
     },
 
   "custom/aur": {

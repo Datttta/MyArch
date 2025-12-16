@@ -1,68 +1,68 @@
 return {
-   'nvimtools/none-ls.nvim',
-   dependencies = {
-      'nvimtools/none-ls-extras.nvim',
-      'jayp0521/mason-null-ls.nvim', -- ensure dependencies are installed
-   },
-   config = function()
-      local null_ls = require 'null-ls'
-      local formatting = null_ls.builtins.formatting -- to setup formatters
-      local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+  'nvimtools/none-ls.nvim',
+  dependencies = {
+    'nvimtools/none-ls-extras.nvim',
+    'jayp0521/mason-null-ls.nvim', -- ensure dependencies are installed
+  },
+  config = function()
+    local null_ls = require 'null-ls'
+    local formatting = null_ls.builtins.formatting -- to setup formatters
+    local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
-      -- list of formatters & linters for mason to install
-      require('mason-null-ls').setup {
-         ensure_installed = {
-            'checkmake',
-            'prettier', -- ts/js formatter
-            'stylua', -- lua formatter
-            'eslint_d', -- ts/js linter
-            'shfmt',
-            'ruff',
-            'clang-format', -- C++ formatter
-            'clang-tidy', -- C++ linter / static analyzer
-            'cppcheck', -- C++ linter
-         },
-         -- auto-install configured formatters & linters (with null-ls)
-         automatic_installation = true,
-      }
+    -- list of formatters & linters for mason to install
+    require('mason-null-ls').setup {
+      ensure_installed = {
+        'checkmake',
+        'prettier', -- ts/js formatter
+        'stylua', -- lua formatter
+        'eslint_d', -- ts/js linter
+        'shfmt',
+        'ruff',
+        'clang-format', -- C++ formatter
+        'clang-tidy', -- C++ linter / static analyzer
+        'cppcheck', -- C++ linter
+      },
+      -- auto-install configured formatters & linters (with null-ls)
+      automatic_installation = true,
+    }
 
-      local sources = {
-         diagnostics.checkmake,
-         formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
-         formatting.stylua,
-         formatting.shfmt.with { args = { '-i', '4' } },
-         formatting.terraform_fmt,
-         require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
-         require 'none-ls.formatting.ruff_format',
-      }
+    local sources = {
+      diagnostics.checkmake,
+      formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
+      formatting.stylua,
+      formatting.shfmt.with { args = { '-i', '4' } },
+      formatting.terraform_fmt,
+      require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
+      require 'none-ls.formatting.ruff_format',
+    }
 
-      -- No need for the augroup and BufWritePre autocommand if you're removing format on save
-      -- local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
+    -- No need for the augroup and BufWritePre autocommand if you're removing format on save
+    -- local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
-      null_ls.setup {
-         -- debug = true, -- Enable debug mode. Inspect logs with :NullLsLog.
-         sources = sources,
-         -- you can reuse a shared lspconfig on_attach callback here
-         on_attach = function(client, bufnr)
-            -- Remove the BufWritePre autocommand here
-            -- if client:supports_method 'textDocument/formatting' then
-            --   vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-            --   vim.api.nvim_create_autocmd('BufWritePre', {
-            --     group = augroup,
-            --     buffer = bufnr,
-            --     callback = function()
-            --       vim.lsp.buf.format { async = false }
-            --     end,
-            --   })
-            -- end
+    null_ls.setup {
+      -- debug = true, -- Enable debug mode. Inspect logs with :NullLsLog.
+      sources = sources,
+      -- you can reuse a shared lspconfig on_attach callback here
+      on_attach = function(client, bufnr)
+        -- Remove the BufWritePre autocommand here
+        -- if client:supports_method 'textDocument/formatting' then
+        --   vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+        --   vim.api.nvim_create_autocmd('BufWritePre', {
+        --     group = augroup,
+        --     buffer = bufnr,
+        --     callback = function()
+        --       vim.lsp.buf.format { async = false }
+        --     end,
+        --   })
+        -- end
 
-            -- Set up a keybinding for manual formatting
-            if client:supports_method 'textDocument/formatting' then
-               vim.keymap.set('n', '<leader>fm', function()
-                  vim.lsp.buf.format { async = true } -- 'async = true' is generally preferred for manual triggers
-               end, { buffer = bufnr, desc = 'Format current buffer (with null-ls)' })
-            end
-         end,
-      }
-   end,
+        -- Set up a keybinding for manual formatting
+        if client:supports_method 'textDocument/formatting' then
+          vim.keymap.set('n', '<leader>fm', function()
+            vim.lsp.buf.format { async = true } -- 'async = true' is generally preferred for manual triggers
+          end, { buffer = bufnr, desc = 'Format current buffer (with null-ls)' })
+        end
+      end,
+    }
+  end,
 }
