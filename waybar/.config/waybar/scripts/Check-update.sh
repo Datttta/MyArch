@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 1
+sleep 5
 PACMAN_UPDATES=$(checkupdates | wc -l)
 AUR_UPDATES=$(yay -Qua | wc -l)
 FLATPAK_UPDATES=$(flatpak remote-ls --updates | wc -l)
