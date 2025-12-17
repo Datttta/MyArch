@@ -38,13 +38,36 @@ return {
 
       local after = vim.api.nvim_buf_get_lines(buf, row - 1, row, false)[1]
 
+      -- Only act when task was just Completed
       if before and after and not before:match '%[X%]' and after:match '%[X%]' then
         -- Remove original line
         vim.api.nvim_buf_set_lines(buf, row - 1, row, false, {})
 
-        local last = vim.api.nvim_buf_line_count(buf)
+        local line_count = vim.api.nvim_buf_line_count(buf)
+        local Completed_header_line = nil
 
-        for i = row, last do
+        -- 1. Find "== Completed ==" header
+        for i = 1, line_count do
+          local line = vim.api.nvim_buf_get_lines(buf, i - 1, i, false)[1]
+          if line == '== Completed ==' then
+            Completed_header_line = i
+            break
+          end
+        end
+
+        -- 2. If header not found, append it at end
+        if not Completed_header_line then
+          vim.api.nvim_buf_set_lines(buf, line_count, line_count, false, {
+            '',
+            '== Completed ==',
+            '',
+          })
+          Completed_header_line = line_count + 2
+          line_count = vim.api.nvim_buf_line_count(buf)
+        end
+
+        -- 3. Find first empty line AFTER "== Completed =="
+        for i = Completed_header_line + 1, line_count do
           local line = vim.api.nvim_buf_get_lines(buf, i - 1, i, false)[1]
           if line == '' then
             vim.api.nvim_buf_set_lines(buf, i - 1, i - 1, false, { after })
@@ -53,12 +76,11 @@ return {
           end
         end
 
-        -- No empty line: append
-        vim.api.nvim_buf_set_lines(buf, last, last, false, { '', after })
+        -- 4. No empty line found → append at end
+        vim.api.nvim_buf_set_lines(buf, line_count, line_count, false, { '', after })
         vim.api.nvim_win_set_cursor(0, cursor)
       end
     end
-
     ----------------------------------------------------------------------
     -- FileType autocmd
     ----------------------------------------------------------------------
