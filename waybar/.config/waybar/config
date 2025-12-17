@@ -48,7 +48,7 @@
         "tooltip": false,
         "exec": "~/.config/waybar/scripts/Check-update.sh",
         "format": "{}",
-        "interval": 7200,
+        "interval": 10,
         "signal": 1
     },
 
@@ -56,6 +56,7 @@
   "format": "{} <span size='120%'>󱑢</span>",
   "exec": "yay -Qua | wc -l;",
   "on-click": "kitty -e sh -c 'yay -Syua; pkill -SIGRTMIN+1 waybar'",
+  "interval": "once",
   "signal": 1
   },
 
@@ -63,6 +64,7 @@
     "format": " {} <span size='120%'>󰏔 </span>",
     "exec": "checkupdates | wc -l",
     "on-click": "kitty -e sh -c 'sudo pacman -Syu; pkill -SIGRTMIN+1 waybar'",
+    "interval": "once",
     "signal": 1
   },
 
@@ -70,6 +72,7 @@
     "format": " {} <span size='120%'>󱉚</span>",
     "exec": "flatpak remote-ls --updates | wc -l",
     "on-click": "kitty -e sh -c 'flatpak update; pkill -SIGRTMIN+1 waybar'",
+    "interval": "once",
     "signal": 1
   },
 

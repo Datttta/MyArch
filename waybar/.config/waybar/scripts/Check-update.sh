@@ -10,7 +10,8 @@ ALERT_ICON=" <span size='150%'>󰃘</span> !"
 if [ "$PACMAN_UPDATES" -gt 0 ] || [ "$AUR_UPDATES" -gt 0 ] || [ "$FLATPAK_UPDATES" -gt 0 ]; then
     pkill -SIGRTMIN+1 waybar
     echo "${ALERT_ICON}"
+    notify-send "AAAAAAAAAAAAlerta"
 else
-
+    notify-send "Nada"
     echo "${EXPAND_ICON}"
 fi
