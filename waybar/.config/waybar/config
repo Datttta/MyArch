@@ -48,7 +48,7 @@
         "tooltip": false,
         "exec": "~/.config/waybar/scripts/Check-update.sh",
         "format": "{}",
-        "interval": 7200,
+        "interval": 14400, // 4 hours
         "signal": 2
     },
 
