@@ -12,7 +12,6 @@
     },
     "modules": [
         "break",
-        "break",
         {
             "type": "custom",
             "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
@@ -105,7 +104,7 @@
         {
             "type": "colors",
             "paddingLeft": 2,
-            "symbol": "diamond" 
+            "symbol": "block" 
         },
 
         "break",
