@@ -68,7 +68,7 @@ window#waybar {
 
 #custom-pacman {
     color: @color15; /* color1 (previously color8) */
-    margin: 0px 3px 0px 3px;
+    margin: 0px 4px;
     border-radius: 15px;
     font-size:13px;
 }

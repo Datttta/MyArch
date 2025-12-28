@@ -3,7 +3,7 @@ return {
    lazy = false,
    priority = 1000,
    config = function()
-      local is_transparent = false
+      local is_transparent = true
 
       local function load_tokyonight()
          require('tokyonight').setup {
