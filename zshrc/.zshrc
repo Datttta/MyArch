@@ -17,16 +17,6 @@ fi
 #editor:
 export EDITOR="nvim"
 
-#for AMD 
-#export DRI_PRIME=1 doesn't open steam
-
-#intel 
-export DRI_PRIME=0
-
-#trash for nnn
-#export NNN_TRASH=1
-export NNN_PLUG='t:trash'
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
