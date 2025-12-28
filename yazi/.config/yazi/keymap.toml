@@ -47,5 +47,9 @@ prepend_keymap = [
   { on = [ ",", "S" ], run = [ "sort size --reverse", "linemode size", "plugin pref-by-location -- save" ],      desc = "Sort by size (reverse)" },
   { on = [ ",", "r" ], run = [ "sort random --reverse=no", "plugin pref-by-location -- save" ],                  desc = "Sort randomly" },
 
+  # Closing current tab
   { on = "<C-x>", run = "close", desc = "Close the current tab, or quit if it's last" },
+
+  # Mount manager
+  { on  = "M", run = "plugin mount" },
 ]
