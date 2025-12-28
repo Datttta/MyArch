@@ -52,4 +52,6 @@ prepend_keymap = [
 
   # Mount manager
   { on  = "M", run = "plugin mount" },
+
+  { on = [ "e" ], run = 'shell "sudo -E nvim \"$@\"" --block --confirm', desc = "Sudo nvim" }
 ]
