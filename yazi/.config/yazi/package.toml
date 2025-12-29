@@ -28,6 +28,11 @@ use = "yazi-rs/plugins:mount"
 rev = "7ca66b4"
 hash = "4fccaaf10c36dc2466e2438a386ff017"
 
+[[plugin.deps]]
+use = "KKV9/command"
+rev = "4762ecc"
+hash = "65fff40a0060fe4b1c42d49d29f770fd"
+
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
 rev = "5f56364"
