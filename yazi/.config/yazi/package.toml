@@ -19,14 +19,19 @@ rev = "c264639"
 hash = "e17c11b605d989568a1d1741ca17c584"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:mount"
-rev = "7ca66b4"
-hash = "4fccaaf10c36dc2466e2438a386ff017"
-
-[[plugin.deps]]
 use = "KKV9/command"
 rev = "4762ecc"
 hash = "65fff40a0060fe4b1c42d49d29f770fd"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "57f1863"
+hash = "e2d4bfccf31e5ab05f46fee4797c5215"
+
+[[plugin.deps]]
+use = "boydaihungst/gvfs"
+rev = "d9e3e0d"
+hash = "3768782f4ecce890d79628cafdcdfa5f"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
