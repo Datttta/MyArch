@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+
 [ -z "$HYPRLAND_INSTANCE_SIGNATURE" ] && export HYPRLAND_INSTANCE_SIGNATURE=$(ls -1t $XDG_RUNTIME_DIR/hypr /tmp/hypr 2>/dev/null | grep '_' | head -n 1)
 ACTION=$1
 HYPR="/usr/bin/hyprctl"
@@ -17,6 +18,5 @@ if [ "$ACTION" = "start" ]; then
 elif [ "$ACTION" = "end" ]; then
     $HYPR keyword monitor eDP-1,1920x1080@60,0x0,1
     $HYPR reload
-    export WAYLAND_DISPLAY=wayland-0
-    pgrep -x waybar >/dev/null || waybar &
+    $HYPR dispatch exec waybar
 fi
