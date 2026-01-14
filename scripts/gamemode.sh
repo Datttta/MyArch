@@ -17,6 +17,7 @@ if [ "$ACTION" = "start" ]; then
 
 elif [ "$ACTION" = "end" ]; then
     $HYPR keyword monitor eDP-1,1920x1080@60,0x0,1
+    sleep 1
     $HYPR reload
     $HYPR dispatch exec waybar
 fi
