@@ -112,8 +112,6 @@ window#waybar {
     font-size:13.5px;
 }
 
-#cpu,
-
 #custom-weather,
 
 #clock, 
@@ -125,6 +123,13 @@ window#waybar {
 #backlight {
     color: @color15; /* color13 */
     margin: 0px 10px 0px 10px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
+#cpu {
+    color: @color15; /* color13 */
+    margin: 0px 6px 0px 10px;
     border-radius: 15px;
     font-size:13.5px;
 }
