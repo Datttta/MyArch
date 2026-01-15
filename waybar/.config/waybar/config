@@ -25,12 +25,14 @@
   },
 
   "keyboard-state": {
-    "capslock": true,
-    "format": "{icon}",
-    "format-icons": {
-        "locked": "<span size='180%'>󱍳 </span>",
-        "unlocked": ""        
-    }
+      "numlock": false,
+      "capslock": true,
+      "format": "{icon}",
+      "device-path": "/dev/input/by-id/usb-SZH_usb_keyboard-event-kbd",
+      "format-icons": {
+          "locked": "<span size='180%'>󱍳 </span>",
+          "unlocked": ""
+      }
   },
 
   "group/trays": {
