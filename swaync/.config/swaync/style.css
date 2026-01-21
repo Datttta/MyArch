@@ -55,7 +55,7 @@
 }
 
 .notification-content {
-    margin: 0;
+    margin: 0px 0px 0px 6px;
     box-shadow: none;
     border: none;
 }
