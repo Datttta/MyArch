@@ -20,7 +20,6 @@
 @define-color main @color0;
 @define-color mycolor @color14;
 
-/* Rest of the CSS remains the same */
 .notification-row {
     outline: none;
     margin:0;
@@ -139,6 +138,7 @@
 .body {
     font-size: small;
 }
+
 /* control-center ====================================== */
 .control-center {
     background: alpha(@cc-bg, .55);
@@ -155,7 +155,8 @@
 .floating-notifications {
     background: transparent;
 }
- /* Buttons menu ========================================= */
+
+/* Buttons menu ========================================= */
 .widget-buttons-grid {
   background: alpha(@mycolor, 0.2);
     margin: 0px 16px 0px 13px;
@@ -236,6 +237,7 @@
     border-radius: 6px;
     border: none;
 }
+
 /*MPRIS ====================================== */
 .widget-mpris {
     color: @mpris-fg;
