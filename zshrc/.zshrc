@@ -136,19 +136,19 @@ alias q="yay -Q"
 alias pi="sudo pacman -S"
 alias ss="pacman -Ss"
 
-alias ls="exa -l"
 alias cat="bat --theme base16"
 alias find="fd"
 
 alias rm="trash"
 alias nnn='nnn -x'
-alias nvims="sudo -E nvim"
 
 alias ls='lsd'
 alias l='lsd -l'
 alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
+
+alias n='nvim'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
