@@ -84,6 +84,17 @@ vim.keymap.set('v', 'p', '"_dP', opts)
 -- Replace word under cursor
 vim.keymap.set('n', '<S-j>', '*``cgn', opts)
 
+-- Paste standart routine
+vim.keymap.set('n', '<leader>ro', 'A \
+- [ ] Languages \
+- [ ] Have lunch \
+- [ ] Listening \
+- [ ] brush \
+- [ ] Loundry \
+- [ ] Workout (time this) \
+- [ ] take a shower \
+- [ ] Reading 2h ')
+
 -- Explicitly yank to system clipboard (highlighted and entire row)
 vim.keymap.set({ 'n', 'v' }, '<leader>c', [["+y]])
 vim.keymap.set('n', '<leader>C', [["+Y]])
