@@ -86,7 +86,8 @@ vim.keymap.set('n', '<S-j>', '*``cgn', opts)
 
 -- Paste standart routine
 vim.keymap.set('n', '<leader>ro', 'A \
-- [ ] Languages \
+- [ ] MemHack \
+- [ ] Anki \
 - [ ] Have lunch \
 - [ ] Listening \
 - [ ] brush \
