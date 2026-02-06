@@ -94,7 +94,9 @@ vim.keymap.set('n', '<leader>ro', 'A \
 - [ ] Loundry \
 - [ ] Workout (time this) \
 - [ ] take a shower \
-- [ ] Reading 2h ')
+- [ ] Reading 2h \
+- [ ] Have dinner \
+- [ ] brush')
 
 -- Explicitly yank to system clipboard (highlighted and entire row)
 vim.keymap.set({ 'n', 'v' }, '<leader>c', [["+y]])
