@@ -134,12 +134,24 @@ window#waybar {
     font-size:13.5px;
 }
 
-#image.anki_icon{
+#image.anki_icon {
+    background-image: url("/usr/local/share/pixmaps/anki.xpm");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 18px;
+    min-height: 18px;
     margin: 0px 0px 0px 3px;
 }
 
 #image.Memhack_icon {
-    margin: 0px 3px;    
+    background-image: url("/home/DROS/Pictures/Icons/Memhack.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 0px 2px;
 }
 
 #custom-trays{

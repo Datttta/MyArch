@@ -12,16 +12,14 @@
   },
 
   "image#Memhack_icon": {
-      "path": "/home/DROS/Pictures/Icons/Memhack.png",
-      "size": 21,
-      "on-click": "xdg-open https://memhack.fluency.io/home"
+    "format": " ",
+    "on-click": "xdg-open https://memhack.fluency.io/home"
   },
 
   "image#anki_icon": {
-      "path": "/usr/local/share/pixmaps/anki.xpm",
-      "size": 17, 
-      "tooltip": "Launch Anki",
-      "on-click": "anki"
+    "format": " ",
+    "tooltip": "Launch Anki",
+    "on-click": "anki"
   },
 
   "keyboard-state": {
