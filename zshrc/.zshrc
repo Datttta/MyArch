@@ -133,7 +133,7 @@ alias u="yay -Syu"
 alias s="yay -Ss"
 alias q="yay -Q"
 
-alias pi="sudo pacman -S"
+alias ii="sudo pacman -S"
 alias ss="pacman -Ss"
 
 alias cat="bat --theme base16"
