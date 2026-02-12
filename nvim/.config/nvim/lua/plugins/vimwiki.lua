@@ -81,6 +81,41 @@ return {
             vim.api.nvim_win_set_cursor(0, cursor)
          end
       end
+
+      ----------------------------------------------------------------------
+      -- Git auto-commit on <leader>p
+      ----------------------------------------------------------------------
+      local function push_vimwiki()
+         local wiki_root = vim.fn.expand(vim.g.vimwiki_list[1].path)
+         local Job = require 'plenary.job'
+
+         Job:new({
+            command = 'git',
+            args = { '-C', wiki_root, 'add', '.' },
+            on_exit = function()
+               Job:new({
+                  command = 'git',
+                  args = { '-C', wiki_root, 'commit', '-m', 'update' },
+                  on_exit = function()
+                     Job:new({
+                        command = 'git',
+                        args = { '-C', wiki_root, 'push' },
+                        on_exit = function(_, code)
+                           vim.schedule(function()
+                              if code == 0 then
+                                 vim.notify('Vimwiki pushed to Git', vim.log.levels.INFO)
+                              else
+                                 vim.notify('Git push failed', vim.log.levels.ERROR)
+                              end
+                           end)
+                        end,
+                     }):start()
+                  end,
+               }):start()
+            end,
+         }):start()
+      end
+      
       ----------------------------------------------------------------------
       -- FileType autocmd
       ----------------------------------------------------------------------
@@ -95,72 +130,12 @@ return {
                buffer = true,
                desc = 'Vimwiki: complete task and jump to next empty line',
             })
+            vim.keymap.set("n", "<leader>p", push_vimwiki, {
+               buffer = true,
+               desc = "Push vimwiki to git",
+             })
          end,
       })
 
-      ----------------------------------------------------------------------
-      -- Git auto-commit on save
-      ----------------------------------------------------------------------
-      vim.api.nvim_create_autocmd('BufWritePost', {
-         pattern = '*.md',
-         callback = function()
-            local notify = function(msg, level)
-               vim.schedule(function()
-                  vim.notify(msg, level)
-               end)
-            end
-
-            local wiki_root = vim.fn.expand(vim.g.vimwiki_list[1].path)
-
-            if vim.fn.isdirectory(wiki_root) == 0 then
-               notify('Wiki directory not found: ' .. wiki_root, vim.log.levels.ERROR)
-               return
-            end
-
-            local check_git = io.popen('git -C ' .. wiki_root .. ' rev-parse --is-inside-work-tree 2>/dev/null')
-            local is_git = check_git:read '*a'
-            check_git:close()
-
-            if not is_git:match 'true' then
-               notify('Not a git repository: ' .. wiki_root, vim.log.levels.WARN)
-               return
-            end
-
-            local Job = require 'plenary.job'
-
-            Job:new({
-               command = 'git',
-               args = { '-C', wiki_root, 'add', '.' },
-               on_exit = function(_, add_code)
-                  if add_code ~= 0 then
-                     notify('Git add failed', vim.log.levels.ERROR)
-                     return
-                  end
-
-                  Job:new({
-                     command = 'git',
-                     args = { '-C', wiki_root, 'commit', '-m', 'vimwiki auto-update' },
-                     on_exit = function(_, commit_code)
-                        if commit_code ~= 0 then
-                           notify('Git commit failed (maybe no changes?)', vim.log.levels.WARN)
-                           return
-                        end
-
-                        Job:new({
-                           command = 'git',
-                           args = { '-C', wiki_root, 'push' },
-                           on_exit = function(_, push_code)
-                              notify(
-                                 push_code == 0 and 'Vimwiki pushed to GitHub' or 'Git push failed',
-                                 push_code == 0 and vim.log.levels.INFO or vim.log.levels.ERROR
-                              )
-                           end,
-                        }):start()
-                     end,
-                  }):start()
-               end,
-            }):start()
-         end,
-      })
    end,
 }
