@@ -1,13 +1,16 @@
 #!/bin/bash
 
 THEME="$1"
-THEME_DIR="$HOME/.config/waybar/themes/$THEME"
+BASE="$HOME/.config/waybar"
+THEME_DIR="$BASE/themes/$THEME"
 
-cp "$THEME_DIR/config.jsonc" "$HOME/.config/waybar/config"
-cp "$THEME_DIR/style.css" "$HOME/.config/waybar/style.css"
+# Remove old links
+rm -f "$BASE/config.jsonc"
+rm -f "$BASE/style.css"
+
+# Create new symlinks
+ln -s "$THEME_DIR/config.jsonc" "$BASE/config.jsonc"
+ln -s "$THEME_DIR/style.css" "$BASE/style.css"
 
 killall waybar
 waybar & disown
-
-echo "Switched to Waybar theme: $THEME"
-
