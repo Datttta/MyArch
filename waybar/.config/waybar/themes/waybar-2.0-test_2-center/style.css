@@ -64,6 +64,10 @@ window#waybar {
     background-color: transparent;
 }
 
+#workspaces.numbers {
+    margin: 0px 10px;
+}
+
 #workspaces.numbers button.empty {
     padding: 0px 10px;
     background-color: alpha(@foreground, 0.1);

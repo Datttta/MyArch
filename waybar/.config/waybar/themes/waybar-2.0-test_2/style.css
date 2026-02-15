@@ -72,11 +72,12 @@ window#waybar {
 }
 
 #workspaces.numbers {
-    margin: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 8px;
 }
 
 #workspaces.numbers button.empty {
-    padding: 0px 9px;
+    padding: 0px 10px;
+    background-color: alpha(@foreground, 0.2);
 }
 
 #custom-launcher {
