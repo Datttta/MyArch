@@ -51,13 +51,15 @@ window#waybar {
 
 #workspaces button.active {
     border-radius: 9px;
-    margin: 4px;
+    margin: 2px;
     padding: 0px 10px;
     transition: all 0.15s ease-in-out;
+    background-color: alpha(@foreground, 0.2);
 }
 
 #workspaces button.empty {
-  padding: 0px 0px 0px 10px;
+  padding: 0px 0px 0px 12px;
+    background-color: transparent;
 }
 
 #custom-launcher {
