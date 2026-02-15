@@ -36,15 +36,14 @@ window#waybar {
 
 #workspaces {
     background-color: alpha(@background, 0.9);
-    padding: 5px 6px;
+    padding: 3px 6px;
     border-radius: 15px;
     border: 1px solid alpha(@color14, 0.5)
 }
 
 #workspaces button {
-    margin: 4px 4px;
+    margin: 2px 4px;
     border-radius: 400px;
-    padding: 0px 0px;
     min-height: 0;
     transition: all 0.15s ease-in-out;
 }
