@@ -1,10 +1,30 @@
 #!/bin/bash
 
-# Pick a random wallpaper
-WALLPAPER=$(find ~/dotfiles/wallpaper -type f | shuf -n 1)
+WALL_DIR=~/dotfiles/wallpaper
+LAST_FILE=~/.cache/last_wallpaper
 
-# Generate a new Hyprpaper config
-cat >~/.config/hypr/hyprpaper.conf <<EOF
+mkdir -p ~/.cache
+
+# If last wallpaper exists, exclude it
+if [[ -f "$LAST_FILE" ]]; then
+    LAST=$(cat "$LAST_FILE")
+
+    # Build list excluding last
+    WALLPAPER=$(find "$WALL_DIR" -type f | grep -vxF "$LAST" | shuf -n 1)
+
+    # If exclusion leaves nothing (only 1 wallpaper exists), fallback
+    if [[ -z "$WALLPAPER" ]]; then
+        WALLPAPER=$(find "$WALL_DIR" -type f | shuf -n 1)
+    fi
+else
+    WALLPAPER=$(find "$WALL_DIR" -type f | shuf -n 1)
+fi
+
+# Save current as last
+echo "$WALLPAPER" > "$LAST_FILE"
+
+# Generate Hyprpaper config
+cat > ~/.config/hypr/hyprpaper.conf <<EOF
 preload = $WALLPAPER
 wallpaper = eDP-1,$WALLPAPER
 EOF
@@ -16,11 +36,12 @@ cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
 pkill hyprpaper
 hyprpaper &
 
-# generate pywal colors
-wal --cols16 lighten -i $WALLPAPER
+# Generate pywal colors
+wal --cols16 lighten -i "$WALLPAPER"
 
 killall waybar
 waybar &
 
 killall swaync
 exec swaync
+
