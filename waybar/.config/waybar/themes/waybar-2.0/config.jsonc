@@ -172,15 +172,19 @@
   },
 
   "hyprland/workspaces": {
-      "format": "{id} {windows}",
-      "workspace-taskbar": {
-          "enable": true,
-          "format": "{icon}",
-          "icon-size": 19,
-          "orientation": "horizontal",
-          "on-click-window": "activate",
-          "empty-format": ""
-      }
+    "format": "{icon} {windows}",
+
+    "format-icons": {
+      "empty": ""
+    },
+
+    "workspace-taskbar": {
+        "enable": true,
+        "format": "{icon}",
+        "icon-size": 19,
+        "orientation": "horizontal",
+        "on-click-window": "activate",
+    }
   },
 
   "backlight": {

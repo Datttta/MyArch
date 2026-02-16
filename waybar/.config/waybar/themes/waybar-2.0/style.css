@@ -57,7 +57,9 @@ window#waybar {
 }
 
 #workspaces button.empty {
-  padding: 0px 0px 0px 12px;
+    padding: 0px;
+    margin: 0px;
+    min-width: 0px;
     background-color: transparent;
 }
 

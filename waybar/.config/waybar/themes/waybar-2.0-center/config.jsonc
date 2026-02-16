@@ -179,7 +179,6 @@
           "icon-size": 19,
           "orientation": "horizontal",
           "on-click-window": "activate",
-          "empty-format": ""
       }
   },
 
