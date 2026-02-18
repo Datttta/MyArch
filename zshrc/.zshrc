@@ -134,6 +134,7 @@ alias s="yay -Ss"
 alias q="yay -Q"
 
 alias ii="sudo pacman -S"
+alias iin="sudo pacman -S --needed"
 alias ss="pacman -Ss"
 
 alias cat="bat --theme base16"

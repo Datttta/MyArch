@@ -11,12 +11,11 @@ if [ "$ACTION" = "start" ]; then
         keyword decoration:shadow:enabled 0; \
         keyword decoration:rounding 0; \
         keyword general:gaps_in 0; \
-        keyword general:gaps_out 0; \
-        keyword monitor eDP-1,1280x720@60,0x0,1"
+        keyword general:border_size 0; \
+        keyword general:gaps_out 0;"
     pkill waybar
 
 elif [ "$ACTION" = "end" ]; then
-    $HYPR keyword monitor eDP-1,1920x1080@60,0x0,1
     sleep 0.5
     $HYPR reload
     pkill waybar

@@ -181,7 +181,7 @@
     "workspace-taskbar": {
         "enable": true,
         "format": "{icon}",
-        "icon-size": 19,
+        "icon-size": 20,
         "orientation": "horizontal",
         "on-click-window": "activate",
     }
