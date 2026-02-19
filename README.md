@@ -21,13 +21,13 @@ makepkg -si
 ### Git
 
 ```
-pacman -S git
+sudo pacman -S git
 ```
 
 ### Stow
 
 ```
-pacman -S stow
+sudo pacman -S stow
 ```
 
 ### Flatpak
