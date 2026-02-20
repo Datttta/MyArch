@@ -27,4 +27,4 @@ stow *
 # ===========================
 echo "Setting sddm permissions..."
 sudo setfacl -m u:sddm:x /home/DROS
-sudo setfacl -R -m u:sddm:rX,m::rX /home/DROS/dotfiles/slashConfs/
+sudo setfacl -R -m u:sddm:rX,m::rX /home/DROS/MyArch/slashConfs/
