@@ -25,7 +25,6 @@ cd MyArch
 stow *
 
 # ===========================
-echo "Setting sddm"
-echo "/home/DROS/MyArch/sddm/themes/my-theme /usr/share/sddm/themes/my-theme none bind 0 0" | sudo tee -a /etc/fstab
-sudo mount -a
-
+echo "Setting sddm permissions..."
+sudo setfacl -m u:sddm:x /home/DROS
+sudo setfacl -R -m u:sddm:rX,m::rX /home/DROS/dotfiles/slashConfs/
