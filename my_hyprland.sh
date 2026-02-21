@@ -45,4 +45,4 @@ echo "Installing apps..."
 yay -S --noconfirm flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh wofi waybar swappy rofi pavucontrol kitty python-pywal16 wlogout swaync waypaper neovim
 
 echo "Installing fonts..."
-yay -S --noconfirm ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberation ttf-ubuntu-font-family woff2-font-awesome noto-fonts-cjk noto-fonts-emoji otf-font-awesome ttf-radio-canada
+yay -S --noconfirm ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberation ttf-ubuntu-font-family woff2-font-awesome noto-fonts-cjk noto-fonts noto-fonts-extra noto-fonts-emoji otf-font-awesome ttf-radio-canada
