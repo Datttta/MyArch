@@ -16,30 +16,18 @@ if ! pacman -Q "yay" > /dev/null; then
     rm -rf ~/yay
 fi
 
-if ! pacman -Q "flatpak" > /dev/null; then
-    echo "Installing flatpak..."
-    sudo pacman -S --noconfirm flatpak
-fi
-
-if ! pacman -Q "stow" > /dev/null; then
-    echo "Installing gnu-stow..."
-    sudo pacman -S --noconfirm stow
-fi
-
-if ! pacman -Q "hyprland" > /dev/null; then
-    echo "Installing hyprland!!"
-    yay -S --noconfirm hyprland
-fi
-
 if ! pacman -Q "vivaldi" >/dev/null; then
-    echo "Installing vivaldi browser..."
-    sudo pacman -S --noconfirm vivaldi
-    echo "Now you must get the ssh keys for you remote repo"
+    echo "Installing basic apps..."
+    sudo pacman -S --noconfirm vivaldi stow hyprland
+    echo "Now you must get the ssh keys for your remote repo"
     exit 1
 fi
 
 # ===========================
-echo "Cloning repo!"
+echo "Cloning Vimwiki repo!"
+git clone git@github.com:Datttta/Vimwiki.git
+
+echo "Cloning MyArch repo!"
 git clone git@github.com:Datttta/MyArch.git
 cd MyArch
 
@@ -47,7 +35,15 @@ echo "Stowing files..."
 stow --ignore='^sl-.*' *
 sudo stow -t / sl-*/
 
-# ===========================
+# ============================
 echo "Setting sddm permissions..."
 sudo setfacl -m u:sddm:x ~/
 sudo setfacl -R -m u:sddm:rX,m::rX ~/MyArch/sl-sddm
+
+# ============================
+echo "Installing apps..."
+sudo pacman -S --noconfirm flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh wofi waybar swappy rofi pavucontrol kitty
+yay -S --noconfirm python-pywal16 wlogout swaync-git waypaper neovim-git
+
+
+
