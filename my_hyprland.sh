@@ -2,29 +2,45 @@
 
 echo "Starting installation ((change this))(:"
 
-echo "Installing git..."
-sudo pacman -S git
+if ! pacman -Q "git" > /dev/null; then 
+    echo "Installing git..."
+    sudo pacman -S git
+fi
 
-echo "Installing yay..."
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-rm -rf ~/yay
+if ! pacman -Q "yay" > /dev/null; then
+    echo "Installing yay..."
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd
+    rm -rf ~/yay
+fi
 
-echo "Installing flatpak"
-sudo pacman -S flatpak
+if ! pacman -Q "flatpak" > /dev/null; then
+    echo "Installing flatpak..."
+    sudo pacman -S flatpak
+fi
 
-echo "Installing gnu-stow"
-sudo pacman -S stow
+if ! pacman -Q "stow" > /dev/null; then
+    echo "Installing gnu-stow..."
+    sudo pacman -S stow
+fi
+
+if ! pacman -Q "browsh" > /dev/null; then
+    echo "Installing browsh browser..."
+    yay -S browsh
+fi
 
 # ===========================
-echo "Stowing files!"
-cd
+echo "Cloning repo!"
 git clone git@github.com:Datttta/MyArch.git
 cd MyArch
-stow *
+
+echo "Stowing files..."
+stow --ignore='^sl-.*' *
+sudo stow -t / sl-*/
 
 # ===========================
 echo "Setting sddm permissions..."
-sudo setfacl -m u:sddm:x /home/DROS
-sudo setfacl -R -m u:sddm:rX,m::rX /home/DROS/MyArch/slashConfs/
+sudo setfacl -m u:sddm:x ~/
+sudo setfacl -R -m u:sddm:rX,m::rX ~/MyArch/sl-sddm
