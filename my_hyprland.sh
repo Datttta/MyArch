@@ -4,7 +4,7 @@ echo "Starting installation ((change this))(:"
 
 if ! pacman -Q "git" > /dev/null; then 
     echo "Installing git..."
-    sudo pacman -S git
+    sudo pacman -S --noconfirm git 
 fi
 
 if ! pacman -Q "yay" > /dev/null; then
@@ -18,17 +18,24 @@ fi
 
 if ! pacman -Q "flatpak" > /dev/null; then
     echo "Installing flatpak..."
-    sudo pacman -S flatpak
+    sudo pacman -S --noconfirm flatpak
 fi
 
 if ! pacman -Q "stow" > /dev/null; then
     echo "Installing gnu-stow..."
-    sudo pacman -S stow
+    sudo pacman -S --noconfirm stow
 fi
 
-if ! pacman -Q "browsh" > /dev/null; then
-    echo "Installing browsh browser..."
-    yay -S browsh
+if ! pacman -Q "hyprland" > /dev/null; then
+    echo "Installing hyprland!!"
+    yay -S --noconfirm hyprland
+fi
+
+if ! pacman -Q "vivaldi" >/dev/null; then
+    echo "Installing vivaldi browser..."
+    sudo pacman -S --noconfirm vivaldi
+    echo "Now you must get the ssh keys for you remote repo"
+    exit 1
 fi
 
 # ===========================
