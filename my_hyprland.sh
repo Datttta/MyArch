@@ -18,7 +18,7 @@ fi
 
 if ! pacman -Q "vivaldi" >/dev/null; then
     echo "Installing basic apps..."
-    sudo pacman -S --noconfirm vivaldi stow hyprland
+    yay -S --noconfirm vivaldi stow hyprland
     echo "Now you must get the ssh keys for your remote repo"
     exit 1
 fi
@@ -42,8 +42,7 @@ sudo setfacl -R -m u:sddm:rX,m::rX ~/MyArch/sl-sddm
 
 # ============================
 echo "Installing apps..."
-sudo pacman -S --noconfirm flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh wofi waybar swappy rofi pavucontrol kitty
-yay -S --noconfirm python-pywal16 wlogout swaync-git waypaper neovim-git
+yay -S --noconfirm flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh wofi waybar swappy rofi pavucontrol kitty python-pywal16 wlogout swaync waypaper neovim
 
-
-
+echo "Installing fonts..."
+yay -S --noconfirm ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberation ttf-ubuntu-font-family woff2-font-awesome noto-fonts-cjk noto-fonts-emoji otf-font-awesome ttf-radio-canada

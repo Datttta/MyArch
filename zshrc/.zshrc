@@ -128,14 +128,11 @@ bindkey -M viins '^[;' autosuggest-accept
 
 # Aliases
 alias i="yay -S"
+alias in="yay -S --needed"
 alias r="yay -Rns"
 alias u="yay -Syu"
 alias s="yay -Ss"
 alias q="yay -Q"
-
-alias ii="sudo pacman -S"
-alias iin="sudo pacman -S --needed"
-alias ss="pacman -Ss"
 
 alias cat="bat --theme base16"
 alias find="fd"
