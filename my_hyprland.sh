@@ -11,7 +11,7 @@ if ! pacman -Q "yay" > /dev/null; then
     echo "Installing yay..."
     git clone https://aur.archlinux.org/yay.git
     cd yay
-    makepkg -si
+    makepkg -si --noconfirm
     cd
     rm -rf ~/yay
 fi
@@ -38,12 +38,13 @@ sudo stow -t / sl-*/
 # ============================
 echo "Installing your apps..."
 yay -S --noconfirm flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh wofi waybar swappy rofi pavucontrol kitty python-pywal16 wlogout swaync waypaper anki pear-desktop discord  lutris firefox steam gnome-clocks piper stremio osu timeshift timeshift-autosnap btop cmatrix deepin-calculator downgrade fd fzf gnome-calendar grub haruna gthumb calibre kalarm zenity grimblast syncthing trash-cli tree unrar tar rsync qbittorrent zsh-autosuggestions zsh-completions zsh-syntax-highlighting wl-copy sddm nwg-look
+flatpak install flathub org.vinegarhq.Sober
 
 echo "Installing system apps & drivers..."
-yay -S --noconfirm xorg-xwayland gvfs glib2 thunar exfatprogs ntfs-3g aria2 jdk-openjdk intel-ucode linux-lts linux-lts-headers preload linux-zen linux-zen-headers xdg-utils playerctl networkmanager pacman-contrib brightnessctl python-gobject jq xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-gnome wireplumber auto-cpufreq bluez blueman bluez-utils corectrl kvantum-qt5 ufw pipewire-pulse libnotify bluez-hid2hci os-prober
+yay -S --noconfirm xorg-xwayland gvfs glib2 thunar exfatprogs ntfs-3g aria2 jdk-openjdk intel-ucode linux-lts linux-lts-headers preload linux-zen linux-zen-headers xdg-utils playerctl networkmanager pacman-contrib brightnessctl python-gobject jq xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-gnome wireplumber auto-cpufreq bluez blueman bluez-utils corectrl kvantum-qt5 ufw pipewire-pulse pipewire wireplumber libnotify bluez-hid2hci os-prober
 
 echo "Installing fonts..."
-yay -S --noconfirm ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberation ttf-ubuntu-font-family woff2-font-awesome noto-fonts-cjk noto-fonts noto-fonts-extra noto-fonts-emoji otf-font-awesome ttf-radio-canada
+yay -S --noconfirm ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberation ttf-ubuntu-font-family woff2-font-awesome noto-fonts-cjk noto-fonts noto-fonts-extra noto-fonts-emoji otf-font-awesome ttf-radio-canada 
 
 # ==========================
 echo "Setting default apps..."
@@ -91,11 +92,17 @@ sudo systemctl start preload
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
+#enable syncthing
+systemctl --user enable syncthing
+
 # set up auto-cpufreq
-sudo auto-cpufreq --install
+sudo systemctl enable --now auto-cpufreq
 
 # set up networkmanager
 sudo systemctl enable --now NetworkManager
+
+# set up user groups
+sudo usermod -aG wheel,video,render,input,storage,gamemode $USER
 
 # set up grub
 echo "GRUB_DISABLE_OS_PROBER=false" | sudo tee -a /etc/default/grub
@@ -104,5 +111,5 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 # set up zsh
 sudo chsh -s $(which zsh) $USER
 
-# set up user groups
-sudo usermod -aG wheel,video,render,input,storage,gamemode $USER
+# set up flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
