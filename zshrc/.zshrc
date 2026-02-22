@@ -149,8 +149,8 @@ alias lt='lsd --tree'
 alias n='nvim'
 
 alias ga='git add .'
-alias gm='git commit -m '
-alias gt='git push'
+alias gm='git commit -m'
+alias gp='git push'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
