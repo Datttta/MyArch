@@ -1,0 +1,6 @@
+[Unit]
+Description=Remove old files form trash
+
+[Service]
+Type=oneshoft
+ExecStart=/usr/bin/trash-empty 30
