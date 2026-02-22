@@ -146,11 +146,14 @@ alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
 
-alias n='nvim'
-
 alias ga='git add .'
 alias gm='git commit -m'
 alias gp='git push'
+
+alias n='nvim'
+
+alias y='yazi'
+alias sy='sudo yazi'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
