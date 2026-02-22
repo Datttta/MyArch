@@ -76,8 +76,7 @@ sudo setfacl -m u:sddm:x ~/
 sudo setfacl -R -m u:sddm:rX,m::rX ~/MyArch/sl-sddm
 
 # set up ufw
-sudo systemctl enable ufw
-sudo systemctl start ufw
+sudo ufw --force enable
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow 22000/tcp
