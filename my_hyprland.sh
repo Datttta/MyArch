@@ -1,27 +1,19 @@
 #!/bin/bash
 
-echo "Starting installation ((change this))(:"
+echo "............Starting installation..........."
 
-if ! pacman -Q "git" > /dev/null; then 
-    echo "Installing git..."
-    sudo pacman -Syu --noconfirm base-devel git 
-fi
+echo "Installing git..."
+sudo pacman -S --noconfirm base-devel git 
 
-if ! pacman -Q "yay" > /dev/null; then
-    echo "Installing yay..."
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si --noconfirm
-    cd
-    rm -rf ~/yay
-fi
+echo "Installing yay..."
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd
+rm -rf ~/yay
 
-if ! pacman -Q "vivaldi" >/dev/null; then
-    echo "Installing basic apps..."
-    yay -S --noconfirm vivaldi stow hyprland neovim
-    echo "Now you must get the ssh keys for your remote repo"
-    exit 1
-fi
+echo "installing gnu-stow"
+yay -S --noconfirm stow
 
 # ===========================
 echo "Cloning Vimwiki repo!"
@@ -37,11 +29,13 @@ sudo stow -t / sl-*/
 
 # ============================
 echo "Installing your apps..."
-yay -S --noconfirm flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh wofi waybar swappy rofi pavucontrol kitty python-pywal16 wlogout swaync waypaper anki pear-desktop discord  lutris firefox steam gnome-clocks piper stremio osu timeshift timeshift-autosnap btop cmatrix deepin-calculator downgrade fd fzf gnome-calendar grub haruna gthumb calibre kalarm zenity grimblast syncthing trash-cli tree unrar tar rsync qbittorrent zsh-autosuggestions zsh-completions zsh-syntax-highlighting wl-copy sddm nwg-look
+yay -S --noconfirm flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh wofi waybar swappy rofi pavucontrol kitty python-pywal16 wlogout swaync waypaper anki pear-desktop discord  lutris firefox steam gnome-clocks piper stremio osu timeshift timeshift-autosnap btop deepin-calculator downgrade fd fzf gnome-calendar grub haruna gthumb calibre kalarm zenity grimblast syncthing trash-cli tree unrar tar rsync qbittorrent zsh-autosuggestions zsh-completions zsh-syntax-highlighting wl-copy sddm nwg-look hyprlock hyprpaper stow neovim tty-clock cmatrix cliphist wl-clipboard ripgrep
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.vinegarhq.Sober
 
 echo "Installing system apps & drivers..."
-yay -S --noconfirm xorg-xwayland gvfs glib2 thunar exfatprogs ntfs-3g aria2 jdk-openjdk intel-ucode linux-lts linux-lts-headers preload linux-zen linux-zen-headers xdg-utils playerctl networkmanager pacman-contrib brightnessctl python-gobject jq xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-gnome wireplumber auto-cpufreq bluez blueman bluez-utils corectrl kvantum-qt5 ufw pipewire-pulse pipewire wireplumber libnotify bluez-hid2hci os-prober
+yay -S --noconfirm xorg-xwayland gvfs glib2 thunar exfatprogs ntfs-3g aria2 jdk-openjdk intel-ucode linux-lts linux-lts-headers preload linux-zen linux-zen-headers xdg-utils playerctl networkmanager pacman-contrib brightnessctl python-gobject jq xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-gnome auto-cpufreq bluez blueman bluez-utils corectrl kvantum-qt5 ufw pipewire-pulse pipewire wireplumber libnotify bluez-hid2hci os-prober qt5-wayland qt6-wayland
 
 echo "Installing fonts..."
 yay -S --noconfirm ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberation ttf-ubuntu-font-family woff2-font-awesome noto-fonts-cjk noto-fonts noto-fonts-extra noto-fonts-emoji otf-font-awesome ttf-radio-canada 
@@ -83,6 +77,10 @@ sudo setfacl -R -m u:sddm:rX,m::rX ~/MyArch/sl-sddm
 # set up ufw
 sudo systemctl enable ufw
 sudo systemctl start ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22000/tcp
+sudo ufw allow 21027/udp
 
 # set up preload
 sudo systemctl enable preload
@@ -111,5 +109,4 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 # set up zsh
 sudo chsh -s $(which zsh) $USER
 
-# set up flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+echo "-Restart your pc to apply all changes-"
