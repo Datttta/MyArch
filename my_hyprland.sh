@@ -91,7 +91,7 @@ sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
 #enable syncthing
-systemctl --user enable syncthing
+systemctl --user enable --now syncthing
 
 # set up auto-cpufreq
 sudo systemctl enable --now auto-cpufreq
