@@ -2,20 +2,6 @@
 
 echo "............Starting installation..........."
 
-echo "Installing git..."
-sudo pacman -S --noconfirm base-devel git 
-
-echo "Installing yay..."
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si --noconfirm
-cd
-rm -rf ~/yay
-
-echo "installing gnu-stow"
-yay -S --noconfirm stow
-
-# ===========================
 echo "Cloning Vimwiki repo!"
 git clone git@github.com:Datttta/Vimwiki.git
 
@@ -39,7 +25,7 @@ yay -S --noconfirm ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberati
 
 echo "Installing flatpak apps"
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.vinegarhq.Sober com.stremio.Stremio
+flatpak install flathub org.vinegarhq.Sober
 
 # ==========================
 echo "Setting default apps..."
