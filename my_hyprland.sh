@@ -89,6 +89,10 @@ sudo systemctl enable --now NetworkManager
 # set up user groups
 sudo usermod -aG wheel,video,render,input,storage,gamemode $USER
 
+# set up keyboard
+sudo localectl set-keymap br-abnt2
+sudo localectl set-x11-keymap br abnt2
+
 # set up grub
 echo "GRUB_DISABLE_OS_PROBER=false" | sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
