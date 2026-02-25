@@ -77,6 +77,7 @@ window#waybar {
     margin: 0px 10px 0px 0px;
     border-radius: 15px;
     font-size:13px;
+    letter-spacing: -1px;
 }
 
 #custom-aur_repo {
@@ -84,6 +85,7 @@ window#waybar {
     border-radius: 15px;
     margin: 0px 2px 0px 5px;
     font-size:13px;
+    letter-spacing: -1px;
 }
 
 #custom-updates{
