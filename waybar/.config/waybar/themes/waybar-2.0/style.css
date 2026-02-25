@@ -74,7 +74,7 @@ window#waybar {
 
 #custom-flatpak {
     color: @color15; /* color1 (previously color8) */
-    margin: 0px 10px 0px 0px;
+    margin: 0px 11px 0px 0px;
     border-radius: 15px;
     font-size:13px;
     letter-spacing: -1px;
@@ -83,7 +83,7 @@ window#waybar {
 #custom-aur_repo {
     color: @color15; /* color1 (previously color8) */
     border-radius: 15px;
-    margin: 0px 2px 0px 5px;
+    margin: 0px 4px 0px 5px;
     font-size:13px;
     letter-spacing: -1px;
 }
