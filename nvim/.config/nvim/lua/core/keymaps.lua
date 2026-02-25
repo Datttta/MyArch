@@ -88,13 +88,14 @@ vim.keymap.set('n', '<S-j>', '*``cgn', opts)
 vim.keymap.set('n', '<leader>ro', 'A \
 - [ ] MemHack \
 - [ ] Anki \
+- [ ] Homework \
 - [ ] Have lunch \
 - [ ] Listening \
 - [ ] brush \
 - [ ] Loundry \
 - [ ] Workout (time this) \
 - [ ] take a shower \
-- [ ] Reading 2h \
+- [ ] Reading \
 - [ ] Have dinner \
 - [ ] brush')
 
