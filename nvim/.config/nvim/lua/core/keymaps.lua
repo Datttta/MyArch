@@ -93,6 +93,7 @@ vim.keymap.set('n', '<leader>ro', 'A \
 - [ ] Listening \
 - [ ] brush \
 - [ ] Loundry \
+- [ ] Clean room \
 - [ ] Workout (time this) \
 - [ ] take a shower \
 - [ ] Reading \
