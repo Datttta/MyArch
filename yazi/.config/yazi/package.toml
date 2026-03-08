@@ -4,11 +4,6 @@ rev = "53ad17c"
 hash = "80221fe740a6f251d35845d29391bea7"
 
 [[plugin.deps]]
-use = "XYenon/clipboard"
-rev = "9089f90"
-hash = "e6efc609de1b617c7e8e98efd5286221"
-
-[[plugin.deps]]
 use = "boydaihungst/pref-by-location"
 rev = "882e752"
 hash = "f45cf212024c85b5f0ea0423e27196a"
