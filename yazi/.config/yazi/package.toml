@@ -23,6 +23,11 @@ use = "Ape/open-with-cmd"
 rev = "e3d430f"
 hash = "d29c1ffa99099181faf8c01d1f59aa4c"
 
+[[plugin.deps]]
+use = "XYenon/clipboard"
+rev = "3b96810"
+hash = "13d7eb15a079c735e34124b922322de5"
+
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
 rev = "8e6296f"

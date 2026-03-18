@@ -23,7 +23,7 @@ echo "Installing system apps & drivers..."
 yay -S --noconfirm --needed xorg-xwayland glib2 thunar exfatprogs ntfs-3g aria2 jdk-openjdk intel-ucode linux-lts linux-lts-headers preload linux-zen linux-zen-headers xdg-utils playerctl pacman-contrib brightnessctl python-gobject jq xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-gnome auto-cpufreq bluez blueman bluez-utils corectrl kvantum-qt5 ufw pipewire-pulse pipewire wireplumber libnotify bluez-hid2hci os-prober qt5-wayland qt6-wayland xdg-user-dirs tree unzip unrar tar rsync gvfs gvfs-mtp udisks2
 
 echo "Installing fonts..."
-yay -S --noconfirm --needed ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberation ttf-ubuntu-font-family woff2-font-awesome noto-fonts-cjk noto-fonts noto-fonts-extra noto-fonts-emoji otf-font-awesome ttf-radio-canada 
+yay -S --noconfirm --needed ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberation ttf-ubuntu-font-family woff2-font-awesome noto-fonts-cjk noto-fonts noto-fonts-extra noto-fonts-emoji otf-font-awesome ttf-radio-canada lora-font-git ttf-playfair-variable
 
 echo "Installing flatpak apps"
 flatpak install flathub org.vinegarhq.Sober com.stremio.Stremio
