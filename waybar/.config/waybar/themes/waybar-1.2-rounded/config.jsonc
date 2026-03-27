@@ -57,7 +57,7 @@
         "click-to-reveal": false,
         "hover-to-reveal": true
     },
-    "modules": ["custom/updates", "custom/aur", "custom/pacman", "custom/flatpak"]
+    "modules": ["custom/updates", "custom/aur_repo", "custom/flatpak"]
   },
 
   "custom/updates": {
@@ -68,9 +68,9 @@
       "signal": 2
   },
 
-  "custom/aur": {
+  "custom/aur_repo": {
   "format": "{} <span size='120%'>󱉚</span>",
-  "exec": "yay -Qua | wc -l;",
+  "exec": "echo $(( $(checkupdates | wc -l) + $(yay -Qua | wc -l) ))",
   "on-click": "kitty -e bash -lc 'yay -Syua; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'",
   "interval": "once",
   "signal": 1
@@ -171,24 +171,21 @@
     "on-click": "kitty -e nmtui"
   },
 
-   "hyprland/workspaces": {
-        "active-only": false,
-        "all-outputs": true,
-        "format": "{icon}",
-        "show-special": false,
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-            "persistent-workspaces": {
-          "*": 0
-        },
-        
-        "format-icons": {
-            "active": "",
-            "default": ""
-            
-        }
+  "hyprland/workspaces": {
+    "format": "{icon} {windows}",
+
+    "format-icons": {
+      "empty": ""
     },
+
+    "workspace-taskbar": {
+        "enable": true,
+        "format": "{icon}",
+        "icon-size": 20,
+        "orientation": "horizontal",
+        "on-click-window": "activate",
+    }
+  },
 
   "backlight": {
     "device": "intel_backlight",

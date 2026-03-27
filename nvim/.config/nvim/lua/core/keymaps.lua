@@ -133,3 +133,6 @@ vim.keymap.set('v', '<leader>ne', function()
    vim.cmd 'normal! gv' -- Re-select the visual area
    vim.cmd "'<,'>s/^/\\=line('.') - line(\"'<\") + 1 . '. '/"
 end, { desc = 'Number selected lines' })
+
+-- run codes
+vim.keymap.set('n', '<leader>rp', ':!python %<CR>') -- run python
