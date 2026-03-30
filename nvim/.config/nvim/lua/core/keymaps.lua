@@ -89,13 +89,12 @@ vim.keymap.set('n', '<leader>ro', 'A \
 - [ ] MemHack \
 - [ ] Anki \
 - [ ] Homework \
-- [ ] Workout (time this) \
+- [ ] Workout \
 - [ ] Have lunch \
 - [ ] Listening \
 - [ ] brush \
 - [ ] Loundry \
 - [ ] Clean room \
-- [ ] take a shower \
 - [ ] Have dinner \
 - [ ] brush')
 
