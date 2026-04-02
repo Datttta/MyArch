@@ -135,3 +135,6 @@ end, { desc = 'Number selected lines' })
 
 -- run codes
 vim.keymap.set('n', '<leader>rp', ':!python %<CR>') -- run python
+
+--Show telescope keymaps
+vim.keymap.set('n', '<leader>km', ':Telescope keymaps<CR>')
