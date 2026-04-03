@@ -134,7 +134,6 @@ window#waybar {
 }
 
 #image.anki_icon {
-    background-image: url("/usr/local/share/pixmaps/anki.xpm");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
