@@ -79,8 +79,8 @@
   "custom/anki_notification": {
     "tooltip": false,
     "exec": "python ~/.config/waybar/scripts/Due_cards.py",
-    "on-click": "pkill -9 anki; sleep 0.5; anki",
-    "interval": 1,
+    "on-click": "pkill -9 anki; setsid anki > /dev/null 2>&1 &",
+    "interval": 10,
     "signal": 3
   },
 

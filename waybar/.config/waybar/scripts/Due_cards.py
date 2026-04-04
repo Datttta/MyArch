@@ -80,7 +80,6 @@ def notify(message):
         check=False
     )
 
-
 def main():
     due = get_due_count()
 
