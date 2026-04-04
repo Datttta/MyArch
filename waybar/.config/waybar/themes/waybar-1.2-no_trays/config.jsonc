@@ -80,7 +80,8 @@
     "tooltip": false,
     "exec": "python ~/.config/waybar/scripts/Due_cards.py",
     "on-click": "pkill -9 anki; sleep 0.5; anki",
-    "interval": 10
+    "interval": 1,
+    "signal": 3
   },
 
   "keyboard-state": {

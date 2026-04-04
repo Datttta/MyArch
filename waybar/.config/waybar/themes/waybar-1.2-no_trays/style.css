@@ -113,17 +113,27 @@ window#waybar {
 
 #custom-weather,
 
-#clock, 
-
 #memory, 
 
 #battery,
 
-#custom-anki_notification,
-
 #backlight {
     color: @color15; /* color13 */
     margin: 0px 10px 0px 10px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
+#clock {
+    color: @color15; /* color13 */
+    margin: 0px 5px 0px 10px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
+#custom-anki_notification {
+    color: @color15; /* color13 */
+    margin: 0px 3px 0px 6px;
     border-radius: 15px;
     font-size:13.5px;
 }
