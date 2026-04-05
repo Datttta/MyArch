@@ -90,12 +90,12 @@ vim.keymap.set('n', '<leader>ro', 'A \
 - [ ] Anki \
 - [ ] Homework \
 - [ ] Workout \
-- [ ] Have lunch \
+- [ ] Have_lunch \
 - [ ] Listening \
 - [ ] brush \
 - [ ] Loundry \
-- [ ] Clean room \
-- [ ] Have dinner \
+- [ ] Clean_room \
+- [ ] Have_dinner \
 - [ ] brush')
 
 -- Explicitly yank to system clipboard (highlighted and entire row)

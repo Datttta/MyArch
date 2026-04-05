@@ -89,7 +89,7 @@ def main():
         if not os.path.exists(TIMER_FILE):
             start_timer()
 
-        if elapsed_time() >= 360: #1 hour
+        if elapsed_time() >= 3600: #1 hour
             notify(f"You have {due} reviews to do!")
             start_timer()
     else:
