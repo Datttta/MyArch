@@ -22,8 +22,8 @@ vim.keymap.set('n', '<leader>w', '<cmd> w <CR>', opts)
 vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 
 -- quit file
-vim.keymap.set('n', '<leader>qw', '<cmd> q! <CR>', opts) -- saving
-vim.keymap.set({ 'n', 'v' }, '<leader>qe', '<cmd> wq <CR>', opts) --without saving
+vim.keymap.set('n', '<leader>qe', '<cmd> q! <CR>', opts) -- without saving
+vim.keymap.set({ 'n', 'v' }, '<leader>qw', '<cmd> wq <CR>', opts)  -- saving
 
 -- Open neotree with ctrl + n
 vim.keymap.set({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true })
