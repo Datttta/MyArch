@@ -5,7 +5,7 @@
   "margin-bottom":3,
   "modules-left": ["custom/launcher", "clock", "custom/anki_notification", "group/trays"],
   "modules-center": ["hyprland/workspaces", "custom/media"],
-  "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "group/updates"],
+  "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "keyboard-state", "group/updates"],
 
   "image#anki_icon": {
     "path": "/usr/local/share/pixmaps/anki.xpm",
@@ -146,20 +146,13 @@
   },
 
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "󰂱  {volume}%",
+    "format": "{icon} <span rise='1400'>{volume}%</span>",
     "format-muted": "󰖁",
     "scroll-step": 1,
     "on-click": "GDK_BACKEND=x11 pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"],
     "format-icons": {
-      "headphone": "  ",
-      "hands-free": " ",
-      "headset": "󰋎 ",
-      "phone": " ",
-      "portable": " ",
-      "car": "",
-      "default": ["󰖀", "󰕾"]
+      "default": ["<span size='120%'>󰖀", "<span size='120%'>󰕾</span>"]
     }
   },
 

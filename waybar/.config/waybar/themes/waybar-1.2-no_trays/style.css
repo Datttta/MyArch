@@ -96,7 +96,7 @@ window#waybar {
 
 #temperature {
     color: @color15; /* color13 */
-    margin: 0px 2px 0px 10px;
+    margin: 0px 2px 0.2px 10px;
     font-size:13.5px;
 }
 
@@ -120,6 +120,13 @@ window#waybar {
 #backlight {
     color: @color15; /* color13 */
     margin: 0px 10px 0px 10px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
+#pulseaudio {
+    color: @color15; /* color13 */
+    margin: 0px 9px 0px 1px;
     border-radius: 15px;
     font-size:13.5px;
 }
