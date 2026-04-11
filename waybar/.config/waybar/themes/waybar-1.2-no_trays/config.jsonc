@@ -99,7 +99,7 @@
     "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
     "critical-threshold": 80,
     "format": "{temperatureC}°C <span size='110%'></span>",
-    "format-critical": "{temperatureC}°C ",
+    "format-critical": "{temperatureC}°C <span size='110%'></span>",
     "interval": 5
   },
 
@@ -151,9 +151,7 @@
     "scroll-step": 1,
     "on-click": "GDK_BACKEND=x11 pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"],
-    "format-icons": {
-      "default": ["<span size='120%'>󰖀", "<span size='120%'>󰕾</span>"]
-    }
+    "format-icons": ["<span size='120%'>󰕾</span>"]
   },
 
   "network": {

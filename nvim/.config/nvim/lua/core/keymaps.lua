@@ -5,6 +5,9 @@ vim.g.mapleader = ' '
 -- For conciseness
 local opts = { noremap = true, silent = true }
 
+-- block mode
+vim.keymap.set('n', '<D-v>', '<C-v>')
+
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 vim.keymap.set({ 'n', 'v' }, '<leader>', '<Nop>', { silent = true })
 
@@ -23,7 +26,7 @@ vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 
 -- quit file
 vim.keymap.set('n', '<leader>qe', '<cmd> q! <CR>', opts) -- without saving
-vim.keymap.set({ 'n', 'v' }, '<leader>qw', '<cmd> wq <CR>', opts)  -- saving
+vim.keymap.set({ 'n', 'v' }, '<leader>wq', '<cmd> wq <CR>', opts)  -- saving
 
 -- Open neotree with ctrl + n
 vim.keymap.set({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true })
