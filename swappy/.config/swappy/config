@@ -1,6 +1,6 @@
 [Default]
-save_dir=/home/DROS/Pictures
-save_filename_format=Important verbs.png
+save_dir=/home/DROS/Pictures/To remember/music
+save_filename_format=Muse.png
 show_panel=false
 line_size=5
 text_size=20
