@@ -102,7 +102,7 @@ sudo chsh -s $(which zsh) $USER
 
 # set up themes
 gsettings set org.gnome.desktop.interface icon-theme "Tela-circle"
-gsettings set org.gnome.desktop.interface gtk-theme "Colloid-grey-dark"
+gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Grey-Dark'
 
 echo "-Restart your pc to apply all changes-"
 echo "You still have to set up plymouth"
