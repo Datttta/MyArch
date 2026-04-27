@@ -122,7 +122,4 @@ prepend_keymap = [
 
   # Open with cmd
   { on = [ "o" ], run  = "plugin open-with-cmd", desc = "Open with command" },
-
-  #f<char>
-  { on   = ["f"], run  = "plugin jump-to-char", desc = "Jump to char" }
 ]
