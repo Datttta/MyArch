@@ -1,0 +1,7 @@
+[Desktop Entry] 
+Name=Time Manager 
+Comment=Stopwatch and time tracking app 
+Exec=Time-manager 
+Terminal=false 
+Type=Application 
+Categories=Utility;
