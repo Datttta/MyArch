@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALL_DIR=~/dotfiles/wallpaper
+WALL_DIR=~/Repos/dotfiles/wallpaper
 LAST_FILE=~/.cache/last_wallpaper
 
 mkdir -p ~/.cache

@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Updating package lists..."
 
-cd ~/dotfiles
+cd ~/Repos/dotfiles
 
 pacman -Qqen > packages/pkglist.txt
 pacman -Qqem > packages/aurlist.txt

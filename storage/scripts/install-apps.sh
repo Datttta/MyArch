@@ -1,4 +1,4 @@
-cd ~/dotfiles/packages/
+cd ~/Repos/dotfiles/packages/
 
 echo "Installing flatpak packages..."
 flatpak install --noninteractive flathub $(<flatpaklist.txt)
