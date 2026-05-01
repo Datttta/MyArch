@@ -1,6 +1,16 @@
 #!/bin/bash
 
-WALL_DIR=~/Repos/dotfiles/wallpaper
+WALL_DIR=~/Repos/dotfiles/storage/wallpaper/
+
+# Expand ~ safely
+WALL_DIR="${WALL_DIR/#\~/$HOME}"
+
+# Validate directory exists
+if [[ ! -d "$WALL_DIR" ]]; then
+    echo "ERROR: Wallpaper directory does not exist: $WALL_DIR" >&2
+    exit 1
+fi
+
 LAST_FILE=~/.cache/last_wallpaper
 
 mkdir -p ~/.cache
