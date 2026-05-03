@@ -1,23 +1,35 @@
 #!/bin/bash
+shopt -s extglob
+set -euo pipefail
 
 echo "............Starting installation..........."
 
 # ===========================
-echo "Cloning Vimwiki repo!"
-git clone git@github.com:Datttta/Vimwiki.git
+cd
+mkdir -p ~/Repos
+cd Repos
 
-echo "Cloning MyArch repo!"
-git clone git@github.com:Datttta/MyArch.git
+if [ ! -d "Vimwiki" ]; then 
+    echo "Cloning Vimwiki repo!"
+    git clone git@github.com:Datttta/Vimwiki.git
+fi
+
+if [ ! -d "MyArch" ]; then 
+    echo "Cloning MyArch repo!"
+    git clone git@github.com:Datttta/MyArch.git
+fi
+
 cd MyArch
 
+yay -S --noconfirm --needed stow
+
 echo "Stowing files..."
-setopt extended_glob
-stow ^(sl-*|storage)
-sudo stow -t / sl-*/
+stow -t ~ !(sl-*|storage)
+sudo stow -t / sl-*
 
 # ============================
 echo "Installing your apps..."
-yay -S --noconfirm --needed flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh bat wofi waybar swappy rofi pavucontrol kitty python-pywal16 wlogout swaync waypaper anki pear-desktop discord  lutris firefox steam gnome-clocks piper osu timeshift timeshift-autosnap btop deepin-calculator downgrade fd fzf gnome-calendar grub haruna gthumb calibre kalarm zenity grimblast syncthing trash-cli qbittorrent zsh-autosuggestions zsh-completions zsh-syntax-highlighting wl-copy sddm nwg-look hyprlock hyprpaper stow neovim tty-clock cmatrix cliphist wl-clipboard ripgrep z-library-bin vim imv Clockify-desktop
+yay -S --noconfirm --needed flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh bat wofi waybar swappy rofi pavucontrol kitty python-pywal16 wlogout swaync waypaper anki pear-desktop discord  lutris firefox steam gnome-clocks piper osu timeshift timeshift-autosnap btop deepin-calculator downgrade fd fzf gnome-calendar grub haruna gthumb calibre kalarm zenity grimblast syncthing trash-cli qbittorrent zsh-autosuggestions zsh-completions zsh-syntax-highlighting wl-copy sddm nwg-look hyprlock hyprpaper neovim tty-clock cmatrix cliphist wl-clipboard ripgrep z-library-bin vim imv Clockify-desktop
 
 echo "Installing system apps & drivers..."
 yay -S --noconfirm --needed xorg-xwayland glib2 thunar exfatprogs ntfs-3g aria2 jdk-openjdk intel-ucode linux-lts linux-lts-headers preload linux-zen linux-zen-headers xdg-utils playerctl pacman-contrib brightnessctl python-gobject jq xdg-desktop-portal-hyprland xdg-desktop-portal-gtk polkit-gnome auto-cpufreq bluez blueman bluez-utils corectrl kvantum-qt5 ufw pipewire-pulse pipewire wireplumber libnotify bluez-hid2hci os-prober qt5-wayland qt6-wayland xdg-user-dirs tree unzip unrar tar rsync gvfs gvfs-mtp udisks2 npm plymouth plymouth-theme-monoarch-refined tela-circle-icon-theme-standard openssh
@@ -26,7 +38,7 @@ echo "Installing fonts..."
 yay -S --noconfirm --needed ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-liberation ttf-ubuntu-font-family woff2-font-awesome noto-fonts-cjk noto-fonts noto-fonts-extra noto-fonts-emoji otf-font-awesome ttf-radio-canada lora-font-git ttf-playfair-variable
 
 echo "Installing flatpak apps"
-flatpak install flathub org.vinegarhq.Sober com.stremio.Stremio
+flatpak install --noninteractive flathub org.vinegarhq.Sober com.stremio.Stremio
 
 # ==========================
 echo "Setting default apps..."
@@ -87,23 +99,34 @@ sudo systemctl enable --now auto-cpufreq
 sudo systemctl enable --now NetworkManager
 
 # set up user groups
-sudo usermod -aG wheel,video,render,input,storage,gamemode $USER
-
+for group in wheel video render input storage gamemode; do
+    if ! id -nG "$USER" | grep -qw "$group"; then
+        sudo usermod -aG "$group" "$USER"
+    fi
+done
 # set up keyboard
 sudo localectl set-keymap br-abnt2
 sudo localectl set-x11-keymap br abnt2
 
 # set up grub
-echo "GRUB_DISABLE_OS_PROBER=false" | sudo tee -a /etc/default/grub
+if grep -q "^GRUB_DISABLE_OS_PROBER=" /etc/default/grub; then
+    sudo sed -i 's/^GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub
+else
+    echo "GRUB_DISABLE_OS_PROBER=false" | sudo tee -a /etc/default/grub
+fi
+
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # set up zsh
 sudo chsh -s $(which zsh) $USER
 
 #set up Time-manager
-cd ~/Repos
-git clone https://github.com/Datttta/Time-manager
-cd Time-manager
+if [ ! -d "$HOME/Repos/Time-manager" ]; then 
+    cd ~/Repos
+    git clone https://github.com/Datttta/Time-manager
+fi
+
+cd ~/Repos/Time-manager
 python Time-manager-installer.py
 
 # set up themes
