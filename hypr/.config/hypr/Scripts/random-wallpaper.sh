@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALL_DIR=~/Repos/dotfiles/storage/wallpaper/
+WALL_DIR=~/Repos/MyArch/storage/wallpaper/
 
 # Expand ~ safely
 WALL_DIR="${WALL_DIR/#\~/$HOME}"

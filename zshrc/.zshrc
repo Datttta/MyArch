@@ -156,12 +156,12 @@ alias y='yazi'
 alias sy='sudo yazi'
 
 alias st='stow -t ~'
-alias dot='cd ~/Repos/dotfiles/'
+alias dot='cd ~/Repos/MyArch/'
 
 #(cat ~/.cache/wal/sequences &)
 
-# To customize prompt, run `p10k configure` or edit ~/Repos/dotfiles/p10k/.p10k.zsh.
-[[ ! -f ~/Repos/dotfiles/p10k/.p10k.zsh ]] || source ~/Repos/dotfiles/p10k/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/Repos/MyArch/p10k/.p10k.zsh.
+[[ ! -f ~/Repos/MyArch/p10k/.p10k.zsh ]] || source ~/Repos/MyArch/p10k/.p10k.zsh
 export AMD_VULKAN_ICD=RADV
 export RADV_PERFTEST=llvm
 export PATH=$PATH:/usr/lib/vinegar
