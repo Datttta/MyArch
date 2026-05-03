@@ -100,6 +100,12 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 # set up zsh
 sudo chsh -s $(which zsh) $USER
 
+#set up Time-manager
+cd ~/Repos
+git clone https://github.com/Datttta/Time-manager
+cd Time-manager
+python Time-manager-installer.py
+
 # set up themes
 gsettings set org.gnome.desktop.interface icon-theme "Tela-circle"
 gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Grey-Dark'
