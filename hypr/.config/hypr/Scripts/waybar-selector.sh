@@ -13,10 +13,13 @@ case "$option" in
         fi ;;
 
     "Configs") 
-        option=$(printf ".config/\n.zshrc" | wofi --dmenu --normal-window)
+        option=$(printf ".config/\nTime-manager/\nConfig-manager.sh\n.zshrc" | wofi --dmenu --normal-window)
         case "$option" in
             ".config/") choosen="$HOME/.config" ;;
+            "Time-manager/") choosen="$HOME/Repos/Time_manager" ;;
+
             ".zshrc") kitty nvim .zshrc ;;
+            "Config-manager.sh") kitty --directory "~/.config/hypr/Scripts" nvim waybar-selector.sh ;;
         esac 
 esac
 
