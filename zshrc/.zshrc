@@ -135,7 +135,6 @@ alias s="yay -Ss"
 alias q="yay -Q"
 
 alias cat="bat --theme base16"
-alias find="fd"
 
 alias rm="trash"
 alias nnn='nnn -x'

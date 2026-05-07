@@ -15,6 +15,10 @@ LAST_FILE=~/.cache/last_wallpaper
 
 mkdir -p ~/.cache
 
+while [[ -z "$(hyprctl monitors 2>/dev/null)" ]]; do
+    sleep 0.1
+done
+
 # If last wallpaper exists, exclude it
 if [[ -f "$LAST_FILE" ]]; then
     LAST=$(cat "$LAST_FILE")
