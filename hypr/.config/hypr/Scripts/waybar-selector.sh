@@ -1,6 +1,6 @@
 #!/bin/bash
 
-option=$(printf "Waybar\nConfigs" | wofi --dmenu --normal-window)
+option=$(printf "Configs\nWaybar" | wofi --dmenu --normal-window)
 
 case "$option" in
 
@@ -13,11 +13,9 @@ case "$option" in
         fi ;;
 
     "Configs") 
-        option=$(printf "hypr/\nnvim/\nwaybar/\n.zshrc" | wofi --dmenu --normal-window)
+        option=$(printf ".config/\n.zshrc" | wofi --dmenu --normal-window)
         case "$option" in
-            "hypr/") choosen="$HOME/.config/hypr" ;;
-            "nvim/") choosen="$HOME/.config/nvim" ;;
-            "waybar/") choosen="$HOME/.config/waybar" ;;
+            ".config/") choosen="$HOME/.config" ;;
             ".zshrc") kitty nvim .zshrc ;;
         esac 
 esac
@@ -27,7 +25,7 @@ if [ -v choosen ]; then
     CURRENT_DIR="$choosen"
 
     while true; do
-        list=$(ls -1FL "$CURRENT_DIR" | grep -v '^\./$')
+        list=$(ls -1AFL "$CURRENT_DIR" | grep -v '^\./$')
         
         selection=$(printf "../\n$list" | wofi --dmenu --normal-window --prompt "${CURRENT_DIR#$HOME/}")
 
