@@ -24,7 +24,7 @@ if [[ -f "$LAST_FILE" ]]; then
     LAST=$(cat "$LAST_FILE")
 
     # Build list excluding last
-    WALLPAPER=$(find "$WALL_DIR" -type f | grep -vxF "$LAST" | shuf -n 1)
+    WALLPAPER=$(find "$WALL_DIR" -type f -not -name "collection.db" | grep -vxF "$LAST" | shuf -n 1)
 
     # If exclusion leaves nothing (only 1 wallpaper exists), fallback
     if [[ -z "$WALLPAPER" ]]; then
@@ -54,6 +54,12 @@ hyprpaper &
 wal --cols16 lighten -i "$WALLPAPER"
 
 killall waybar
+
+# We check if the card* device is initialized in /dev/dri/
+while [ ! -d /dev/dri ] || [ -z "$(ls /dev/dri/card* 2>/dev/null)" ]; do
+    sleep 0.5
+done
+
 waybar &
 
 killall swaync

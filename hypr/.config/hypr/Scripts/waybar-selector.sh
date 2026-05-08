@@ -31,7 +31,7 @@ if [ -v choosen ]; then
     CURRENT_DIR="$choosen"
 
     while true; do
-        list=$(ls -1AFL "$CURRENT_DIR" | grep -v '^\./$')
+        list=$(ls -1AFL "$CURRENT_DIR" | grep -v '^\./$' | sed 's/\*$//')
         
         selection=$(printf "../\n$list" | wofi --dmenu --normal-window --prompt "${CURRENT_DIR#$HOME/}")
 
