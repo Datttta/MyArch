@@ -1,8 +1,10 @@
 #!/bin/bash
 
-option=$(printf "Configs\nWaybar" | wofi --dmenu --normal-window)
+option=$(printf "Configs\nWaybar\nTeste" | wofi --dmenu --normal-window)
 
 case "$option" in
+
+    "Teste") bash "$HOME/test.sh" ;;
 
     "Waybar")
         DIR="$HOME/.config/waybar/themes"
@@ -13,13 +15,14 @@ case "$option" in
         fi ;;
 
     "Configs") 
-        option=$(printf ".config/\nTime-manager/\nConfig-manager.sh\n.zshrc" | wofi --dmenu --normal-window)
+        option=$(printf ".config/\nTime-manager/\nConfig-manager.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window)
         case "$option" in
             ".config/") choosen="$HOME/.config" ;;
             "Time-manager/") choosen="$HOME/Repos/Time_manager" ;;
 
             ".zshrc") kitty nvim .zshrc ;;
             "Config-manager.sh") kitty --directory "~/.config/hypr/Scripts" nvim waybar-selector.sh ;;
+            "my_hyprland.sh") kitty --directory "~/Repos/MyArch/storage/scripts/" nvim my_hyprland.sh ;;
         esac 
 esac
 
