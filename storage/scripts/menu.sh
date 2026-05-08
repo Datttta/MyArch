@@ -18,7 +18,7 @@ case "$option" in
         option=$(printf ".config/\n/usr/share/applications\n.local/share/applications\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window)
         case "$option" in
             ".config/") choosen="$HOME/.config" ;;
-            "/usr/applications") choosen="/usr/share/applications" ;;
+            "/usr/share/applications") choosen="/usr/share/applications" ;;
             ".local/share/applications") choosen="$HOME/.local/share/applications" ;;
             "Time-manager/") choosen="$HOME/Repos/Time_manager" ;;
 
@@ -51,8 +51,15 @@ if [ -v choosen ]; then
         else
             # It's a file. Open it!
             FULL_PATH="$CURRENT_DIR/$selection"
-            
-            kitty --directory "$CURRENT_DIR" nvim "$FULL_PATH"
+
+            notify-send $CURRENT_DIR
+
+            if [[ "$CURRENT_DIR" == /usr* ]]; then
+                kitty --directory "$CURRENT_DIR" sudoedit "$FULL_PATH"
+            else
+                kitty --directory "$CURRENT_DIR" nvim "$FULL_PATH"
+            fi
+
             break
         fi
     done

@@ -18,8 +18,8 @@ wait_for_window() {
 hyprctl dispatch movecursor 0 0
 
 # Open Yazi
-kitty --class "cm_term" cmatrix -b &
-wait_for_window "cm_term"
+kitty --class "c_term" cava &
+wait_for_window "c_term"
 
 # Open Nvim
 kitty --class "k_term" &
@@ -44,5 +44,5 @@ wait_for_window "n_term"
 # Extra top-right
 hyprctl dispatch movefocus u
 hyprctl dispatch movefocus r
-kitty --class "c_term" cava &
-wait_for_window "c_term"
+kitty --class "cm_term" cmatrix -b &
+wait_for_window "cm_term"
