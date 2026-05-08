@@ -18,31 +18,31 @@ wait_for_window() {
 hyprctl dispatch movecursor 0 0
 
 # Open Yazi
-kitty --class "yazi_term" yazi &
-wait_for_window "yazi_term"
+kitty --class "cm_term" cmatrix -b &
+wait_for_window "cm_term"
 
 # Open Nvim
-kitty --class "nvim_term" nvim ~/.config/hypr/hyprland.conf &
-wait_for_window "nvim_term"
+kitty --class "k_term" &
+wait_for_window "k_term"
 
-# Move focus and open Cmatrix
+# bottom-left
 hyprctl dispatch movefocus l
 hyprctl dispatch movefocus d
-kitty --class "cmatrix_term" cmatrix &
-wait_for_window "cmatrix_term"
+kitty --class "t_term" tenki &
+wait_for_window "t_term"
 
 # Bottom-right
 hyprctl dispatch movefocus r
-kitty --class "standard_term" &
-wait_for_window "standard_term"
+kitty --class "b_term" btop &
+wait_for_window "b_term"
 
 # Extra bottom-left
 hyprctl dispatch movefocus l
-kitty --class "btop_term" btop &
-wait_for_window "btop_term"
+kitty --class "n_term" nvim ~/.cache/wal/colors-hyprland.conf &
+wait_for_window "n_term"
 
 # Extra top-right
 hyprctl dispatch movefocus u
 hyprctl dispatch movefocus r
-kitty --class "fish_term" asciiquarium &
-wait_for_window "fish_term"
+kitty --class "c_term" cava &
+wait_for_window "c_term"

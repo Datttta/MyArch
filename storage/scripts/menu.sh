@@ -1,10 +1,10 @@
 #!/bin/bash
 
-option=$(printf "Configs\nWaybar\nTeste" | wofi --dmenu --normal-window)
+option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window)
 
 case "$option" in
 
-    "Teste") bash "$HOME/test.sh" ;;
+    "Ricing") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-1.sh" ;;
 
     "Waybar")
         DIR="$HOME/.config/waybar/themes"
