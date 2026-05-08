@@ -7,13 +7,6 @@
   "modules-center": ["hyprland/workspaces", "custom/media"],
   "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "keyboard-state", "group/updates"],
 
-  "image#anki_icon": {
-    "path": "/usr/local/share/pixmaps/anki.xpm",
-    "size": 18,
-    "tooltip": "Launch Anki",
-    "on-click": "anki"
-  },
-
   "tray": {
     "icon-size": 19
   },

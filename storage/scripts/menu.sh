@@ -15,9 +15,11 @@ case "$option" in
         fi ;;
 
     "Configs") 
-        option=$(printf ".config/\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window)
+        option=$(printf ".config/\n/usr/share/applications\n.local/share/applications\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window)
         case "$option" in
             ".config/") choosen="$HOME/.config" ;;
+            "/usr/applications") choosen="/usr/share/applications" ;;
+            ".local/share/applications") choosen="$HOME/.local/share/applications" ;;
             "Time-manager/") choosen="$HOME/Repos/Time_manager" ;;
 
             ".zshrc") kitty nvim .zshrc ;;
