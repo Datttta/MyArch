@@ -31,6 +31,7 @@ check_class() {
         fi
     done
 
+    echo "final class name: $target_class" >&2
     echo "$target_class"
 }
 
@@ -38,33 +39,36 @@ hyprctl dispatch movecursor 0 0
 
 # Open Yazi
 app=$(check_class "cava_term")
-echo "final class name: $app" >&2
 kitty --class "$app" cava &
 wait_for_window "$app"
-exit
 
 # Open Nvim
-kitty --class "k_term" &
-wait_for_window "k_term"
+app=$(check_class "kitty_term")
+kitty --class $app &
+wait_for_window $app
 
 # bottom-left
 hyprctl dispatch movefocus l
 hyprctl dispatch movefocus d
-kitty --class "t_term" tenki &
-wait_for_window "t_term"
+app=$(check_class "tenki_term")
+kitty --class $app tenki &
+wait_for_window $app
 
 # Bottom-right
 hyprctl dispatch movefocus r
-kitty --class "b_term" btop &
-wait_for_window "b_term"
+app=$(check_class "btop_term")
+kitty --class $app btop &
+wait_for_window $app
 
 # Extra bottom-left
 hyprctl dispatch movefocus l
-kitty --class "n_term" nvim ~/.cache/wal/colors-hyprland.conf &
-wait_for_window "n_term"
+app=$(check_class "nvim_term")
+kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
+wait_for_window $app
 
 # Extra top-right
 hyprctl dispatch movefocus u
 hyprctl dispatch movefocus r
-kitty --class "cm_term" cmatrix -b &
-wait_for_window "cm_term"
+app=$(check_class "cmatrix_term")
+kitty --class $app cmatrix -b &
+wait_for_window $app
