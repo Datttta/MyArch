@@ -15,11 +15,33 @@ wait_for_window() {
     return 1
 }
 
+check_class() {
+    local target_class=$1
+    while hyprctl clients -j | jq -e --arg class "$target_class" '.[] | select(.class == $class)' > /dev/null; do
+        echo "class already exists: $target_class" >&2
+        echo "changing name..." >&2
+        if [[ $target_class =~ ([0-9]+)$ ]]; then
+            number="${BASH_REMATCH[1]}"
+            prefix="${target_class%$number}"
+
+            target_class="${prefix}$((number + 1))"
+            echo "currect class name: $target_class" >&2
+        else
+            target_class="${target_class}1"
+        fi
+    done
+
+    echo "$target_class"
+}
+
 hyprctl dispatch movecursor 0 0
 
 # Open Yazi
-kitty --class "c_term" cava &
-wait_for_window "c_term"
+app=$(check_class "cava_term")
+echo "final class name: $app" >&2
+kitty --class "$app" cava &
+wait_for_window "$app"
+exit
 
 # Open Nvim
 kitty --class "k_term" &
