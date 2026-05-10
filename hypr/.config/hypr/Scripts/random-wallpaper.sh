@@ -40,7 +40,7 @@ echo "$WALLPAPER" > "$LAST_FILE"
 # Generate Hyprpaper config
 cat > ~/.config/hypr/hyprpaper.conf <<EOF
 preload = $WALLPAPER
-wallpaper = eDP-1,$WALLPAPER
+wallpaper = ,$WALLPAPER
 EOF
 
 mkdir -p ~/.cache/hyprlock

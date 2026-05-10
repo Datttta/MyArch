@@ -20,7 +20,8 @@ check_class() {
     while hyprctl clients -j | jq -e --arg class "$target_class" '.[] | select(.class == $class)' > /dev/null; do
         echo "class already exists: $target_class" >&2
         echo "changing name..." >&2
-        if [[ $target_class =~ ([0-9]+)$ ]]; then
+        #check if there is a number at the end of the variable
+        if [[ $target_class =~ ([0-9]+)$ ]]; then 
             number="${BASH_REMATCH[1]}"
             prefix="${target_class%$number}"
 

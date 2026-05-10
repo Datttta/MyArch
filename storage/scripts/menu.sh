@@ -52,8 +52,6 @@ if [ -v choosen ]; then
             # It's a file. Open it!
             FULL_PATH="$CURRENT_DIR/$selection"
 
-            notify-send $CURRENT_DIR
-
             if [[ "$CURRENT_DIR" == /usr* ]]; then
                 kitty --directory "$CURRENT_DIR" sudoedit "$FULL_PATH"
             else
