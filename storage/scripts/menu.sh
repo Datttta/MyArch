@@ -4,7 +4,13 @@ option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window)
 
 case "$option" in
 
-    "Ricing") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-1.sh" ;;
+    "Ricing") 
+        option=$(printf "ricing-1.sh\nricing-2.sh\nricing-3.sh" | wofi --dmenu --normal-window)
+        case "$option" in
+            "ricing-1.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-1.sh" ;;
+            "ricing-2.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-2.sh" ;;
+            "ricing-3.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-3.sh" ;;
+        esac ;;
 
     "Waybar")
         DIR="$HOME/.config/waybar/themes"
