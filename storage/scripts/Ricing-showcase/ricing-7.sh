@@ -39,30 +39,24 @@ check_class() {
 hyprctl dispatch movecursor 0 0
 
 # Right hyprland.conf + neotree
-app=$(check_class "hyprconf_blur")
-kitty --class $app nvim +'Neotree show left' ~/.config/hypr/hyprland.conf &
+app=$(check_class "hyprconf_term")
+kitty --class $app nvim ~/.config/hypr/hyprland.conf &
 wait_for_window $app
 
 # Left Open kitty
-app=$(check_class "kitty_blur")
+app=$(check_class "kitty_term")
 kitty --class $app &
 wait_for_window $app
 
 # bottom-left open btop
 hyprctl dispatch movecursor 450 700
-app=$(check_class "btop_blur")
+app=$(check_class "btop_term")
 kitty --class $app btop &
 wait_for_window $app
 
 # Bottom-right cmatrix -b
 hyprctl dispatch movefocus r
 hyprctl dispatch movecursor 1450 700
-app=$(check_class "cmatrix_blur")
+app=$(check_class "cmatrix_term")
 kitty --class $app cmatrix -b &
 wait_for_window $app
-
-# Open swaync
-swaync-client -t &
-
-#Open wofi
-wofi --show drun --normal-window
