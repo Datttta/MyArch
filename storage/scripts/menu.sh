@@ -5,13 +5,14 @@ option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window)
 case "$option" in
 
     "Ricing") 
-        option=$(printf "ricing-1.sh\nricing-2.sh\nricing-3.sh\nricing-4.sh\nricing-4_blur.sh" | wofi --dmenu --normal-window)
+        option=$(printf "ricing-1.sh\nricing-2.sh\nricing-3.sh\nricing-4.sh\nricing-4_blur.sh\nricing-5.sh" | wofi --dmenu --normal-window)
         case "$option" in
             "ricing-1.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-1.sh" ;;
             "ricing-2.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-2.sh" ;;
             "ricing-3.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-3.sh" ;;
             "ricing-4.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-4.sh" ;;
             "ricing-4_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-4_blur.sh" ;;
+            "ricing-5.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-5.sh" ;;
         esac ;;
 
     "Waybar")
