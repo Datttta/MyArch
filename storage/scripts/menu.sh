@@ -5,7 +5,7 @@ option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window)
 case "$option" in
 
     "Ricing") 
-        option=$(printf "ricing-1.sh\nricing-2.sh\nricing-3.sh\nricing-4.sh\nricing-4_blur.sh\nricing-5.sh\nricing-6_blur.sh\nricing-7.sh\nricing-8_blur.sh" | wofi --dmenu --normal-window)
+        option=$(printf "ricing-1.sh\nricing-2.sh\nricing-3.sh\nricing-4.sh\nricing-4_blur.sh\nricing-5.sh\nricing-6_blur.sh\nricing-7.sh\nricing-8_blur.sh\nricing-9.sh\nricing-9_blur.sh" | wofi --dmenu --normal-window)
         case "$option" in
             "ricing-1.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-1.sh" ;;
             "ricing-2.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-2.sh" ;;
@@ -16,6 +16,8 @@ case "$option" in
             "ricing-6_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-6_blur.sh" ;;
             "ricing-7.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-7.sh" ;;
             "ricing-8_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-8_blur.sh" ;;
+            "ricing-9.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-9.sh" ;;
+            "ricing-9_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-9_blur.sh" ;;
         esac ;;
 
     "Waybar")
