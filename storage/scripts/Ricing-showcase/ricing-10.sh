@@ -36,33 +36,12 @@ check_class() {
     echo "$target_class"
 }
 
-hyprctl dispatch movecursor 0 0
-
-# Right hyprland.conf
-app=$(check_class "hyprconf_term")
-kitty --class $app nvim ~/.config/hypr/hyprland.conf &
-wait_for_window $app
-
-# Left Open kitty
-app=$(check_class "kitty_term")
-kitty --class $app &
-wait_for_window $app
-
-# bottom-left open btop
-hyprctl dispatch movecursor 450 700
-app=$(check_class "btop_term")
-kitty --class $app btop &
-wait_for_window $app
-
-# Bottom-right cmatrix -b
-hyprctl dispatch movefocus r
-hyprctl dispatch movecursor 1450 700
-app=$(check_class "hpyrland-colors_term")
-kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
-wait_for_window $app
+# Open kitty
+kitty &
 
 # Open wofi
 wofi --show drun --normal-window &
+sleep 0.3
 hyprctl dispatch focuswindow class:^wofi$
 wait_for_window "wofi"
 

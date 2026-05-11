@@ -61,8 +61,10 @@ app=$(check_class "cmatrix_blur")
 kitty --class $app cmatrix -b &
 wait_for_window $app
 
+# Open wofi
+wofi --show drun --normal-window &
+hyprctl dispatch focuswindow class:^wofi$
+wait_for_window "wofi"
+
 # Open swaync
 swaync-client -t &
-
-#Open wofi
-wofi --show drun --normal-window

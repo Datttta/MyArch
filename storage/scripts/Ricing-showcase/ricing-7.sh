@@ -38,7 +38,7 @@ check_class() {
 
 hyprctl dispatch movecursor 0 0
 
-# Right hyprland.conf + neotree
+# Right hyprland.conf
 app=$(check_class "hyprconf_term")
 kitty --class $app nvim ~/.config/hypr/hyprland.conf &
 wait_for_window $app

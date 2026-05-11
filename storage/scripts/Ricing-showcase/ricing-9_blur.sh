@@ -60,4 +60,3 @@ hyprctl dispatch movecursor 1450 700
 app=$(check_class "hpyrland-colors_blur")
 kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
 wait_for_window $app
-
