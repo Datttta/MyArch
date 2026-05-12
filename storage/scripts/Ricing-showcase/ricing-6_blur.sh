@@ -39,8 +39,8 @@ check_class() {
 hyprctl dispatch movecursor 0 0
 
 # Right hyprland.conf + neotree
-app=$(check_class "hyprconf_blur")
-kitty --class $app nvim +'Neotree show left' ~/.config/hypr/hyprland.conf &
+app=$(check_class "hpyrland-colors_blur")
+kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
 wait_for_window $app
 
 # Left Open kitty
