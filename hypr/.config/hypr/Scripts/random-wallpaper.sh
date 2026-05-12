@@ -48,7 +48,16 @@ cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
 
 # Restart hyprpaper
 pkill hyprpaper
+
+while pgrep -x hyprpaper >/dev/null; do
+    sleep 0.1
+done
+
 hyprpaper &
+
+while ! hyprctl hyprpaper listactive >/dev/null 2>&1; do
+    sleep 0.1
+done
 
 # Generate pywal colors
 wal --cols16 lighten -i "$WALLPAPER"
@@ -63,5 +72,5 @@ done
 waybar &
 
 killall swaync
-exec swaync
+swaync &
 
