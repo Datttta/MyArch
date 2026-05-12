@@ -45,7 +45,7 @@ wait_for_window $app
 
 # Left Open kitty
 app=$(check_class "kitty_term")
-kitty --class $app &
+kitty --class $app env FASTFETCH_LOGO=arch2 zsh &
 wait_for_window $app
 
 # bottom-left tty-clock
