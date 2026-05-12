@@ -39,23 +39,23 @@ check_class() {
 hyprctl dispatch movecursor 0 0
 
 # Right hyprland.conf
-app=$(check_class "hpyrland_blur")
+app=$(check_class "hpyrland_term")
 kitty --class $app nvim ~/.config/hypr/hyprland.conf &
 wait_for_window $app
 
 # Left Open kitty
-app=$(check_class "kitty_blur")
+app=$(check_class "kitty_term")
 kitty --class $app &
 wait_for_window $app
 
 # bottom-left open btop
 hyprctl dispatch movecursor 450 700
-app=$(check_class "btop_blur")
+app=$(check_class "btop_term")
 kitty --class $app btop &
 wait_for_window $app
 
 # Bottom-right cmatrix -b
 hyprctl dispatch movefocus r
 hyprctl dispatch movecursor 1450 700
-app=$(check_class "nvim_blur")
+app=$(check_class "nvim_term")
 kitty --class $app nvim 

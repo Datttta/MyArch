@@ -40,7 +40,7 @@ hyprctl dispatch movecursor 0 0
 
 # Right hyprland.conf + neotree
 app=$(check_class "hyprconf_term")
-kitty --class $app nvim +'Neotree show left' ~/.config/hypr/hyprland.conf &
+kitty --class $app nvim +'Neotree filesystem reveal left dir=~/.config reveal_file=~/.config/hypr/hyprland.conf' ~/.config/hypr/hyprland.conf &
 wait_for_window $app
 
 # Left Open kitty
