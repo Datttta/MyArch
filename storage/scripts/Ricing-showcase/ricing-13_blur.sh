@@ -71,4 +71,3 @@ swaync-client -t &
 
 # Open wlogout
 wlogout
-
