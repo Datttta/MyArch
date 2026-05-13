@@ -39,24 +39,30 @@ check_class() {
 hyprctl dispatch movecursor 0 0
 
 # Right 
-app=$(check_class "hyprconf_term")
-kitty --class $app nvim +'Neotree filesystem reveal left dir=~/.config reveal_file=~/.config/hypr/hyprland.conf' ~/.config/hypr/hyprland.conf &
+app=$(check_class "arch2_term")
+kitty --class $app env FASTFETCH_LOGO=arch2 zsh &
 wait_for_window $app
 
 # Left 
-app=$(check_class "kitty_term")
+app=$(check_class "arch_term")
 kitty --class $app &
 wait_for_window $app
 
-# bottom-left 
-hyprctl dispatch movecursor 450 700
-app=$(check_class "btop_term")
-kitty --class $app btop &
+hyprctl dispatch movefocus r
+hyprctl killactive && kill -9 $(hyprctl activewindow -j | jq -r '.pid')
+app=$(check_class "arch2_term")
+kitty --class $app env FASTFETCH_LOGO=arch2 zsh &
 wait_for_window $app
 
 # Bottom-right 
-hyprctl dispatch movefocus r
 hyprctl dispatch movecursor 1450 700
-app=$(check_class "hpyrland-colors_term")
-kitty --class $app nvim ~/.cache/wal/colors-waybar.css &
+app=$(check_class "arch_old_term")
+kitty --class $app env FASTFETCH_LOGO=arch_old zsh &
+wait_for_window $app
+
+# bottom-left 
+hyprctl dispatch movefocus l
+hyprctl dispatch movecursor 450 700
+app=$(check_class "arch3_term")
+kitty --class $app env FASTFETCH_LOGO=arch3 zsh &
 wait_for_window $app
