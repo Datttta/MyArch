@@ -1,53 +1,47 @@
 #!/bin/bash
 
-option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window)
+WOFI_CONFIG="$HOME/.config/wofi/menu/menu_initial.conf"
+WOFI_STYLE="$HOME/.config/wofi/selector.css"
+
+option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window -c "$WOFI_CONFIG" \
+    -s "$WOFI_STYLE")
 
 case "$option" in
 
-    "Ricing") 
-        option=$(printf "ricing-1.sh\nricing-2.sh\nricing-3.sh\nricing-4.sh\nricing-4_blur.sh\nricing-5.sh\nricing-6_blur.sh\nricing-7.sh\nricing-8_blur.sh\nricing-9.sh\nricing-9_blur.sh\nricing-10.sh\nricing-11.sh\nricing-12.sh\nricing-13_blur.sh\nricing-14.sh\nricing-7_blur.sh\nricing-15.sh\nricing-16.sh\nricing-16_blur.sh\nricing-17.sh\nricing-18.sh\nricing-19.sh\nricing-20.sh\narch_logos.sh\narch_logos-blur.sh\narch vs arch2.sh\narch vs arch2_blur.sh\nricing-21.sh" | wofi --dmenu --normal-window)
-        case "$option" in
-            "ricing-1.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-1.sh" ;;
-            "ricing-2.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-2.sh" ;;
-            "ricing-3.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-3.sh" ;;
-            "ricing-4.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-4.sh" ;;
-            "ricing-4_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-4_blur.sh" ;;
-            "ricing-5.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-5.sh" ;;
-            "ricing-6_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-6_blur.sh" ;;
-            "ricing-7.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-7.sh" ;;
-            "ricing-8_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-8_blur.sh" ;;
-            "ricing-9.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-9.sh" ;;
-            "ricing-9_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-9_blur.sh" ;;
-            "ricing-10.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-10.sh" ;;
-            "ricing-11.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-11.sh" ;;
-            "ricing-12.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-12.sh" ;;
-            "ricing-13_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-13_blur.sh" ;;
-            "ricing-14.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-14.sh" ;;
-            "ricing-7_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-7_blur.sh" ;;
-            "ricing-15.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-15.sh" ;;
-            "ricing-16.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-16.sh" ;;
-            "ricing-16_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-16_blur.sh" ;;
-            "ricing-17.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-17.sh" ;;
-            "ricing-18.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-18.sh" ;;
-            "ricing-19.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-19.sh" ;;
-            "ricing-20.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-20.sh" ;;
-            "arch_logos.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/arch_logos.sh" ;;
-            "arch_logos-blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/arch_logos-blur.sh" ;;
-            "arch vs arch2.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/arch vs arch2.sh" ;;
-            "arch vs arch2_blur.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/arch vs arch2_blur.sh" ;;
-            "ricing-21.sh") bash "$HOME/Repos/MyArch/storage/scripts/Ricing-showcase/ricing-21.sh" ;;
-        esac ;;
+    "Ricing")
+        WOFI_CONFIG="$HOME/.config/wofi/menu/ricing_sh.conf"
+        WALL_DIR="$HOME/Repos/MyArch/storage/wallpaper/"
+        SCRIPT_DIR="$HOME/Repos/MyArch/storage/scripts/Ricing-showcase"
+
+        LIST=""
+
+        for img in "$WALL_DIR"/*.{png,jpg,jpeg,webp}; do
+            [ -f "$img" ] || continue
+
+            name=$(basename "$img")
+            script="${name%.*}.sh"
+
+            LIST+="img:$img:text:$script\n"
+        done
+
+        selected=$(
+            echo -e "$LIST" | wofi --dmenu --normal-window -c "$WOFI_CONFIG" --prompt "Select Rice")
+
+        [ -z "$selected" ] && exit
+
+        bash "$SCRIPT_DIR/$selected"
+    ;;
 
     "Waybar")
         DIR="$HOME/.config/waybar/themes"
-        THEME=$(ls "$DIR" | wofi --dmenu --normal-window --sort-order=alphabetical "Waybar theme:")
+        THEME=$(ls "$DIR" | wofi --dmenu --normal-window --sort-order=alphabetical -s "$WOFI_STYLE" "Waybar theme:")
 
         if [ -n "$THEME" ]; then
             ~/.config/waybar/scripts/waybar-switcher.sh "$THEME"
         fi ;;
 
     "Configs") 
-        option=$(printf ".config/\n/usr/share/applications\n.local/share/applications\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window)
+        option=$(printf ".config/\n/usr/share/applications\n.local/share/applications\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window -s "$WOFI_STYLE")
         case "$option" in
             ".config/") choosen="$HOME/.config" ;;
             "/usr/share/applications") choosen="/usr/share/applications" ;;
@@ -67,7 +61,7 @@ if [ -v choosen ]; then
     while true; do
         list=$(ls -1AFL "$CURRENT_DIR" | grep -v '^\./$' | sed 's/\*$//')
         
-        selection=$(printf "../\n$list" | wofi --dmenu --normal-window --prompt "${CURRENT_DIR#$HOME/}")
+        selection=$(printf "../\n$list" | wofi --dmenu --normal-window -s "$WOFI_STYLE" --prompt "${CURRENT_DIR#$HOME/}")
 
         [ -z "$selection" ] && break
 
