@@ -1,6 +1,6 @@
 [Default]
-save_dir=/home/DROS/Pictures/Español
-save_filename_format=kwiziq.png
+save_dir=/home/DROS/Pictures/Linux/Desktop screenshots
+save_filename_format=rainy day.png
 show_panel=false
 line_size=5
 text_size=20
