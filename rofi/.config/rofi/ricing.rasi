@@ -1,0 +1,30 @@
+configuration {
+    show-icons: true;
+}
+
+window {
+    width: 1600px;
+    height: 900px;
+}
+
+listview {
+    columns: 3;
+    lines: 3;
+    spacing: 20px;
+    cycle: false;
+    dynamic: true;
+}
+
+element {
+    orientation: vertical;
+    padding: 10px;
+    border-radius: 16px;
+}
+
+element-icon {
+    size: 320px;
+}
+
+element-text {
+    horizontal-align: 0.5;
+}

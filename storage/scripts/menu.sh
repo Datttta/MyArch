@@ -9,27 +9,27 @@ option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window -c "$WO
 case "$option" in
 
     "Ricing")
-        WOFI_CONFIG="$HOME/.config/wofi/menu/ricing_sh.conf"
-        WALL_DIR="$HOME/Repos/MyArch/storage/wallpaper/"
-        SCRIPT_DIR="$HOME/Repos/MyArch/storage/scripts/Ricing-showcase"
+        RICING_DIR="$HOME/Repos/MyArch/storage/scripts/Ricing-showcase"
+        PREVIEW_DIR="$RICING_DIR/preview"
 
-        LIST=""
+        list=""
 
-        for img in "$WALL_DIR"/*.{png,jpg,jpeg,webp}; do
-            [ -f "$img" ] || continue
+        for script in "$RICING_DIR"/*.sh; do
+            filename=$(basename "$script" .sh)
+            img="$PREVIEW_DIR/$filename.png"
 
-            name=$(basename "$img")
-            script="${name%.*}.sh"
-
-            LIST+="img:$img:text:$script\n"
+            list+="$filename\x00icon\x1f$img\n"
         done
 
         selected=$(
-            echo -e "$LIST" | wofi --dmenu --normal-window -c "$WOFI_CONFIG" --prompt "Select Rice")
+            echo -en "$list" | \
+            rofi -dmenu \
+                 -show-icons \
+                 -theme ~/.config/rofi/ricing.rasi
+        )
 
-        [ -z "$selected" ] && exit
-
-        bash "$SCRIPT_DIR/$selected"
+        [ -n "$selected" ] && \
+            bash "$RICING_DIR/$selected.sh"
     ;;
 
     "Waybar")
