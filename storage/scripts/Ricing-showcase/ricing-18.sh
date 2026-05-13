@@ -38,26 +38,25 @@ check_class() {
 
 hyprctl dispatch movecursor 0 0
 
-# Right cmatrix
-app=$(check_class "cmatrix_term")
-kitty --class $app cmatrix -b &
+# Right 
+app=$(check_class "asciiquarium_term")
+kitty --class $app asciiquarium &
 wait_for_window $app
 
-# Left Open kitty
+# Left Open 
 app=$(check_class "kitty_term")
 kitty --class $app &
 wait_for_window $app
 
-# bottom-left open btop
+# bottom-left 
 hyprctl dispatch movecursor 450 700
 app=$(check_class "btop_term")
 kitty --class $app btop &
 wait_for_window $app
 
-# Bottom-right colors-hyprland.conf
+# Bottom-right 
 hyprctl dispatch movefocus r
 hyprctl dispatch movecursor 1450 700
-app=$(check_class "hpyrland-colors_term")
-kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
+app=$(check_class "pipes.sh_term")
+kitty --class $app pipes.sh -t 3 &
 wait_for_window $app
-

@@ -38,26 +38,26 @@ check_class() {
 
 hyprctl dispatch movecursor 0 0
 
-# Open hyprland.conf
-app=$(check_class "hyprconf_term")
-kitty --class $app nvim ~/.config/hypr/hyprland.conf &
+# Open nvim
+app=$(check_class "hpyrland-colors_term")
+kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
 wait_for_window $app
 
 # Right Open kitty
-hyprctl dispatch movefocus l
 app=$(check_class "kitty_term")
 kitty --class $app &
 wait_for_window $app
 
 # bottom-left open btop
-hyprctl dispatch movefocus l
-hyprctl dispatch movefocus d
+hyprctl dispatch movecursor 450 700
 app=$(check_class "btop_term")
 kitty --class $app btop &
 wait_for_window $app
 
-# Bottom-right nvim 
+# top-right neovim
 hyprctl dispatch movefocus r
+hyprctl dispatch movecursor 1450 300
 app=$(check_class "neovim_term")
 kitty --class $app nvim &
 wait_for_window $app
+
