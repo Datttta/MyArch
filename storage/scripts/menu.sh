@@ -33,7 +33,7 @@ case "$option" in
         done
 
         # 2. Show wofi
-        selection=$(echo -e "$list_items" | wofi --dmenu --normal-window -c "$WOFI_CONFIG" -s "$WOFI_STYLE" --prompt "Select script")
+        selection=$(echo -e "$list_items" | wofi --dmenu --normal-window -c "$WOFI_CONFIG" --prompt "Select script")
 
         # 3. execute
         [ -z "$selection" ] && exit
@@ -41,8 +41,8 @@ case "$option" in
         # 1. Remove the "img:" prefix if it exists and Get just the filename
         clean_name=$(basename "${selection#img:}")
 
-        # 3. Change the extension from .png back to .sh (if it was an image)
-        script_name="${clean_name%.png}.sh"
+        # 3. Change the extension from .* to .sh
+        script_name="${clean_name%.*}.sh"
 
         bash "$RICING_DIR/$script_name" ;;
 
