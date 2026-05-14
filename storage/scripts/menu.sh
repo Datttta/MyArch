@@ -9,28 +9,42 @@ option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window -c "$WO
 case "$option" in
 
     "Ricing")
+        WOFI_CONFIG="$HOME/.config/wofi/menu/ricing_sh.conf"
+        WOFI_STYLE="$HOME/.config/wofi/menu/ricing_sh.css"
         RICING_DIR="$HOME/Repos/MyArch/storage/scripts/Ricing-showcase"
         PREVIEW_DIR="$RICING_DIR/preview"
-
-        list=""
-
+        
+        # 1. Generate the list with images
+        # We loop through scripts and format them for wofi
+        list_items=""
         for script in "$RICING_DIR"/*.sh; do
-            filename=$(basename "$script" .sh)
-            img="$PREVIEW_DIR/$filename.png"
-
-            list+="$filename\x00icon\x1f$img\n"
+            filename=$(basename "$script")
+            # Assume image has the same name as the script but with .png
+            # e.g., ricing-1.sh -> preview/ricing-1.png
+            img_path="$PREVIEW_DIR/${filename%.sh}.png"
+            
+            if [ -f "$img_path" ]; then
+                # Format for wofi with images
+                list_items+="img:$img_path\n"
+            else
+                # Fallback if no image exists
+                list_items+="$filename\n"
+            fi
         done
 
-        selected=$(
-            echo -en "$list" | \
-            rofi -dmenu \
-                 -show-icons \
-                 -theme ~/.config/rofi/ricing.rasi
-        )
+        # 2. Show wofi
+        selection=$(echo -e "$list_items" | wofi --dmenu --normal-window -c "$WOFI_CONFIG" -s "$WOFI_STYLE" --prompt "Select script")
 
-        [ -n "$selected" ] && \
-            bash "$RICING_DIR/$selected.sh"
-    ;;
+        # 3. execute
+        [ -z "$selection" ] && exit
+
+        # 1. Remove the "img:" prefix if it exists and Get just the filename
+        clean_name=$(basename "${selection#img:}")
+
+        # 3. Change the extension from .png back to .sh (if it was an image)
+        script_name="${clean_name%.png}.sh"
+
+        bash "$RICING_DIR/$script_name" ;;
 
     "Waybar")
         DIR="$HOME/.config/waybar/themes"

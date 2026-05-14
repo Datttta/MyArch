@@ -1,28 +1,33 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
 configuration {
     show-icons: true;
 }
 
 window {
-    width: 1600px;
-    height: 900px;
-}
+    width: 800px;
+    height: 350px;
+    border: 2px;
+    border-radius: 13px;
+    background-color: alpha(@background, 0.1);
+    }
 
 listview {
     columns: 3;
     lines: 3;
-    spacing: 20px;
+    spacing: 0px;
     cycle: false;
     dynamic: true;
 }
 
 element {
     orientation: vertical;
-    padding: 10px;
+    padding: 0px;
     border-radius: 16px;
 }
 
 element-icon {
-    size: 320px;
+    size: 200px;
 }
 
 element-text {
