@@ -38,38 +38,37 @@ check_class() {
 
 hyprctl dispatch movecursor 0 0
 
-# Open Yazi
+# top-right
 app=$(check_class "cava_term")
 kitty --class "$app" cava &
 wait_for_window "$app"
 
-# Open Nvim
+# top-left
 app=$(check_class "kitty_term")
 kitty --class $app &
 wait_for_window $app
 
 # bottom-left
-hyprctl dispatch movefocus l
-hyprctl dispatch movefocus d
+hyprctl dispatch movecursor 450 700
+app=$(check_class "hpyrland-colors_term")
+kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
+wait_for_window $app
+
+# Extra bottom-left
+hyprctl dispatch movecursor 750 700
 app=$(check_class "tenki_term")
 kitty --class $app tenki &
 wait_for_window $app
 
 # Bottom-right
 hyprctl dispatch movefocus r
+hyprctl dispatch movecursor 1450 700
 app=$(check_class "btop_term")
 kitty --class $app btop &
 wait_for_window $app
 
-# Extra bottom-left
-hyprctl dispatch movefocus l
-app=$(check_class "hpyrland-colors_term")
-kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
-wait_for_window $app
-
 # Extra top-right
 hyprctl dispatch movefocus u
-hyprctl dispatch movefocus r
 app=$(check_class "cmatrix_term")
 kitty --class $app cmatrix -b &
 wait_for_window $app

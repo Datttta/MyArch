@@ -84,6 +84,8 @@ case "$option" in
 
             random_script="${scripts[RANDOM % ${#scripts[@]}]}"
 
+            notify-send $(basename "${random_script%.*}.sh")
+
             bash "$random_script"
             exit
         fi
