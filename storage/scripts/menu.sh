@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WOFI_CONFIG="$HOME/.config/wofi/menu/menu_initial.conf"
+WOFI_CONFIG="$HOME/.config/wofi/menu/home_menu.conf"
 WOFI_STYLE="$HOME/.config/wofi/selector.css"
 
 option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window -c "$WOFI_CONFIG" \
@@ -11,40 +11,89 @@ case "$option" in
     "Ricing")
         WOFI_CONFIG="$HOME/.config/wofi/menu/ricing_sh.conf"
         WOFI_STYLE="$HOME/.config/wofi/menu/ricing_sh.css"
+
         RICING_DIR="$HOME/Repos/MyArch/storage/scripts/Ricing-showcase"
         PREVIEW_DIR="$RICING_DIR/preview"
-        
-        # 1. Generate the list with images
-        # We loop through scripts and format them for wofi
-        list_items=""
-        for script in "$RICING_DIR"/*.sh; do
-            filename=$(basename "$script")
-            # Assume image has the same name as the script but with .png
-            # e.g., ricing-1.sh -> preview/ricing-1.png
-            img_path="$PREVIEW_DIR/${filename%.sh}.png"
-            
-            if [ -f "$img_path" ]; then
-                # Format for wofi with images
-                list_items+="img:$img_path\n"
-            else
-                # Fallback if no image exists
-                list_items+="$filename\n"
-            fi
-        done
 
-        # 2. Show wofi
-        selection=$(echo -e "$list_items" | wofi --dmenu --normal-window -c "$WOFI_CONFIG" --prompt "Select script")
+        CACHE_DIR="$HOME/.cache/ricing-selector"
+        THUMBNAIL_WIDTH="250"
+        THUMBNAIL_HEIGHT="141"
 
-        # 3. execute
+        mkdir -p "$CACHE_DIR"
+
+        # Shuffle thumbnail
+        SHUFFLE_ICON="$CACHE_DIR/shuffle_thumbnail.png"
+
+        magick -size "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" xc:none \
+            \( "$HOME/.config/wofi/menu/shuffle.png" -resize "80x80" \) \
+            -gravity center -composite "$SHUFFLE_ICON"
+
+        # Generate thumbnail function
+        generate_thumbnail() {
+            local input="$1"
+            local output="$2"
+
+            magick "$input" \
+                -thumbnail "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}^" \
+                -gravity center \
+                -extent "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" \
+                "$output"
+        }
+
+        # Generate menu
+        generate_menu() {
+            # Shuffle option
+            echo -en "img:$SHUFFLE_ICON\x00info:Shuffle\x1fRANDOM\n"
+
+            # Scripts
+            for script in "$RICING_DIR"/*.sh; do
+                [[ -f "$script" ]] || continue
+
+                filename=$(basename "$script")
+                preview="$PREVIEW_DIR/${filename%.sh}.png"
+
+                if [[ -f "$preview" ]]; then
+                    thumbnail="$CACHE_DIR/${filename%.sh}.png"
+
+                    # Regenerate if preview changed
+                    if [[ ! -f "$thumbnail" ]] || [[ "$preview" -nt "$thumbnail" ]]; then
+                        generate_thumbnail "$preview" "$thumbnail"
+                    fi
+
+                    echo -en "img:$thumbnail\x00info:$filename\x1f$script\n"
+                else
+                    echo -en "$filename\n"
+                fi
+            done
+        }
+
+        # Show wofi
+        selection=$(generate_menu | wofi --dmenu --normal-window \
+            -c "$WOFI_CONFIG" \
+            -s "$WOFI_STYLE" \
+            --prompt "Select script")
+
         [ -z "$selection" ] && exit
 
-        # 1. Remove the "img:" prefix if it exists and Get just the filename
-        clean_name=$(basename "${selection#img:}")
+        # Remove img: prefix
+        selected_path="${selection#img:}"
 
-        # 3. Change the extension from .* to .sh
-        script_name="${clean_name%.*}.sh"
+        # Shuffle
+        if [[ "$selected_path" == "$SHUFFLE_ICON" ]]; then
+            mapfile -t scripts < <(find "$RICING_DIR" -maxdepth 1 -name "*.sh")
 
-        bash "$RICING_DIR/$script_name" ;;
+            random_script="${scripts[RANDOM % ${#scripts[@]}]}"
+
+            bash "$random_script"
+            exit
+        fi
+
+        # Convert thumbnail back to script name
+        clean_name=$(basename "${selected_path%.*}")
+        script_name="${clean_name}.sh"
+
+        bash "$RICING_DIR/$script_name"
+        ;;
 
     "Waybar")
         DIR="$HOME/.config/waybar/themes"
@@ -56,6 +105,7 @@ case "$option" in
 
     "Configs") 
         option=$(printf ".config/\n/usr/share/applications\n.local/share/applications\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window -s "$WOFI_STYLE")
+
         case "$option" in
             ".config/") choosen="$HOME/.config" ;;
             "/usr/share/applications") choosen="/usr/share/applications" ;;
@@ -65,7 +115,7 @@ case "$option" in
             ".zshrc") kitty nvim .zshrc ;;
             "menu.sh") kitty --directory "~/Repos/MyArch/storage/scripts/" nvim menu.sh ;;
             "my_hyprland.sh") kitty --directory "~/Repos/MyArch/storage/scripts/" nvim my_hyprland.sh ;;
-        esac 
+        esac
 esac
 
 if [ -v choosen ]; then
@@ -74,22 +124,22 @@ if [ -v choosen ]; then
 
     while true; do
         list=$(ls -1AFL "$CURRENT_DIR" | grep -v '^\./$' | sed 's/\*$//')
-        
-        selection=$(printf "../\n$list" | wofi --dmenu --normal-window -s "$WOFI_STYLE" --prompt "${CURRENT_DIR#$HOME/}")
+
+        selection=$(printf "../\n$list" | wofi --dmenu --normal-window \
+            -s "$WOFI_STYLE" \
+            --prompt "${CURRENT_DIR#$HOME/}")
 
         [ -z "$selection" ] && break
 
         if [ "$selection" = "../" ]; then
-            # Go up a level
             if [ "$CURRENT_DIR" != "$HOME" ]; then
                 CURRENT_DIR=$(dirname "$CURRENT_DIR")
             fi
+
         elif [[ "$selection" == */ ]]; then
-            # If it ends in /, it's a directory. 
-            # We strip the / and update the current path.
             CURRENT_DIR="${CURRENT_DIR}/${selection%/}"
+
         else
-            # It's a file. Open it!
             FULL_PATH="$CURRENT_DIR/$selection"
 
             if [[ "$CURRENT_DIR" == /usr* ]]; then
@@ -102,3 +152,4 @@ if [ -v choosen ]; then
         fi
     done
 fi
+

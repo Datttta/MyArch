@@ -1,47 +1,58 @@
+@import '.cache/wal/colors-waybar.css';
+
+@define-color bg @background;
+@define-color selected-bg @color1;
+@define-color dragging-scroll @color2;
+@define-color border-color @color14;
+
+* {
+    background-color:transparent;
+}
+
 window {
-    background-color: #1e1e2e;
-    border-radius: 8px;
-    border: 2px solid #313244;
+    background-color: alpha(@bg, 0.55);
 }
 
 #input {
-    margin: 2px;
-    padding: 4px;
-    border-radius: 4px;
-    border: none;
-    background-color: #313244;
-    color: #cdd6f4;
+    /* Spacing */
+    margin: 15px;           /* Outer margin */
+    padding: 10px 16px;      /* Inner padding (top/bottom, left/right) */
+
+    border: 0.8px solid @border-color;            /* Removes the border */
+    outline: none;           /* Removes focus outline */
+    box-shadow: none;        /* Removes shadow if present */
+    border-radius: 13px;
+    background: alpha(@color0, 0.5);
 }
 
 #inner-box {
-  margin: 0px;
+  margin: 40px;
 }
 
 #outer-box {
   margin: 0px;
 }
 
-#scroll {
-  margin: 0px;
-}
-
-#text {
-  margin: 2px;
-  color: #cdd6f4;
-}
 
 #entry {
-  padding: 2px;
-  margin: 0px;
-  border-radius: 4px;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 4px;
+    outline: none;
 }
 
 #entry:selected {
-  background-color: #313244;
+    background-color: alpha(@color14, 0.4); 
 }
 
 #img {
   margin: 2px;
-  padding-left: 4px;
+  padding-left: 5px;
   border-radius: 4px;
 }
+
+#entry:first-child {
+    padding: 0;
+    margin: 0;
+}
+
