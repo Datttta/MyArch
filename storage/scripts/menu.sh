@@ -25,7 +25,7 @@ case "$option" in
         SHUFFLE_ICON="$CACHE_DIR/shuffle_thumbnail.png"
 
         magick -size "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" xc:none \
-            \( "$HOME/.config/wofi/menu/shuffle.png" -resize "80x80" \) \
+            \( "$HOME/.config/wofi/menu/shuffle.png" -resize "100x100" \) \
             -gravity center -composite "$SHUFFLE_ICON"
 
         # Generate thumbnail function
