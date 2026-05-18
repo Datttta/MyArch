@@ -78,27 +78,17 @@ case "$option" in
         # Remove img: prefix
         selected_path="${selection#img:}"
 
-
         # Shuffle
         if [[ "$selected_path" == "$SHUFFLE_ICON" ]]; then
-            stop=0
-            until [ $stop == 1 ]; do
-                mapfile -t scripts < <(find "$RICING_DIR" -maxdepth 1 -name "*.sh")
+            mapfile -t scripts < <(find "$RICING_DIR" -maxdepth 1 -name "*.sh")
 
-                random_script="${scripts[RANDOM % ${#scripts[@]}]}"
+            random_script="${scripts[RANDOM % ${#scripts[@]}]}"
 
-                preview="$PREVIEW_DIR/$(basename "${random_script%.sh}.png")"
-                echo "path: $preview"
-                notify-send "stop: $stop"
+            notify-send $(basename "${random_script%.*}.sh")
 
-                if [[ ! -f "$preview" ]]; then
-                    notify-send $(basename "${random_script%.*}.sh")
-                    bash "$random_script"
-                    stop=1
-                fi
-            done
+            bash "$random_script"
+            exit
         fi
-        exit
 
         # Convert thumbnail back to script name
         clean_name=$(basename "${selected_path%.*}")
