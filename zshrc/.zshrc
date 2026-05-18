@@ -151,6 +151,7 @@ alias lt='lsd --tree'
 alias ga='git add .'
 alias gm='git commit -m'
 alias gp='git push'
+alias gup='ga && gm "update" && gp'
 
 alias n='nvim'
 
