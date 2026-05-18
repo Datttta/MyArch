@@ -1,6 +1,6 @@
 [Default]
-save_dir=/home/DROS/Pictures
-save_filename_format=Screenshot-2026-05-18-003410.png
+save_dir=/home/DROS/Repos/MyArch/storage/scripts/Ricing-showcase/preview
+save_filename_format=ricing-7_blur.png
 show_panel=false
 line_size=5
 text_size=20
