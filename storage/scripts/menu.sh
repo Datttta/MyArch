@@ -84,9 +84,14 @@ case "$option" in
 
             random_script="${scripts[RANDOM % ${#scripts[@]}]}"
 
-            notify-send $(basename "${random_script%.*}.sh")
+            preview="$PREVIEW_DIR/$(basename "${random_script%.sh}.png")"
+            echo "path: $preview"
 
-            bash "$random_script"
+            if [[ ! -f "$preview" ]]; then
+                notify-send $(basename "${random_script%.*}.sh")
+                bash "$random_script"
+            fi
+
             exit
         fi
 
