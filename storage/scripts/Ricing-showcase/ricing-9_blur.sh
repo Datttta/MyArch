@@ -38,12 +38,12 @@ check_class() {
 
 hyprctl dispatch movecursor 0 0
 
-# Right hyprland.conf + neotree
-app=$(check_class "hyprconf_blur")
-kitty --class $app nvim ~/.config/hypr/hyprland.conf &
+# Top-right
+app=$(check_class "tenki_blur")
+kitty --class $app tenki &
 wait_for_window $app
 
-# Left Open kitty
+# Top-left
 app=$(check_class "kitty_blur")
 kitty --class $app &
 wait_for_window $app

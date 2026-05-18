@@ -1,6 +1,6 @@
 [Default]
-save_dir=/home/DROS/Pictures/Linux/Desktop screenshots
-save_filename_format=rainy day.png
+save_dir=/home/DROS/Repos/MyArch/storage/scripts/Ricing-showcase/preview
+save_filename_format=arch vs arch2_blur.png
 show_panel=false
 line_size=5
 text_size=20
