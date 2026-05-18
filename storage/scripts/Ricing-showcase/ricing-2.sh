@@ -38,34 +38,26 @@ check_class() {
 
 hyprctl dispatch movecursor 0 0
 
-# Top-right 
-app=$(check_class "btop_term")
-kitty --class $app btop &
+# Bottom-right
+app=$(check_class "hpyrland-colors_term")
+kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
 wait_for_window $app
 
 # Top-left
 app=$(check_class "kitty_term")
-kitty --class $app env FASTFETCH_LOGO=arch2 zsh &
+kitty --class $app &
 wait_for_window $app
 
 # bottom-left 
 hyprctl dispatch movecursor 450 700
+app=$(check_class "btop_term")
+kitty --class $app btop &
+wait_for_window $app
+
+# top-right 
+hyprctl dispatch movefocus r
+hyprctl dispatch movecursor 1450 300
 app=$(check_class "tty-clock_term")
 kitty --class $app tty-clock -s -c &
 wait_for_window $app
-
-# Bottom-right 
-hyprctl dispatch movefocus r
-hyprctl dispatch movecursor 1450 700
-app=$(check_class "pipes.sh_term")
-kitty --class $app pipes.sh -t 0 &
-wait_for_window $app
-
-# Open wofi
-wofi --show drun --normal-window &
-hyprctl dispatch focuswindow class:^wofi$
-wait_for_window "wofi"
-
-# Open swaync
-swaync-client -t &
 

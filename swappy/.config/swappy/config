@@ -1,6 +1,6 @@
 [Default]
 save_dir=/home/DROS/Repos/MyArch/storage/scripts/Ricing-showcase/preview
-save_filename_format=ricing-4.png
+save_filename_format=ricing-2.png
 show_panel=false
 line_size=5
 text_size=20
