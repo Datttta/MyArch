@@ -94,6 +94,8 @@ case "$option" in
         clean_name=$(basename "${selected_path%.*}")
         script_name="${clean_name}.sh"
 
+        notify-send $script_name
+
         bash "$RICING_DIR/$script_name"
         ;;
 
