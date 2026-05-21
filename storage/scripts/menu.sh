@@ -9,8 +9,8 @@ option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window -c "$WO
 case "$option" in
 
     "Ricing")
-        WOFI_CONFIG="$HOME/.config/wofi/menu/ricing_sh.conf"
-        WOFI_STYLE="$HOME/.config/wofi/menu/ricing_sh.css"
+        WOFI_CONFIG="$HOME/.config/wofi/menu/ricing_showcase/ricing_sh.conf"
+        WOFI_STYLE="$HOME/.config/wofi/menu/ricing_showcase/ricing_sh.css"
 
         RICING_DIR="$HOME/Repos/MyArch/storage/scripts/Ricing-showcase"
         PREVIEW_DIR="$RICING_DIR/preview"
@@ -25,7 +25,7 @@ case "$option" in
         SHUFFLE_ICON="$CACHE_DIR/shuffle_thumbnail.png"
 
         magick -size "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" xc:none \
-            \( "$HOME/.config/wofi/menu/shuffle.png" -resize "100x90" \) \
+            \( "$HOME/.config/wofi/menu/ricing_showcase/shuffle.png" -resize "100x90" \) \
             -gravity center -composite "$SHUFFLE_ICON"
 
         # Generate thumbnail function
@@ -101,33 +101,42 @@ case "$option" in
 
     "Waybar")
         DIR="$HOME/.config/waybar/themes"
-        THEME=$(ls "$DIR" | wofi --dmenu --normal-window --sort-order=alphabetical -s "$WOFI_STYLE" "Waybar theme:")
+        PREVIEW_DIR="$HOME/.config/waybar/themes/preview"
+        WOFI_CONFIG="$HOME/.config/wofi/menu/"
 
         # Generate menu
-        #generate_menu() {
+        generate_menu() {
 
-        #    # Scripts
-        #    for script in "$RICING_DIR"/*.sh; do
-        #        [[ -f "$script" ]] || continue
+            # Themes
+            for themes in "$DIR"/*; do
+                [[ -d "$themes" ]] || continue
 
-        #        filename=$(basename "$script")
-        #        preview="$PREVIEW_DIR/${filename%.sh}.png"
+                filename=$(basename "$themes")
+                echo "filename: $filename" >&2
 
-        #        if [[ -f "$preview" ]]; then
-        #            thumbnail="$CACHE_DIR/${filename%.sh}.png"
+                preview="$PREVIEW_DIR/${filename%}.png"
 
-        #            # Regenerate if preview changed
-        #            if [[ ! -f "$thumbnail" ]] || [[ "$preview" -nt "$thumbnail" ]]; then
-        #                generate_thumbnail "$preview" "$thumbnail"
-        #            fi
+                if [[ -f "$preview" ]]; then
+                    thumbnail="$CACHE_DIR/${filename%}.png"
 
-        #            echo -en "img:$thumbnail\x00info:$filename\x1f$script\n"
-        #        else
-        #            echo -en "$filename\n"
-        #        fi
-        #    done
-        #}
+                    # Regenerate if preview changed
+                    if [[ ! -f "$thumbnail" ]] || [[ "$preview" -nt "$thumbnail" ]]; then
+                        generate_thumbnail "$preview" "$thumbnail"
+                    fi
 
+                    echo -en "img:$thumbnail\x00info:$filename\x1f$themes\n"
+                else
+                    echo -en "$filename\n"
+                fi
+            done
+        }
+
+        THEME=$(generate_menu | wofi --dmenu --normal-window \
+        -c "$WOFI_CONFIG" \
+        -s "$WOFI_STYLE" \
+        --prompt "Select script")
+
+        [ -z "$THEME" ] && exit
 
         if [ -n "$THEME" ]; then
             BASE="$HOME/.config/waybar"
