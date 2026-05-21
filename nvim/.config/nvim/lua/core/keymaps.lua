@@ -93,11 +93,11 @@ vim.keymap.set('n', '<leader>ro', 'A \
 - [ ] Anki \
 - [ ] Homework \
 - [ ] Workout \
+- [ ] Clean_room \
 - [ ] Have_lunch \
 - [ ] Listening \
 - [ ] brush \
 - [ ] Loundry \
-- [ ] Clean_room \
 - [ ] Have_dinner \
 - [ ] brush')
 

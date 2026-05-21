@@ -1,0 +1,7 @@
+treeview:selected,
+.view:selected,
+.view text:selected,
+selection {
+    background-color: #4a90d9;
+    color: #ffffff;
+}
