@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WOFI_CONFIG="$HOME/.config/wofi/menu/home_menu.conf"
-WOFI_STYLE="$HOME/.config/wofi/selector.css"
+WOFI_STYLE="$HOME/.config/wofi/menu/selector.css"
 
 option=$(printf "Configs\nWaybar\nRicing" | wofi --dmenu --normal-window -c "$WOFI_CONFIG" \
     -s "$WOFI_STYLE")
@@ -102,22 +102,39 @@ case "$option" in
     "Waybar")
         DIR="$HOME/.config/waybar/themes"
         PREVIEW_DIR="$HOME/.config/waybar/themes/preview"
-        WOFI_CONFIG="$HOME/.config/wofi/menu/"
+        CACHE_DIR="$HOME/.cache/waybar_switcher"
+
+        WOFI_CONFIG="$HOME/.config/wofi/menu/waybar_switcher/config"
+        WOFI_STYLE="$HOME/.config/wofi/menu/waybar_switcher/style.css"
+
+        # Generate thumbnail function
+        generate_thumbnail() {
+            local input="$1"
+            local output="$2"
+
+            magick "$input" \
+                -gravity center \
+                -extent "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" \
+                "$output"
+        }
+
+        mkdir -p "$CACHE_DIR"
 
         # Generate menu
         generate_menu() {
 
             # Themes
-            for themes in "$DIR"/*; do
+            for themes in "$DIR"/waybar*; do
                 [[ -d "$themes" ]] || continue
 
                 filename=$(basename "$themes")
-                echo "filename: $filename" >&2
 
                 preview="$PREVIEW_DIR/${filename%}.png"
 
                 if [[ -f "$preview" ]]; then
                     thumbnail="$CACHE_DIR/${filename%}.png"
+                    echo "preview: $preview" >&2
+                    echo "thumbnail: $thumbnail" >&2
 
                     # Regenerate if preview changed
                     if [[ ! -f "$thumbnail" ]] || [[ "$preview" -nt "$thumbnail" ]]; then
@@ -131,10 +148,18 @@ case "$option" in
             done
         }
 
-        THEME=$(generate_menu | wofi --dmenu --normal-window \
+        selected=$(generate_menu | wofi --dmenu --normal-window \
         -c "$WOFI_CONFIG" \
         -s "$WOFI_STYLE" \
         --prompt "Select script")
+
+        # remove "img:"
+        selected_theme="${selected#img:}"
+
+        # remove extension
+        THEME=$(basename "${selected_theme%.*}")
+
+        echo "theme: $THEME" >&2
 
         [ -z "$THEME" ] && exit
 

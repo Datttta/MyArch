@@ -1,0 +1,51 @@
+@import '.cache/wal/colors-waybar.css';
+
+@define-color bg @background;
+@define-color selected-bg @color1;
+@define-color dragging-scroll @color2;
+@define-color border-color @color14;
+
+* {
+    background-color:transparent;
+}
+
+#input {
+    /* Spacing */
+    margin: 15px;           /* Outer margin */
+    padding: 10px 16px;      /* Inner padding (top/bottom, left/right) */
+
+    border: 0.8px solid @border-color;            /* Removes the border */
+    outline: none;           /* Removes focus outline */
+    box-shadow: none;        /* Removes shadow if present */
+    border-radius: 13px;
+    background: alpha(@color0, 0.5);
+}
+
+window {
+    background-color: alpha(@bg, 0.55);
+}
+#scroll {
+    margin: 0px 20px 20px 20px;
+    border: none;
+} 
+/* top, right, bottom, left */
+
+/* Change color ONLY when dragging */
+#scroll trough slider:active {
+    background-color: @dragging-scroll; /* Bright color when dragging */
+    opacity: 1; /* Fully visible */
+}
+
+#entry {
+    margin: 4px 10px;
+    padding: 10px;
+    outline: none;
+}
+
+#entry:selected {
+    background-color: alpha(@color14, 0.4); 
+    border: 0.2px solid @border-color;
+    border-radius:15px;
+    /*margin: 0px 20px;*/
+}
+
