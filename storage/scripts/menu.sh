@@ -103,8 +103,46 @@ case "$option" in
         DIR="$HOME/.config/waybar/themes"
         THEME=$(ls "$DIR" | wofi --dmenu --normal-window --sort-order=alphabetical -s "$WOFI_STYLE" "Waybar theme:")
 
+        # Generate menu
+        #generate_menu() {
+
+        #    # Scripts
+        #    for script in "$RICING_DIR"/*.sh; do
+        #        [[ -f "$script" ]] || continue
+
+        #        filename=$(basename "$script")
+        #        preview="$PREVIEW_DIR/${filename%.sh}.png"
+
+        #        if [[ -f "$preview" ]]; then
+        #            thumbnail="$CACHE_DIR/${filename%.sh}.png"
+
+        #            # Regenerate if preview changed
+        #            if [[ ! -f "$thumbnail" ]] || [[ "$preview" -nt "$thumbnail" ]]; then
+        #                generate_thumbnail "$preview" "$thumbnail"
+        #            fi
+
+        #            echo -en "img:$thumbnail\x00info:$filename\x1f$script\n"
+        #        else
+        #            echo -en "$filename\n"
+        #        fi
+        #    done
+        #}
+
+
         if [ -n "$THEME" ]; then
-            ~/.config/waybar/scripts/waybar-switcher.sh "$THEME"
+            BASE="$HOME/.config/waybar"
+            THEME_DIR="$BASE/themes/$THEME"
+
+            # Remove old links
+            rm -f "$BASE/config.jsonc"
+            rm -f "$BASE/style.css"
+
+            # Create new symlinks
+            ln -s "$THEME_DIR/config.jsonc" "$BASE/config.jsonc"
+            ln -s "$THEME_DIR/style.css" "$BASE/style.css"
+
+            killall waybar
+            waybar & disown
         fi ;;
 
     "Configs") 
