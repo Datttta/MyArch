@@ -1,6 +1,6 @@
 [Default]
-save_dir=/home/DROS
-save_filename_format=waybar-1.2-no_trays.png
+save_dir=/home/DROS/Pictures
+save_filename_format=Screenshot-2026-05-21-014643.png
 show_panel=false
 line_size=5
 text_size=20

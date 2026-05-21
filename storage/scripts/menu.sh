@@ -114,7 +114,6 @@ case "$option" in
 
             magick "$input" \
                 -gravity center \
-                -extent "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" \
                 "$output"
         }
 
@@ -133,8 +132,6 @@ case "$option" in
 
                 if [[ -f "$preview" ]]; then
                     thumbnail="$CACHE_DIR/${filename%}.png"
-                    echo "preview: $preview" >&2
-                    echo "thumbnail: $thumbnail" >&2
 
                     # Regenerate if preview changed
                     if [[ ! -f "$thumbnail" ]] || [[ "$preview" -nt "$thumbnail" ]]; then
