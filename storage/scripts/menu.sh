@@ -148,17 +148,22 @@ case "$option" in
         selected=$(generate_menu | wofi --dmenu --normal-window \
         -c "$WOFI_CONFIG" \
         -s "$WOFI_STYLE" \
-        --prompt "Select script")
+        --prompt "Select waybar")
 
-        # remove "img:"
-        selected_theme="${selected#img:}"
+        THEME=$selected
 
-        # remove extension
-        THEME=$(basename "${selected_theme%.*}")
+        if [[ $selected == img:* ]]; then 
 
-        echo "theme: $THEME" >&2
+            # remove "img:"
+            selected_theme="${selected#img:}"
+
+            # remove extension
+            THEME=$(basename "${selected_theme%.*}")
+        fi
 
         [ -z "$THEME" ] && exit
+
+        notify-send $THEME
 
         if [ -n "$THEME" ]; then
             BASE="$HOME/.config/waybar"

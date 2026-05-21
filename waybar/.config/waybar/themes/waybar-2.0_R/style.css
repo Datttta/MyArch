@@ -4,7 +4,7 @@
 /* @define-color color15 @color14; change the color it to @color15 or @color7 to meke it white | @color5 is recomended for one color */ 
 
 * {
-    font-family: "LiterationMono Nerd Font";
+    font-family: "Liberation Mono";
     font-weight: bold;
     font-size: 10px;
 }
@@ -36,41 +36,33 @@ window#waybar {
 
 #workspaces {
     background-color: alpha(@background, 0.9);
-    padding: 5px 6px;
+    padding: 2.5px 6px;
     border-radius: 15px;
     border: 1px solid alpha(@color14, 0.5)
 }
 
 #workspaces button {
-    margin: 2px 4px;
+    margin: 2.5px 4px;
+    padding: 2px 2.5px;
     border-radius: 400px;
-    padding: 0px 0px;
     min-height: 0;
     transition: all 0.15s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: alpha(@foreground, 0.1);
     border-radius: 9px;
-    margin: 0px;
-    padding: 0px 10px;
+    margin: 2.5px;
+    padding: 2px 10px;
     transition: all 0.15s ease-in-out;
+    background-color: alpha(@foreground, 0.2);
 }
 
 #workspaces button.empty {
-    min-width: 0;
-    margin: 0;
-    padding: 0;
+    padding: 0px;
+    margin: 0px;
+    min-width: 0px;
+    min-height: 0px;
     background-color: transparent;
-}
-
-#workspaces.numbers {
-    margin: 0px 10px;
-}
-
-#workspaces.numbers button.empty {
-    padding: 0px 10px;
-    background-color: alpha(@foreground, 0.1);
 }
 
 #custom-launcher {
@@ -111,7 +103,7 @@ window#waybar {
 
 #temperature {
     color: @color15; /* color13 */
-    margin: 0px 2px 0px 10px;
+    margin: 0px 2px 0.2px 10px;
     font-size:13.5px;
 }
 
@@ -128,8 +120,6 @@ window#waybar {
 
 #custom-weather,
 
-#clock, 
-
 #memory, 
 
 #battery,
@@ -141,6 +131,27 @@ window#waybar {
     font-size:13.5px;
 }
 
+#pulseaudio {
+    color: @color15; /* color13 */
+    margin: 0px 9px 0px 1px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
+#clock {
+    color: @color15; /* color13 */
+    margin: 0px 5px 0px 10px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
+#custom-anki_notification {
+    color: @color15; /* color13 */
+    margin: 0px 3px 0px 6px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
 #cpu {
     color: @color15; /* color13 */
     margin: 0px 6px 0px 10px;
@@ -148,25 +159,6 @@ window#waybar {
     font-size:13.5px;
 }
 
-#image.anki_icon {
-    background-image: url("/usr/local/share/pixmaps/anki.xpm");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-width: 18px;
-    min-height: 18px;
-    margin: 0px 0px 0px 3px;
-}
-
-#image.Memhack_icon {
-    background-image: url("/home/DROS/Pictures/Icons/Memhack.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-width: 20px;
-    min-height: 20px;
-    margin: 0px 2px;
-}
 
 #custom-trays{
     padding: 0px 3px 0px 1px;
@@ -179,4 +171,6 @@ window#waybar {
 #tray * {
     margin: 0px 3px;
 }
+
+
 

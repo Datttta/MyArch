@@ -20,7 +20,7 @@ window#waybar {
     margin: 0px 3px;
     background-color: alpha(@background, 0.9); /* background */
     padding: 0px 6px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid alpha(@color14, 1)
 }
 
@@ -29,7 +29,7 @@ window#waybar {
     margin: 0px 0px 0px 15px;
     background-color: alpha(@background, 0.9); /* background */
     padding: 2px 10px 1px 10px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid alpha(@color14, 1);
     font-size: 14px; 
 }
@@ -37,7 +37,7 @@ window#waybar {
 #workspaces {
     background-color: alpha(@background, 0.9);
     padding: 5px 6px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid alpha(@color14, 1)
 }
 
@@ -96,7 +96,7 @@ window#waybar {
 
 #temperature {
     color: @color15; /* color13 */
-    margin: 0px 2px 0px 10px;
+    margin: 0px 2px 0.2px 10px;
     font-size:13.5px;
 }
 
@@ -113,8 +113,6 @@ window#waybar {
 
 #custom-weather,
 
-#clock, 
-
 #memory, 
 
 #battery,
@@ -126,6 +124,27 @@ window#waybar {
     font-size:13.5px;
 }
 
+#pulseaudio {
+    color: @color15; /* color13 */
+    margin: 0px 9px 0px 1px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
+#clock {
+    color: @color15; /* color13 */
+    margin: 0px 5px 0px 10px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
+#custom-anki_notification {
+    color: @color15; /* color13 */
+    margin: 0px 3px 0px 6px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
 #cpu {
     color: @color15; /* color13 */
     margin: 0px 6px 0px 10px;
@@ -133,25 +152,6 @@ window#waybar {
     font-size:13.5px;
 }
 
-#image.anki_icon {
-    background-image: url("/usr/local/share/pixmaps/anki.xpm");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-width: 18px;
-    min-height: 18px;
-    margin: 0px 0px 0px 3px;
-}
-
-#image.Memhack_icon {
-    background-image: url("/home/DROS/Pictures/Icons/Memhack.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-width: 20px;
-    min-height: 20px;
-    margin: 0px 2px;
-}
 
 #custom-trays{
     padding: 0px 3px 0px 1px;
@@ -164,3 +164,5 @@ window#waybar {
 #tray * {
     margin: 0px 3px;
 }
+
+
