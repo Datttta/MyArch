@@ -65,30 +65,23 @@ window#waybar {
     background-color: transparent;
 }
 
-#custom-launcher {
-    color: @color15;
-    margin: 0px 3px 2px 4px;
-    border-radius: 25px;
-    font-size:13px;
-}
-
 #custom-pacman {
     color: @color15; /* color1 (previously color8) */
     margin: 0px 4px;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size:13px;
 }
 
 #custom-flatpak {
     color: @color15; /* color1 (previously color8) */
     margin: 0px 10px 0px 0px;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size:13px;
 }
 
 #custom-aur {
     color: @color15; /* color1 (previously color8) */
-    border-radius: 15px;
+    border-radius: 10px;
     margin: 0px 0px 0px 5px;
     font-size:13px;
 }
@@ -114,7 +107,7 @@ window#waybar {
 #network{
     color: @color15; /* color13 */
     margin: 0px 10px 0px 8px;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size:13.5px;
 }
 
@@ -127,50 +120,48 @@ window#waybar {
 #backlight {
     color: @color15; /* color13 */
     margin: 0px 10px 0px 10px;
-    border-radius: 15px;
-    font-size:13.5px;
-}
-
-#pulseaudio {
-    color: @color15; /* color13 */
-    margin: 0px 9px 0px 1px;
-    border-radius: 15px;
-    font-size:13.5px;
-}
-
-#clock {
-    color: @color15; /* color13 */
-    margin: 0px 5px 0px 10px;
-    border-radius: 15px;
-    font-size:13.5px;
-}
-
-#custom-anki_notification {
-    color: @color15; /* color13 */
-    margin: 0px 3px 0px 6px;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size:13.5px;
 }
 
 #cpu {
     color: @color15; /* color13 */
     margin: 0px 6px 0px 10px;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size:13.5px;
 }
 
+#pulseaudio {
+    color: @color15; /* color13 */
+    margin: 0px 9px 0px 1px;
+    border-radius: 10px;
+    font-size:13.5px;
+}
+
+#custom-launcher {
+    color: @color15;
+    margin: 0px 3px 2px 4px;
+    padding: 1px 0px 0px 0px;
+    border-radius: 25px;
+    font-size:13px;
+}
+
+#clock {
+    color: @color15; /* color13 */
+    margin: 0px 5px 0px 10px;
+    padding: 1px 0px 0px 0px;
+    border-radius: 10px;
+    font-size:13.5px;
+}
 
 #custom-trays{
-    padding: 0px 3px 0px 1px;
     color: @color15;
+    padding: 0px 3px 0px 0px;
+    margin: 0px 0px 0px 0px;
     font-size: 10.5px;
     transition: all .2s ease;
-    margin: 0px 0px 0px 0px;
 }
 
 #tray * {
     margin: 0px 3px;
 }
-
-
-
