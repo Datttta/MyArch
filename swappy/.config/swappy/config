@@ -1,6 +1,6 @@
 [Default]
-save_dir=/home/DROS/Pictures/Linux/Desktop screenshots
-save_filename_format=red industry.png
+save_dir=/home/DROS/Pictures
+save_filename_format=Screenshot-2026-05-23-235741.png
 show_panel=false
 line_size=5
 text_size=20
