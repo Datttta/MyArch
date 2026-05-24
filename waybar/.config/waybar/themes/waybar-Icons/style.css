@@ -59,8 +59,8 @@ window#waybar {
 
 #workspaces button.empty {
     padding-left: 16px;
-    padding-top: 4px;
-    margin: 0px;
+    padding-top: 5px;
+    margin: 2px;
     min-width: 0px;
     min-height: 0px;
     background-color: alpha(@foreground,0.2);
