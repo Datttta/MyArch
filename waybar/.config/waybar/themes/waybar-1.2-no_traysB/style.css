@@ -147,6 +147,13 @@ window#waybar {
     font-size:13.5px;
 }
 
+#custom-anki_notification {
+    color: @color15; /* color13 */
+    margin: 0px 3px 0px 6px;
+    border-radius: 15px;
+    font-size:13.5px;
+}
+
 #custom-trays{
     color: @color15;
     padding: 0px 3px 0px 0px;
