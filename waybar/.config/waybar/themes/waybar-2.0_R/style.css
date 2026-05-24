@@ -58,11 +58,12 @@ window#waybar {
 }
 
 #workspaces button.empty {
-    padding: 0px;
+    padding-left: 16px;
+    padding-top: 4px;
     margin: 0px;
     min-width: 0px;
     min-height: 0px;
-    background-color: transparent;
+    background-color: alpha(@foreground,0.2);
 }
 
 #custom-pacman {

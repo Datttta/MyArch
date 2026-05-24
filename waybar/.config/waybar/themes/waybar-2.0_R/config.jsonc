@@ -161,10 +161,6 @@
   "hyprland/workspaces": {
     "format": "{icon} {windows}",
 
-    "format-icons": {
-      "empty": ""
-    },
-
     "workspace-taskbar": {
         "enable": true,
         "format": "{icon}",

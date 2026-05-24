@@ -1,6 +1,6 @@
 [Default]
-save_dir=/home/DROS/Pictures
-save_filename_format=Screenshot-2026-05-23-235741.png
+save_dir=/home/DROS/Pictures/Español
+save_filename_format=kwiziq.png
 show_panel=false
 line_size=5
 text_size=20
