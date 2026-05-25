@@ -1,0 +1,188 @@
+/* waybar-numbers */
+{
+  "layer": "top",
+  "position": "bot",
+  "margin-top": 3,
+  "margin-bottom":3,
+  "modules-left": ["custom/launcher", "clock", "custom/anki_notification", "group/trays"],
+  "modules-center": ["hyprland/workspaces", "custom/media"],
+  "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "keyboard-state", "group/updates"],
+
+  "tray": {
+    "icon-size": 19
+  },
+
+  "group/trays": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 600,
+        "transition-to-left": true,
+        "click-to-reveal": false,
+        "hover-to-reveal": true
+    },
+    "modules": ["custom/trays", "tray"]
+  },
+
+  "custom/trays": {
+    "tooltip": false,
+    "format": "{} <span size='120%'></span>"
+  },
+
+  "group/updates": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 600,
+        "transition-to-left": true,
+        "click-to-reveal": false,
+        "hover-to-reveal": true
+    },
+    "modules": ["custom/updates", "custom/aur", "custom/flatpak"]
+  },
+
+  "custom/updates": {
+      "tooltip": false,
+      "exec": "~/.config/waybar/scripts/Check-update.sh",
+      "interval": 14400, // 4 hours
+      "signal": 2
+  },
+
+  "custom/aur": {
+  "format": "{} <span size='120%'>󱉚</span>",
+  "exec": "echo $(( $(checkupdates | wc -l) + $(yay -Qua | wc -l) ))",
+  "on-click": "kitty -e bash -lc 'yay; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'",
+  "interval": "once",
+  "signal": 1
+  },
+
+  "custom/pacman": {
+    "format": " {} <span size='120%'>󰏔</span>",
+    "exec": "checkupdates | wc -l",
+    "on-click": "kitty -e bash -lc 'sudo pacman -Syu; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'",
+    "interval": "once",
+    "signal": 1
+  },
+
+  "custom/flatpak": {
+    "format": " {} <span size='120%'>󱑢</span>",
+    "exec": "flatpak remote-ls --updates | wc -l",
+    "on-click": "kitty -e bash -lc 'flatpak update; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'",
+    "interval": "once",
+    "signal": 1
+  },
+
+  "custom/anki_notification": {
+    "tooltip": false,
+    "exec": "python ~/.config/waybar/scripts/Due_cards.py",
+    "on-click": "pkill -9 anki; setsid anki > /dev/null 2>&1 &",
+    "interval": 10,
+    "signal": 3
+  },
+
+  "keyboard-state": {
+      "numlock": false,
+      "capslock": true,
+      "format": "{icon}",
+      "device-path": "/dev/input/by-id/usb-SZH_usb_keyboard-event-kbd",
+      "format-icons": {
+          "locked": "<span size='180%'>󱍳 </span>",
+          "unlocked": ""
+      }
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C <span size='110%'></span>",
+    "format-critical": "{temperatureC}°C <span size='110%'></span>",
+    "interval": 5
+  },
+
+  "cpu": {
+    "format": "{usage}% ",
+    "on-click": "kitty -e btop",
+    "interval": 1
+  },
+
+  "memory": {
+    "format": "{}% ",
+    "on-click": "kitty -e btop",
+    "interval": 1
+  },
+
+  "custom/launcher": {
+    "format": "<span size='130%'>󰣇</span>",
+    "on-click": "wlogout"
+  },
+
+  "custom/media": {
+    "format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 2, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources/custom_modules folder
+  },
+
+  "battery": {
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "clock": {
+    //"format-alt": "󰥔   {:%I:%M %p}",
+    "format": "{:%a %d/%b %I:%M%p}",
+    "on-click": "gnome-calendar"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} <span rise='1400'>{volume}%</span>",
+    "format-muted": "󰖁",
+    "scroll-step": 1,
+    "on-click": "GDK_BACKEND=x11 pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"],
+    "format-icons": ["<span size='120%'>󰕾</span>"]
+  },
+
+  "network": {
+    "interface": "wlp9s0",
+    "format": "{ifname}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀   {ipaddr}/{cidr}",
+    "format-disconnected": "󰖪",
+    "max-length": 50,
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", ""],
+    "on-click": "kitty -e nmtui"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "workspace-taskbar": {
+      "enable": true,
+      "format": "{icon}",
+      "icon-size": 20,
+      "orientation": "horizontal",
+      "on-click-window": "activate"
+    }
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"]
+  },
+
+  "custom/weather": {
+    "exec": "${HOME}/.config/waybar/scripts/get_weather.sh Araguaina+Brazil",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
+  }
+}
+
+
