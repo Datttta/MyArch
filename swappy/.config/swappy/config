@@ -1,6 +1,6 @@
 [Default]
 save_dir=/home/DROS/Pictures
-save_filename_format=Screenshot-2026-05-24-193738.png
+save_filename_format=hyprlua.png
 show_panel=false
 line_size=5
 text_size=20
