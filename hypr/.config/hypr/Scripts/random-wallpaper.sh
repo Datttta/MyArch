@@ -24,7 +24,11 @@ if [[ -f "$LAST_FILE" ]]; then
     LAST=$(cat "$LAST_FILE")
 
     # Build list excluding last
-    WALLPAPER=$(find "$WALL_DIR" -type f -not -name "collection.db" | grep -vxF "$LAST" | shuf -n 1)
+    WALLPAPER=$(find "$WALL_DIR" -type f \
+        -not -name "collection.db" \
+        -not - name ".*" \
+        | grep -vxF "$LAST" \
+        | shuf -n 1)
 
     # If exclusion leaves nothing (only 1 wallpaper exists), fallback
     if [[ -z "$WALLPAPER" ]]; then
