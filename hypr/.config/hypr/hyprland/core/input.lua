@@ -10,3 +10,8 @@ hl.config({
         no_hardware_cursors = true,
     },
 })
+
+hl.device = {
+    name = "epic-mouse-v1",
+    sensitivity = -0.5,
+}
