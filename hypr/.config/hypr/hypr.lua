@@ -3,9 +3,14 @@ MainMod = "ALT"
 
 require("hyprland.core.monitors")
 require("hyprland.core.autostart")
-require("hyprland.core.programs")
 require("hyprland.core.env")
 require("hyprland.core.input")
+
+require("hyprland.binds.apps")
+require("hyprland.binds.media")
+require("hyprland.binds.scripts")
+require("hyprland.binds.workspaces")
+require("hyprland.binds.windows")
 
 require("hyprland.ui.general")
 require("hyprland.ui.decoration")
