@@ -1,6 +1,6 @@
-require("core.monitors")
-require("core.autostart")
-require("core.programs")
-require("core.env")
+require("hyprland.core.monitors")
+require("hyprland.core.autostart")
+require("hyprland.core.programs")
+require("hyprland.core.env")
 
-require("rules.permissions")
+require("hyprland.rules.permissions")
