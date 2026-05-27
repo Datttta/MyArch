@@ -15,10 +15,10 @@ hl.bind(MainMod .. " + SHIFT + L", hl.dsp.exec_cmd("wlogout"))
 hl.bind(MainMod .. " + N",         hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(MainMod .. " + SHIFT + N", hl.dsp.exec_cmd("~/.config/swaync/scripts/swayncRestart.sh"))
 
--- Clipboard
+-- copyq
 hl.bind(MainMod .. " + SHIFT + C", hl.dsp.exec_cmd("copyq toggle"))
 
--- Wallpaper
+-- Waypaper
 hl.bind(MainMod .. " + W",         hl.dsp.exec_cmd("waypaper"))
 
 -- Waybar
