@@ -16,5 +16,8 @@ wal --cols16 lighten -i "$WALLPAPER"
 #Reload kitty
 pgrep -x kitty | xargs -r kill -SIGUSR1
 
+#Reolad hyprland
+hyprctl reload
+
 killall swaync
 exec swaync
