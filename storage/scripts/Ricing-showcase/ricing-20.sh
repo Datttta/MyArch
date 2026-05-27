@@ -55,7 +55,7 @@ kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
 wait_for_window $app
 
 # Extra bottom-left 
-hyprctl dispatch movecursor 750 700
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 750, y = 700 })'
 app=$(check_class "tenki_term")
 kitty --class $app tenki &
 wait_for_window $app

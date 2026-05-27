@@ -63,7 +63,7 @@ wait_for_window $app
 
 # Open wofi
 wofi --show drun --normal-window &
-hyprctl dispatch focuswindow class:^wofi$
+hyprctl dispatch 'hl.dsp.focus({ window = "class:^wofi$" })'
 wait_for_window "wofi"
 
 # Open swaync

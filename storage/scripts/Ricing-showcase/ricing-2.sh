@@ -56,7 +56,7 @@ wait_for_window $app
 
 # top-right 
 hyprctl dispatch 'hl.dsp.focus({ direction = "r" })'
-hyprctl dispatch movecursor 1450 300
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 1450, y = 300 })'
 app=$(check_class "tty-clock_term")
 kitty --class $app tty-clock -s -c &
 wait_for_window $app

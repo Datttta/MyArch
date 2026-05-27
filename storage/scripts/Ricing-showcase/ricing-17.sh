@@ -55,7 +55,7 @@ kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
 wait_for_window $app
 
 # Extra bottom-left tenki
-hyprctl dispatch movecursor 750 700
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 750, y = 700 })'
 app=$(check_class "tenki_term")
 kitty --class $app tenki &
 wait_for_window $app
@@ -68,14 +68,14 @@ kitty --class $app btop &
 wait_for_window $app
 
 # Extra top-right
-hyprctl dispatch movefocus u
+hyprctl dispatch 'hl.dsp.focus({ direction = "u" })'
 app=$(check_class "cmatrix_term")
 kitty --class $app cmatrix -b &
 wait_for_window $app
 
 # Open wofi
 wofi --show drun --normal-window &
-hyprctl dispatch focuswindow class:^wofi$
+hyprctl dispatch 'hl.dsp.focus({ window = "class:^wofi$" })'
 wait_for_window "wofi"
 
 # Open swaync
