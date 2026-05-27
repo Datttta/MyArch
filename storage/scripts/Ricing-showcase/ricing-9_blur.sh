@@ -36,7 +36,7 @@ check_class() {
     echo "$target_class"
 }
 
-hyprctl dispatch movecursor 0 0
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 0, y = 0 })'
 
 # Top-right
 app=$(check_class "tenki_blur")
@@ -49,14 +49,14 @@ kitty --class $app &
 wait_for_window $app
 
 # bottom-left open btop
-hyprctl dispatch movecursor 450 700
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 450, y = 700 })'
 app=$(check_class "btop_blur")
 kitty --class $app btop &
 wait_for_window $app
 
 # Bottom-right cmatrix -b
-hyprctl dispatch movefocus r
-hyprctl dispatch movecursor 1450 700
+hyprctl dispatch 'hl.dsp.focus({ direction = "r" })'
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 1450, y = 700 })'
 app=$(check_class "hpyrland-colors_blur")
 kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
 wait_for_window $app

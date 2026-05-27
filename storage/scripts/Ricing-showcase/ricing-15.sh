@@ -36,7 +36,7 @@ check_class() {
     echo "$target_class"
 }
 
-hyprctl dispatch movecursor 0 0
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 0, y = 0 })'
 
 # Top-right 
 app=$(check_class "btop_term")
@@ -49,14 +49,14 @@ kitty --class $app env FASTFETCH_LOGO=arch2 zsh &
 wait_for_window $app
 
 # bottom-left 
-hyprctl dispatch movecursor 450 700
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 450, y = 700 })'
 app=$(check_class "tty-clock_term")
 kitty --class $app tty-clock -s -c &
 wait_for_window $app
 
 # Bottom-right 
-hyprctl dispatch movefocus r
-hyprctl dispatch movecursor 1450 700
+hyprctl dispatch 'hl.dsp.focus({ direction = "r" })'
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 1450, y = 700 })'
 app=$(check_class "pipes.sh_term")
 kitty --class $app pipes.sh -t 0 &
 wait_for_window $app

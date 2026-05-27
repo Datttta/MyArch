@@ -36,7 +36,7 @@ check_class() {
     echo "$target_class"
 }
 
-hyprctl dispatch movecursor 0 0
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 0, y = 0 })'
 
 # Bottom-right
 app=$(check_class "hpyrland-colors_term")
@@ -49,13 +49,13 @@ kitty --class $app &
 wait_for_window $app
 
 # bottom-left 
-hyprctl dispatch movecursor 450 700
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 450, y = 700 })'
 app=$(check_class "btop_term")
 kitty --class $app btop &
 wait_for_window $app
 
 # top-right 
-hyprctl dispatch movefocus r
+hyprctl dispatch 'hl.dsp.focus({ direction = "r" })'
 hyprctl dispatch movecursor 1450 300
 app=$(check_class "tty-clock_term")
 kitty --class $app tty-clock -s -c &

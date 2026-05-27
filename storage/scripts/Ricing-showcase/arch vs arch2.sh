@@ -50,21 +50,20 @@ wait_for_window $app
 
 # right again
 hyprctl dispatch 'hl.dsp.focus({ direction = "r" })'
-exit
 hyprctl killactive && kill -9 $(hyprctl activewindow -j | jq -r '.pid')
 app=$(check_class "arch_term")
 kitty --class $app &
 wait_for_window $app
 
 # Bottom-right 
-hyprctl dispatch movecursor 1450 700
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 1450, y = 700 })'
 app=$(check_class "arch_term")
 kitty --class $app &
 wait_for_window $app
 
 # bottom-left 
-hyprctl dispatch movefocus l
-hyprctl dispatch movecursor 450 700
+hyprctl dispatch 'hl.dsp.focus({ direction = "l" })'
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 450, y = 700 })'
 app=$(check_class "arch2_term")
 kitty --class $app env FASTFETCH_LOGO=arch2 zsh &
 wait_for_window $app

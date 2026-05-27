@@ -36,7 +36,7 @@ check_class() {
     echo "$target_class"
 }
 
-hyprctl dispatch movecursor 0 0
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 0, y = 0 })'
 
 # Right hyprland.conf
 app=$(check_class "btop_term")
@@ -49,7 +49,7 @@ kitty --class $app &
 wait_for_window $app
 
 # bottom-left open btop
-hyprctl dispatch movecursor 450 700
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 450, y = 700 })'
 app=$(check_class "hpyrland-colors_term")
 kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
 wait_for_window $app

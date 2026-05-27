@@ -36,7 +36,7 @@ check_class() {
     echo "$target_class"
 }
 
-hyprctl dispatch movecursor 0 0
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 0, y = 0 })'
 
 # top-right
 app=$(check_class "cava_term")
@@ -49,7 +49,7 @@ kitty --class $app &
 wait_for_window $app
 
 # bottom-left
-hyprctl dispatch movecursor 450 700
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 450, y = 700 })'
 app=$(check_class "hpyrland-colors_term")
 kitty --class $app nvim ~/.cache/wal/colors-hyprland.conf &
 wait_for_window $app
@@ -61,8 +61,8 @@ kitty --class $app tenki &
 wait_for_window $app
 
 # Bottom-right
-hyprctl dispatch movefocus r
-hyprctl dispatch movecursor 1450 700
+hyprctl dispatch 'hl.dsp.focus({ direction = "r" })'
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 1450, y = 700 })'
 app=$(check_class "btop_term")
 kitty --class $app btop &
 wait_for_window $app
