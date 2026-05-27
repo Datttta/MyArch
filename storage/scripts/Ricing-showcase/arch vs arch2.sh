@@ -36,7 +36,7 @@ check_class() {
     echo "$target_class"
 }
 
-hyprctl dispatch movecursor 0 0
+hyprctl dispatch 'hl.dsp.cursor.move({ x = 0, y = 0 })'
 
 # Right 
 app=$(check_class "arch_term")
@@ -49,7 +49,8 @@ kitty --class $app env FASTFETCH_LOGO=arch2 zsh &
 wait_for_window $app
 
 # right again
-hyprctl dispatch movefocus r
+hyprctl dispatch 'hl.dsp.focus({ direction = "r" })'
+exit
 hyprctl killactive && kill -9 $(hyprctl activewindow -j | jq -r '.pid')
 app=$(check_class "arch_term")
 kitty --class $app &
