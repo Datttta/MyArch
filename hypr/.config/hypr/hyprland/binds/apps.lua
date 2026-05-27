@@ -26,5 +26,4 @@ hl.bind(MainMod .. " + SHIFT + R", hl.dsp.exec_cmd("killall waybar && waybar"))
 hl.bind(MainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("killall waybar"))
 
 -- hyprland
-hl.bind(MainMod .. " + SHIFT + M", hl.dsp.exec_cmd("exit"))
-
+hl.bind(MainMod .. " + SHIFT + M", hl.dsp.exit())

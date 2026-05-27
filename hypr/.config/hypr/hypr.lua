@@ -19,3 +19,6 @@ require("hyprland.ui.animations")
 require("hyprland.ui.misc")
 
 require("hyprland.rules.permissions")
+require("hyprland.rules.window-rules")
+require("hyprland.rules.layer-rules")
+
