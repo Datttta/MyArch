@@ -1,4 +1,4 @@
-Colors = dofile(os.getenv("HOME") .. "/.cache/wal/colors.lua")
+Colors = dofile(os.getenv("HOME") .. "/.cache/wal/rgba-colors.lua")
 MainMod = "ALT"
 
 require("hyprland.core.monitors")
