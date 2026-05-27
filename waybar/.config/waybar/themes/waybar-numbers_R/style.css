@@ -53,8 +53,13 @@ window#waybar {
     border-radius: 9px;
     margin: 2.5px 0px;
     padding: 5px 10px;
-    transition: all 0.15s ease-in-out;
     background-color: alpha(@foreground, 0.2);
+}
+
+#workspaces button:hover:not(.active) {
+    border-radius: 9px;
+    margin: 2.5px 2px;
+    padding: 5px 8px;
 }
 
 #custom-pacman {
