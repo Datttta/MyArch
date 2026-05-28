@@ -66,6 +66,8 @@ done
 # Generate pywal colors
 wal --cols16 lighten -i "$WALLPAPER"
 
+hyprctl reload
+
 killall waybar
 
 # We check if the card* device is initialized in /dev/dri/
