@@ -48,13 +48,13 @@ app=$(check_class "kitty_term")
 kitty --class $app &
 wait_for_window $app
 
-# bottom-left 
+# bottom-left open btop
 hyprctl dispatch 'hl.dsp.cursor.move({ x = 450, y = 700 })'
 app=$(check_class "btop_term")
 kitty --class $app btop &
 wait_for_window $app
 
-# Bottom-right 
+# Bottom-right cmatrix -b
 hyprctl dispatch 'hl.dsp.focus({ direction = "r" })'
 hyprctl dispatch 'hl.dsp.cursor.move({ x = 1450, y = 700 })'
 app=$(check_class "hpyrland-colors_term")
