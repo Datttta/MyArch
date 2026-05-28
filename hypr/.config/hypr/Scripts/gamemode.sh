@@ -17,11 +17,9 @@ if [ "$ACTION" = "start" ]; then
 
 elif [ "$ACTION" = "end" ]; then
     sleep 0.5
-    # Standard reload evaluates your hyprland.lua cleanly
     $HYPR reload
     pkill waybar
     
-    # Fix: Pass the explicit native dispatcher object (hl.dsp.exec_raw) inside the execution string
-    $HYPR eval "hl.dispatch(hl.dsp.exec_raw('waybar'))"
+    $HYPR eval "hl.dispatch(hl.dsp.exec_cmd('waybar'))"
 fi
 
