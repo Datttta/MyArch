@@ -13,8 +13,11 @@ cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
 # Run pywal
 wal --cols16 --backend haishoku -i "$WALLPAPER"
 
-#if [[ $(basename "$WALLPAPER") == "arc.jpg" ]]; then
+#if [[ $(basename "$WALLPAPER") == "sky city.jpg" ]]; then
 #
+#    #wal --cols16 --backend haishoku -i "$WALLPAPER"
+#    #wal --cols16 lighten -i "$WALLPAPER"
+#    #wal --cols16 --backend colorthief -i "$WALLPAPER"
 #
 #    #file="$HOME/.cache/wal/rgba-colors.lua"
 #
@@ -24,7 +27,7 @@ wal --cols16 --backend haishoku -i "$WALLPAPER"
 #    #sed -i "s|color1 = \".*\"|color1 = \"$color14\"|" "$file"
 #    #sed -i "s|color14 = \".*\"|color14 = \"$color1\"|" "$file"
 #else
-#    wal --cols16 lighten -i "$WALLPAPER"
+#    wal --cols16 --backend haishoku -i "$WALLPAPER"
 #fi
 
 # change order of the colors based on wallpaper
