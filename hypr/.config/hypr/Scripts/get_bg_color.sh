@@ -30,8 +30,11 @@ wal --cols16 --backend haishoku -i "$WALLPAPER"
 # change order of the colors based on wallpaper
 echo "wallpaper: $(basename "$WALLPAPER")"
 
-#Reolad hyprland
+# Reolad hyprland
 hyprctl reload
+
+# Reload kitty
+pgrep -x kitty | xargs -r kill -sigusr1
 
 killall swaync
 exec swaync
