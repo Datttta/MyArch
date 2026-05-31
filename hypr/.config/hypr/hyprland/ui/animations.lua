@@ -13,7 +13,7 @@ hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79,  spring = 
 hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.10,  spring = "easy",         style = "popin 87%" })
 hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 11.5,  bezier = "linear",       style = "popin 87%" })
 hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 2.00,  bezier = "easeOutQuint"  })
-hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 2.00,  bezier = "easeOutQuint"  })
+hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 5.00,  bezier = "easeOutQuint"  })
 hl.animation({ leaf = "fade",          enabled = true,  speed = 3.03,  bezier = "quick" })
 
 hl.animation({ leaf = "layers",        enabled = true,  speed = 3.81, bezier = "easeOutQuint" } )
