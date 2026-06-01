@@ -64,7 +64,7 @@ while ! hyprctl hyprpaper listactive >/dev/null 2>&1; do
 done
 
 # Generate pywal colors
-wal --cols16 lighten -i "$WALLPAPER"
+wal --cols16 --backend haishoku -i "$WALLPAPER"
 
 hyprctl reload
 
