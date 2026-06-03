@@ -63,3 +63,11 @@ done
 # Generate pywal colors
 echo " ======================= wallpaper: $WALLPAPER ======================="
 bash ~/.config/hypr/Scripts/get_bg_color.sh startup "$WALLPAPER"
+
+# We check if the card* device is initialized in /dev/dri/
+while [ ! -d /dev/dri ] || [ -z "$(ls /dev/dri/card* 2>/dev/null)" ]; do
+    sleep 0.5
+done
+
+#start waybar
+waybar &

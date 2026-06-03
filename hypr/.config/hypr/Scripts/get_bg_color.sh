@@ -11,9 +11,6 @@ else
     echo "wallpaper: '$(basename "$WALLPAPER")'" >> /tmp/current_wallpaper
 fi
 
-# Expand ~ to full path if needed
-WALLPAPER="${WALLPAPER/#\~/$HOME}"
-
 # copy image to a folder so hyprlock can use it
 mkdir -p ~/.cache/hyprlock
 cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
