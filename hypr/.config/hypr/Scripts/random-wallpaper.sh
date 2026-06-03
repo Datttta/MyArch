@@ -1,53 +1,50 @@
 #!/bin/bash
 
-WALL_DIR=~/Repos/MyArch/storage/wallpaper/
+WALL_DIR="$HOME/Repos/MyArch/storage/wallpaper"
+PLAYLIST="$HOME/.cache/wallpaper_playlist"
+WALL_HASH_FILE="$HOME/.cache/wallpaper_hash"
 
-# Expand ~ safely
-WALL_DIR="${WALL_DIR/#\~/$HOME}"
+current_hash() {
+    find "$WALL_DIR" -type f \
+        ! -name "collection.db" \
+        ! -name ".*" \
+        | sort | sha256sum | cut -d' ' -f1
+}
 
-# Validate directory exists
-if [[ ! -d "$WALL_DIR" ]]; then
-    echo "ERROR: Wallpaper directory does not exist: $WALL_DIR" >&2
-    exit 1
-fi
+generate_playlist() {
+    find "$WALL_DIR" -type f \
+        ! -name "collection.db" \
+        ! -name ".*" \
+        | shuf > "$PLAYLIST"
+}
 
-LAST_FILE=~/.cache/last_wallpaper
+CURRENT_HASH=$(current_hash)
 
-mkdir -p ~/.cache
-
-while [[ -z "$(hyprctl monitors 2>/dev/null)" ]]; do
-    sleep 0.1
-done
-
-# If last wallpaper exists, exclude it
-if [[ -f "$LAST_FILE" ]]; then
-    LAST=$(cat "$LAST_FILE")
-
-    # Build list excluding last
-    WALLPAPER=$(find "$WALL_DIR" -type f \
-        -not -name "collection.db" \
-        -not -name ".*" \
-        | grep -vxF "$LAST" \
-        | shuf -n 1)
-
-    # If exclusion leaves nothing (only 1 wallpaper exists), fallback
-    if [[ -z "$WALLPAPER" ]]; then
-        WALLPAPER=$(find "$WALL_DIR" -type f | shuf -n 1)
-    fi
+if [[ ! -f "$WALL_HASH_FILE" ]]; then
+    echo "$CURRENT_HASH" > "$WALL_HASH_FILE"
+    generate_playlist
 else
-    WALLPAPER=$(find "$WALL_DIR" -type f | shuf -n 1)
+    SAVED_HASH=$(cat "$WALL_HASH_FILE")
+
+    if [[ "$CURRENT_HASH" != "$SAVED_HASH" ]]; then
+        echo "Wallpaper collection changed, regenerating playlist..."
+        echo "$CURRENT_HASH" > "$WALL_HASH_FILE"
+        generate_playlist
+    fi
 fi
 
-# Save current as last
-echo "$WALLPAPER" > "$LAST_FILE"
+# Get first wallpaper
+WALLPAPER=$(head -n 1 "$PLAYLIST")
 
-# Generate Hyprpaper config
-cat > ~/.config/hypr/hyprpaper.conf <<EOF
-preload = $WALLPAPER
-wallpaper = ,$WALLPAPER
-EOF
+# Remove first line from playlist
+tail -n +2 "$PLAYLIST" > "${PLAYLIST}.tmp"
+mv "${PLAYLIST}.tmp" "$PLAYLIST"
+
+# If playlist became empty, prepare next cycle
+if [[ ! -s "$PLAYLIST" ]]; then
+    generate_playlist
+fi
 
 # Generate pywal colors
 echo " ======================= wallpaper: $WALLPAPER ======================="
 bash ~/.config/hypr/Scripts/get_bg_color.sh startup "$WALLPAPER"
-
