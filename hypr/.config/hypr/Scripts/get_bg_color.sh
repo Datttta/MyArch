@@ -8,8 +8,11 @@ if [[ $1 == "startup" ]]; then
     echo "wallpaper: '$(basename "$WALLPAPER")'" >> /tmp/current_wallpaper
 else
     WALLPAPER=$(grep '^wallpaper =' ~/.config/waypaper/config.ini | cut -d'=' -f2- | xargs)
-    echo "wallpaper: '$(basename "$WALLPAPER")'" >> /tmp/current_wallpaper
+    echo "wallpaper: "$WALLPAPER >> /tmp/current_wallpaper
 fi
+
+# expand ~ if needed
+WALLPAPER="${WALLPAPER/#\~/$HOME}"
 
 # copy image to a folder so hyprlock can use it
 mkdir -p ~/.cache/hyprlock
@@ -20,7 +23,7 @@ cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
 #if [[ $(basename "$WALLPAPER") == "hyprforest.jpg" ||
 #      $(basename "$WALLPAPER") == "tokyo cyberpunk car.png"]]; then
 
-if [[ $(basename "$WALLPAPER") == "hyprforest.jpg" ]]; then
+if [[ $(basename "$WALLPAPER") == "retro wave.png" ]]; then
 
     #wal --cols16 --backend haishoku -i "$WALLPAPER"
     #wal --cols16 lighten -i "$WALLPAPER"
