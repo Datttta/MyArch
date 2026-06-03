@@ -78,5 +78,6 @@ done
 waybar &
 
 killall swaync
+sleep 0.2
 swaync &
 

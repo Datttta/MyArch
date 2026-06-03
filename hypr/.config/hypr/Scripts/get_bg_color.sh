@@ -11,27 +11,31 @@ mkdir -p ~/.cache/hyprlock
 cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
 
 # Run pywal
-wal --cols16 --backend haishoku -i "$WALLPAPER"
 
-#if [[ $(basename "$WALLPAPER") == "sky city.jpg" ]]; then
-#
-#    #wal --cols16 --backend haishoku -i "$WALLPAPER"
-#    #wal --cols16 lighten -i "$WALLPAPER"
-#    #wal --cols16 --backend colorthief -i "$WALLPAPER"
-#
-#    #file="$HOME/.cache/wal/rgba-colors.lua"
-#
-#    #color1=$(grep "color1 =" "$file" | cut -d'"' -f2)
-#    #color14=$(grep "color14 =" "$file" | cut -d'"' -f2)
-#
-#    #sed -i "s|color1 = \".*\"|color1 = \"$color14\"|" "$file"
-#    #sed -i "s|color14 = \".*\"|color14 = \"$color1\"|" "$file"
-#else
-#    wal --cols16 --backend haishoku -i "$WALLPAPER"
-#fi
+#if [[ $(basename "$WALLPAPER") == "hyprforest.jpg" ||
+#      $(basename "$WALLPAPER") == "tokyo cyberpunk car.png"]]; then
+
+if [[ $(basename "$WALLPAPER") == "hyprforest.jpg" ]]; then
+
+    #wal --cols16 --backend haishoku -i "$WALLPAPER"
+    #wal --cols16 lighten -i "$WALLPAPER"
+    echo "colorthief" > /tmp/current_wallpaper
+    wal --cols16 --backend colorthief -i "$WALLPAPER"
+
+    #file="$HOME/.cache/wal/rgba-colors.lua"
+
+    #color1=$(grep "color1 =" "$file" | cut -d'"' -f2)
+    #color14=$(grep "color14 =" "$file" | cut -d'"' -f2)
+
+    #sed -i "s|color1 = \".*\"|color1 = \"$color14\"|" "$file"
+    #sed -i "s|color14 = \".*\"|color14 = \"$color1\"|" "$file"
+else
+    echo "haishoku" > /tmp/current_wallpaper
+    wal --cols16 --backend haishoku -i "$WALLPAPER"
+fi
 
 # change order of the colors based on wallpaper
-echo "wallpaper: $(basename "$WALLPAPER")"
+echo "wallpaper: '$(basename "$WALLPAPER")'" >> /tmp/current_wallpaper
 
 # Reolad hyprland
 hyprctl reload
