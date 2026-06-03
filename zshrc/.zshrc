@@ -78,12 +78,6 @@ bindkey -M vicmd '\ea' fzf-history-widget
 bindkey -M viins '\ea' fzf-history-widget
 bindkey -M emacs '^[;' autosuggest-accept
 bindkey -M viins '^[;' autosuggest-accept
-# ctrl + S interrupts a signal
-bindkey -r "^S"
-if [[ -t 0 ]]; then
-  stty -ixon
-  stty intr ^S
-fi
 
 # Aliases
 alias i="yay -S"
