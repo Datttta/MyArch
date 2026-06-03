@@ -92,6 +92,10 @@ sudo systemctl start bluetooth.service
 #enable syncthing
 systemctl --user enable --now syncthing
 
+# set up autotrash timer
+systemctl --user daemon-reload
+systemctl --user enable --now trash-clean.timer
+
 # set up auto-cpufreq
 sudo systemctl enable --now auto-cpufreq
 
