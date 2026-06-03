@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 WALL_DIR=~/Repos/MyArch/storage/wallpaper/
 
 # Expand ~ safely
@@ -26,7 +27,7 @@ if [[ -f "$LAST_FILE" ]]; then
     # Build list excluding last
     WALLPAPER=$(find "$WALL_DIR" -type f \
         -not -name "collection.db" \
-        -not - name ".*" \
+        -not -name ".*" \
         | grep -vxF "$LAST" \
         | shuf -n 1)
 
@@ -47,12 +48,8 @@ preload = $WALLPAPER
 wallpaper = ,$WALLPAPER
 EOF
 
-mkdir -p ~/.cache/hyprlock
-cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
-
 # Restart hyprpaper
 pkill hyprpaper
-
 while pgrep -x hyprpaper >/dev/null; do
     sleep 0.1
 done
@@ -64,20 +61,5 @@ while ! hyprctl hyprpaper listactive >/dev/null 2>&1; do
 done
 
 # Generate pywal colors
-wal --cols16 --backend haishoku -i "$WALLPAPER"
-
-hyprctl reload
-
-killall waybar
-
-# We check if the card* device is initialized in /dev/dri/
-while [ ! -d /dev/dri ] || [ -z "$(ls /dev/dri/card* 2>/dev/null)" ]; do
-    sleep 0.5
-done
-
-waybar &
-
-killall swaync
-sleep 0.2
-swaync &
-
+echo " ======================= wallpaper: $WALLPAPER ======================="
+bash ~/.config/hypr/Scripts/get_bg_color.sh startup "$WALLPAPER"

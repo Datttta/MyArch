@@ -1,7 +1,15 @@
 #!/bin/bash
+echo "============== get_bg_color.sh log file ==============" > /tmp/current_wallpaper
 
-# Extract the current wallpaper path from Waypaper config
-WALLPAPER=$(grep '^wallpaper =' ~/.config/waypaper/config.ini | cut -d'=' -f2- | xargs)
+# Extract the current wallpaper path from Waypaper config or from hyprlock
+if [[ $1 == "startup" ]]; then
+    WALLPAPER="$2"
+    echo "startup" >> /tmp/current_wallpaper
+    echo "wallpaper: '$(basename "$WALLPAPER")'" >> /tmp/current_wallpaper
+else
+    WALLPAPER=$(grep '^wallpaper =' ~/.config/waypaper/config.ini | cut -d'=' -f2- | xargs)
+    echo "wallpaper: '$(basename "$WALLPAPER")'" >> /tmp/current_wallpaper
+fi
 
 # Expand ~ to full path if needed
 WALLPAPER="${WALLPAPER/#\~/$HOME}"
@@ -19,7 +27,7 @@ if [[ $(basename "$WALLPAPER") == "hyprforest.jpg" ]]; then
 
     #wal --cols16 --backend haishoku -i "$WALLPAPER"
     #wal --cols16 lighten -i "$WALLPAPER"
-    echo "colorthief" > /tmp/current_wallpaper
+    echo "colorthief" >> /tmp/current_wallpaper
     wal --cols16 --backend colorthief -i "$WALLPAPER"
 
     #file="$HOME/.cache/wal/rgba-colors.lua"
@@ -30,12 +38,9 @@ if [[ $(basename "$WALLPAPER") == "hyprforest.jpg" ]]; then
     #sed -i "s|color1 = \".*\"|color1 = \"$color14\"|" "$file"
     #sed -i "s|color14 = \".*\"|color14 = \"$color1\"|" "$file"
 else
-    echo "haishoku" > /tmp/current_wallpaper
+    echo "haishoku" >> /tmp/current_wallpaper
     wal --cols16 --backend haishoku -i "$WALLPAPER"
 fi
-
-# change order of the colors based on wallpaper
-echo "wallpaper: '$(basename "$WALLPAPER")'" >> /tmp/current_wallpaper
 
 # Reolad hyprland
 hyprctl reload
