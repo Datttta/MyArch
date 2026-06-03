@@ -136,7 +136,7 @@
   "clock": {
     //"format-alt": "󰥔   {:%I:%M %p}",
     "format": "{:%a %d/%b %I:%M%p}",
-    "on-click": "gnome-calendar"
+    "on-click": "kitty sh -c 'khal interactive'"
   },
 
   "pulseaudio": {
