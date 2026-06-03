@@ -2,7 +2,7 @@ local apps = {
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
     "syncthing --no-browser",
     "copyq --start-server",
-    "waybar",
+    "sleep 1 && waybar",
     "hyprpaper",
     "swaync",
 }
