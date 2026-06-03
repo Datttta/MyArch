@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 WALL_DIR=~/Repos/MyArch/storage/wallpaper/
 
 # Expand ~ safely
@@ -48,26 +47,7 @@ preload = $WALLPAPER
 wallpaper = ,$WALLPAPER
 EOF
 
-# Restart hyprpaper
-pkill hyprpaper
-while pgrep -x hyprpaper >/dev/null; do
-    sleep 0.1
-done
-
-hyprpaper &
-
-while ! hyprctl hyprpaper listactive >/dev/null 2>&1; do
-    sleep 0.1
-done
-
 # Generate pywal colors
 echo " ======================= wallpaper: $WALLPAPER ======================="
 bash ~/.config/hypr/Scripts/get_bg_color.sh startup "$WALLPAPER"
 
-# We check if the card* device is initialized in /dev/dri/
-while [ ! -d /dev/dri ] || [ -z "$(ls /dev/dri/card* 2>/dev/null)" ]; do
-    sleep 0.5
-done
-
-#start waybar
-waybar &

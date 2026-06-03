@@ -2,6 +2,9 @@ local apps = {
     "syncthing --no-browser",
     "copyq --start-server",
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+    "hyprpaper",
+    "swaync",
+    "waybar"
 }
 
 hl.on("hyprland.start", function()

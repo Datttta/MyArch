@@ -44,7 +44,3 @@ hyprctl reload
 
 # Reload kitty
 pgrep -x kitty | xargs -r kill -sigusr1
-
-killall swaync
-exec swaync
-
