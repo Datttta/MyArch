@@ -163,7 +163,7 @@ return { -- LSP Configuration & Plugins
          },
          clangd = {},
          jsonls = {},
-         sqlls = {},
+         sqls = {},
          terraformls = {},
          yamlls = {},
          bashls = {},
