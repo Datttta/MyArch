@@ -23,7 +23,8 @@ cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
 #if [[ $(basename "$WALLPAPER") == "hyprforest.jpg" ||
 #      $(basename "$WALLPAPER") == "tokyo cyberpunk car.png"]]; then
 
-if [[ $(basename "$WALLPAPER") == "retro wave.png" ]]; then
+if [[ $(basename "$WALLPAPER") == "retro wave.png" ||
+    $(basename "$WALLPAPER") == "atmosphere.jpg" ]]; then
 
     #wal --cols16 --backend haishoku -i "$WALLPAPER"
     #wal --cols16 lighten -i "$WALLPAPER"
