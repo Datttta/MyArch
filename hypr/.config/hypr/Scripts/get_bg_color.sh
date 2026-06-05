@@ -24,7 +24,8 @@ cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
 #      $(basename "$WALLPAPER") == "tokyo cyberpunk car.png"]]; then
 
 if [[ $(basename "$WALLPAPER") == "retro wave.png" ||
-    $(basename "$WALLPAPER") == "atmosphere.jpg" ]]; then
+    $(basename "$WALLPAPER") == "atmosphere.jpg" || 
+    $(basename "$WALLPAPER") == "japan city.png" ]]; then
 
     #wal --cols16 --backend haishoku -i "$WALLPAPER"
     #wal --cols16 lighten -i "$WALLPAPER"
@@ -45,6 +46,10 @@ fi
 
 # Reolad hyprland
 hyprctl reload
+
+# Reload swaync
+killall swaync &
+swaync
 
 # Reload kitty
 pgrep -x kitty | xargs -r kill -sigusr1
