@@ -18,11 +18,12 @@ WALLPAPER="${WALLPAPER/#\~/$HOME}"
 mkdir -p ~/.cache/hyprlock
 cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
 
+# wait for hyprpaper
+while ! pgrep -x hyprpaper >/dev/null; do
+    sleep 0.5
+done
+
 # Run pywal
-
-#if [[ $(basename "$WALLPAPER") == "hyprforest.jpg" ||
-#      $(basename "$WALLPAPER") == "tokyo cyberpunk car.png"]]; then
-
 if [[ $(basename "$WALLPAPER") == "retro wave.png" ||
     $(basename "$WALLPAPER") == "atmosphere.jpg" || 
     $(basename "$WALLPAPER") == "japan city.png" ]]; then
