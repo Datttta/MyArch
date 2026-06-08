@@ -1,4 +1,14 @@
 #!/bin/bash
+echo "get $1" >&2
+
+# update
+if [[ $1 == "yay" ]]; then
+    kitty -e bash -lc 'yay; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'
+elif [[ $1 == "flatpak" ]]; then
+    kitty -e bash -lc 'flatpak update; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'
+fi
+
+# check updates
 sleep 6
 PACMAN_UPDATES=$(checkupdates | wc -l)
 AUR_UPDATES=$(yay -Qua | wc -l)

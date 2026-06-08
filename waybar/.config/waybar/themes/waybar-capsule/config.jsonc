@@ -41,7 +41,7 @@
 
   "custom/updates": {
       "tooltip": false,
-      "exec": "~/.config/waybar/scripts/Check-update.sh",
+      "exec": "~/.config/waybar/scripts/Update.sh",
       "interval": 14400, // 4 hours
       "signal": 2
   },
@@ -49,7 +49,7 @@
   "custom/aur": {
   "format": "{} <span size='120%'>󱉚</span>",
   "exec": "echo $(( $(checkupdates | wc -l) + $(yay -Qua | wc -l) ))",
-  "on-click": "kitty -e bash -lc 'yay; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'",
+  "on-click": "~/.config/waybar/scripts/Update.sh yay",
   "interval": "once",
   "signal": 1
   },
@@ -57,7 +57,7 @@
   "custom/pacman": {
     "format": " {} <span size='120%'>󰏔</span>",
     "exec": "checkupdates | wc -l",
-    "on-click": "kitty -e bash -lc 'sudo pacman -Syu; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'",
+    "on-click": "~/.config/waybar/scripts/Update.sh flatpak",
     "interval": "once",
     "signal": 1
   },
