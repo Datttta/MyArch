@@ -1,4 +1,5 @@
 #!/bin/bash
+echo " ======================= random-wallpaper.sh log file  ======================="
 
 WALL_DIR="$HOME/Repos/MyArch/storage/wallpaper"
 PLAYLIST="$HOME/.cache/wallpaper_playlist"
@@ -46,5 +47,5 @@ if [[ ! -s "$PLAYLIST" ]]; then
 fi
 
 # Generate pywal colors
-echo " ======================= wallpaper: $WALLPAPER ======================="
+echo " ====== wallpaper: $WALLPAPER ======"
 bash ~/.config/hypr/Scripts/get_bg_color.sh startup "$WALLPAPER"

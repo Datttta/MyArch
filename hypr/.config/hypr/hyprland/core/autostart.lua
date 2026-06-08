@@ -15,7 +15,7 @@ hl.on("hyprland.start", function()
 
     hl.exec_cmd([[
         sh -c '~/.config/hypr/Scripts/random-wallpaper.sh \
-        > ~/.local/state/wallpaper_log.txt 2>&1 && \
+        > /tmp/current_wallpaper 2>&1 && \
         ~/Repos/MyArch/storage/scripts/vimwiki.sh \
     ]])
 
