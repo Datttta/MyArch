@@ -6,6 +6,12 @@ if [[ $1 == "startup" ]]; then
     WALLPAPER="$2"
     echo "startup" >> /tmp/current_wallpaper
     echo "wallpaper: '$(basename "$WALLPAPER")'" >> /tmp/current_wallpaper
+
+    # wait for hyprpaper
+    while ! hyprctl hyprpaper listactive >/dev/null 2>&1; do
+        sleep 0.5
+    done
+
 else
     WALLPAPER=$(grep '^wallpaper =' ~/.config/waypaper/config.ini | cut -d'=' -f2- | xargs)
     echo "wallpaper: "$WALLPAPER >> /tmp/current_wallpaper
@@ -17,11 +23,6 @@ WALLPAPER="${WALLPAPER/#\~/$HOME}"
 # copy image to a folder so hyprlock can use it
 mkdir -p ~/.cache/hyprlock
 cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
-
-# wait for hyprpaper
-while ! pgrep -x hyprpaper >/dev/null; do
-    sleep 0.5
-done
 
 # Run pywal
 if [[ $(basename "$WALLPAPER") == "retro wave.png" ||
