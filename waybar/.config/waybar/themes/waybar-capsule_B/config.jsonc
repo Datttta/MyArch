@@ -99,13 +99,13 @@
 
   "cpu": {
     "format": "{usage}% ",
-    "on-click": "kitty -e btop",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'",
     "interval": 1
   },
 
   "memory": {
     "format": "{}% ",
-    "on-click": "kitty -e btop",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'",
     "interval": 1
   },
 

@@ -50,8 +50,8 @@ wait_for_window $app
 
 # bottom-left 
 hyprctl dispatch 'hl.dsp.cursor.move({ x = 450, y = 700 })'
-app=$(check_class "btop_term")
-kitty --class $app btop &
+app=$(check_class "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'")
+kitty --class $app hyprctl dispatch "hl.dsp.exec_cmd('kitty -e hyprctl dispatch 'hl.dsp.exec_cmd("kitty -e hyprctl dispatch 'hl.dsp.exec_cmd''("kitty -e hyprctl dispatch '''hl.dsp.exec_cmd("kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch '''hl.dsp.exec_cmd("kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch '''hl.dsp.exec_cmd("kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'")'''\")'")'''\")'"\)'"\)'\)'"")'''")'''")'')" &
 wait_for_window $app
 
 # top-right 

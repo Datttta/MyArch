@@ -16,7 +16,7 @@ hl.bind(MainMod .. " + N",         hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(MainMod .. " + SHIFT + N", hl.dsp.exec_cmd("~/.config/swaync/scripts/swayncRestart.sh"))
 
 -- copyq
-hl.bind(MainMod .. " + SHIFT + C", hl.dsp.exec_cmd("copyq toggle", { workspace = "current silent" }))
+hl.bind(MainMod .. " + SHIFT + C", hl.dsp.exec_cmd("copyq toggle && hyprctl dispatch focuswindow class:copy"))
 
 -- Waypaper
 hl.bind(MainMod .. " + W",         hl.dsp.exec_cmd("waypaper"))

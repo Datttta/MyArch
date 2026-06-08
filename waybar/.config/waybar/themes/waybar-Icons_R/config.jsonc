@@ -65,7 +65,7 @@
   "custom/flatpak": {
     "format": " {} <span size='120%'>󱑢</span>",
     "exec": "flatpak remote-ls --updates | wc -l",
-    "on-click": "kitty -e bash -lc 'flatpak update; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'",
+    "on-click": "~/.config/waybar/scripts/Update.sh flatpak",
     "interval": "once",
     "signal": 1
   },
@@ -99,13 +99,13 @@
 
   "cpu": {
     "format": "{usage}% ",
-    "on-click": "kitty -e btop",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'",
     "interval": 1
   },
 
   "memory": {
     "format": "{}% ",
-    "on-click": "kitty -e btop",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'",
     "interval": 1
   },
 

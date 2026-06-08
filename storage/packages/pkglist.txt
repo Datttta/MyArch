@@ -70,7 +70,7 @@ breeze-gtk
 breeze-icons
 brightnessctl
 brotli
-btop
+hyprctl dispatch "hl.dsp.exec_cmd('kitty -e hyprctl dispatch 'hl.dsp.exec_cmd("kitty -e hyprctl dispatch 'hl.dsp.exec_cmd''("kitty -e hyprctl dispatch '''hl.dsp.exec_cmd("kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch '''hl.dsp.exec_cmd("kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e hyprctl dispatch '''hl.dsp.exec_cmd("kitty -e hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'")'''\")'")'''\")'"\)'"\)'\)'"")'''")'''")'')"
 bubblewrap
 bzip2
 c-ares
