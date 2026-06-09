@@ -3,7 +3,7 @@
 switch=/tmp/toggle_upside-down
 touch $switch
 
-toggle=$(cat /tmp/toggle_upside-down)
+toggle=$(cat $switch)
 
 if [[ $toggle == "OFF" || -z $toggle ]]; then
     hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "preferred", transform = 2 })' 

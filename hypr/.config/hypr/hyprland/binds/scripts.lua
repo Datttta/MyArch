@@ -3,8 +3,7 @@ hl.bind("CTRL + SHIFT + S", hl.dsp.exec_cmd("~/Repos/MyArch/storage/scripts/scre
 hl.bind("CTRL + SHIFT + A", hl.dsp.exec_cmd("grimblast --freeze --notify save screen"))
 
 -- gamemode
-hl.bind(MainMod .. " + SHIFT + G", hl.dsp.exec_cmd("~/.config/hypr/Scripts/gamemode.sh start"))
-hl.bind(MainMod .. " + G", hl.dsp.exec_cmd("~/.config/hypr/Scripts/gamemode.sh end"))
+hl.bind(MainMod .. " + G", hl.dsp.exec_cmd("~/.config/hypr/Scripts/gamemode.sh"))
 
 -- menu
 hl.bind(MainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/Repos/MyArch/storage/scripts/menu.sh"))
