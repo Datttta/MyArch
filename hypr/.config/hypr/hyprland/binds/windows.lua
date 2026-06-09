@@ -5,8 +5,8 @@ hl.bind(MainMod .. " + C", hl.dsp.window.close()) -- Close active window
 hl.bind(MainMod .. " + X", hl.dsp.exec_cmd("hyprctl killactive && kill -9 $(hyprctl activewindow -j | jq -r '.pid')")) -- Force kill active window
 
 hl.bind(MainMod .. " + V", hl.dsp.window.float({ action = "toggle" })) -- Toggle floating
-hl.bind(MainMod .. " + P", hl.dsp.window.pseudo()) -- Toggle pseudo
 hl.bind(MainMod .. " + SPACE", hl.dsp.layout("togglesplit")) -- Toggle split (dwindle)
+--hl.bind(MainMod .. " + P", hl.dsp.window.pseudo()) -- Toggle pseudo
 
 -- Move focus with MainMod + vim keys
 hl.bind(MainMod .. " + h",  hl.dsp.focus({ direction = "left" }))
