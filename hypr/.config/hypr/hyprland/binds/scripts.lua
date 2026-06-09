@@ -9,6 +9,9 @@ hl.bind(MainMod .. " + G", hl.dsp.exec_cmd("~/.config/hypr/Scripts/gamemode.sh e
 -- menu
 hl.bind(MainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/Repos/MyArch/storage/scripts/menu.sh"))
 
+-- upside down
+hl.bind(MainMod .. "+ U + P", hl.dsp.exec_cmd("~/.config/hypr/Scripts/upside-down.sh"))
+
 -- bluetooth
 hl.bind(MainMod .. " + F1", hl.dsp.exec_cmd("~/.config/hypr/Scripts/bluetooth/connectBluetoothEarbuds.sh"))
 hl.bind(MainMod .. " + F2", hl.dsp.exec_cmd("~/.config/hypr/Scripts/bluetooth/disconnectBlutooth.sh"))
