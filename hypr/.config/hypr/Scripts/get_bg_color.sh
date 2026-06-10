@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "============== get_bg_color.sh log file ==============" > /tmp/current_wallpaper
+echo "============== get_bg_color.sh log file ==============" >> /tmp/current_wallpaper
 
 # Extract the current wallpaper path from Waypaper config or from hyprlock
 if [[ $1 == "startup" ]]; then

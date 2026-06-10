@@ -1,7 +1,7 @@
 local apps = {
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
     "syncthing --no-browser",
-    "copyq --start-server",
+    "~/.config/hypr/Scripts/launcher.sh start-copyq",
     "sleep 1 && waybar",
     "hyprpaper",
     "swaync",
