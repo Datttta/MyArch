@@ -12,6 +12,7 @@ watch_file() {
 # Take a screenshot first using grimblast.
 # The screenshot is saved to a temporary file.
 TMP_FILE="$(mktemp --suffix=.png)"
+# case $1 == all, you took a fullscreen shoft capture
 if [[ $1 == "all" ]]; then
     grimblast --freeze save screen "$TMP_FILE" || { rm "$TMP_FILE"; exit 1; }
 else
