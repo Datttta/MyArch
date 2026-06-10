@@ -5,7 +5,7 @@ echo "get $1" >&2
 if [[ $1 == "yay" ]]; then
     hyprctl dispatch "hl.dsp.exec_cmd(\"kitty -e bash -lc 'yay; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'\")"
 elif [[ $1 == "flatpak" ]]; then
-    kitty -e bash -lc 'flatpak update; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'
+    hyprctl dispatch "hl.dsp.exec_cmd(\"kitty -e bash -lc 'flatpak update; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'\")"
 fi
 
 # check updates

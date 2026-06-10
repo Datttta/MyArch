@@ -54,18 +54,10 @@
   "signal": 1
   },
 
-  "custom/pacman": {
-    "format": " {} <span size='120%'>󰏔</span>",
-    "exec": "checkupdates | wc -l",
-    "on-click": "~/.config/waybar/scripts/Update.sh flatpak",
-    "interval": "once",
-    "signal": 1
-  },
-
   "custom/flatpak": {
     "format": " {} <span size='120%'>󱑢</span>",
     "exec": "flatpak remote-ls --updates | wc -l",
-    "on-click": "kitty -e bash -lc 'flatpak update; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'",
+    "on-click": "~/.config/waybar/scripts/Update.sh flatpak",
     "interval": "once",
     "signal": 1
   },
