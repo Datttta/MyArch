@@ -1,6 +1,6 @@
 -- screenshot
 hl.bind("CTRL + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/Scripts/screenshot.sh"))
-hl.bind("CTRL + SHIFT + A", hl.dsp.exec_cmd("grimblast --freeze --notify save screen"))
+hl.bind("CTRL + SHIFT + A", hl.dsp.exec_cmd("~/.config/hypr/Scripts/screenshot.sh all"))
 
 -- upside down
 hl.bind("CTRL + U + P", hl.dsp.exec_cmd("~/.config/hypr/Scripts/upside-down.sh"))

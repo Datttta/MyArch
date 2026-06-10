@@ -12,7 +12,11 @@ watch_file() {
 # Take a screenshot first using grimblast.
 # The screenshot is saved to a temporary file.
 TMP_FILE="$(mktemp --suffix=.png)"
-grimblast --freeze save area "$TMP_FILE" || { rm "$TMP_FILE"; exit 1; }
+if [[ $1 == "all" ]]; then
+    grimblast --freeze save screen "$TMP_FILE" || { rm "$TMP_FILE"; exit 1; }
+else
+    grimblast --freeze save area "$TMP_FILE" || { rm "$TMP_FILE"; exit 1; }
+fi
 
 # Ask for the save location and filename after the screenshot is taken.
 # The default filename is now based on the current date and time.
