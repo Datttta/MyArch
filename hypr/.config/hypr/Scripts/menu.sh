@@ -182,16 +182,21 @@ case "$option" in
         fi ;;
 
     "Configs") 
-        option=$(printf ".config/\nhyprland/\n.config/hypr/Scripts/\n/usr/share/applications\n.local/share/applications\nmy logs\nhyprland.lua\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window -s "$WOFI_STYLE")
+        option=$(printf ".config/\nhyprland/\nwallpapers/\nMyArch/\n.config/hypr/Scripts/\n/usr/share/applications\n.local/share/applications\nmy logs\nhyprland.lua\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window -s "$WOFI_STYLE")
 
         case "$option" in
             ".config/") choosen="$HOME/.config" ;;
-            "hyprland/") choosen="$HOME/.config/hypr/hyprland" ;;
             "my logs") choosen="/tmp/mylogs" ;;
+            
+            "hyprland/") choosen="$HOME/.config/hypr/hyprland" ;;
             ".config/hypr/Scripts/") choosen="$HOME/.config/hypr/Scripts" ;;
+            
             "/usr/share/applications") choosen="/usr/share/applications" ;;
             ".local/share/applications") choosen="$HOME/.local/share/applications" ;;
+            
             "Time-manager/") choosen="$HOME/Repos/Time_manager" ;;
+            "MyArch/") kitty yazi Repos/MyArch ;;
+            "wallpapers/") kitty yazi Repos/MyArch/storage/wallpaper ;;
 
             "hyprland.lua") kitty nvim ~/.config/hypr/hyprland.lua ;;
             ".zshrc") kitty nvim .zshrc ;;
