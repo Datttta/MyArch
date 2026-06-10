@@ -41,7 +41,7 @@
 
   "custom/updates": {
       "tooltip": false,
-      "exec": "~/.config/waybar/scripts/Update.sh",
+      "exec": "~/.config/waybar/scripts/waybar_hub.sh",
       "interval": 14400, // 4 hours
       "signal": 2
   },
@@ -49,7 +49,7 @@
   "custom/aur": {
   "format": "{} <span size='120%'>󱉚</span>",
   "exec": "echo $(( $(checkupdates | wc -l) + $(yay -Qua | wc -l) ))",
-  "on-click": "~/.config/waybar/scripts/Update.sh yay",
+  "on-click": "~/.config/waybar/scripts/waybar_hub.sh yay",
   "interval": "once",
   "signal": 1
   },
@@ -57,7 +57,7 @@
   "custom/flatpak": {
     "format": " {} <span size='120%'>󱑢</span>",
     "exec": "flatpak remote-ls --updates | wc -l",
-    "on-click": "~/.config/waybar/scripts/Update.sh flatpak",
+    "on-click": "~/.config/waybar/scripts/waybar_hub.sh flatpak",
     "interval": "once",
     "signal": 1
   },
@@ -148,7 +148,7 @@
     "format-disconnected": "󰖪",
     "max-length": 50,
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", ""],
-    "on-click": "kitty -e nmtui"
+    "on-click": "~/.config/waybar/scripts/waybar_hub.sh network"
   },
 
    "hyprland/workspaces": {

@@ -191,7 +191,7 @@ case "$option" in
             "Time-manager/") choosen="$HOME/Repos/Time_manager" ;;
 
             ".zshrc") kitty nvim .zshrc ;;
-            "menu.sh") kitty --directory "~/Repos/MyArch/storage/scripts/" nvim menu.sh ;;
+            "menu.sh") kitty --directory "~/.config/hypr/Scripts/" nvim menu.sh ;;
             "my_hyprland.sh") kitty --directory "~/Repos/MyArch/storage/scripts/" nvim my_hyprland.sh ;;
         esac
 esac
