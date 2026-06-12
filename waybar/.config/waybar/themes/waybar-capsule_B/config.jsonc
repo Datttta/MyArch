@@ -41,7 +41,7 @@
 
   "custom/updates": {
       "tooltip": false,
-      "exec": "~/.config/waybar/scripts/waybar_hub.sh",
+      "exec": "~/.config/waybar/scripts/waybar_hub.sh update",
       "interval": 14400, // 4 hours
       "signal": 2
   },
