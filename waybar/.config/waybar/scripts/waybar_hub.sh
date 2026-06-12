@@ -24,7 +24,7 @@ ALERT_ICON=" <span size='150%'>󰃘</span> !"
 echo "Yay updates: $YAY_UPDATES" >&2
 echo "flatpak: $FLATPAK_UPDATES" >&2
 
-if [[ "$YAY_UPDATES" != 0 ]] || [[ "$FLATPAK_UPDATES" != 0 ]]; then
+if [[ "$YAY_UPDATES" != 0 || "$FLATPAK_UPDATES" != 0 ]]; then
     echo "you have updates" >&2
     echo "${ALERT_ICON}"
 else
