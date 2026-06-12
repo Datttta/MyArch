@@ -1,7 +1,6 @@
 #!/bin/bash
 echo "get $1" >&2
 
-# update
 if [[ $1 == "yay" ]]; then
     hyprctl dispatch "hl.dsp.exec_cmd(\"kitty -e bash -lc 'yay; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'\")"
 
