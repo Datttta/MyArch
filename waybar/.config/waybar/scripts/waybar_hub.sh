@@ -11,19 +11,23 @@ elif [[ $1 == "network" ]]; then
 fi
 
 # check updates
+echo "sleeping" >&2
 sleep 6
-PACMAN_UPDATES=$(checkupdates | wc -l)
-AUR_UPDATES=$(yay -Qua | wc -l)
+echo "awake" >&2
+
+YAY_UPDATES=$(yay -Qua | wc -l)
 FLATPAK_UPDATES=$(flatpak remote-ls --updates | wc -l)
 
 EXPAND_ICON=" <span size='150%'>󰃘</span> "
 ALERT_ICON=" <span size='150%'>󰃘</span> !"
 
-pkill -SIGRTMIN+1 waybar
+echo "Yay updates: $YAY_UPDATES" >&2
+echo "flatpak: $FLATPAK_UPDATES" >&2
 
-if [ "$PACMAN_UPDATES" -gt 0 ] || [ "$AUR_UPDATES" -gt 0 ] || [ "$FLATPAK_UPDATES" -gt 0 ]; then
-    pkill -SIGRTMIN+1 waybar
+if [[ "$YAY_UPDATES" != 0 ]] || [[ "$FLATPAK_UPDATES" != 0 ]]; then
+    echo "you have updates" >&2
     echo "${ALERT_ICON}"
 else
+    echo "up to date" >&2
     echo "${EXPAND_ICON}"
 fi
