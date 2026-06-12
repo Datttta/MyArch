@@ -1,17 +1,20 @@
 #!/bin/bash
 echo "get $1" >&2
 
+# run yay
 if [[ $1 == "yay" ]]; then
     hyprctl dispatch "hl.dsp.exec_cmd(\"kitty -e bash -lc 'yay; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'\")"
 
+# run flatpak update
 elif [[ $1 == "flatpak" ]]; then
     hyprctl dispatch "hl.dsp.exec_cmd(\"kitty -e bash -lc 'flatpak update; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'\")"
 
+# open network app
 elif [[ $1 == "network" ]]; then
     hyprctl dispatch "hl.dsp.exec_cmd('kitty -e nmtui')"
 
+# check updates
 elif [[ $1 == "update" ]]; then
-    # check updates
     echo "sleeping" >&2
     sleep 6
     echo "awake" >&2
