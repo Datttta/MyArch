@@ -67,10 +67,10 @@ hl.window_rule({
     center = true,
 })
 
--- waypaper
+-- waypaper & zenity
 hl.window_rule({
     match = {
-        class = "waypaper",
+        class = "waypaper|zenity",
     },
 
     float = true,
