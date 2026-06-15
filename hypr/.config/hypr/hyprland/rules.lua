@@ -23,7 +23,7 @@ hl.window_rule({
 -- no border
 hl.window_rule({
     match = {
-        class = "(Xdg-desktop-portal-gtk|vivaldi-stable|Vivaldi-stable|Opera|firefox)",
+        class = "(Xdg-desktop-portal-gtk|vivaldi-stable|Opera|firefox)",
     },
 
     border_size = 0,
@@ -67,10 +67,10 @@ hl.window_rule({
     center = true,
 })
 
--- waypaper & zenity
+-- waypaper
 hl.window_rule({
     match = {
-        class = "waypaper|zenity",
+        class = "waypaper",
     },
 
     float = true,
@@ -102,7 +102,7 @@ hl.window_rule({
 
 hl.window_rule({
     match = {
-        class = "(firefox|Opera|vivaldi-stable|Vivaldi-stable)",
+        class = "(firefox|Opera|vivaldi-stable)",
     },
 
     float = true,

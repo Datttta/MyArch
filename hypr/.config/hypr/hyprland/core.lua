@@ -3,7 +3,7 @@
 -----------------------
 
 local apps = {
-    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+    "systemctl --user start hyprpolkitagent",
     "syncthing --no-browser",
     "sleep 1 && waybar",
     "hyprpaper",
@@ -32,7 +32,6 @@ end)
 -----------------
 
 hl.env("XCURSOR_SIZE", "24")
-hl.env("DRI_PRIME", "0")
 
 hl.env("EDITOR", "nvim")
 hl.env("SHELL", "/usr/bin/zsh")

@@ -182,7 +182,7 @@ case "$option" in
         fi ;;
 
     "Configs") 
-        option=$(printf ".config/\nhyprland/\nwallpapers/\nMyArch/\n.config/hypr/Scripts/\n/usr/share/applications\n.local/share/applications\nmy logs\nhyprland.lua\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window -s "$WOFI_STYLE")
+        option=$(printf ".config/\nhyprland/\nwallpapers/\nMyArch/\n.config/hypr/Scripts/\n.desktop files\n.local/share/applications\nmy logs\nhyprland.lua\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window -s "$WOFI_STYLE")
 
         case "$option" in
             ".config/") choosen="$HOME/.config" ;;
@@ -191,8 +191,11 @@ case "$option" in
             "hyprland/") choosen="$HOME/.config/hypr/hyprland" ;;
             ".config/hypr/Scripts/") choosen="$HOME/.config/hypr/Scripts" ;;
             
-            "/usr/share/applications") choosen="/usr/share/applications" ;;
-            ".local/share/applications") choosen="$HOME/.local/share/applications" ;;
+            ".desktop files") option=$(printf "/usr/share/applications/\n~/.local/share/applications" | wofi --dmenu --normal-window -s "$WOFI_STYLE") 
+            case "$option" in            
+                "~/.local/share/applications") choosen="$HOME/.local/share/applications" ;;
+                "/usr/share/applications/") choosen="/usr/share/applications" ;;
+            esac ;;
             
             "Time-manager/") choosen="$HOME/Repos/Time_manager" ;;
             "MyArch/") kitty yazi Repos/MyArch ;;
@@ -204,6 +207,8 @@ case "$option" in
             "my_hyprland.sh") kitty --directory "~/Repos/MyArch/storage/scripts/" nvim my_hyprland.sh ;;
         esac
 esac
+
+echo "choosen: $choosen"
 
 if [ -v choosen ]; then
 
