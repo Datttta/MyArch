@@ -66,7 +66,7 @@
     "tooltip": false,
     "exec": "python ~/.config/waybar/scripts/Due_cards.py",
     "on-click": "pkill -9 anki; setsid anki > /dev/null 2>&1 &",
-    "interval": 10,
+    "interval": 20,
     "signal": 3
   },
 
@@ -92,13 +92,13 @@
   "cpu": {
     "format": "{usage}% ",
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'",
-    "interval": 1
+    "interval": 2
   },
 
   "memory": {
     "format": "{}% ",
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'",
-    "interval": 1
+    "interval": 2
   },
 
   "custom/launcher": {

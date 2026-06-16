@@ -1,6 +1,6 @@
 [Default]
-save_dir=.
-save_filename_format=Invalid value (0) for DRI_PRIME. Should be > 0
+save_dir=/home/DROS/Pictures/Español
+save_filename_format=kwiziq.png
 show_panel=false
 line_size=5
 text_size=20
