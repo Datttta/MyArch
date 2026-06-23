@@ -177,33 +177,24 @@ return { -- LSP Configuration & Plugins
          -- texlab = {},
       }
 
-      -- Ensure the servers and tools above are installed
       require('mason').setup()
 
-      -- 🛑 NEW: Separate list for tools that are NOT LSPs
       local tools_to_install = {
          'stylua', -- Used to format lua code
          'clangd', -- Clangd is also an LSP server, but listing it here is fine
       }
 
-      -- LSPs are pulled from the `servers` table keys
       local lsp_servers_to_install = vim.tbl_keys(servers or {})
 
-      -- Combine lists for Mason Tool Installer
       vim.list_extend(lsp_servers_to_install, tools_to_install)
       require('mason-tool-installer').setup { ensure_installed = lsp_servers_to_install }
 
       require('mason-lspconfig').setup {
-         -- ✅ KEEP THIS: This correctly excludes stylua and null-ls from the LSP setup loop
          exclude = { 'stylua', 'null-ls' },
          handlers = {
             function(server_name)
                local server = servers[server_name] or {}
                server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-
-               -- 🛑 THE FINAL PIECE: The nvim-lspconfig function is called directly here.
-               -- This will only run for LSPs configured in your `servers` table
-               -- or default LSPs that mason-lspconfig knows about, excluding the ones in `exclude`.
                require('lspconfig')[server_name].setup(server)
             end,
          },

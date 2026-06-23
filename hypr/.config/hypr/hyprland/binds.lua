@@ -64,6 +64,9 @@ hl.bind("CTRL + SHIFT + A", hl.dsp.exec_cmd("~/.config/hypr/Scripts/screenshot.s
 -- upside down
 hl.bind("CTRL + U + P", hl.dsp.exec_cmd("~/.config/hypr/Scripts/upside-down.sh"))
 
+-- turn off display
+hl.bind(MainMod .. " + F6", hl.dsp.exec_cmd("~/.config/hypr/Scripts/turn-off-monitor.sh"))
+
 -- gamemode
 hl.bind(MainMod .. " + G", hl.dsp.exec_cmd("~/.config/hypr/Scripts/gamemode.sh"))
 

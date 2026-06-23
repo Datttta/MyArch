@@ -5,18 +5,18 @@
 local apps = {
     "systemctl --user start hyprpolkitagent",
     "syncthing --no-browser",
-    "sleep 1 && waybar",
+    "sh -c 'sleep 1 && waybar > " .. Log_path .. "/waybar.log 2>&1'",
     "hyprpaper",
     "swaync",
 }
 
 hl.on("hyprland.start", function()
 
+    os.execute("mkdir -p " .. Log_path)
+
     for _, cmd in ipairs(apps) do
         hl.exec_cmd(cmd)
     end
-
-    os.execute("mkdir " .. Log_path)
 
     hl.exec_cmd([[
         sh -c '

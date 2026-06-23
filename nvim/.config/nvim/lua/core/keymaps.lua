@@ -92,7 +92,6 @@ vim.keymap.set('n', '<leader>ro', 'A \
 - [ ] Meditate \
 - [ ] MemHack \
 - [ ] Anki \
-- [ ] Homework \
 - [ ] Workout \
 - [ ] Clean_room \
 - [ ] Have_lunch \
