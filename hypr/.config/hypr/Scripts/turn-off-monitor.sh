@@ -1,4 +1,5 @@
 #!/bin/bash
+
 switch=/tmp/toggle_turn-off-monitor
 touch $switch
 
