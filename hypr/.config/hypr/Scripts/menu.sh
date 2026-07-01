@@ -182,7 +182,7 @@ case "$option" in
         fi ;;
 
     "Configs") 
-        option=$(printf ".config/\nhyprland/\nwallpapers/\nMyArch/\n.config/hypr/Scripts/\n.desktop files\n.local/share/applications\nmy logs\nhyprland.lua\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window -s "$WOFI_STYLE")
+        option=$(printf ".config/\nhyprland/\nwallpapers/\nMyArch/\n.config/hypr/Scripts/\n.desktop files\nmy logs\nhyprland.lua\nTime-manager/\nmenu.sh\nmy_hyprland.sh\n.zshrc" | wofi --dmenu --normal-window -s "$WOFI_STYLE")
 
         case "$option" in
             ".config/") choosen="$HOME/.config" ;;
@@ -191,10 +191,11 @@ case "$option" in
             "hyprland/") choosen="$HOME/.config/hypr/hyprland" ;;
             ".config/hypr/Scripts/") choosen="$HOME/.config/hypr/Scripts" ;;
             
-            ".desktop files") option=$(printf "/usr/share/applications/\n~/.local/share/applications" | wofi --dmenu --normal-window -s "$WOFI_STYLE") 
+            ".desktop files") option=$(printf "/usr/share/applications/\n~/.local/share/applications\n/var/lib/flatpak/exports/share/applications" | wofi --dmenu --normal-window -s "$WOFI_STYLE") 
             case "$option" in            
                 "~/.local/share/applications") choosen="$HOME/.local/share/applications" ;;
                 "/usr/share/applications/") choosen="/usr/share/applications" ;;
+                "/var/lib/flatpak/exports/share/applications") choosen="/var/lib/flatpak/exports/share/applications" ;;
             esac ;;
             
             "Time-manager/") choosen="$HOME/Repos/Time_manager" ;;
