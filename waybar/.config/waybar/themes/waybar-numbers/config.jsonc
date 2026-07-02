@@ -51,7 +51,7 @@
   "exec": "echo $(( $(checkupdates | wc -l) + $(yay -Qua | wc -l) ))",
   "on-click": "~/.config/waybar/scripts/waybar_hub.sh yay",
   "interval": "once",
-  "signal": 1
+  "signal": 2
   },
 
   "custom/flatpak": {
@@ -59,7 +59,7 @@
     "exec": "flatpak remote-ls --updates | wc -l",
     "on-click": "~/.config/waybar/scripts/waybar_hub.sh flatpak",
     "interval": "once",
-    "signal": 1
+    "signal": 2
   },
 
   "custom/anki_notification": {
