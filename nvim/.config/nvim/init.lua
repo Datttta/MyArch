@@ -5,6 +5,7 @@ require("core.padding-config")
 require("core.filetypes")
 
 require("lazy").setup({
+	require("plugins.devicons"),
 	require("plugins.neotree"),
 	require("plugins.bufferline"),
 	require("plugins.lualine"),
