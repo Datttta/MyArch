@@ -2,6 +2,7 @@ require("core.options")
 require("core.keymaps")
 require("core.plugin-manager")
 require("core.padding-config")
+require("core.filetypes")
 
 require("lazy").setup({
 	require("plugins.neotree"),
@@ -21,7 +22,6 @@ require("lazy").setup({
 	require("plugins.image-clip"),
 	require("plugins.colorizer"),
 	require("plugins.tokyo-night"),
-	require("plugins.nvim-orgmode"),
 	-- require("plugins.colortheme"),
 	-- require("plugins.colorthemeCat"),
 
