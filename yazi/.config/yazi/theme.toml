@@ -1,2 +1,7 @@
 [flavor]
 dark = "tokyo-night"
+
+[icon]
+prepend_exts = [
+    { name = "tcss", text = "", fg = "#42A5F5" },
+]
