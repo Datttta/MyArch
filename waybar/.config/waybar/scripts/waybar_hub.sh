@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "get $1" >&2
-sleep 1
 
 # run yay
 if [[ $1 == "yay" ]]; then
@@ -16,7 +15,6 @@ elif [[ $1 == "network" ]]; then
 
 # check updates
 elif [[ $1 == "update" ]]; then
-
     YAY_UPDATES=$(yay -Qua | wc -l)
     FLATPAK_UPDATES=$(flatpak remote-ls --updates | wc -l)
 
