@@ -31,5 +31,7 @@ elif [[ $1 == "update" ]]; then
         echo "up to date" >&2
         echo "${EXPAND_ICON}"
     fi
+
+    hyprctl dispatch "hl.dsp.exec_cmd('kill -SIGRTMIN+2 $(pidof waybar)')"
 fi
 
