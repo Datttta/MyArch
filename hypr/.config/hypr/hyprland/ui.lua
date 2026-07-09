@@ -106,7 +106,7 @@ hl.config({
 hl.config({
     misc = {
         disable_splash_rendering = true,
-        force_default_wallpaper = -1,
+        force_default_wallpaper = 1,
         disable_hyprland_logo = false,
     },
 

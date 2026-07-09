@@ -32,6 +32,6 @@ elif [[ $1 == "update" ]]; then
         echo "${EXPAND_ICON}"
     fi
 
-    hyprctl dispatch "hl.dsp.exec_cmd('kill -SIGRTMIN+2 $(pidof waybar)')"
+    kill -SIGRTMIN+4 $(pidof waybar)
 fi
 
