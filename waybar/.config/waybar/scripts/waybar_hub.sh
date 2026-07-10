@@ -3,11 +3,11 @@ echo "get $1" >&2
 
 # run yay
 if [[ $1 == "yay" ]]; then
-    hyprctl dispatch "hl.dsp.exec_cmd(\"kitty -e bash -lc 'yay; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'\")"
+    hyprctl dispatch "hl.dsp.exec_cmd(\"kitty -e bash -lc 'yay; kill -SIGRTMIN+2 $(pidof waybar)'\")"
 
 # run flatpak update
 elif [[ $1 == "flatpak" ]]; then
-    hyprctl dispatch "hl.dsp.exec_cmd(\"kitty -e bash -lc 'flatpak update; sleep 1; kill -SIGRTMIN+2 $(pidof waybar)'\")"
+    hyprctl dispatch "hl.dsp.exec_cmd(\"kitty -e bash -lc 'flatpak update; kill -SIGRTMIN+2 $(pidof waybar)'\")"
 
 # open network app
 elif [[ $1 == "network" ]]; then
@@ -15,8 +15,9 @@ elif [[ $1 == "network" ]]; then
 
 # check updates
 elif [[ $1 == "update" ]]; then
-    YAY_UPDATES=$(yay -Qua | wc -l)
-    FLATPAK_UPDATES=$(flatpak remote-ls --updates | wc -l)
+
+    YAY_UPDATES=$(( $(/usr/bin/checkupdates | wc -l) + $(/usr/bin/yay -Qua | wc -l) ))
+    FLATPAK_UPDATES=$(/usr/bin/flatpak remote-ls --updates | wc -l)
 
     EXPAND_ICON=" <span size='150%'>󰃘</span> "
     ALERT_ICON=" <span size='150%'>󰃘</span> !"
@@ -31,7 +32,5 @@ elif [[ $1 == "update" ]]; then
         echo "up to date" >&2
         echo "${EXPAND_ICON}"
     fi
-
-    kill -SIGRTMIN+4 $(pidof waybar)
 fi
 
