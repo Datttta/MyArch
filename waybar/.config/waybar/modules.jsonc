@@ -22,14 +22,16 @@
   "format": "{} <span size='120%'>󱉚</span>",
   "exec": "~/.config/waybar/scripts/waybar_hub.sh get_yay_numbers",
   "on-click": "~/.config/waybar/scripts/waybar_hub.sh yay",
-  "interval": "once"
+  "interval": "once",
+  "signal": 2
   },
 
   "custom/flatpak": {
     "format": " {} <span size='120%'>󱑢</span>",
-    "exec": "/usr/bin/flatpak remote-ls --updates | wc -l",
+    "exec": "~/.config/waybar/scripts/waybar_hub.sh get_flatpak_numbers",
     "on-click": "~/.config/waybar/scripts/waybar_hub.sh flatpak",
-    "interval": "once"
+    "interval": "once",
+    "signal": 2
   },
 
   // ======================================== TRAYS ========================================

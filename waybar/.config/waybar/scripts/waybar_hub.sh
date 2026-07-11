@@ -1,5 +1,8 @@
 #!/bin/bash
-echo "get $1" >&2
+yay_update_count=/tmp/yay_update_count
+flatpak_update_count=/tmp/flatpak_update_count
+
+touch $flatpak_update_count $yay_update_count
 
 wait_for_network() {
     while true; do
@@ -17,12 +20,14 @@ wait_for_network() {
 }
 
 yay_updates() {
-    echo $(( $(/usr/bin/checkupdates | wc -l) + $(/usr/bin/yay -Qua | wc -l) ))
+    echo $(( $(/usr/bin/checkupdates | wc -l) + $(/usr/bin/yay -Qua | wc -l) )) > $yay_update_count
 }
 
 flatpak_updates() {
-    echo $(/usr/bin/flatpak remote-ls --updates | wc -l)
+    echo $(/usr/bin/flatpak remote-ls --updates | wc -l) > $flatpak_update_count
 }
+
+echo "get $1" >&2
 
 case "$1" in
     "yay")
@@ -42,29 +47,32 @@ case "$1" in
    
     "get_yay_numbers")
         wait_for_network
-        YAY_UPDATES=$(yay_updates)
+        yay_updates
+
+        YAY_UPDATES=$(cat $yay_update_count)
         echo $YAY_UPDATES
         
         echo "yay updates from get_yay_numbers: $YAY_UPDATES" >&2
+        kill -SIGRTMIN+1 $(pidof waybar)
         ;;
 
     "get_flatpak_numbers")
         wait_for_network
-        FLATPAK_UPDATES=$(flatpak_updates)
+        flatpak_updates
+
+        FLATPAK_UPDATES=$(cat $flatpak_update_count)
         echo $FLATPAK_UPDATES
 
-        echo "flatpak updaets from get_flatpak_numbers: $FLATPAK_UPDATES" >&2
+        echo "flatpak updates from get_flatpak_numbers: $FLATPAK_UPDATES" >&2
+        kill -SIGRTMIN+1 $(pidof waybar)
         ;;
 
     "update")
-        # check updates
-        wait_for_network
-
-        YAY_UPDATES=(yay_updates)
-        FLATPAK_UPDATES=(flatpak_updates)
-
         EXPAND_ICON=" <span size='150%'>󰃘</span> "
         ALERT_ICON=" <span size='150%'>󰃘</span> !"
+
+        YAY_UPDATES=$(cat $yay_update_count)
+        FLATPAK_UPDATES=$(cat $flatpak_update_count)
 
         echo "Yay updates: $YAY_UPDATES" >&2
         echo "flatpak: $FLATPAK_UPDATES" >&2
