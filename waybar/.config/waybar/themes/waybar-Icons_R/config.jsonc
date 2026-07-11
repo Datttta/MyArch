@@ -4,6 +4,7 @@
   "position": "bot",
   "margin-top": 3,
   "margin-bottom":3,
+  "include": ["~/.config/waybar/modules.jsonc"],
   "modules-left": ["custom/launcher", "clock", "custom/anki_notification", "group/trays"],
   "modules-center": ["hyprland/workspaces", "custom/media"],
   "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "keyboard-state", "group/updates"],
@@ -26,40 +27,6 @@
   "custom/trays": {
     "tooltip": false,
     "format": "{} <span size='120%'></span>"
-  },
-
-  "group/updates": {
-    "orientation": "horizontal",
-    "drawer": {
-        "transition-duration": 600,
-        "transition-to-left": true,
-        "click-to-reveal": false,
-        "hover-to-reveal": true
-    },
-    "modules": ["custom/updates", "custom/aur", "custom/flatpak"]
-  },
-
-  "custom/updates": {
-      "tooltip": false,
-      "exec": "~/.config/waybar/scripts/waybar_hub.sh update",
-      "interval": 14400, // 4 hours
-      "signal": 2
-  },
-
-  "custom/aur": {
-  "format": "{} <span size='120%'>󱉚</span>",
-  "exec": "echo $(( $(checkupdates | wc -l) + $(yay -Qua | wc -l) ))",
-  "on-click": "~/.config/waybar/scripts/waybar_hub.sh yay",
-  "interval": "once",
-  "signal": 1
-  },
-
-  "custom/flatpak": {
-    "format": " {} <span size='120%'>󱑢</span>",
-    "exec": "flatpak remote-ls --updates | wc -l",
-    "on-click": "~/.config/waybar/scripts/waybar_hub.sh flatpak",
-    "interval": "once",
-    "signal": 1
   },
 
   "custom/anki_notification": {

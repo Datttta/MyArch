@@ -1,0 +1,34 @@
+{
+  // ======================================== UPDATE MODULES ========================================
+  "group/updates": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 600,
+        "transition-to-left": true,
+        "click-to-reveal": false,
+        "hover-to-reveal": true
+    },
+    "modules": ["custom/updates", "custom/aur", "custom/flatpak"]
+  },
+
+  "custom/updates": {
+      "tooltip": false,
+      "exec": "~/.config/waybar/scripts/waybar_hub.sh update",
+      "interval": 14400, // 4 hours
+      "signal": 1
+  },
+
+  "custom/aur": {
+  "format": "{} <span size='120%'>󱉚</span>",
+  "exec": "~/.config/waybar/scripts/waybar_hub.sh get_yay_numbers",
+  "on-click": "~/.config/waybar/scripts/waybar_hub.sh yay",
+  "interval": "once"
+  },
+
+  "custom/flatpak": {
+    "format": " {} <span size='120%'>󱑢</span>",
+    "exec": "/usr/bin/flatpak remote-ls --updates | wc -l",
+    "on-click": "~/.config/waybar/scripts/waybar_hub.sh flatpak",
+    "interval": "once"
+  }
+}
