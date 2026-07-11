@@ -48,14 +48,14 @@
 
   "custom/aur": {
   "format": "{} <span size='120%'>󱉚</span>",
-  "exec": "echo $(( $(/usr/bin/checkupdates | wc -l) + $(/usr/bin/yay -Qua | wc -l) ))",
+  "exec": "~/.config/waybar/scripts/waybar_hub.sh get_yay_numbers",
   "on-click": "~/.config/waybar/scripts/waybar_hub.sh yay",
   "interval": "once"
   },
 
   "custom/flatpak": {
     "format": " {} <span size='120%'>󱑢</span>",
-    "exec": "/usr/bin/flatpak remote-ls --updates | wc -l",
+    "exec": "~/.config/waybar/scripts/waybar_hub.sh get_flatpak_numbers",
     "on-click": "~/.config/waybar/scripts/waybar_hub.sh flatpak",
     "interval": "once"
   },
