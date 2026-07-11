@@ -9,126 +9,23 @@
   "modules-center": ["hyprland/workspaces", "custom/media"],
   "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "keyboard-state", "group/updates"],
 
-  "custom/anki_notification": {
-    "tooltip": false,
-    "exec": "python ~/.config/waybar/scripts/Due_cards.py",
-    "on-click": "pkill -9 anki; setsid anki > /dev/null 2>&1 &",
-    "interval": 20,
-    "signal": 3
-  },
-
-  "keyboard-state": {
-      "numlock": false,
-      "capslock": true,
+  "hyprland/workspaces": {
+      "active-only": false,
+      "all-outputs": true,
       "format": "{icon}",
-      "device-path": "/dev/input/by-id/usb-SZH_usb_keyboard-event-kbd",
+      "show-special": false,
+      "on-click": "activate",
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+          "persistent-workspaces": {
+        "*": 0
+      },
+      
       "format-icons": {
-          "locked": "<span size='180%'>󱍳 </span>",
-          "unlocked": ""
+          "active": "",
+          "default": ""
+          
       }
-  },
-
-  "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-    "critical-threshold": 80,
-    "format": "{temperatureC}°C <span size='110%'></span>",
-    "format-critical": "{temperatureC}°C <span size='110%'></span>",
-    "interval": 5
-  },
-
-  "cpu": {
-    "format": "{usage}% ",
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'",
-    "interval": 2
-  },
-
-  "memory": {
-    "format": "{}% ",
-    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty -e btop\")'",
-    "interval": 2
-  },
-
-  "custom/launcher": {
-    "format": "<span size='130%'>󰣇</span>",
-    "on-click": "wlogout"
-  },
-
-  "custom/media": {
-    "format": "{}",
-    "escape": true,
-    "return-type": "json",
-    "max-length": 40,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 2, // This value was tested using a trackpad, it should be lowered if using a mouse.
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources/custom_modules folder
-  },
-
-  "battery": {
-    "format": "{icon}  {capacity}%",
-    "format-charging": "󰂄  {capacity}%",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-  },
-
-  "clock": {
-    //"format-alt": "󰥔   {:%I:%M %p}",
-    "format": "{:%a %d/%b %I:%M%p}",
-    "on-click": "kitty sh -c 'khal interactive'"
-  },
-
-  "pulseaudio": {
-    "format": "{icon} <span rise='1400'>{volume}%</span>",
-    "format-muted": "󰖁",
-    "scroll-step": 1,
-    "on-click": "GDK_BACKEND=x11 pavucontrol",
-    "ignored-sinks": ["Easy Effects Sink"],
-    "format-icons": ["<span size='120%'>󰕾</span>"]
-  },
-
-  "network": {
-    "interface": "wlp9s0",
-    "format": "{ifname}",
-    "format-wifi": "{icon}",
-    "format-ethernet": "󰈀   {ipaddr}/{cidr}",
-    "format-disconnected": "󰖪",
-    "max-length": 50,
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", ""],
-    "on-click": "~/.config/waybar/scripts/waybar_hub.sh network"
-  },
-
-   "hyprland/workspaces": {
-        "active-only": false,
-        "all-outputs": true,
-        "format": "{icon}",
-        "show-special": false,
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-            "persistent-workspaces": {
-          "*": 0
-        },
-        
-        "format-icons": {
-            "active": "",
-            "default": ""
-            
-        }
-    },
-
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["󰃞", "󰃟", "󰃠"]
-  },
-
-  "custom/weather": {
-    "exec": "${HOME}/.config/waybar/scripts/get_weather.sh Araguaina+Brazil",
-    "return-type": "json",
-    "format": "{}",
-    "tooltip": true,
-    "interval": 3600
   }
 }
 
