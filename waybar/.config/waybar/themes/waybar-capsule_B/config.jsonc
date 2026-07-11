@@ -9,26 +9,6 @@
   "modules-center": ["hyprland/workspaces", "custom/media"],
   "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "pulseaudio", "keyboard-state", "group/updates"],
 
-  "tray": {
-    "icon-size": 19
-  },
-
-  "group/trays": {
-    "orientation": "horizontal",
-    "drawer": {
-        "transition-duration": 600,
-        "transition-to-left": true,
-        "click-to-reveal": false,
-        "hover-to-reveal": true
-    },
-    "modules": ["custom/trays", "tray"]
-  },
-
-  "custom/trays": {
-    "tooltip": false,
-    "format": "{} <span size='120%'></span>"
-  },
-
   "custom/anki_notification": {
     "tooltip": false,
     "exec": "python ~/.config/waybar/scripts/Due_cards.py",
