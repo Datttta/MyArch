@@ -169,8 +169,12 @@ case "$option" in
             BASE="$HOME/.config/waybar"
             THEME_DIR="$BASE/themes/$THEME"
 
+            # Create symlink
+            ln -sf "$THEME_DIR/config.jsonc" "$BASE/config.jsonc"
+            ln -sf "$THEME_DIR/style.css" "$BASE/style.css"
+
             killall waybar
-            waybar -c "$THEME_DIR/config.jsonc" -s "$THEME_DIR/style.css" & disown
+            waybar & disown
         fi ;;
 
     "Configs") 
