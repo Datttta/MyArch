@@ -101,7 +101,7 @@ alias lt='lsd --tree'
 alias ga='git add .'
 alias gm='git commit -m'
 alias gp='git push'
-alias gup='ga && gm "update" && gp'
+alias gpc='agy -p "Analyze the current Git diff, then create a conventional commit massege based on the diff, and push the changes."'
 
 alias n='nvim'
 
@@ -127,3 +127,7 @@ export PATH=/home/DROS/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/l
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/DROS/.local/bin:$PATH"
