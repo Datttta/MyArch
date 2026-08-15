@@ -1,0 +1,68 @@
+[
+  {
+    "id": 9,
+    "name": "Flex Routine",
+    "tasks": [
+      {
+        "id": 4,
+        "name": "Read",
+        "planned_start": "",
+        "planned_end": ""
+      },
+      {
+        "id": 5,
+        "name": "Anki",
+        "planned_start": "",
+        "planned_end": ""
+      },
+      {
+        "id": 6,
+        "name": "Workout",
+        "planned_start": "",
+        "planned_end": ""
+      },
+      {
+        "id": 7,
+        "name": "Clean room",
+        "planned_start": "",
+        "planned_end": ""
+      },
+      {
+        "id": 1,
+        "name": "Have lunch",
+        "planned_start": "",
+        "planned_end": ""
+      },
+      {
+        "id": 2,
+        "name": "Listening",
+        "planned_start": "",
+        "planned_end": ""
+      },
+      {
+        "id": 3,
+        "name": "Brush",
+        "planned_start": "",
+        "planned_end": ""
+      },
+      {
+        "id": 4,
+        "name": "Loundry",
+        "planned_start": "",
+        "planned_end": ""
+      },
+      {
+        "id": 5,
+        "name": "Have dinner",
+        "planned_start": "",
+        "planned_end": ""
+      },
+      {
+        "id": 6,
+        "name": "Brush",
+        "planned_start": "",
+        "planned_end": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Anki",
+    "status": "STOPPED",
+    "planned_start": "08:43",
+    "planned_end": "22:10",
+    "actual_start": {
+      "secs_since_epoch": 1786754743,
+      "nanos_since_epoch": 86288956
+    },
+    "actual_end": {
+      "secs_since_epoch": 1786752903,
+      "nanos_since_epoch": 103255919
+    },
+    "stopwatch": {
+      "elapsed_secs": 987,
+      "running": false
+    }
+  }
+]

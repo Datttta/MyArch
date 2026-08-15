@@ -4,7 +4,7 @@
 
 -- my programs
 local terminal =    "kitty"
-local fileManager = "kitty yazi"
+local fileManager = "kitty spf"
 local menu =        "wofi --show drun --normal-window"
 
 -- apps
