@@ -126,4 +126,4 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=
 export PATH=/home/DROS/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/vinegar:/usr/lib/vinegar:$HOME/go/bin
 
 # zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
