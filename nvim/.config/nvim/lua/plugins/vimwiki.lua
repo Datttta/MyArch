@@ -83,7 +83,7 @@ return {
       end
 
       ----------------------------------------------------------------------
-      -- Git auto-commit on <leader>p
+      -- Git auto-commit
       ----------------------------------------------------------------------
       local function push_vimwiki()
          local wiki_root = vim.fn.expand(vim.g.vimwiki_list[1].path)
@@ -130,12 +130,17 @@ return {
                buffer = true,
                desc = 'Vimwiki: complete task and jump to next empty line',
             })
-            vim.keymap.set("n", "<leader>p", push_vimwiki, {
-               buffer = true,
-               desc = "Push vimwiki to git",
-             })
          end,
       })
 
+      ----------------------------------------------------------------------
+      -- Git auto-commit + push on save
+      ----------------------------------------------------------------------
+      vim.api.nvim_create_autocmd('BufWritePost', {
+         pattern = '*.md',
+         callback = function()
+            push_vimwiki()
+         end,
+      })
    end,
 }
