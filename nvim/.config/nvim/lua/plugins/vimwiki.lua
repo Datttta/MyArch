@@ -130,7 +130,7 @@ return {
                buffer = true,
                desc = 'Vimwiki: complete task and jump to next empty line',
             })
-            vim.keymap.set("n", "<leader>w", push_vimwiki, {
+            vim.keymap.set("n", "<leader>p", push_vimwiki, {
                buffer = true,
                desc = "Push vimwiki to git",
              })
