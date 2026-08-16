@@ -101,7 +101,7 @@ alias lt='lsd --tree'
 alias ga='git add .'
 alias gm='git commit -m'
 alias gp='git push'
-alias gpp='git add -A && git commit -m "$(git diff --cached | agy -p "Output one Conventional Commit message based only on this diff. Output only the commit message.")" && git push'
+alias gpp='aicommits -a -y && git push'
 
 alias n='nvim'
 
