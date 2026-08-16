@@ -1,127 +1,19 @@
 [
   {
-    "name": "get food",
-    "status": "COMPLETED",
-    "planned_start": "12:20",
-    "planned_end": "12:35",
-    "actual_start": {
-      "secs_since_epoch": 1786807266,
-      "nanos_since_epoch": 922900361
-    },
-    "actual_end": {
-      "secs_since_epoch": 1786817077,
-      "nanos_since_epoch": 342431529
-    },
-    "stopwatch": {
-      "elapsed_secs": 1952,
-      "running": false
-    }
-  },
-  {
-    "name": "Have lunch",
-    "status": "COMPLETED",
-    "planned_start": "12:35",
-    "planned_end": "13:05",
-    "actual_start": {
-      "secs_since_epoch": 1786809219,
-      "nanos_since_epoch": 821270673
-    },
-    "actual_end": {
-      "secs_since_epoch": 1786812632,
-      "nanos_since_epoch": 284240202
-    },
-    "stopwatch": {
-      "elapsed_secs": 3412,
-      "running": false
-    }
-  },
-  {
-    "name": "Anki",
-    "status": "COMPLETED",
-    "planned_start": "13:25",
-    "planned_end": "14:55",
-    "actual_start": {
-      "secs_since_epoch": 1786812925,
-      "nanos_since_epoch": 976444932
-    },
-    "actual_end": {
-      "secs_since_epoch": 1786816436,
-      "nanos_since_epoch": 219026949
-    },
-    "stopwatch": {
-      "elapsed_secs": 940,
-      "running": false
-    }
-  },
-  {
-    "name": "Clean room",
-    "status": "PENDING",
-    "planned_start": "14:55",
-    "planned_end": "15:10",
-    "actual_start": null,
-    "actual_end": null,
-    "stopwatch": {
-      "elapsed_secs": 0,
-      "running": false
-    }
-  },
-  {
-    "name": "Brush + floss",
-    "status": "PENDING",
+    "name": "fjkd",
+    "status": "IN PROGRESS",
     "planned_start": "",
     "planned_end": "",
-    "actual_start": null,
-    "actual_end": null,
+    "actual_start": {
+      "secs_since_epoch": 1786903261,
+      "nanos_since_epoch": 290129314
+    },
+    "actual_end": {
+      "secs_since_epoch": 1786868093,
+      "nanos_since_epoch": 403893814
+    },
     "stopwatch": {
-      "elapsed_secs": 0,
-      "running": false
-    }
-  },
-  {
-    "name": "Loundry",
-    "status": "PENDING",
-    "planned_start": "15:30",
-    "planned_end": "16:00",
-    "actual_start": null,
-    "actual_end": null,
-    "stopwatch": {
-      "elapsed_secs": 0,
-      "running": false
-    }
-  },
-  {
-    "name": "assigment",
-    "status": "PENDING",
-    "planned_start": "",
-    "planned_end": "",
-    "actual_start": null,
-    "actual_end": null,
-    "stopwatch": {
-      "elapsed_secs": 0,
-      "running": false
-    }
-  },
-  {
-    "name": "Have dinner",
-    "status": "PENDING",
-    "planned_start": "19:00",
-    "planned_end": "19:45",
-    "actual_start": null,
-    "actual_end": null,
-    "stopwatch": {
-      "elapsed_secs": 0,
-      "running": false
-    }
-  },
-  {
-    "name": "Brush",
-    "status": "PENDING",
-    "planned_start": "",
-    "planned_end": "",
-    "actual_start": null,
-    "actual_end": null,
-    "stopwatch": {
-      "elapsed_secs": 0,
+      "elapsed_secs": 28,
       "running": false
     }
   }

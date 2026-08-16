@@ -34,14 +34,6 @@ if [[ $(basename "$WALLPAPER") == "retro wave.png" ||
     #wal --cols16 lighten -i "$WALLPAPER"
     echo "colorthief" >> $log_path
     wal --cols16 --backend colorthief -i "$WALLPAPER"
-
-    #file="$HOME/.cache/wal/rgba-colors.lua"
-
-    #color1=$(grep "color1 =" "$file" | cut -d'"' -f2)
-    #color14=$(grep "color14 =" "$file" | cut -d'"' -f2)
-
-    #sed -i "s|color1 = \".*\"|color1 = \"$color14\"|" "$file"
-    #sed -i "s|color14 = \".*\"|color14 = \"$color1\"|" "$file"
 else
     echo "haishoku" >> $log_path
     wal --cols16 --backend haishoku -i "$WALLPAPER"

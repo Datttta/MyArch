@@ -101,7 +101,7 @@ alias lt='lsd --tree'
 alias ga='git add .'
 alias gm='git commit -m'
 alias gp='git push'
-alias gpc='agy -p "Analyze the current Git diff, then create a conventional commit massege based on the diff, and push the changes."'
+alias gpp='git add -A && git commit -m "$(git diff --cached | agy -p "Output one Conventional Commit message based only on this diff. Output only the commit message.")" && git push'
 
 alias n='nvim'
 
@@ -110,8 +110,6 @@ alias sy='sudo yazi'
 
 alias st='stow -t ~'
 alias dot='cd ~/Repos/MyArch/'
-
-#(cat ~/.cache/wal/sequences &)
 
 # To customize prompt, run `p10k configure` or edit ~/Repos/MyArch/p10k/.p10k.zsh.
 [[ ! -f ~/Repos/MyArch/p10k/.p10k.zsh ]] || source ~/Repos/MyArch/p10k/.p10k.zsh
