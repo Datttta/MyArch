@@ -101,7 +101,7 @@ alias lt='lsd --tree'
 alias ga='git add -A'
 alias gm='git commit -m'
 alias gp='git push'
-alias gpp='aicommits -a -y && git push'
+alias gpp='git add -A && aicommits -y && git push'
 
 alias n='nvim'
 
