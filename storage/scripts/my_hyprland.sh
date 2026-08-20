@@ -132,7 +132,7 @@ cd
 git clone https://github.com/vinceliuice/Colloid-gtk-theme
 
 cd Colloid-gtk-theme
-./install.sh -d ~/.themes -t grey -c dark -l
+./install.sh -d ~/.themes -t grey -c dark -l --tweaks black
 
 cd
 rm -r Colloid-gtk-theme
