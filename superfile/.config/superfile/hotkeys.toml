@@ -60,7 +60,7 @@ open_current_directory_with_editor = ['E', '']
 open_file_with_editor = ['e', '']
 
 #-- Other Actions
-change_panel_mode = ['v', '']
+change_panel_mode = ['v', 'V']
 copy_path = ['c+d', '']
 copy_present_working_directory = ['c', '']
 open_command_line = [':', '']
