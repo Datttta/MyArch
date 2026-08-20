@@ -124,18 +124,29 @@ fi
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # set up zsh
-sudo chsh -s $(which zsh) $USER
+chsh -s /bin/zsh "$USER"
 
-#set up Time-manager
-if [ ! -d "$HOME/Repos/Time-manager" ]; then 
-    cd ~/Repos
-    git clone https://github.com/Datttta/Time-manager
-fi
+# Set up theme
+## Intall gtk theme
+cd
+git clone https://github.com/vinceliuice/Colloid-gtk-theme
 
-cd ~/Repos/Time-manager
-python Time-manager-installer.py
+cd Colloid-gtk-theme
+./install.sh -t grey -c dark -l
 
-# set up themes
+cd
+rm -r Colloid-gtk-theme
+
+## Install icon theme
+git clone https://github.com/vinceliuice/Tela-circle-icon-theme
+
+cd Tela-circle-icon-theme
+./install.sh
+
+cd 
+rm -r Tela-circle-icon-theme
+
+## apply theme
 gsettings set org.gnome.desktop.interface icon-theme "Tela-circle"
 gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Grey-Dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
