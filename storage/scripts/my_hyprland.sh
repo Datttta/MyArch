@@ -152,4 +152,4 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Grey-Dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 echo "-Restart your pc to apply all changes-"
-echo "You still have to set up plymouth and aicommits (run aicommits setup)"
+echo "You still have to set up plymouth and aicommits (run aicommits setup (currently using groq for provider))"
