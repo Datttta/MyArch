@@ -18,7 +18,7 @@ prompt="Write a conventional commit message for this diff. Output ONLY the final
 json_payload=$(jq -n --arg p "$prompt" '{contents: [{parts: [{text: $p}]}]}')
 
 # Call Gemini 1.5 Flash
-response=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=$GEMINI_API_KEY" \
+response=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=$GEMINI_API_KEY" \
   -H 'Content-Type: application/json' \
   -d "$json_payload")
   
