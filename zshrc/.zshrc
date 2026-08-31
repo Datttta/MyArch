@@ -101,7 +101,11 @@ alias lt='lsd --tree'
 alias ga='git add -A'
 alias gm='git commit -m'
 alias gam='git commit --amend -m'
-alias gac='git add -A && aicommits -y'
+alias gac='git add -A && aicommits -p "Analyze this diff and write a conventional commit message.
+    Structure:
+    1. Title: type(scope): short summary
+    2. Body: Empty line, then bullet points starting with - for each logical change. No paragraphs"'
+
 alias gp='git push'
 
 alias n='nvim'
