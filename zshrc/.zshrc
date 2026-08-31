@@ -100,7 +100,9 @@ alias lt='lsd --tree'
 
 alias ga='git add -A'
 alias gm='git commit -m'
-alias gam='git commit --amend -m'
+alias gma='git commit --amend -m'
+alias gac='bash ~/.config/hypr/Scripts/gemini_commit_conv.sh'
+alias gacb='bash ~/.config/hypr/Scripts/gemini_commit.sh'
 alias gp='git push'
 
 alias n='nvim'
