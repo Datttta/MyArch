@@ -36,10 +36,8 @@ title=$(echo "$response" | jq -r '.candidates[0].content.parts[0].text | fromjso
 body=$(echo "$response" | jq -r '.candidates[0].content.parts[0].text | fromjson | .body')
 
 if [ -n "$title" ] && [ "$title" != "null" ]; then
-  echo -e "\n----------------------------------------"
   echo -e "$title"
-  echo -e "\n$body"
-  echo -e "----------------------------------------\n"
+  echo -e "\n$body\n"
   
   git commit -m "$title" -m "$body"
   echo "✅ Committed successfully!"
