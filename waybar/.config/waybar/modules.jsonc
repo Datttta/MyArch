@@ -55,15 +55,6 @@
     "format": "{} <span size='120%'></span>"
   },
 
-  // ======================================== ANKI REVIEW REMINDER ========================================
-  "custom/anki_notification": {
-    "tooltip": false,
-    "exec": "python ~/.config/waybar/scripts/Due_cards.py",
-    "on-click": "pkill -9 anki; setsid anki > /dev/null 2>&1 &",
-    "interval": 20,
-    "signal": 3
-  },
-
   // ======================================== SHOW CAPSLOCK STATE ========================================
   "keyboard-state": {
       "numlock": false,
