@@ -47,6 +47,16 @@ hl.window_rule({
     rounding = 10,
 })
 
+-- rofi
+hl.window_rule({
+    match = {
+        class = "Rofi",
+    },
+
+    rounding = 10,
+    float = true,
+})
+
 -- Portal windows
 hl.window_rule({
     match = {

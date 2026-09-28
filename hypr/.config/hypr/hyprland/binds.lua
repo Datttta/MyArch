@@ -5,7 +5,8 @@
 -- my programs
 local terminal =    "kitty"
 local fileManager = "kitty spf"
-local menu =        "wofi --show drun --normal-window"
+local menu = [[sh -c 'printf "HOME=%s\nXDG_DATA_HOME=%s\nXDG_DATA_DIRS=%s\nPATH=%s\n" "$HOME" "$XDG_DATA_HOME" "$XDG_DATA_DIRS" "$PATH" > /tmp/wofi-bind-env; exec wofi --show drun --normal-window']]
+
 
 -- apps
 hl.bind(MainMod .. " + Q",         hl.dsp.exec_cmd(terminal))
