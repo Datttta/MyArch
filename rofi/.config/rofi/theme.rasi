@@ -6,7 +6,7 @@
 }
 
 window {
-    width:            700px;
+    width:            797px; /* old 700 */
     height:           460px;
     /* #071010 at 55% opacity (Hex: #0710108c) */
     background-color: @background;
@@ -44,6 +44,7 @@ entry {
     border:           0px;
     text-color:       #ffffff;
     placeholder:      "";
+    cursor-width:     1px;
 }
 
 /* #scroll equivalent */
