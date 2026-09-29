@@ -2,8 +2,6 @@
 
 * {
     white: #ffffff;
-    selected-normal-background: @color14;
-    
     text-color:       @white;
 }
 
@@ -23,20 +21,29 @@ mainbox {
 
 /* Prompt / Search container */
 inputbar {
-    children:         [ entry ];
-    background-color: transparent;
+    children:         [ textbox-prompt-colon, entry ];
+    background-color: @input-background;
+    border:           1px;
+    border-color:     @border-color;
+    border-radius:    13px;
+    margin:           15px;
+    padding:          8px 16px;
 }
 
-/* #input equivalent */
+/* Magnifying glass icon block */
+textbox-prompt-colon {
+    expand:           false;
+    str:              " ";
+    text-color:       #ffffff80;
+    vertical-align:   0.5;
+}
+
+/* Search input field */
 entry {
-    margin:           12px;
-    padding:          17px 16px;
-    border:           1px;
-    border-color:     @selected-normal-background;
-    border-radius:    13px;
-    /* #071010 at 50% opacity */
-    background-color: #07101080;
-    text-color:       @white;
+    padding:          10px 1px;
+    border:           0px;
+    text-color:       #ffffff;
+    placeholder:      "";
 }
 
 /* #scroll equivalent */
@@ -93,3 +100,4 @@ element-icon {
     size:             40px;
     margin:           0px 10px 0px 0px;
 }
+

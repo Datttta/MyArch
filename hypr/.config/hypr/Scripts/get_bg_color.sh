@@ -28,6 +28,7 @@ cp "$WALLPAPER" ~/.cache/hyprlock/current_wallpaper
 # Run pywal
 if [[ $(basename "$WALLPAPER") == "retro wave.png" ||
     $(basename "$WALLPAPER") == "Atmosphere.jpg" || 
+    $(basename "$WALLPAPER") == "hyprforest.jpg" || 
     $(basename "$WALLPAPER") == "japan city.png" ]]; then
 
     #wal --cols16 --backend haishoku -i "$WALLPAPER"
