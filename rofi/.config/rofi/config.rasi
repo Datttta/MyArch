@@ -6,6 +6,10 @@ configuration {
     drun-display-format: "{name}";
     font: "Sans 10";
     
+    run,drun {
+        fallback-icon: "application-x-executable";
+    }
+    
     matching: "fuzzy";
     sort: true;
     sorting-method: "fzf";
