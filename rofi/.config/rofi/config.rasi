@@ -6,9 +6,8 @@ configuration {
     drun-display-format: "{name}";
     font: "Sans 11";
     
-    /* Mirrors Wofi config settings */
     matching: "fuzzy";
-    case-sensitive: false; /* equivalent to insensitive=true */
+    case-sensitive: false;
     cycle: false;
 }
 

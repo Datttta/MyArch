@@ -1,15 +1,15 @@
-/* Rofi theme configured for Pywal's colors-rofi-dark.rasi */
-
-@import "~/.cache/wal/colors-rofi-dark.rasi"
+@import "~/.cache/wal/colors.rasi"
 
 * {
+    white: #ffffff;
+    
     background-color: transparent;
-    text-color:       @foreground;
+    text-color:       @white;
 }
 
 window {
     width:            700px;
-    height:           450px;
+    height:           460px;
     /* #071010 at 55% opacity (Hex: #0710108c) */
     background-color: #0710108c;
     border:           0px;
@@ -36,12 +36,12 @@ entry {
     border-radius:    13px;
     /* #071010 at 50% opacity */
     background-color: #07101080;
-    text-color:       @foreground;
+    text-color:       @white;
 }
 
 /* #scroll equivalent */
 listview {
-    margin:           0px 20px 20px 20px;
+    margin:           0px 20px 0px 20px;
     background-color: transparent;
     scrollbar:        true;
     border:           0px;
@@ -70,7 +70,7 @@ element {
 element normal.normal,
 element alternate.normal {
     background-color: transparent;
-    text-color:       @foreground;
+    text-color:       @white;
 }
 
 /* #entry:selected equivalent */
@@ -80,7 +80,7 @@ element selected.active {
     border:           1px;
     border-color:     @selected-normal-background;
     border-radius:    20px;
-    text-color:       @foreground;
+    text-color:       @white;
 }
 
 element-text {
