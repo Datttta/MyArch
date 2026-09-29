@@ -1,7 +1,8 @@
-@import "~/.cache/wal/colors.rasi"
+@import "~/.cache/wal/rofi-colors.rasi"
 
 * {
     white: #ffffff;
+    selected-normal-background: @color14;
     
     background-color: transparent;
     text-color:       @white;
