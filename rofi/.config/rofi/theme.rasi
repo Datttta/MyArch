@@ -93,6 +93,7 @@ element-text {
     background-color: transparent;
     text-color:       inherit;
     vertical-align:   0.5;
+    highlight: none;
 }
 
 element-icon {

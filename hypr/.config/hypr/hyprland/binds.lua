@@ -5,7 +5,7 @@
 -- my programs
 local terminal =    "kitty"
 local fileManager = "kitty spf"
-local menu =        "wofi --show drun --normal-window" -- rofi -x11 -show drun -normal-window
+local menu =        "rofi -x11 -show drun -normal-window" -- old: wofi --show drun --normal-window
 
 -- apps
 hl.bind(MainMod .. " + Q",         hl.dsp.exec_cmd(terminal))
