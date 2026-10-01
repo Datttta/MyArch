@@ -29,7 +29,7 @@ sudo stow -t / sl-*
 
 # ============================
 echo "Installing your apps..."
-yay -S --noconfirm --needed flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh bat wofi waybar swappy rofi pavucontrol kitty python-pywal16 wlogout swaync waypaper anki pear-desktop discord  lutris firefox steam gnome-clocks piper osu timeshift timeshift-autosnap btop deepin-calculator downgrade fd fzf gnome-calendar grub haruna gthumb calibre kalarm zenity grimblast syncthing trash-cli qbittorrent zsh-autosuggestions zsh-completions zsh-syntax-highlighting wl-copy sddm nwg-look hyprlock hyprpaper neovim tty-clock cmatrix cliphist wl-clipboard ripgrep z-library-bin vim imv Clockify-desktop kolourpaint tenki cava pipes.sh gimp sklauncher-bin uwsm zoxide
+yay -S --noconfirm --needed flatpak libreoffice kvantum copyq yazi fastfetch gamemode zsh bat wofi waybar swappy rofi pavucontrol kitty python-pywal16 wlogout swaync waypaper anki pear-desktop discord  lutris firefox steam gnome-clocks piper osu timeshift timeshift-autosnap btop deepin-calculator downgrade fd fzf gnome-calendar grub haruna gthumb calibre kalarm zenity grimblast syncthing trash-cli qbittorrent zsh-autosuggestions zsh-completions zsh-syntax-highlighting wl-copy sddm nwg-look hyprlock hyprpaper neovim tty-clock cmatrix cliphist wl-clipboard ripgrep z-library-bin vim imv Clockify-desktop kolourpaint tenki cava pipes.sh gimp sklauncher-bin uwsm zoxide github-cli
 
 npm install -g aicommits
 

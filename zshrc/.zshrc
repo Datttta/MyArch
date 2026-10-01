@@ -105,9 +105,9 @@ alias gac='git add -A && aicommits -y -p "Analyze this diff and write a conventi
     Structure:
     1. Title: type(scope): short summary
     2. Body: Empty line, then bullet points starting with - for each logical change. No paragraphs"'
-
 alias gp='git push'
 
+alias pdr='bash /home/DROS/Repos/MyArch/storage/scripts/push_duetime_release.sh'
 alias n='nvim'
 
 alias y='yazi'
