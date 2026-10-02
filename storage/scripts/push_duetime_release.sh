@@ -20,7 +20,7 @@ while true; do
 ================ Tipo de actualización ================
 1 - Cambios incompatibles
 2 - Cambios menores
-3 - Corrección de errores
+3 - Corrección de errores o ajustes
 0 - Salir
 
 Versión actual: $(awk -F '"' '/^version =/ {print $2}' Cargo.toml)
