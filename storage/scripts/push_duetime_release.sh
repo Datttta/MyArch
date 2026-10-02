@@ -70,13 +70,19 @@ git tag v$nueva_version
 echo -e "\nEnviando tag..."
 git push origin v$nueva_version
 
-echo -e "\nConstruindo release..."
+echo -e "\nConstruindo releases..."
 cargo build --release
+cargo build --release --target x86_64-pc-windows-gnu
 echo -e "\nComprimiendo binario GNU/Linux..."
 tar -czf Duetime-x86_64-unknown-linux-gnu.tar.gz -C target/release Duetime
-echo -e "\nEnviando versión GNU/Linux..."
-gh release create v$nueva_version Duetime-x86_64-unknown-linux-gnu.tar.gz --generate-notes
+echo -e "\nComprimiendo binario windows"
+zip Duetime-x86_64-pc-windows-gnu.zip -j target/x86_64-pc-windows-gnu/release/Duetime.exe
+echo -e "\nEnviando releases a GitHub..."
+gh release create v$nueva_version \
+   Duetime-x86_64-unknown-linux-gnu.tar.gz \
+   Duetime-x86_64-pc-windows-gnu.zip \
+   --generate-notes
 
-rm Duetime-x86_64-unknown-linux-gnu.tar.gz
+rm Duetime-x86_64-unknown-linux-gnu.tar.gz Duetime-x86_64-pc-windows-gnu.zip
 
 echo -e "\n¡Nueva versión subida a github!"
