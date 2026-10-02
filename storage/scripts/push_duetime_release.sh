@@ -1,6 +1,18 @@
+#!/bin/sh
+set -e
+
 if [ ! -d "target/" ]; then
    echo "Ejecute el script en el directorio padre"
    exit
+fi
+
+git fetch origin
+
+if [[ -n "$(git cherry -v 2>/dev/null)" || -n "$(git status --porcelain)" ]]; then
+    read -p "Hay cambios sin enviar, desea continuar? [s/n]: " continuar
+    if [ "$continuar" != "s" ]; then
+       exit 0
+    fi
 fi
 
 while true; do
@@ -47,15 +59,24 @@ done
 
 sed -i "s/^version = .*/version = \"$nueva_version\"/" Cargo.toml
 
+echo -e "\nAdicionando cambios en Cargo.toml..."
 git add Cargo.toml
+echo -e "\nComitting nueava version..."
 git commit -m "Release v$nueva_version"
-git tag v$nueva_version
+echo -e "\nEnviando cambios..."
 git push origin main
+echo -e "\nAdicionando tag..."
+git tag v$nueva_version
+echo -e "\nEnviando tag..."
 git push origin v$nueva_version
 
+echo -e "\nConstruindo release..."
 cargo build --release
+echo -e "\nComprimiendo binario GNU/Linux..."
 tar -czf Duetime-x86_64-unknown-linux-gnu.tar.gz -C target/release Duetime
+echo -e "\nEnviando versión GNU/Linux..."
 gh release create v$nueva_version Duetime-x86_64-unknown-linux-gnu.tar.gz --generate-notes
 
 rm Duetime-x86_64-unknown-linux-gnu.tar.gz
-echo "¡Nueva versión subida a github!"
+
+echo -e "\n¡Nueva versión subida a github!"
