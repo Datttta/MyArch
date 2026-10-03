@@ -70,8 +70,9 @@ git tag v$nueva_version
 echo -e "\nEnviando tag..."
 git push origin v$nueva_version
 
-echo -e "\nConstruindo releases..."
+echo -e "\nConstruindo linux release..."
 cargo build --release
+echo -e "\nConstruindo windows release..."
 cargo build --release --target x86_64-pc-windows-gnu
 echo -e "\nComprimiendo binario GNU/Linux..."
 tar -czf Duetime-x86_64-unknown-linux-gnu.tar.gz -C target/release Duetime
