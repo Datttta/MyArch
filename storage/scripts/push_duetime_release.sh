@@ -76,7 +76,7 @@ echo -e "\nConstruindo windows release..."
 cargo build --release --target x86_64-pc-windows-gnu
 echo -e "\nComprimiendo binario GNU/Linux..."
 tar -czf Duetime-x86_64-unknown-linux-gnu.tar.gz -C target/release Duetime
-echo -e "\nComprimiendo binario windows"
+echo -e "\nComprimiendo binario windows..."
 zip Duetime-x86_64-pc-windows-gnu.zip -j target/x86_64-pc-windows-gnu/release/Duetime.exe
 echo -e "\nEnviando releases a GitHub..."
 gh release create v$nueva_version \
