@@ -59,6 +59,11 @@ done
 
 sed -i "s/^version = .*/version = \"$nueva_version\"/" Cargo.toml
 
+echo -e "\nConstruindo linux release..."
+cargo build --release
+echo -e "\nConstruindo windows release..."
+cargo build --release --target x86_64-pc-windows-gnu
+
 echo -e "\nAdicionando cambios en Cargo.toml..."
 git add Cargo.toml
 echo -e "\nComitting nueava version..."
@@ -70,10 +75,6 @@ git tag v$nueva_version
 echo -e "\nEnviando tag..."
 git push origin v$nueva_version
 
-echo -e "\nConstruindo linux release..."
-cargo build --release
-echo -e "\nConstruindo windows release..."
-cargo build --release --target x86_64-pc-windows-gnu
 echo -e "\nComprimiendo binario GNU/Linux..."
 tar -czf Duetime-x86_64-unknown-linux-gnu.tar.gz -C target/release Duetime
 echo -e "\nComprimiendo binario windows..."
