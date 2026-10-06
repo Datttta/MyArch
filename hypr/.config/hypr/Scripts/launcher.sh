@@ -1,17 +1,27 @@
 #!/bin/bash
 
-### Copyq ###
-if [[ $1 == "copyq" ]]; then
-    hyprctl dispatch 'hl.dsp.exec_cmd("copyq toggle")'
+case $1 in
+    ### Copyq ###
+    "copyq")
+        hyprctl dispatch 'hl.dsp.exec_cmd("copyq toggle")'
+        ;;
+    #this exists because copyq would always open on the workspace 1 the first time you run it
+    "start-copyq")
+        copyq --start-server
 
-#this exists because copyq would always open on the workspace 1 the first time you run it
-elif [[ $1 == "start-copyq" ]]; then
-    copyq --start-server
+        until copyq eval '1' >/dev/null 2>&1; do
+            sleep 0.5
+        done
 
-    until copyq eval '1' >/dev/null 2>&1; do
-        sleep 0.5
-    done
-
-    copyq toggle
-    copyq toggle
-fi
+        copyq toggle
+        copyq toggle
+        ;;
+    ### Vimwiki ###
+    "vimwiki")
+        hyprctl dispatch 'hl.dsp.exec_cmd("kitty -e nvim ~/Repos/vimwiki/index.md ~/Repos/vimwiki/\"New words.md\"", { workspace = "2 silent" })'
+        ;;
+    ### Duetime ###
+    "Duetime")
+        hyprctl dispatch 'hl.dsp.exec_cmd("kitty Duetime", { workspace = "2 silent" })'
+        ;;
+esac

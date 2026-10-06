@@ -21,8 +21,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd([[
         sh -c '
         ~/.config/hypr/Scripts/random-wallpaper.sh > ]] .. Log_path .. [[/random-wallpaper.log 2>&1 && \
-        ~/.config/hypr/Scripts/vimwiki.sh > ]] .. Log_path .. [[/vimwiki_sh.log 2>&1 && \
-        ~/.config/hypr/Scripts/launcher.sh start-copyq > ]] .. Log_path .. [[/launcher.log 2>&1
+        ~/.config/hypr/Scripts/launcher.sh start-copyq > ]] .. Log_path .. [[/launcher.log 2>&1 && \
+        ~/.config/hypr/Scripts/launcher.sh Duetime > ]] .. Log_path .. [[/launcher.log 2>&1 && \
+        ~/.config/hypr/Scripts/launcher.sh vimwiki > ]] .. Log_path .. [[/vimwiki_sh.log 2>&1 
         '
     ]])
 end)
