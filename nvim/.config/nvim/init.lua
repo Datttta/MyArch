@@ -3,6 +3,7 @@ require("core.keymaps")
 require("core.plugin-manager")
 require("core.padding-config")
 require("core.filetypes")
+require("core.autocmds")
 
 require("lazy").setup({
 	require("plugins.devicons"),
