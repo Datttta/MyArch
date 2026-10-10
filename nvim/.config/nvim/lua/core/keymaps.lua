@@ -102,8 +102,14 @@ vim.keymap.set('n', '<leader>ro', 'A \
 - [ ] brush')
 
 -- Explicitly yank to system clipboard (highlighted and entire row)
+vim.keymap.set({ 'n', 'v' }, 'y', [["+y]])
+vim.keymap.set({ 'n', 'v' }, 'Y', [["+y]])
+vim.keymap.set({ 'n', 'v' }, 'x', [["+d]])
+vim.keymap.set({ 'n', 'v' }, 'X', [["+d]])
+
 vim.keymap.set({ 'n', 'v' }, '<leader>c', [["+y]])
 vim.keymap.set('n', '<leader>C', [["+Y]])
+
 vim.keymap.set({ 'n', 'v' }, '<leader>f', [["+d]])
 vim.keymap.set({ 'n', 'v' }, '<leader>F', [["+d]])
 
