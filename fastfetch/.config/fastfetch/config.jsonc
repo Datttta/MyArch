@@ -29,7 +29,8 @@
         {
             "type": "gpu",
             "key": "│ ├󰍛",
-            "keyColor": "green"
+            "keyColor": "green",
+            "format": "{vendor} {name:39}"
         },
         {
             "type": "memory",
