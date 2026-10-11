@@ -145,5 +145,16 @@ end, { desc = 'Number selected lines' })
 -- run codes
 vim.keymap.set('n', '<leader>rp', ':!python %<CR>') -- run python
 
---Show telescope keymaps
+-- Show telescope keymaps
 vim.keymap.set('n', '<leader>km', ':Telescope keymaps<CR>')
+
+-- auto-formatting
+vim.keymap.set('n', '<leader>fm', function()
+   vim.lsp.buf.format({
+      async = true,
+      filter = function(client)
+         return client.name == 'rust_analyzer'
+            or client.name == 'null-ls'
+      end,
+   })
+end, { desc = 'Format current buffer' })

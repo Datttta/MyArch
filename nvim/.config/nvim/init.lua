@@ -26,5 +26,4 @@ require("lazy").setup({
 	require("plugins.tokyo-night"),
 	-- require("plugins.colortheme"),
 	-- require("plugins.colorthemeCat"),
-
 })

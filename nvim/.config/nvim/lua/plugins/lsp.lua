@@ -161,6 +161,7 @@ return { -- LSP Configuration & Plugins
                },
             },
          },
+         rust_analyzer = {},
          clangd = {},
          jsonls = {},
          sqls = {},
@@ -169,12 +170,7 @@ return { -- LSP Configuration & Plugins
          bashls = {},
          dockerls = {},
          docker_compose_language_service = {},
-         -- tailwindcss = {},
-         -- graphql = {},
-         -- html = { filetypes = { 'html', 'twig', 'hbs' } },
          cssls = {},
-         -- ltex = {},
-         -- texlab = {},
       }
 
       require('mason').setup()

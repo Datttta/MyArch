@@ -21,6 +21,7 @@ return {
             'clang-format', -- C++ formatter
             'clang-tidy', -- C++ linter / static analyzer
             'cppcheck', -- C++ linter
+            'rustfmt',
          },
          -- auto-install configured formatters & linters (with null-ls)
          automatic_installation = true,
@@ -54,11 +55,9 @@ return {
          formatting.terraform_fmt,
          require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
          require 'none-ls.formatting.ruff_format',
-         require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
-         require 'none-ls.formatting.ruff_format',
       }
 
-      -- No need for the augroup and BufWritePre autocommand if you're removing format on save
+      -- uncomment the line for autoformat on save
       -- local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
       null_ls.setup {
@@ -66,7 +65,7 @@ return {
          sources = sources,
          -- you can reuse a shared lspconfig on_attach callback here
          on_attach = function(client, bufnr)
-            -- Remove the BufWritePre autocommand here
+            -- autoformat on save
             -- if client:supports_method 'textDocument/formatting' then
             --   vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
             --   vim.api.nvim_create_autocmd('BufWritePre', {
@@ -77,13 +76,6 @@ return {
             --     end,
             --   })
             -- end
-
-            -- Set up a keybinding for manual formatting
-            if client:supports_method 'textDocument/formatting' then
-               vim.keymap.set('n', '<leader>fm', function()
-                  vim.lsp.buf.format { async = true } -- 'async = true' is generally preferred for manual triggers
-               end, { buffer = bufnr, desc = 'Format current buffer (with null-ls)' })
-            end
          end,
       }
    end,
