@@ -24,7 +24,8 @@ hl.on("hyprland.start", function()
         ~/.config/hypr/Scripts/launcher.sh start-copyq > ]] .. Log_path .. [[/launcher.log 2>&1 && \
         sleep 0.1 && \
         ~/.config/hypr/Scripts/launcher.sh Duetime > ]] .. Log_path .. [[/launcher.log 2>&1 && \
-        ~/.config/hypr/Scripts/launcher.sh vimwiki > ]] .. Log_path .. [[/vimwiki_sh.log 2>&1 
+        ~/.config/hypr/Scripts/launcher.sh vimwiki > ]] .. Log_path .. [[/vimwiki_sh.log 2>&1 && \
+        ~/.config/hypr/Scripts/sync_gdrive.sh > ]] .. Log_path .. [[/gdrive.log 2>&1 
         '
     ]])
 end)

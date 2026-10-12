@@ -1,13 +1,33 @@
 #!/bin/bash
-LOCAL_DIR="/home/DROS/Documents"
-REMOTE_DIR="gdrive:MyArch/Documents"
+
 FILTER_FILE="/home/DROS/.rclone-ignore.txt"
 
-echo "==> Starting initial full copy..."
-rclone copy "$LOCAL_DIR" "$REMOTE_DIR" --filter-from "$FILTER_FILE" -vv
+DOCS_LOCAL="/home/DROS/Documents"
+DOCS_REMOTE="gdrive:MyArch/Documents"
 
-echo "==> Watching for real-time changes..."
-inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "$LOCAL_DIR" | while read EVENT FILE_PATH; do
+PICS_LOCAL="/home/DROS/Pictures"
+PICS_REMOTE="gdrive:MyArch/Pictures"
+
+echo "==> Starting initial full copies..."
+rclone copy "$DOCS_LOCAL" "$DOCS_REMOTE" --filter-from "$FILTER_FILE" -vv
+rclone copy "$PICS_LOCAL" "$PICS_REMOTE" --filter-from "$FILTER_FILE" -vv
+
+echo "==> Starting unified real-time watcher..."
+
+# Watch both directories in a single inotifywait instance
+inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "$DOCS_LOCAL" "$PICS_LOCAL" | while read EVENT FILE_PATH; do
+    
+    # Dynamically determine whether the change is in Documents or Pictures
+    if [[ "$FILE_PATH" == "$DOCS_LOCAL"* ]]; then
+        LOCAL_DIR="$DOCS_LOCAL"
+        REMOTE_DIR="$DOCS_REMOTE"
+    elif [[ "$FILE_PATH" == "$PICS_LOCAL"* ]]; then
+        LOCAL_DIR="$PICS_LOCAL"
+        REMOTE_DIR="$PICS_REMOTE"
+    else
+        continue
+    fi
+
     REL_PATH="${FILE_PATH#$LOCAL_DIR/}"
     
     # Skip if file matches ignore rules
@@ -16,10 +36,10 @@ inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "
     fi
 
     if [[ "$EVENT" =~ "DELETE" ]] || [[ "$EVENT" =~ "MOVED_FROM" ]]; then
-        echo "==> Removal/Move-out detected: $REL_PATH. Removing from Google Drive..."
+        echo "==> Removal detected: $REL_PATH. Removing from remote..."
         rclone deletefile "$REMOTE_DIR/$REL_PATH" -vv
     else
-        echo "==> Change/Move-in detected: $REL_PATH. Syncing file..."
+        echo "==> Change detected: $REL_PATH. Syncing file..."
         REL_DIR=$(dirname "$REL_PATH")
         FILENAME=$(basename "$FILE_PATH")
         
@@ -30,3 +50,4 @@ inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "
         fi
     fi
 done
+
