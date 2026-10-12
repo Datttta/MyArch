@@ -161,13 +161,14 @@ return { -- LSP Configuration & Plugins
                },
             },
          },
-         rust_analyzer = {
-            settings = {
-               ['rust-analyzer'] = {
-                  checkOnSave = false,
-               },
-            },
-         },
+         -- maybe uncomment when you have a better pc, this takes a lot of memory 
+         --rust_analyzer = {
+         --   settings = {
+         --      ['rust-analyzer'] = {
+         --         checkOnSave = false,
+         --      },
+         --   },
+         --},
          clangd = {},
          jsonls = {},
          sqls = {},
