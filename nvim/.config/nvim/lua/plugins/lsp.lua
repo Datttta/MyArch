@@ -161,7 +161,13 @@ return { -- LSP Configuration & Plugins
                },
             },
          },
-         rust_analyzer = {},
+         rust_analyzer = {
+            settings = {
+               ['rust-analyzer'] = {
+                  checkOnSave = false,
+               },
+            },
+         },
          clangd = {},
          jsonls = {},
          sqls = {},
@@ -187,13 +193,12 @@ return { -- LSP Configuration & Plugins
 
       require('mason-lspconfig').setup {
          exclude = { 'stylua', 'null-ls' },
-         handlers = {
-            function(server_name)
-               local server = servers[server_name] or {}
-               server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-               require('lspconfig')[server_name].setup(server)
-            end,
-         },
       }
+
+      for server_name, server in pairs(servers) do
+         server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+         vim.lsp.config(server_name, server)
+         vim.lsp.enable(server_name)
+      end
    end,
 }
