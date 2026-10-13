@@ -24,4 +24,12 @@ case $1 in
     "Duetime")
         hyprctl dispatch 'hl.dsp.exec_cmd("kitty Duetime", { workspace = "2 silent" })'
         ;;
+    ### Sticky notes ###
+    "sticky")
+        sticky &
+        sleep 1.5
+        hyprctl clients -j | jq -r '.[] | select(.initialTitle == "Notes") | .address' | while read -r addr; do
+            hyprctl dispatch "hl.dsp.window.close({ window = \"address:$addr\" })"
+        done
+        ;;
 esac
