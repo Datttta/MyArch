@@ -27,7 +27,13 @@ case $1 in
     ### Sticky notes ###
     "sticky")
         sticky &
-        sleep 1.5
+
+        count=0
+        while [[ $(hyprctl clients -j | jq '[.[] | select(.initialTitle == "Notes")] | length') -lt 2 ]]; do
+            sleep 0.1
+            echo "not found"
+        done
+
         hyprctl clients -j | jq -r '.[] | select(.initialTitle == "Notes") | .address' | while read -r addr; do
             hyprctl dispatch "hl.dsp.window.close({ window = \"address:$addr\" })"
         done
