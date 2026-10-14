@@ -31,5 +31,7 @@ case $1 in
         hyprctl clients -j | jq -r '.[] | select(.initialTitle == "Notes") | .address' | while read -r addr; do
             hyprctl dispatch "hl.dsp.window.close({ window = \"address:$addr\" })"
         done
+
+        hyprctl dispatch "hl.dsp.window.move({ workspace = 2, window = \"class:Sticky.py\", follow = false })"
         ;;
 esac
