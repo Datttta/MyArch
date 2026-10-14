@@ -26,7 +26,7 @@ vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 
 -- quit file
 vim.keymap.set('n', '<leader>qe', '<cmd> q! <CR>', opts) -- without saving
-vim.keymap.set({ 'n', 'v' }, '<leader>wq', '<cmd> wq <CR>', opts)  -- saving
+vim.keymap.set({ 'n', 'v' }, '<leader>wq', '<cmd> wq <CR>', opts) -- saving
 
 -- Open neotree with ctrl + n
 vim.keymap.set({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true })
@@ -88,7 +88,10 @@ vim.keymap.set('v', 'p', '"_dP', opts)
 vim.keymap.set('n', '<S-j>', '*``cgn', opts)
 
 -- Paste standart routine
-vim.keymap.set('n', '<leader>ro', 'A \
+vim.keymap.set(
+   'n',
+   '<leader>ro',
+   'A \
 - [ ] Meditate \
 - [ ] MemHack \
 - [ ] Anki \
@@ -99,7 +102,8 @@ vim.keymap.set('n', '<leader>ro', 'A \
 - [ ] brush \
 - [ ] Loundry \
 - [ ] Have_dinner \
-- [ ] brush')
+- [ ] brush'
+)
 
 -- Explicitly yank to system clipboard (highlighted and entire row)
 vim.keymap.set({ 'n', 'v' }, 'y', [["+y]])
@@ -150,11 +154,5 @@ vim.keymap.set('n', '<leader>km', ':Telescope keymaps<CR>')
 
 -- auto-formatting
 vim.keymap.set('n', '<leader>fm', function()
-   vim.lsp.buf.format({
-      async = true,
-      filter = function(client)
-         return client.name == 'rust_analyzer'
-            or client.name == 'null-ls'
-      end,
-   })
+   require('conform').format({ async = true })
 end, { desc = 'Format current buffer' })
