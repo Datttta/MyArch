@@ -22,7 +22,6 @@ case $1 in
         ;;
     ### Duetime ###
     "Duetime")
-        hyprctl dispatch 'hl.dsp.cursor.move({ x = 940, y = 600 })'
         hyprctl dispatch 'hl.dsp.exec_cmd("kitty Duetime", { workspace = "2 silent" })'
         ;;
     ### Sticky notes ###
