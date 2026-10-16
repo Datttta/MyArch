@@ -22,16 +22,19 @@ case $1 in
         ;;
     ### Duetime ###
     "Duetime")
+        hyprctl dispatch 'hl.dsp.cursor.move({ x = 940, y = 600 })'
         hyprctl dispatch 'hl.dsp.exec_cmd("kitty Duetime", { workspace = "2 silent" })'
         ;;
     ### Sticky notes ###
     "sticky")
         sticky &
 
-        count=0
         while [[ $(hyprctl clients -j | jq '[.[] | select(.initialTitle == "Notes")] | length') -lt 2 ]]; do
             sleep 0.1
-            echo "not found"
+        done
+        
+        while ! hyprctl clients -j | jq -e '.[] | select(.class == "Sticky.py")' > /dev/null; do
+            sleep 0.1
         done
 
         hyprctl clients -j | jq -r '.[] | select(.initialTitle == "Notes") | .address' | while read -r addr; do
