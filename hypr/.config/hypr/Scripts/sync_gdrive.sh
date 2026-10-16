@@ -8,7 +8,7 @@ DOCS_REMOTE="gdrive:MyArch/Documents"
 PICS_LOCAL="/home/DROS/Pictures"
 PICS_REMOTE="gdrive:MyArch/Pictures"
 
-DUETIME_LOCAL="/home/DROS/.config/duetime/"
+DUETIME_LOCAL="/home/DROS/.config/duetime"
 DUETIME_REMOTE="gdrive:MyArch/duetime"
 
 echo "==> Starting initial full copies..."
@@ -19,7 +19,7 @@ rclone copy "$DUETIME_LOCAL" "$DUETIME_REMOTE" --filter-from "$FILTER_FILE" -vv
 echo "==> Starting unified real-time watcher..."
 
 # Watch both directories in a single inotifywait instance
-inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "$DOCS_LOCAL" "$PICS_LOCAL" | while read EVENT FILE_PATH; do
+inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "$DOCS_LOCAL" "$PICS_LOCAL" "$DUETIME_LOCAL" | while read EVENT FILE_PATH; do
     
     # Dynamically determine whether the change is in Documents or Pictures
     if [[ "$FILE_PATH" == "$DOCS_LOCAL"* ]]; then
