@@ -8,9 +8,13 @@ DOCS_REMOTE="gdrive:MyArch/Documents"
 PICS_LOCAL="/home/DROS/Pictures"
 PICS_REMOTE="gdrive:MyArch/Pictures"
 
+DUETIME_LOCAL="/home/DROS/.config/duetime/"
+DUETIME_REMOTE="gdrive:MyArch/duetime"
+
 echo "==> Starting initial full copies..."
 rclone copy "$DOCS_LOCAL" "$DOCS_REMOTE" --filter-from "$FILTER_FILE" -vv
 rclone copy "$PICS_LOCAL" "$PICS_REMOTE" --filter-from "$FILTER_FILE" -vv
+rclone copy "$DUETIME_LOCAL" "$DUETIME_REMOTE" --filter-from "$FILTER_FILE" -vv
 
 echo "==> Starting unified real-time watcher..."
 
@@ -24,6 +28,9 @@ inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "
     elif [[ "$FILE_PATH" == "$PICS_LOCAL"* ]]; then
         LOCAL_DIR="$PICS_LOCAL"
         REMOTE_DIR="$PICS_REMOTE"
+    elif [[ "$FILE_PATH" == "$DUETIME_LOCAL"* ]]; then
+        LOCAL_DIR="$DUETIME_LOCAL"
+        REMOTE_DIR="$DUETIME_REMOTE"
     else
         continue
     fi

@@ -1,1 +1,2 @@
 - **/myenv/**
+- **update_success.flag**

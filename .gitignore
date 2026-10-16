@@ -1,7 +1,7 @@
 /yazi/.config/yazi/pref-by-location
-waypaper/
-swappy/
-btop/
+waypaper/*
+swappy/*
+btop/*
 
 *.log
 
