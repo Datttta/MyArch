@@ -1,5 +1,7 @@
-- **/myenv/
-- /update_success.flag
-- /current_tasks.json
-- /current_timers.json
-- **/*.tmp
+- **/myenv/**
+
+- update_success.flag
+- current_tasks.json
+- current_timers.json
+
+- *.tmp

@@ -18,10 +18,38 @@ rclone copy "$DUETIME_LOCAL" "$DUETIME_REMOTE" --filter-from "$FILTER_FILE" -vv
 
 echo "==> Starting unified real-time watcher..."
 
-# Watch both directories in a single inotifywait instance
+# Function to check if REL_PATH matches any exclude rule in the ignore file
+should_ignore() {
+    local path="$1"
+    local filter_file="$2"
+    
+    while IFS= read -r line; do
+        # Trim whitespace
+        line="$(echo "$line" | xargs)"
+        # Skip empty lines or comments
+        [[ -z "$line" || "$line" =~ ^# ]] && continue
+        
+        # Only process exclude rules starting with '-'
+        if [[ "$line" == -* ]]; then
+            local pattern="${line#-}"
+            pattern="$(echo "$pattern" | xargs)" # trim whitespace
+            
+            # Strip leading '**/ ' or '**/' for flexible path matching
+            local clean_pattern="${pattern#**/}"
+            
+            # Check exact match, glob match (*.tmp), or path match
+            if [[ "$path" == $pattern ]] || [[ "$path" == $clean_pattern ]] || [[ "$path" == */$clean_pattern ]]; then
+                return 0 # Ignored
+            fi
+        fi
+    done < "$filter_file"
+    return 1 # Not ignored
+}
+
+# Watch directories in a single inotifywait instance
 inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "$DOCS_LOCAL" "$PICS_LOCAL" "$DUETIME_LOCAL" | while read EVENT FILE_PATH; do
     
-    # Dynamically determine whether the change is in Documents or Pictures
+    # Dynamically determine the root directory
     if [[ "$FILE_PATH" == "$DOCS_LOCAL"* ]]; then
         LOCAL_DIR="$DOCS_LOCAL"
         REMOTE_DIR="$DOCS_REMOTE"
@@ -38,7 +66,8 @@ inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "
     REL_PATH="${FILE_PATH#$LOCAL_DIR/}"
     
     # Skip if file matches ignore rules
-    if grep -qxF "$REL_PATH" "$FILTER_FILE" 2>/dev/null; then
+    if should_ignore "$REL_PATH" "$FILTER_FILE"; then
+        echo "==> Ignored: $REL_PATH"
         continue
     fi
 
@@ -57,4 +86,3 @@ inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "
         fi
     fi
 done
-
