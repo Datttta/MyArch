@@ -19,6 +19,10 @@ case $1 in
     ### Vimwiki ###
     "vimwiki")
         hyprctl dispatch 'hl.dsp.exec_cmd("kitty -e nvim ~/Repos/vimwiki/index.md ~/Repos/vimwiki/\"New words.md\"", { workspace = "2 silent" })'
+
+        while ! hyprctl clients -j | jq -e '.[] | select(.title == "nvim")' > /dev/null; do
+            sleep 0.1
+        done
         ;;
     ### Duetime ###
     "Duetime")

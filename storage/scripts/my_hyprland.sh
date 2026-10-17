@@ -159,5 +159,5 @@ rustup target add x86_64-pc-windows-gnu
 echo "- Restart your pc to apply all changes -"
 echo ""
 echo "manually set up aicommits (run aicommits setup (currently using groq for provider))"
-echo "manually set up rclone (run rclone config)"
+echo "manually set up rclone (download config from personal files)"
 echo "manually set up plymouth"
