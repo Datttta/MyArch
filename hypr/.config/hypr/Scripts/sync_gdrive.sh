@@ -67,7 +67,6 @@ inotifywait -m -r -e close_write,moved_to,moved_from,delete --format '%e %w%f' "
     
     # Skip if file matches ignore rules
     if should_ignore "$REL_PATH" "$FILTER_FILE"; then
-        echo "==> Ignored: $REL_PATH"
         continue
     fi
 
