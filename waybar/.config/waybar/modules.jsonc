@@ -128,7 +128,7 @@
   "pulseaudio": {
       "format": "<span size='120%'>󰕾</span> <span rise='1400'>{volume}%</span>",
       "format-bluetooth": "<span size='120%'></span>&#x2009;&#x200A;&#x200A;<span rise='1400'>{volume}%</span>",
-      //other icon option: "format-bluetooth": "<span size='110%'></span>&#x2002;<span rise='1400'>{volume}%</span>",
+      //"format-bluetooth": "<span size='110%'></span>&#x2002;<span rise='1400'>{volume}%</span>",
       "format-muted": "󰖁",
       "scroll-step": 1,
       "on-click": "~/.config/waybar/scripts/waybar_hub.sh audio",
