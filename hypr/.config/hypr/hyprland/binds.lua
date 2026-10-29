@@ -3,9 +3,9 @@
 -------------------
 
 -- my programs
-local terminal =    "kitty"
+local terminal =    "kitty -o linux_display_server=x11"
 local fileManager = "kitty yazi"
-local menu =        "rofi -x11 -show drun -normal-window" -- old: wofi --show drun --normal-window
+local menu =        "rofi -show drun -normal-window" -- old: wofi --show drun --normal-window | "rofi -x11 -show drun -normal-window"
 
 -- apps
 hl.bind(MainMod .. " + Q",         hl.dsp.exec_cmd(terminal))
