@@ -62,7 +62,7 @@ hl.bind("CTRL + SHIFT + S",        hl.dsp.exec_cmd("~/.config/hypr/Scripts/scree
 hl.bind("CTRL + SHIFT + A",        hl.dsp.exec_cmd("~/.config/hypr/Scripts/screenshot.sh all"))
 
 -- upside down
-hl.bind("CTRL + U + P",            hl.dsp.exec_cmd("~/.config/hypr/Scripts/upside-down.sh"))
+hl.bind("CTRL + S + D",            hl.dsp.exec_cmd("~/.config/hypr/Scripts/upside-down.sh"))
 
 -- turn off display
 hl.bind(MainMod .. " + F6",        hl.dsp.exec_cmd("~/.config/hypr/Scripts/turn-off-monitor.sh"))
@@ -123,4 +123,3 @@ hl.bind(MainMod .. " + SHIFT + S",               hl.dsp.window.move({ workspace 
 -- Scroll through existing workspaces with MainMod + scroll
 hl.bind(MainMod .. " + mouse_down",              hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(MainMod .. " + mouse_up",                hl.dsp.focus({ workspace = "e-1" }))
-
