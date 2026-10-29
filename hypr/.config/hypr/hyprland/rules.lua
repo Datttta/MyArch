@@ -55,6 +55,7 @@ hl.window_rule({
 
     rounding = 10,
     float = true,
+    immediate = false, -- related to allow_tearing
 })
 
 -- Portal windows
