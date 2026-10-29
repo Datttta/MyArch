@@ -98,21 +98,3 @@ hl.config({
         fullscreen_on_one_column = true,
     },
 })
-
-------------------
------- MISC ------
-------------------
-
-hl.config({
-    misc = {
-        disable_splash_rendering = true,
-        force_default_wallpaper = 1,
-        disable_hyprland_logo = false,
-    },
-
-    debug = {
-        disable_logs = false,
-        enable_stdout_logs = true,
-    },
-})
-

@@ -50,6 +50,8 @@ hl.env("WLR_DRM_NO_ATOMIC", "1")
 hl.env("__GL_GSYNC_ALLOWED", "0")
 hl.env("__GL_VRR_ALLOWED", "0")
 
+hl.env("HYPRLAND_NO_BELL", "1")
+
 ------------------------
 ------ PERMISSION ------
 ------------------------
@@ -91,4 +93,22 @@ hl.monitor({
     mode     = "preferred",
     position = "auto",
     scale    = "auto",
+})
+
+------------------
+------ MISC ------
+------------------
+
+hl.config({
+    misc = {
+        disable_splash_rendering = true,
+        force_default_wallpaper = 1,
+        disable_hyprland_logo = false,
+        bell_sound = "none",
+    },
+
+    debug = {
+        disable_logs = false,
+        enable_stdout_logs = true,
+    },
 })
