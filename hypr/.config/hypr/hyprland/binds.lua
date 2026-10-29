@@ -3,7 +3,7 @@
 -------------------
 
 -- my programs
-local terminal =    "kitty -o linux_display_server=x11"
+local terminal =    "kitty"
 local fileManager = "kitty yazi"
 local menu =        "rofi -show drun -normal-window" -- old: wofi --show drun --normal-window | "rofi -x11 -show drun -normal-window"
 

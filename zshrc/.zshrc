@@ -116,6 +116,8 @@ alias sy='sudo yazi'
 alias st='stow -t ~'
 alias dot='cd ~/Repos/MyArch/'
 
+alias kitty='env -u DRI_PRIME LIBGL_ALWAYS_SOFTWARE=1 kitty'
+
 # To customize prompt, run `p10k configure` or edit ~/Repos/MyArch/p10k/.p10k.zsh.
 [[ ! -f ~/Repos/MyArch/p10k/.p10k.zsh ]] || source ~/Repos/MyArch/p10k/.p10k.zsh
 export AMD_VULKAN_ICD=RADV
