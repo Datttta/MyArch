@@ -192,7 +192,7 @@ hl.layer_rule({
 
 -- workspaces (create a mudule for workspaces rules if necessary)
 hl.workspace_rule({
-    workspace = "name:1",
+    workspace = "1",
 
     gaps_in = 0,
     gaps_out = 0,

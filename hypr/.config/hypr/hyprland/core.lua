@@ -111,4 +111,8 @@ hl.config({
         disable_logs = false,
         enable_stdout_logs = true,
     },
+
+    quirks = {
+        skip_non_kms_dmabuf_formats = false,
+    },
 })
